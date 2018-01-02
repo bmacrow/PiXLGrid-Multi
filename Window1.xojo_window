@@ -1629,7 +1629,7 @@ End
 		  
 		  if mScale <5 then mScale=5
 		  rebuild=false
-		  'UpdateScreen()
+		  
 		  Window1.Canvas1.Refresh
 		  
 		  zoom.Text=str(mScale)+"%"
@@ -1731,7 +1731,7 @@ End
 #tag Events SizeSlide
 	#tag Event
 		Sub ValueChanged()
-		  'Window2.speed=me.value
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1745,16 +1745,33 @@ End
 #tag Events AddGrid
 	#tag Event
 		Sub Action()
+		  dim previousList as integer
 		  
-		  GridsList.AddRow()
-		  
-		  
-		  for i as integer = 0 to 7
-		    GridsList.cell(GridsList.Lastindex,i)=GridsList.cell((GridsList.Lastindex-1),i)
-		  next
-		  for i as integer = 8 to 15
-		    GridsList.cellcheck(GridsList.Lastindex,i)=GridsList.cellcheck((GridsList.Lastindex-1),i)
-		  next
+		  if GridsList.Listindex <> -1 then
+		    previousList = GridsList.ListIndex
+		    GridsList.AddRow()
+		    for i as integer = 0 to 6
+		      GridsList.cell(GridsList.Lastindex,i)=GridsList.cell(previousList,i)
+		    next
+		    GridsList.celltag(GridsList.Lastindex,7)=GridsList.celltag(previousList,7)
+		    for i as integer = 8 to 15
+		      GridsList.cellcheck(GridsList.Lastindex,i)=GridsList.cellcheck(previousList,i)
+		    next
+		    
+		    
+		  else
+		    
+		    
+		    GridsList.AddRow()
+		    for i as integer = 0 to 6
+		      GridsList.cell(GridsList.Lastindex,i)=GridsList.cell((GridsList.Lastindex-1),i)
+		    next
+		    GridsList.celltag(GridsList.Lastindex,7)=GridsList.celltag((GridsList.Lastindex-1),7)
+		    for i as integer = 8 to 15
+		      GridsList.cellcheck(GridsList.Lastindex,i)=GridsList.cellcheck((GridsList.Lastindex-1),i)
+		    next
+		    
+		  end
 		  UpdateScreen()
 		  
 		  
@@ -2036,18 +2053,58 @@ End
 #tag Events DeleteGrid
 	#tag Event
 		Sub Action()
-		  if PicIndex >0 Then
-		    PicIndex = PicIndex -1
-		    
-		    for i as integer=GridsList.listcount-1 downto 0
-		      if GridsList.selected(i) then
-		        GridsList.removeRow(i)
-		      end if
-		    next
-		    
+		  dim previous as integer
+		  
+		  
+		  if GridsList.listcount >1 Then
+		    if PicIndex = GridsList.ListIndex then
+		      PicIndex = 0
+		    else
+		      if GridsList.ListIndex <> -1 then
+		        GridsList.removeRow(GridsList.ListIndex)
+		      else
+		        MsgBox("Please select grid to Delete")
+		      end
+		      UpdateScreen()
+		    end
 		  else
 		    MsgBox("Must have one grid")
 		  end
+		  
+		  
+		  
+		  'if GridsList.listcount >1 Then
+		  'if PicIndex = GridsList.Index then
+		  'PicIndex = 0
+		  'end
+		  '
+		  ''for i as integer=GridsList.listcount-1 downto 0
+		  'if GridsList.selected(i) then
+		  'GridsList.removeRow(i)
+		  'else
+		  'MsgBox("Please select grid to Delete")
+		  'end if
+		  ''next
+		  'UpdateScreen()
+		  'else
+		  'MsgBox("Must have one grid")
+		  'end
+		  
+		  
+		  
+		  
+		  'if PicIndex >0 Then
+		  'PicIndex = PicIndex -1
+		  '
+		  'for i as integer=GridsList.listcount-1 downto 0
+		  'if GridsList.selected(i) then
+		  'GridsList.removeRow(i)
+		  'end if
+		  'next
+		  '
+		  'else
+		  'MsgBox("Must have one grid")
+		  'end
 		End Sub
 	#tag EndEvent
 #tag EndEvents

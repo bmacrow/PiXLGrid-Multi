@@ -76,7 +76,7 @@ Begin Window About
          TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "PiXL Grid"
+         Text            =   "PiXL Grid Multi"
          TextAlign       =   1
          TextColor       =   &c00000000
          TextFont        =   "System"
@@ -111,7 +111,7 @@ Begin Window About
          TabIndex        =   1
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Alpha"
+         Text            =   "Beta"
          TextAlign       =   1
          TextColor       =   &c00000000
          TextFont        =   "System"
@@ -181,7 +181,7 @@ Begin Window About
          TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "2017"
+         Text            =   "2018"
          TextAlign       =   1
          TextColor       =   &c00000000
          TextFont        =   "System"
