@@ -421,7 +421,7 @@ Begin Window Window1
    Begin CheckBox stats
       AutoDeactivate  =   True
       Bold            =   False
-      Caption         =   "Canvas Stats"
+      Caption         =   "Canvas Raster"
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
@@ -448,7 +448,7 @@ Begin Window Window1
       Underline       =   False
       Value           =   True
       Visible         =   True
-      Width           =   100
+      Width           =   116
    End
    Begin Label zoom
       AutoDeactivate  =   True
@@ -511,7 +511,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   597
+      Top             =   595
       Underline       =   False
       Value           =   True
       Visible         =   False
@@ -896,6 +896,38 @@ Begin Window Window1
       Visible         =   True
       Width           =   104
    End
+   Begin CheckBox originCursor
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   "Origin Cursor"
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Display Grid values including offsets"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   574
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   27
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   424
+      Underline       =   False
+      Value           =   True
+      Visible         =   True
+      Width           =   116
+   End
 End
 #tag EndWindow
 
@@ -1018,7 +1050,7 @@ End
 		  Case "Black/White"
 		    'Black/White
 		    bgColor = Array(&c3F3F3F,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000)
-		  Case "LightGray/DarkGray"
+		  Case "Light Gray/Dark Gray"
 		    'LightGray/DarkGray
 		    bgColor = Array(&c3F3F3F,&c3F3F3F,&c7E7E7E,&c3F3F3F,&c7E7E7E,&c3F3F3F,&c7E7E7E,&c000000)
 		  Case "Yellow/Gray"
@@ -1079,7 +1111,7 @@ End
 		      end
 		      
 		      if GridsList.cellcheck(Index,10) then
-		        'id = str(i+((j-1)*screenWidth))               //total tile number
+		        
 		        id = (str(j) + "," +str(i))                                      //row, column numbering
 		        MyPic.Graphics.DrawString(id, (x+1),(y+max((tileY/5),8)))           //tile address
 		      end
@@ -1149,6 +1181,8 @@ End
 		  end
 		  
 		  if GridsList.cellcheck(Index,9) then 
+		    'Draw canvas Raster
+		    
 		    if val(GridsList.cell(Index,7)) = 3 then
 		      MyPic.Graphics.ForeColor  = &c000000
 		    else
@@ -1192,31 +1226,35 @@ End
 		    
 		    Dim offX as double = val(GridsList.Cell(i,4))
 		    Dim offY as double = val(GridsList.Cell(i,5))
-		    
-		    
-		    
-		    
-		    'OutCanvas = New Picture(val(OutH.Text), val(OutV.Text))
-		    
-		    
-		    'Display offset markers
-		    'OutCanvas.graphics.ForeColor = RGB(255,255,255)
-		    '
-		    'OutCanvas.Graphics.DrawLine(offX, 0, OffX,OffY)
-		    'OutCanvas.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
-		    'OutCanvas.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
-		    'OutCanvas.Graphics.DrawLine((offX+5),(OffY-5),OffX,OffY)
-		    '
-		    'OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
-		    
+		    if Window1.originCursor.Value then
+		      'Display offset markers
+		      OutCanvas.graphics.ForeColor = RGB(255,255,255)
+		      
+		      OutCanvas.Graphics.DrawLine(offX, 0, OffX,OffY)
+		      OutCanvas.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
+		      OutCanvas.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
+		      OutCanvas.Graphics.DrawLine((offX+5),(OffY-5),OffX,OffY)
+		      
+		      OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
+		      
+		    end
 		    
 		    'Display canvas stats
 		    if Window1.stats.Value then
-		      id = ("Tile X:" + GridsList.Cell(PicIndex,0) + " Columns:" + GridsList.Cell(PicIndex,3) + " Total X:" + str(val(GridsList.Cell(PicIndex,0))*val(GridsList.Cell(PicIndex,3))))
-		      OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-40))
 		      
-		      id = ("Tile Y:" + GridsList.Cell(PicIndex,1) + " Rows:" + GridsList.Cell(PicIndex,4)+ " Total Y:" + str(val(GridsList.Cell(PicIndex,1))*val(GridsList.Cell(PicIndex,4))))
-		      OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-20))
+		      'Canvas Raster.
+		      
+		      OutCanvas.Graphics.ForeColor  = &cffffff
+		      
+		      OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
+		      
+		      
+		      
+		      'id = ("Tile X:" + GridsList.Cell(PicIndex,0) + " Columns:" + GridsList.Cell(PicIndex,3) + " Total X:" + str(val(GridsList.Cell(PicIndex,0))*val(GridsList.Cell(PicIndex,3))))
+		      'OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-40))
+		      '
+		      'id = ("Tile Y:" + GridsList.Cell(PicIndex,1) + " Rows:" + GridsList.Cell(PicIndex,4)+ " Total Y:" + str(val(GridsList.Cell(PicIndex,1))*val(GridsList.Cell(PicIndex,4))))
+		      'OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-20))
 		    end
 		    
 		    BuildGrid(i)
@@ -1857,56 +1895,6 @@ End
 		End Function
 	#tag EndEvent
 	#tag Event
-		Function KeyDown(Key As String) As Boolean
-		  Select case asc(key)
-		  case 9
-		    if Keyboard.AsyncShiftKey then
-		      // back
-		      
-		      // look for column left
-		      for i as integer = column-1 downto 0
-		        if me.ColumnType(i) >= me.TypeEditable then
-		          me.EditCell(row, i)
-		          Return true
-		        end if
-		      next
-		      
-		      // not found, so look in row before
-		      row = row - 1
-		      if row >= 0 then
-		        for i as integer = me.ColumnCount-1 downto 0
-		          if me.ColumnType(i) >= me.TypeEditable then
-		            me.EditCell(row, i)
-		            Return true
-		          end if
-		        next
-		      end if
-		    else
-		      // forward
-		      
-		      // look for column right
-		      for i as integer = column+1 to me.ColumnCount-1
-		        if me.ColumnType(i) >= me.TypeEditable then
-		          me.EditCell(row, i)
-		          Return true
-		        end if
-		      next
-		      
-		      // not found, so look in row below
-		      row = row + 1
-		      if row < me.listCount then
-		        for i as integer = 0 to me.ColumnCount-1
-		          if me.ColumnType(i) >= me.TypeEditable then
-		            me.EditCell(row, i)
-		            Return true
-		          end if
-		        next
-		      end if
-		    end if
-		  end Select
-		End Function
-	#tag EndEvent
-	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
 		  Dim row As Integer = Me.RowFromXY(x, y)
 		  Dim col As Integer = Me.ColumnFromXY(x, y)
@@ -1930,7 +1918,6 @@ End
 		    base.Append(New MenuItem("Blue/Red"))
 		    base.Append(New MenuItem("Black/White"))
 		    base.Append(New MenuItem("Light Gray/Dark Gray"))
-		    base.Append(New MenuItem("Yellow/Gray"))
 		    base.Append(New MenuItem("Yellow/Gray"))
 		    base.Append(New MenuItem("Orange/Gray"))
 		    base.Append(New MenuItem("Aqua/Gray"))
@@ -2053,58 +2040,27 @@ End
 #tag Events DeleteGrid
 	#tag Event
 		Sub Action()
-		  dim previous as integer
-		  
 		  
 		  if GridsList.listcount >1 Then
-		    if PicIndex = GridsList.ListIndex then
-		      PicIndex = 0
-		    else
-		      if GridsList.ListIndex <> -1 then
+		    
+		    if GridsList.ListIndex <> -1 then
+		      if GridsList.ListIndex = 0 then
 		        GridsList.removeRow(GridsList.ListIndex)
 		      else
-		        MsgBox("Please select grid to Delete")
+		        GridsList.Selected(GridsList.ListIndex-1) = True
+		        GridsList.removeRow(GridsList.ListIndex+1)
 		      end
 		      UpdateScreen()
+		    else
+		      MsgBox("Please select grid to Delete")
 		    end
+		    
 		  else
 		    MsgBox("Must have one grid")
 		  end
 		  
 		  
 		  
-		  'if GridsList.listcount >1 Then
-		  'if PicIndex = GridsList.Index then
-		  'PicIndex = 0
-		  'end
-		  '
-		  ''for i as integer=GridsList.listcount-1 downto 0
-		  'if GridsList.selected(i) then
-		  'GridsList.removeRow(i)
-		  'else
-		  'MsgBox("Please select grid to Delete")
-		  'end if
-		  ''next
-		  'UpdateScreen()
-		  'else
-		  'MsgBox("Must have one grid")
-		  'end
-		  
-		  
-		  
-		  
-		  'if PicIndex >0 Then
-		  'PicIndex = PicIndex -1
-		  '
-		  'for i as integer=GridsList.listcount-1 downto 0
-		  'if GridsList.selected(i) then
-		  'GridsList.removeRow(i)
-		  'end if
-		  'next
-		  '
-		  'else
-		  'MsgBox("Must have one grid")
-		  'end
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2119,6 +2075,13 @@ End
 		  End If
 		  UpdateScreen()
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events originCursor
+	#tag Event
+		Sub Action()
+		  UpdateScreen()
 		End Sub
 	#tag EndEvent
 #tag EndEvents
