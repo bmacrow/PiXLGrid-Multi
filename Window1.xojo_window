@@ -234,7 +234,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   422
+      Top             =   423
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
@@ -276,7 +276,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   422
+      Top             =   423
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
@@ -342,7 +342,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   424
+      Top             =   423
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -377,7 +377,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   424
+      Top             =   423
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -412,7 +412,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   424
+      Top             =   423
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -444,7 +444,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   424
+      Top             =   423
       Underline       =   False
       Value           =   True
       Visible         =   True
@@ -764,7 +764,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   424
+      Top             =   423
       Underline       =   False
       Visible         =   True
       Width           =   76
@@ -870,7 +870,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   424
+      Top             =   423
       Underline       =   False
       Visible         =   True
       Width           =   88
@@ -922,11 +922,73 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   424
+      Top             =   423
       Underline       =   False
       Value           =   True
       Visible         =   True
       Width           =   116
+   End
+   Begin PushButton SaveList
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Save List..."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   708
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   28
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   423
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton LoadList
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Load List..."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   800
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   29
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   423
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
    End
 End
 #tag EndWindow
@@ -1372,16 +1434,21 @@ End
 		  Dim d As SaveAsDialog
 		  d = New SaveAsDialog
 		  
-		  BuildGrid(PicIndex)
-		  
-		  f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(PicIndex,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
-		  
-		  
-		  If f <> Nil Then
-		    MyPic.Save(f, Picture.SaveAsPNG)
-		  End If
-		  
-		  
+		  if GridsList.ListIndex <> -1 then
+		    
+		    BuildGrid(PicIndex)
+		    
+		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(PicIndex,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
+		    
+		    
+		    If f <> Nil Then
+		      MyPic.Save(f, Picture.SaveAsPNG)
+		    End If
+		  else
+		    
+		    MsgBox("Please select a grid to save")
+		    
+		  end
 		  
 		End Sub
 	#tag EndEvent
@@ -1716,7 +1783,7 @@ End
 		  Dim f As FolderItem
 		  OutCanvasUpdate()
 		  
-		  f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +GridsList.Cell(PicIndex,6)+ "-"+str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
+		  f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
 		  
 		  
 		  If f <> Nil Then
@@ -1823,12 +1890,13 @@ End
 	#tag Event
 		Sub Open()
 		  dim i as integer
-		  'Me.ColumnType(7) = Listbox.Type
 		  
-		  Dim values() As String = Array("80","60","16","12","150","150","Screen One","25% Colour")
+		  
+		  Dim values() As String = Array("80","60","16","12","150","150","Screen One")
 		  Me.AddRow(values)
 		  
-		  
+		  me.Celltag(0,7)="25% Colour"
+		  'me.cell(0,7)="25% Colour"
 		  
 		  
 		  for i = 0 to 7
@@ -1840,8 +1908,7 @@ End
 		    me.CellCheck(0,i)=true
 		  next
 		  
-		  'rebuild = true
-		  'UpdateScreen()
+		  
 		  
 		  
 		  
@@ -2082,6 +2149,95 @@ End
 	#tag Event
 		Sub Action()
 		  UpdateScreen()
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events SaveList
+	#tag Event
+		Sub Action()
+		  dim f as folderitem
+		  dim tos as textOutputStream
+		  dim s as string
+		  dim i, j as integer
+		  
+		  'show standard file selector
+		  f= GetSaveFolderItem("text/plain","Grid List"+".csv")
+		  if f = nil then exit sub                              'cancel clicked
+		  
+		  'create file
+		  tos = f.CreateTextFile
+		  if tos = nil then                                       'failed?
+		    MsgBox("The file could not be created!")
+		    exit sub
+		  end if
+		  
+		  if GridsList.ListCount>0 then                   'if grid not empty
+		    for i=0 to GridsList.ListCount-1            'for each row
+		      s=""                                                   'build line to save
+		      for j=0 to 6   'for each column
+		        s=s+GridsList.Cell(i,j)+ ","    'csv
+		      next
+		      s=s+str(GridsList.celltag(i,7))+","
+		      for j = 8 to 15
+		        s=s+str(GridsList.cellcheck(i,j))+","
+		      next
+		      tos.WriteLine s.left(s.len-1)                'save line
+		    next
+		  end if
+		  
+		  tos.Close                                                 'close file
+		  
+		  
+		  
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events LoadList
+	#tag Event
+		Sub Action()
+		  Dim f As FolderItem
+		  dim tis as TextInputStream
+		  dim s as string
+		  dim i as integer
+		  dim fields() as string
+		  
+		  'show standard file selector
+		  f = GetOpenFolderItem("any" )
+		  if f=nil then exit sub             'cancel clicked
+		  
+		  'open the file
+		  tis = f.OpenAsTextFile
+		  if tis=nil then                        'failed?
+		    MsgBox("The file could not be opened.")
+		    exit sub
+		  end if
+		  
+		  
+		  
+		  'read file into grid
+		  if not tis.EOF then
+		    GridsList.DeleteAllRows
+		  end
+		  while not tis.EOF                    'while not end-of-file
+		    GridsList.AddRow ""             'add row to grid
+		    s=tis.ReadLine                    'read line from file
+		    fields=Split(s,",")                 'put items in fileds() array
+		    for i=0 to 6  'copy to grid
+		      GridsList.Cell(GridsList.ListCount-1,i)=Trim(fields(i))
+		    next
+		    GridsList.celltag(GridsList.LastIndex,7)=Trim(fields(7))
+		    for i=8 to 15
+		      If Trim(fields(i)) = "True" then
+		        GridsList.cellcheck(GridsList.Lastindex,i) = True 'Trim(fields(i))
+		      else
+		        GridsList.cellcheck(GridsList.Lastindex,i) = False
+		      end
+		    next
+		  wend
+		  
+		  tis.Close                                 'close file
 		End Sub
 	#tag EndEvent
 #tag EndEvents
