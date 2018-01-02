@@ -1,0 +1,40 @@
+#tag MultiImage
+Image logo3
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFoAAAAAAFoAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8QVVAgNTAweDUwMHB4LnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAAB0dyaWRHZW4AAAIANS86VXNlcnM6cmljaGFyZDpDbG91ZFN0YXRpb246R3JpZEdlbjpVUCA1MDB4NTAwcHgucG5nAAAOACIAEABVAFAAIAA1ADAAMAB4ADUAMAAwAHAAeAAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAM1VzZXJzL3JpY2hhcmQvQ2xvdWRTdGF0aW9uL0dyaWRHZW4vVVAgNTAweDUwMHB4LnBuZwAAEwABLwAAFQACAA7//wAAAAAAAAAA
+		FullPath = /Users/richard/CloudStation/GridGen/UP 500x500px.png
+		PartialPath = ..\GridGen\UP 500x500px.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 500.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 500.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

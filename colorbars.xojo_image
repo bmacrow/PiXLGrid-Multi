@@ -1,0 +1,40 @@
+#tag MultiImage
+Image colorbars
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAHKAAAAAAHKAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8fMTkyMHB4LVNNUFRFX0NvbG9yI0ZGRkZGRkZGLnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAAB0dyaWRHZW4AAAIATi86VXNlcnM6cmljaGFyZDpDbG91ZFN0YXRpb246R3JpZEdlbjoxOTIwcHgtU01QVEVfQ29sb3JfQmFyc18xNng5LnN2ZyBjb3B5LnBuZwAOAFQAKQAxADkAMgAwAHAAeAAtAFMATQBQAFQARQBfAEMAbwBsAG8AcgBfAEIAYQByAHMAXwAxADYAeAA5AC4AcwB2AGcAIABjAG8AcAB5AC4AcABuAGcADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBMVXNlcnMvcmljaGFyZC9DbG91ZFN0YXRpb24vR3JpZEdlbi8xOTIwcHgtU01QVEVfQ29sb3JfQmFyc18xNng5LnN2ZyBjb3B5LnBuZwATAAEvAAAVAAIADv//AAAAAAAAAAA=
+		FullPath = /Users/richard/CloudStation/GridGen/1920px-SMPTE_Color_Bars_16x9.svg copy.png
+		PartialPath = ..\GridGen\1920px-SMPTE_Color_Bars_16x9.svg copy.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 1920.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 330.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage
