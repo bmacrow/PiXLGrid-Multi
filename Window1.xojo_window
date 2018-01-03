@@ -497,7 +497,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   419
+      Left            =   435
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -515,7 +515,7 @@ Begin Window Window1
       Underline       =   False
       Value           =   True
       Visible         =   False
-      Width           =   76
+      Width           =   67
    End
    Begin CheckBox Vscroll
       AutoDeactivate  =   True
@@ -529,7 +529,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   494
+      Left            =   508
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -547,7 +547,7 @@ Begin Window Window1
       Underline       =   False
       Value           =   True
       Visible         =   False
-      Width           =   82
+      Width           =   69
    End
    Begin Slider SpeedSlide
       AutoDeactivate  =   True
@@ -556,7 +556,7 @@ Begin Window Window1
       HelpTag         =   "Adjust speed of cursor"
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   693
+      Left            =   696
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
@@ -588,7 +588,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   649
+      Left            =   650
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -610,7 +610,7 @@ Begin Window Window1
       Transparent     =   True
       Underline       =   False
       Visible         =   False
-      Width           =   68
+      Width           =   41
    End
    Begin PushButton Live
       AutoDeactivate  =   True
@@ -650,7 +650,7 @@ Begin Window Window1
       HelpTag         =   "Adjust weight of cursor"
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   818
+      Left            =   816
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
@@ -682,7 +682,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   787
+      Left            =   783
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -704,7 +704,7 @@ Begin Window Window1
       Transparent     =   True
       Underline       =   False
       Visible         =   False
-      Width           =   68
+      Width           =   28
    End
    Begin CheckBox CursorColour
       AutoDeactivate  =   True
@@ -718,7 +718,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   574
+      Left            =   582
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -776,7 +776,7 @@ Begin Window Window1
       Border          =   True
       ColumnCount     =   16
       ColumnsResizable=   True
-      ColumnWidths    =   "40,40,40,40,40,40,195,115,50,50,50,50,50,50,50,70"
+      ColumnWidths    =   "44,44,44,44,52,52,160,110,50,50,50,50,50,50,50,70"
       DataField       =   ""
       DataSource      =   ""
       DefaultRowHeight=   -1
@@ -792,7 +792,7 @@ Begin Window Window1
       Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
-      InitialValue    =   "x	y	totX	totY	OffX	OffY	Name	Bgnd	Grid	Raster	TileIDs	Circle	Cross	Corner	Logo	ColourBars"
+      InitialValue    =   "tileX	tileY	cols	rows	OffsetX	OffsetY	Name	Bgnd	Grid	Raster	TileIDs	Circle	Cross	Corner	Logo	ColourBars"
       Italic          =   False
       Left            =   20
       LockBottom      =   True
