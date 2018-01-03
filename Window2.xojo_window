@@ -126,7 +126,7 @@ End
 
 
 	#tag Property, Flags = &h0
-		speed As Integer = 1
+		speed As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -208,6 +208,8 @@ End
 #tag Events Animate
 	#tag Event
 		Sub Action()
+		  speed = Window1.SpeedSlide.Value
+		  
 		  xPos=xPos+speed
 		  yPos=yPos+speed
 		  if (xPos > val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),0))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),2))) OR (xPos > Window2.width) then xPos=0

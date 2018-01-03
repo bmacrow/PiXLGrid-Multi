@@ -1835,7 +1835,7 @@ End
 #tag Events SpeedSlide
 	#tag Event
 		Sub ValueChanged()
-		  Window2.speed=me.value
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
