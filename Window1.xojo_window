@@ -1038,7 +1038,7 @@ End
 		    
 		    Canvas1.EraseBackground = True
 		    
-		       'val(Window1.TileX.Text)
+		    'val(Window1.TileX.Text)
 		    
 		    
 		    tileX = val(GridsList.cell(Index,0))
@@ -1149,7 +1149,7 @@ End
 		      
 		      for i = 1 to screenWidth //draw column
 		        if val(GridsList.cell(Index,7)) = 5 then
-		            'Blank BG
+		          'Blank BG
 		          
 		        elseif val(GridsList.cell(Index,7)) = 3 then
 		          MyPic.Graphics.ForeColor  = &cffffff
@@ -2120,6 +2120,19 @@ End
 		  
 		  
 		End Sub
+	#tag EndEvent
+	#tag Event
+		Function CellKeyDown(row as Integer, column as Integer, key as String) As Boolean
+		  if asc(key) = 9 then
+		    // here you find the next cell to make editable, and use editCell on it
+		    
+		    if column <6 then
+		      me.EditCell(row, column+1)
+		    end
+		  else
+		    return false
+		  end if
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag Events DeleteGrid
