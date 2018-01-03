@@ -9,7 +9,7 @@ Begin Window Window1
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   True
-   Height          =   635
+   Height          =   648
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
@@ -18,7 +18,7 @@ Begin Window Window1
    MaxWidth        =   32000
    MenuBar         =   905261055
    MenuBarVisible  =   True
-   MinHeight       =   635
+   MinHeight       =   648
    MinimizeButton  =   True
    MinWidth        =   1009
    Placement       =   0
@@ -52,7 +52,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   595
+      Top             =   608
       Underline       =   False
       Visible         =   True
       Width           =   110
@@ -65,7 +65,7 @@ Begin Window Window1
       DoubleBuffer    =   False
       Enabled         =   True
       EraseBackground =   True
-      Height          =   347
+      Height          =   360
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
@@ -89,7 +89,7 @@ Begin Window Window1
       AcceptFocus     =   True
       AutoDeactivate  =   True
       Enabled         =   True
-      Height          =   347
+      Height          =   360
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
@@ -136,7 +136,7 @@ Begin Window Window1
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   366
+      Top             =   379
       Value           =   0
       Visible         =   True
       Width           =   954
@@ -159,7 +159,7 @@ Begin Window Window1
       TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   386
+      Top             =   399
       Visible         =   True
       Width           =   14
    End
@@ -192,7 +192,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   386
+      Top             =   399
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -234,7 +234,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
@@ -276,7 +276,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
@@ -308,7 +308,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   595
+      Top             =   608
       Underline       =   False
       Visible         =   True
       Width           =   120
@@ -342,7 +342,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -377,7 +377,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -412,7 +412,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -444,7 +444,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Underline       =   False
       Value           =   True
       Visible         =   True
@@ -479,7 +479,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   386
+      Top             =   399
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -511,7 +511,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   595
+      Top             =   608
       Underline       =   False
       Value           =   True
       Visible         =   False
@@ -543,7 +543,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   595
+      Top             =   608
       Underline       =   False
       Value           =   True
       Visible         =   False
@@ -572,7 +572,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       TickStyle       =   "0"
-      Top             =   595
+      Top             =   608
       Value           =   1
       Visible         =   False
       Width           =   82
@@ -606,7 +606,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   595
+      Top             =   608
       Transparent     =   True
       Underline       =   False
       Visible         =   False
@@ -638,7 +638,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   595
+      Top             =   608
       Underline       =   False
       Visible         =   True
       Width           =   86
@@ -666,7 +666,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       TickStyle       =   "0"
-      Top             =   595
+      Top             =   608
       Value           =   1
       Visible         =   False
       Width           =   82
@@ -700,7 +700,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   595
+      Top             =   608
       Transparent     =   True
       Underline       =   False
       Visible         =   False
@@ -732,7 +732,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   595
+      Top             =   608
       Underline       =   False
       Value           =   True
       Visible         =   False
@@ -764,7 +764,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Underline       =   False
       Visible         =   True
       Width           =   76
@@ -812,7 +812,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   453
+      Top             =   466
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
@@ -839,7 +839,7 @@ Begin Window Window1
       Scope           =   0
       TabIndex        =   4
       TabPanelIndex   =   0
-      Top             =   414
+      Top             =   427
       TopLeftColor    =   &c00000000
       Visible         =   True
       Width           =   969
@@ -870,7 +870,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Underline       =   False
       Visible         =   True
       Width           =   88
@@ -892,7 +892,7 @@ Begin Window Window1
       SelectionType   =   0
       TabIndex        =   26
       TabPanelIndex   =   0
-      Top             =   386
+      Top             =   399
       Visible         =   True
       Width           =   104
    End
@@ -922,7 +922,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Underline       =   False
       Value           =   True
       Visible         =   True
@@ -954,7 +954,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Underline       =   False
       Visible         =   True
       Width           =   80
@@ -985,7 +985,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   423
+      Top             =   436
       Underline       =   False
       Visible         =   True
       Width           =   80
@@ -1032,234 +1032,249 @@ End
 		  dim gridColor(), bgColor() as color
 		  dim id as string
 		  
-		  Canvas1.EraseBackground = True
+		  dim circlesize as integer
 		  
-		     'val(Window1.TileX.Text)
-		  
-		  
-		  tileX = val(GridsList.cell(Index,0))
-		  
-		  tileY = val(GridsList.cell(Index,1))
-		  screenWidth= val(GridsList.cell(Index,2))
-		  screenHeight= val(GridsList.cell(Index,3))
-		  
-		  
-		  
-		  x = 0
-		  y = 0
-		  k = 0
-		  rcount = 1
-		  totX = (tileX*screenWidth)
-		  totY = (tileY*screenHeight)
-		  
-		  'Window1.totXlabel.Text=str(totX)
-		  'Window1.totYlabel.Text=str(totY)
-		  
-		  
-		  
-		  MyPic = Self.BitmapForCaching(totX,totY)
-		  
-		  
-		  
-		  MyPic.Graphics.TextFont="Helvetica"
-		  MyPic.Graphics.TextUnit=FontUnits.Pixel
-		  
-		  
-		  'MyPic(PicIndex).Graphics.TextSize=(tileX/5)
-		  MyPic.Graphics.TextSize=max((tileY/5),8)'font size is fifth of tileY or8pixels min
-		  
-		  gridColor = Array(&c000000,&cff0000,&c00ff00,&c0000ff,&cffff00,&c00ffff,&cff00ff,&cffffff)
-		  
-		  
-		  Select Case GridsList.celltag(Index,7) 'FilledPopUp.ListIndex
+		  if GridsList.ListCount <>0 then
 		    
-		  Case "100% Colour"
-		    '100%
-		    bgColor = Array(&cffffff,&cff00ff,&c00ffff,&cffff00,&c0000ff,&c00ff00,&cff0000,&c000000)
-		  Case "50% Colour"
-		    '50%
-		    bgColor =   Array(&c7e7e7e,&c7e007e,&c007e7e,&c7e7e00,&c00007e,&c007e00,&c7e0000,&c000000)
-		  Case "25% Colour"
-		    '25%
-		    bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
-		  Case "White"
-		    'White
-		    bgColor = Array(&c3F3F3F,&cFFFFFF,&cFFFFFF,&cFFFFFF,&cFFFFFF,&cFFFFFF,&cFFFFFF,&c000000)
-		  Case "Black"
-		    'Black
-		    bgColor = Array(&c3F3F3F,&c000000,&c000000,&c000000,&c000000,&c000000,&c000000,&c000000)
-		  Case "Transparent"
-		    'Blank
-		    bgColor = Array(&c3F3F3F00,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c00000000)
-		  Case "Red/Gray"
-		    'Red/Gray
-		    bgColor = Array(&c3F3F3F,&c3F0000,&c3F3F3F,&c3F0000,&c3F3F3F,&c3F0000,&c3F3F3F,&c000000)
-		  Case "Green/Gray"
-		    'Green/Gray
-		    bgColor = Array(&c3F3F3F,&c003F00,&c3F3F3F,&c003F00,&c3F3F3F,&c003F00,&c3F3F3F,&c000000)
-		  Case "Blue/Gray"
-		    'Blue/Gray
-		    bgColor = Array(&c3F3F3F,&c00003F,&c3F3F3F,&c00003F,&c3F3F3F,&c00003F,&c3F3F3F,&c000000)
-		  Case "Red/Green"
-		    'Red/Green
-		    bgColor = Array(&c3F3F3F,&c3F0000,&c003F00,&c3F0000,&c003F00,&c3F0000,&c003F00,&c000000)
-		  Case  "Green/Blue"
-		    'Green/Blue
-		    bgColor = Array(&c3F3F3F,&c003F00,&c00003F,&c003F00,&c00003F,&c003F00,&c00003F,&c000000)
-		  Case "Blue/Red"
-		    'Blue/Red
-		    bgColor = Array(&c3F3F3F,&c00003F,&c3F0000,&c00003F,&c3F0000,&c00003F,&c3F0000,&c000000)
-		  Case "Black/White"
-		    'Black/White
-		    bgColor = Array(&c3F3F3F,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000)
-		  Case "Light Gray/Dark Gray"
-		    'LightGray/DarkGray
-		    bgColor = Array(&c3F3F3F,&c3F3F3F,&c7E7E7E,&c3F3F3F,&c7E7E7E,&c3F3F3F,&c7E7E7E,&c000000)
-		  Case "Yellow/Gray"
-		    'Yellow/Gray
-		    bgColor = Array(&c3F3F3F,&cf4d51a,&c3f3f3f,&cf4d51a,&c3f3f3f,&cf4d51a,&c3f3f3f,&c000000)
-		  Case "Orange/Gray"
-		    'Orange/Gray
-		    bgColor = Array(&c3F3F3F,&cff5722,&c3f3f3f,&cff5722,&c3f3f3f,&cff5722,&c3f3f3f,&c000000)
-		  Case "Aqua/Gray"
-		    'Aqua/Gray
-		    bgColor = Array(&c3F3F3F,&c0ea7b5,&c3f3f3f,&c0ea7b5,&c3f3f3f,&c0ea7b5,&c3f3f3f,&c000000)
-		  Case "Purple/Gray"
-		    'Purple/Gray
-		    bgColor = Array(&c3F3F3F,&c9c6fda,&c3f3f3f,&c9c6fda,&c3f3f3f,&c9c6fda,&c3f3f3f,&c000000)
-		  Else
-		    bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
-		  End Select
-		  
-		  
-		  for j = 1  to screenHeight //draw row
+		    Canvas1.EraseBackground = True
+		    
+		       'val(Window1.TileX.Text)
 		    
 		    
-		    if rcount < 6 then
-		      rcount = rcount +1
-		    else
-		      rcount = 1
-		    end
+		    tileX = val(GridsList.cell(Index,0))
+		    
+		    tileY = val(GridsList.cell(Index,1))
+		    screenWidth= val(GridsList.cell(Index,2))
+		    screenHeight= val(GridsList.cell(Index,3))
 		    
 		    
-		    k = rcount     'colour is row count
 		    
-		    
-		    for i = 1 to screenWidth //draw column
-		      if val(GridsList.cell(Index,7)) = 5 then
-		          'Blank BG
-		        
-		      elseif val(GridsList.cell(Index,7)) = 3 then
-		        MyPic.Graphics.ForeColor  = &cffffff
-		        MyPic.Graphics.FillRect(x,y,tileX,tileY)
-		      elseif val(GridsList.cell(Index,7)) = 4 then
-		        MyPic.Graphics.ForeColor  = &c000000
-		        MyPic.Graphics.FillRect(x,y,tileX,tileY)
-		      else
-		        MyPic.Graphics.ForeColor  = (bgColor(k))
-		        MyPic.Graphics.FillRect(x,y,tileX,tileY)
-		      end
-		      
-		      if GridsList.cellcheck(Index,8) then
-		        MyPic.Graphics.ForeColor  = (gridColor(k))
-		        MyPic.Graphics.DrawRect(x, y, tileX,tileY)
-		      end
-		      
-		      'if FilledPopUp.ListIndex = 3 then
-		      if (bgColor(k))=&cFFFFFF00 then
-		        MyPic.Graphics.ForeColor  = &c656565 '(gridColor(0))
-		      else
-		        MyPic.Graphics.ForeColor  = (gridColor(7))
-		      end
-		      
-		      if GridsList.cellcheck(Index,10) then
-		        
-		        id = (str(j) + "," +str(i))                                      //row, column numbering
-		        MyPic.Graphics.DrawString(id, (x+1),(y+max((tileY/5),8)))           //tile address
-		      end
-		      
-		      x = x + tileX
-		      k = k+1
-		      if k = 7 then k = 1
-		      
-		    next
 		    x = 0
-		    y = y + tileY
-		  next
-		  
-		  
-		  if GridsList.cellcheck(Index,12) then
-		    myPic.Graphics.ForeColor = &c0000ff
-		    MyPic.graphics.DrawLine ( 0,0,MyPic.width,MyPic.height)
-		    MyPic.graphics.DrawLine ( 0,MyPic.height,MyPic.width,0)
-		  end
-		  
-		  'Draw colorbars
-		  if GridsList.cellcheck(Index,15)  then
-		    if MyPic.height > MyPic.width then 
-		      myPic.Graphics.DrawPicture(colorbars, 10,((totY/2)-(totY/10))   ,(totX-20),(totY/5)    ,0,0,1920,330)
-		    else
-		      myPic.Graphics.DrawPicture(colorbars,  ((totX/2)-(totY/2)+10),((totY/2)-(totY/10))   ,(totY-20),(totY/5)    ,0,0,1920,330)
-		    end
-		  end
-		  
-		  if (GridsList.cell(Index,6)) <> ""  then 
-		    'Custom text
-		    MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
-		    MyPic.Graphics.ForeColor  = (gridColor(7))
-		    id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
-		    MyPic.Graphics.DrawString(id,3,(totY-3))
-		  end
-		  
-		  'Draw Circle
-		  if GridsList.cellcheck(Index,11) then 
-		    if val(GridsList.cell(Index,8))= 3 then
-		      MyPic.Graphics.ForeColor  = &c000000
-		    else
-		      MyPic.Graphics.ForeColor  = &cffffff
-		    end
-		    if MyPic.height > MyPic.width then 
-		      MyPic.Graphics.DrawOval(0,(MyPic.height/2)-(MyPic.width/2),MyPic.width,MyPic.width)
-		    else
-		      MyPic.Graphics.DrawOval((MyPic.width/2)-(MyPic.height/2),0,MyPic.height,MyPic.height)
-		    end
-		  end
-		  
-		  if GridsList.cellcheck(Index,13) then 
-		    'Draw Corner circles
-		    'TL-Red
-		    myPic.graphics.ForeColor = &cff0000
-		    MyPic.Graphics.DrawOval(0,0,(tileX*2),(tileX*2))
-		    'TR-Green
-		    myPic.graphics.ForeColor = &c00ff00
-		    MyPic.Graphics.DrawOval((totX-(tileX*2)),0,(tileX*2),(tileX*2))
-		    'BL-Blue
-		    myPic.graphics.ForeColor = &c0000ff
-		    MyPic.Graphics.DrawOval(0,(totY-(tileX*2)),(tileX*2),(tileX*2))
-		    'BR-Yellow
-		    myPic.graphics.ForeColor = &cffff00
-		    MyPic.Graphics.DrawOval((totX-(tileX*2)),(totY-(tileX*2)),(tileX*2),(tileX*2))
-		    myPic.graphics.ForeColor = &cffffff
-		  end
-		  
-		  if GridsList.cellcheck(Index,9) then 
-		    'Draw canvas Raster
+		    y = 0
+		    k = 0
+		    rcount = 1
+		    totX = (tileX*screenWidth)
+		    totY = (tileY*screenHeight)
 		    
-		    if val(GridsList.cell(Index,7)) = 3 then
-		      MyPic.Graphics.ForeColor  = &c000000
-		    else
-		      MyPic.Graphics.ForeColor  = &cffffff
+		    
+		    
+		    
+		    MyPic = Self.BitmapForCaching(totX,totY)
+		    
+		    
+		    
+		    MyPic.Graphics.TextFont="Helvetica"
+		    MyPic.Graphics.TextUnit=FontUnits.Pixel
+		    
+		    
+		    'MyPic(PicIndex).Graphics.TextSize=(tileX/5)
+		    MyPic.Graphics.TextSize=max((tileY/5),8)'font size is fifth of tileY or8pixels min
+		    
+		    gridColor = Array(&c000000,&cff0000,&c00ff00,&c0000ff,&cffff00,&c00ffff,&cff00ff,&cffffff)
+		    
+		    
+		    Select Case GridsList.celltag(Index,7) 'FilledPopUp.ListIndex
+		      
+		    Case "100% Colour"
+		      '100%
+		      bgColor = Array(&cffffff,&cff00ff,&c00ffff,&cffff00,&c0000ff,&c00ff00,&cff0000,&c000000)
+		    Case "50% Colour"
+		      '50%
+		      bgColor =   Array(&c7e7e7e,&c7e007e,&c007e7e,&c7e7e00,&c00007e,&c007e00,&c7e0000,&c000000)
+		    Case "25% Colour"
+		      '25%
+		      bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
+		    Case "White"
+		      'White
+		      bgColor = Array(&c3F3F3F,&cFFFFFF,&cFFFFFF,&cFFFFFF,&cFFFFFF,&cFFFFFF,&cFFFFFF,&c000000)
+		    Case "Black"
+		      'Black
+		      bgColor = Array(&c3F3F3F,&c000000,&c000000,&c000000,&c000000,&c000000,&c000000,&c000000)
+		    Case "Transparent"
+		      'Blank
+		      bgColor = Array(&c3F3F3F00,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c00000000)
+		    Case "Red/Gray"
+		      'Red/Gray
+		      bgColor = Array(&c3F3F3F,&c3F0000,&c3F3F3F,&c3F0000,&c3F3F3F,&c3F0000,&c3F3F3F,&c000000)
+		    Case "Green/Gray"
+		      'Green/Gray
+		      bgColor = Array(&c3F3F3F,&c003F00,&c3F3F3F,&c003F00,&c3F3F3F,&c003F00,&c3F3F3F,&c000000)
+		    Case "Blue/Gray"
+		      'Blue/Gray
+		      bgColor = Array(&c3F3F3F,&c00003F,&c3F3F3F,&c00003F,&c3F3F3F,&c00003F,&c3F3F3F,&c000000)
+		    Case "Red/Green"
+		      'Red/Green
+		      bgColor = Array(&c3F3F3F,&c3F0000,&c003F00,&c3F0000,&c003F00,&c3F0000,&c003F00,&c000000)
+		    Case  "Green/Blue"
+		      'Green/Blue
+		      bgColor = Array(&c3F3F3F,&c003F00,&c00003F,&c003F00,&c00003F,&c003F00,&c00003F,&c000000)
+		    Case "Blue/Red"
+		      'Blue/Red
+		      bgColor = Array(&c3F3F3F,&c00003F,&c3F0000,&c00003F,&c3F0000,&c00003F,&c3F0000,&c000000)
+		    Case "Black/White"
+		      'Black/White
+		      bgColor = Array(&c3F3F3F,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000)
+		    Case "Light Gray/Dark Gray"
+		      'LightGray/DarkGray
+		      bgColor = Array(&c3F3F3F,&c3F3F3F,&c7E7E7E,&c3F3F3F,&c7E7E7E,&c3F3F3F,&c7E7E7E,&c000000)
+		    Case "Yellow/Gray"
+		      'Yellow/Gray
+		      bgColor = Array(&c3F3F3F,&cf4d51a,&c3f3f3f,&cf4d51a,&c3f3f3f,&cf4d51a,&c3f3f3f,&c000000)
+		    Case "Orange/Gray"
+		      'Orange/Gray
+		      bgColor = Array(&c3F3F3F,&cff5722,&c3f3f3f,&cff5722,&c3f3f3f,&cff5722,&c3f3f3f,&c000000)
+		    Case "Aqua/Gray"
+		      'Aqua/Gray
+		      bgColor = Array(&c3F3F3F,&c0ea7b5,&c3f3f3f,&c0ea7b5,&c3f3f3f,&c0ea7b5,&c3f3f3f,&c000000)
+		    Case "Purple/Gray"
+		      'Purple/Gray
+		      bgColor = Array(&c3F3F3F,&c9c6fda,&c3f3f3f,&c9c6fda,&c3f3f3f,&c9c6fda,&c3f3f3f,&c000000)
+		    Else
+		      bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
+		    End Select
+		    
+		    
+		    for j = 1  to screenHeight //draw row
+		      
+		      
+		      if rcount < 6 then
+		        rcount = rcount +1
+		      else
+		        rcount = 1
+		      end
+		      
+		      
+		      k = rcount     'colour is row count
+		      
+		      
+		      for i = 1 to screenWidth //draw column
+		        if val(GridsList.cell(Index,7)) = 5 then
+		            'Blank BG
+		          
+		        elseif val(GridsList.cell(Index,7)) = 3 then
+		          MyPic.Graphics.ForeColor  = &cffffff
+		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		        elseif val(GridsList.cell(Index,7)) = 4 then
+		          MyPic.Graphics.ForeColor  = &c000000
+		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		        else
+		          MyPic.Graphics.ForeColor  = (bgColor(k))
+		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		        end
+		        
+		        if GridsList.cellcheck(Index,8) then
+		          MyPic.Graphics.ForeColor  = (gridColor(k))
+		          MyPic.Graphics.DrawRect(x, y, tileX,tileY)
+		        end
+		        
+		        'if FilledPopUp.ListIndex = 3 then
+		        if (bgColor(k))=&cFFFFFF00 then
+		          MyPic.Graphics.ForeColor  = &c656565 '(gridColor(0))
+		        else
+		          MyPic.Graphics.ForeColor  = (gridColor(7))
+		        end
+		        
+		        if GridsList.cellcheck(Index,10) then
+		          
+		          id = (str(j) + "," +str(i))                                      //row, column numbering
+		          MyPic.Graphics.DrawString(id, (x+1),(y+max((tileY/5),8)))           //tile address
+		        end
+		        
+		        x = x + tileX
+		        k = k+1
+		        if k = 7 then k = 1
+		        
+		      next
+		      x = 0
+		      y = y + tileY
+		    next
+		    
+		    
+		    if GridsList.cellcheck(Index,12) then
+		      myPic.Graphics.ForeColor = &c0000ff
+		      MyPic.graphics.DrawLine ( 0,0,MyPic.width,MyPic.height)
+		      MyPic.graphics.DrawLine ( 0,MyPic.height,MyPic.width,0)
 		    end
-		    MyPic.Graphics.DrawRect(0,0,MyPic.width,MyPic.height)
-		  end
-		  
-		  'Draw logo
-		  logoSize=min(totX/4,totY/4,tileX*8)
-		  if GridsList.cellcheck(Index,14) then 
-		    myPic.Graphics.Transparency = 25
 		    
-		    myPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
+		    'Draw colorbars
+		    if GridsList.cellcheck(Index,15)  then
+		      if MyPic.height > MyPic.width then 
+		        myPic.Graphics.DrawPicture(colorbars, 10,((totY/2)-(totY/10))   ,(totX-20),(totY/5)    ,0,0,1920,330)
+		      else
+		        myPic.Graphics.DrawPicture(colorbars,  ((totX/2)-(totY/2)+10),((totY/2)-(totY/10))   ,(totY-20),(totY/5),0,0,1920,330)
+		      end
+		    end
 		    
+		    if (GridsList.cell(Index,6)) <> ""  then 
+		      'Custom text
+		      MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
+		      MyPic.Graphics.ForeColor  = (gridColor(7))
+		      id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
+		      MyPic.Graphics.DrawString(id,3,(totY-3))
+		    end
+		    
+		    'Draw Circle
+		    if GridsList.cellcheck(Index,11) then 
+		      circlesize =min((MyPic.height),(MyPic.width))
+		      
+		      if val(GridsList.cell(Index,8))= 3 then
+		        MyPic.Graphics.ForeColor  = &c000000
+		      else
+		        MyPic.Graphics.ForeColor  = &cffffff
+		      end
+		      'if MyPic.height > MyPic.width then 
+		      '
+		      'MyPic.Graphics.DrawOval(0,(MyPic.height/2)-(MyPic.width/2),MyPic.width,MyPic.width)
+		      'else
+		      'MyPic.Graphics.DrawOval((MyPic.width/2)-(MyPic.height/2),0,MyPic.height,MyPic.height)
+		      'end
+		      MyPic.Graphics.DrawOval((MyPic.width/2)-(circlesize/2),(MyPic.height/2)-(circlesize/2),circlesize,circlesize)
+		    end
+		    
+		    
+		    
+		    
+		    if GridsList.cellcheck(Index,13) then 
+		      'Draw Corner circles
+		      'TL-Red
+		      myPic.graphics.ForeColor = &cff0000
+		      MyPic.Graphics.DrawOval(0,0,(tileX*2),(tileX*2))
+		      'TR-Green
+		      myPic.graphics.ForeColor = &c00ff00
+		      MyPic.Graphics.DrawOval((totX-(tileX*2)),0,(tileX*2),(tileX*2))
+		      'BL-Blue
+		      myPic.graphics.ForeColor = &c0000ff
+		      MyPic.Graphics.DrawOval(0,(totY-(tileX*2)),(tileX*2),(tileX*2))
+		      'BR-Yellow
+		      myPic.graphics.ForeColor = &cffff00
+		      MyPic.Graphics.DrawOval((totX-(tileX*2)),(totY-(tileX*2)),(tileX*2),(tileX*2))
+		      myPic.graphics.ForeColor = &cffffff
+		    end
+		    
+		    if GridsList.cellcheck(Index,9) then 
+		      'Draw canvas Raster
+		      
+		      if val(GridsList.cell(Index,7)) = 3 then
+		        MyPic.Graphics.ForeColor  = &c000000
+		      else
+		        MyPic.Graphics.ForeColor  = &cffffff
+		      end
+		      MyPic.Graphics.DrawRect(0,0,MyPic.width,MyPic.height)
+		    end
+		    
+		    'Draw logo
+		    logoSize=min(totX/4,totY/4,tileX*8)
+		    if GridsList.cellcheck(Index,14) then 
+		      myPic.Graphics.Transparency = 25
+		      
+		      myPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
+		      
+		      
+		    end
+		    
+		  else
+		    
+		    myPic.Graphics.ClearRect(0,0,1,1)
 		    
 		  end
 		  
@@ -1509,10 +1524,10 @@ End
 		    else 
 		      Window1.MaxWidth = 1009
 		    end
-		    if (scaledHeight+288) > 635 then
-		      Window1.MaxHeight=max((scaledHeight+288),635)
+		    if (scaledHeight+288) > 648 then
+		      Window1.MaxHeight=max((scaledHeight+288),648)
 		    else
-		      Window1.MaxHeight=635
+		      Window1.MaxHeight=648
 		    end
 		    
 		    'if Window1.Fit.Active then
@@ -1570,10 +1585,10 @@ End
 		    else 
 		      Window1.MaxWidth = 1009
 		    end
-		    if (scaledHeight+288) > 635 then
-		      Window1.MaxHeight=max((scaledHeight+288),635)
+		    if (scaledHeight+288) > 648 then
+		      Window1.MaxHeight=max((scaledHeight+288),648)
 		    else
-		      Window1.MaxHeight=635
+		      Window1.MaxHeight=648
 		    end
 		    
 		    'if Window1.Fit.Active then
@@ -1720,9 +1735,11 @@ End
 #tag Events Scale
 	#tag Event
 		Sub Down()
-		  mScale = mScale+5
+		  mScale = mScale-5
+		  
+		  if mScale <5 then mScale=5
 		  rebuild=false
-		  'UpdateScreen()
+		  
 		  Window1.Canvas1.Refresh
 		  
 		  zoom.Text=str(mScale)+"%"
@@ -1730,11 +1747,12 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub Up()
-		  mScale = mScale-5
 		  
-		  if mScale <5 then mScale=5
+		  
+		  
+		  mScale = mScale+5
 		  rebuild=false
-		  
+		  'UpdateScreen()
 		  Window1.Canvas1.Refresh
 		  
 		  zoom.Text=str(mScale)+"%"
@@ -2238,6 +2256,8 @@ End
 		  wend
 		  
 		  tis.Close                                 'close file
+		  
+		  UpdateScreen()
 		End Sub
 	#tag EndEvent
 #tag EndEvents

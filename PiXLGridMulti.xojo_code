@@ -9,7 +9,7 @@ Inherits Application
 
 	#tag Event
 		Sub Open()
-		  Window1.icon = logo3
+		  Window1.icon = logo2
 		End Sub
 	#tag EndEvent
 
