@@ -2203,6 +2203,9 @@ End
 		  end if
 		  
 		  if GridsList.ListCount>0 then                   'if grid not empty
+		    
+		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)
+		    tos.WriteLine s.left(s.len-1)                'save line
 		    for i=0 to GridsList.ListCount-1            'for each row
 		      s=""                                                   'build line to save
 		      for j=0 to 6   'for each column
@@ -2250,6 +2253,20 @@ End
 		  'read file into grid
 		  if not tis.EOF then
 		    GridsList.DeleteAllRows
+		    s=tis.ReadLine                    'read line from file
+		    fields=Split(s,",")                 'put items in fileds() array
+		    Window1.OutH.text = Trim(fields(0))
+		    Window1.OutV.text = Trim(fields(1))
+		    if Trim(fields(2)) = "True" then
+		      Window1.stats.value = True
+		    else
+		      Window1.stats.value = False
+		    end
+		    if Trim(fields(3)) = "True" then
+		      Window1.originCursor.value = True
+		    else
+		      Window1.originCursor.value = False
+		    end
 		  end
 		  while not tis.EOF                    'while not end-of-file
 		    GridsList.AddRow ""             'add row to grid
