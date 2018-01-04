@@ -31,7 +31,7 @@ Begin Window Window1
       Bold            =   False
       ButtonStyle     =   "0"
       Cancel          =   False
-      Caption         =   "Grid Save As..."
+      Caption         =   "Save All Grids As..."
       Default         =   False
       Enabled         =   True
       Height          =   20
@@ -55,7 +55,7 @@ Begin Window Window1
       Top             =   608
       Underline       =   False
       Visible         =   True
-      Width           =   110
+      Width           =   126
    End
    Begin Canvas Canvas1
       AcceptFocus     =   False
@@ -1461,8 +1461,14 @@ End
 		    End If
 		  else
 		    
-		    MsgBox("Please select a grid to save")
-		    
+		    for i as integer = 0 to GridsList.ListCount-1
+		      BuildGrid(i)
+		      f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(i,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
+		      If f <> Nil Then
+		        MyPic.Save(f, Picture.SaveAsPNG)
+		      End If
+		      
+		    next
 		  end
 		  
 		End Sub
@@ -1808,6 +1814,11 @@ End
 		    OutCanvas.Save(f, Picture.SaveAsPNG)
 		  End If
 		  
+		  
+		  
+		  
+		  
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1954,6 +1965,9 @@ End
 		  
 		  if me.ListIndex <> -1 then
 		    PicIndex=me.ListIndex
+		    SaveAsGrid.Caption="Save Grid As..."
+		  else
+		    SaveAsGrid.Caption="Save All Grids As..."
 		  end
 		  'MsgBox(str(PicIndex))
 		  UpdateScreen()
@@ -2204,7 +2218,7 @@ End
 		  
 		  if GridsList.ListCount>0 then                   'if grid not empty
 		    
-		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","
+		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","         'exports canvas size and options
 		    tos.WriteLine s.left(s.len-1)                'save line
 		    for i=0 to GridsList.ListCount-1            'for each row
 		      s=""                                                   'build line to save
@@ -2255,6 +2269,7 @@ End
 		    GridsList.DeleteAllRows
 		    s=tis.ReadLine                    'read line from file
 		    fields=Split(s,",")                 'put items in fileds() array
+		    'imports grid size and options
 		    Window1.OutH.text = Trim(fields(0))
 		    Window1.OutV.text = Trim(fields(1))
 		    if Trim(fields(2)) = "True" then
