@@ -1342,6 +1342,8 @@ End
 		    OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
 		    
 		  next
+		  
+		  BuildGrid(picindex) 'ensure last build grid is currently selected one from list.
 		End Sub
 	#tag EndMethod
 
