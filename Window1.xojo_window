@@ -35,7 +35,7 @@ Begin Window Window1
       Default         =   False
       Enabled         =   True
       Height          =   20
-      HelpTag         =   "Save just the grid"
+      HelpTag         =   "Save just the grid if selected\notherwise save all grids."
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -146,7 +146,7 @@ Begin Window Window1
       AutoDeactivate  =   True
       Enabled         =   True
       Height          =   23
-      HelpTag         =   ""
+      HelpTag         =   "Zoom in and out"
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   892
@@ -291,7 +291,7 @@ Begin Window Window1
       Default         =   False
       Enabled         =   True
       Height          =   20
-      HelpTag         =   "Save the grid within larger canvas"
+      HelpTag         =   "Save the grids within larger canvas"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -426,7 +426,7 @@ Begin Window Window1
       DataSource      =   ""
       Enabled         =   True
       Height          =   20
-      HelpTag         =   "Display Grid values including offsets"
+      HelpTag         =   "Display raster on canvas"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -621,7 +621,7 @@ Begin Window Window1
       Default         =   False
       Enabled         =   True
       Height          =   20
-      HelpTag         =   "Save the grid within larger canvas"
+      HelpTag         =   "Display canvas on second monitor"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -714,7 +714,7 @@ Begin Window Window1
       DataSource      =   ""
       Enabled         =   True
       Height          =   20
-      HelpTag         =   ""
+      HelpTag         =   "Toggle live cursor colour"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -747,7 +747,7 @@ Begin Window Window1
       Default         =   False
       Enabled         =   True
       Height          =   20
-      HelpTag         =   ""
+      HelpTag         =   "If selected; copy grid, otherwise copy last grid"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -788,7 +788,7 @@ Begin Window Window1
       HasHeading      =   True
       HeadingIndex    =   -1
       Height          =   132
-      HelpTag         =   ""
+      HelpTag         =   "Add multiple grids with individual offsets"
       Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
@@ -853,7 +853,7 @@ Begin Window Window1
       Default         =   False
       Enabled         =   True
       Height          =   20
-      HelpTag         =   ""
+      HelpTag         =   "Remove slected grid"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -904,7 +904,7 @@ Begin Window Window1
       DataSource      =   ""
       Enabled         =   True
       Height          =   20
-      HelpTag         =   "Display Grid values including offsets"
+      HelpTag         =   "Display TL start point cursor"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -937,7 +937,7 @@ Begin Window Window1
       Default         =   False
       Enabled         =   True
       Height          =   20
-      HelpTag         =   ""
+      HelpTag         =   "Save grid list as csv file"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -968,7 +968,7 @@ Begin Window Window1
       Default         =   False
       Enabled         =   True
       Height          =   20
-      HelpTag         =   ""
+      HelpTag         =   "Import grid list from csv file"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1210,7 +1210,13 @@ End
 		      MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
 		      MyPic.Graphics.ForeColor  = (gridColor(7))
 		      id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
-		      MyPic.Graphics.DrawString(id,3,(totY-3))
+		      if (myPic.Graphics.StringWidth(id)) < Mypic.width then
+		        'id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
+		        MyPic.Graphics.DrawString(id,3,(totY-3))
+		      else
+		        id = (GridsList.cell(Index,6))
+		        MyPic.Graphics.DrawString(id,3,(totY-3))
+		      end
 		    end
 		    
 		    'Draw Circle
