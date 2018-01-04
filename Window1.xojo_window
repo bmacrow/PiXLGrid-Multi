@@ -1067,7 +1067,7 @@ End
 		    MyPic.Graphics.TextUnit=FontUnits.Pixel
 		    
 		    
-		    'MyPic(PicIndex).Graphics.TextSize=(tileX/5)
+		    
 		    MyPic.Graphics.TextSize=max((tileY/5),8)'font size is fifth of tileY or8pixels min
 		    
 		    gridColor = Array(&c000000,&cff0000,&c00ff00,&c0000ff,&cffff00,&c00ffff,&cff00ff,&cffffff)
@@ -1211,7 +1211,7 @@ End
 		      MyPic.Graphics.ForeColor  = (gridColor(7))
 		      id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
 		      if (myPic.Graphics.StringWidth(id)) < Mypic.width then
-		        'id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
+		        
 		        MyPic.Graphics.DrawString(id,3,(totY-3))
 		      else
 		        id = (GridsList.cell(Index,6))
@@ -1228,12 +1228,7 @@ End
 		      else
 		        MyPic.Graphics.ForeColor  = &cffffff
 		      end
-		      'if MyPic.height > MyPic.width then 
-		      '
-		      'MyPic.Graphics.DrawOval(0,(MyPic.height/2)-(MyPic.width/2),MyPic.width,MyPic.width)
-		      'else
-		      'MyPic.Graphics.DrawOval((MyPic.width/2)-(MyPic.height/2),0,MyPic.height,MyPic.height)
-		      'end
+		      
 		      MyPic.Graphics.DrawOval((MyPic.width/2)-(circlesize/2),(MyPic.height/2)-(circlesize/2),circlesize,circlesize)
 		    end
 		    
@@ -1243,17 +1238,19 @@ End
 		    if GridsList.cellcheck(Index,13) then 
 		      'Draw Corner circles
 		      'TL-Red
+		      circlesize = min((myPic.Height/2)-5,(myPic.Width/2)-5,tileX*2)
+		      
 		      myPic.graphics.ForeColor = &cff0000
-		      MyPic.Graphics.DrawOval(0,0,(tileX*2),(tileX*2))
+		      MyPic.Graphics.DrawOval(0,0,circlesize,circlesize)
 		      'TR-Green
 		      myPic.graphics.ForeColor = &c00ff00
-		      MyPic.Graphics.DrawOval((totX-(tileX*2)),0,(tileX*2),(tileX*2))
+		      MyPic.Graphics.DrawOval((totX-circlesize),0,circlesize,circlesize)
 		      'BL-Blue
 		      myPic.graphics.ForeColor = &c0000ff
-		      MyPic.Graphics.DrawOval(0,(totY-(tileX*2)),(tileX*2),(tileX*2))
+		      MyPic.Graphics.DrawOval(0,(totY-circlesize),circlesize,circlesize)
 		      'BR-Yellow
 		      myPic.graphics.ForeColor = &cffff00
-		      MyPic.Graphics.DrawOval((totX-(tileX*2)),(totY-(tileX*2)),(tileX*2),(tileX*2))
+		      MyPic.Graphics.DrawOval((totX-circlesize),(totY-circlesize),circlesize,circlesize)
 		      myPic.graphics.ForeColor = &cffffff
 		    end
 		    
@@ -1967,7 +1964,6 @@ End
 		Sub Change()
 		  
 		  
-		  'if me.ListIndex <> PicIndex then 
 		  
 		  if me.ListIndex <> -1 then
 		    PicIndex=me.ListIndex
@@ -1975,9 +1971,9 @@ End
 		  else
 		    SaveAsGrid.Caption="Save All Grids As..."
 		  end
-		  'MsgBox(str(PicIndex))
+		  
 		  UpdateScreen()
-		  'end
+		  
 		End Sub
 	#tag EndEvent
 	#tag Event
