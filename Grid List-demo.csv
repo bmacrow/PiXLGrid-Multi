@@ -1,5 +1,6 @@
-80,60,16,12,320,180,Centre Screen,25% Colour,True,True,True,True,True,True,True,True
-80,60,3,12,40,180,Stage Right,Yellow/Gray,True,True,True,True,True,True,False,True
-80,60,3,12,1640,180,Stage Left,Aqua/Gray,True,True,True,True,True,True,False,True
-80,60,12,2,480,932,Riser,Orange/Gray,True,True,True,True,True,False,False,False
-80,60,12,2,480,35,Header,Purple/Gray,True,True,True,True,True,False,False,False
+1920,1080,TRUE,TRUE,,,,,,,,,,,,
+80,60,16,12,320,180,Centre Screen,25% Colour,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE
+80,60,3,12,40,180,Stage Right,Yellow/Gray,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE
+80,60,3,12,1640,180,Stage Left,Aqua/Gray,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE
+80,60,12,2,480,932,Riser,Orange/Gray,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE
+80,60,12,2,480,35,Header,Purple/Gray,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE

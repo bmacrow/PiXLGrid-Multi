@@ -2204,7 +2204,7 @@ End
 		  
 		  if GridsList.ListCount>0 then                   'if grid not empty
 		    
-		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)
+		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","
 		    tos.WriteLine s.left(s.len-1)                'save line
 		    for i=0 to GridsList.ListCount-1            'for each row
 		      s=""                                                   'build line to save
