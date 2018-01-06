@@ -1402,7 +1402,6 @@ End
 		      if Window1.originCursor.Value then
 		        'Display offset markers
 		        OutCanvas.graphics.ForeColor = RGB(255,255,255)
-		        
 		        OutCanvas.Graphics.DrawLine(offX, 0, OffX,OffY)
 		        OutCanvas.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
 		        OutCanvas.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
@@ -1417,63 +1416,42 @@ End
 		        OutCanvas.Graphics.DrawString(id,offX+5,offY-2)
 		      end
 		      
-		      'Display canvas stats
+		      'Display canvas raster
 		      if Window1.stats.Value then
-		        
-		        'Canvas Raster.
-		        
 		        OutCanvas.Graphics.ForeColor  = &cffffff
-		        
 		        OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
-		        
-		        
 		      end
-		      
 		      BuildGrid(i)
-		      
 		      OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
-		      
 		    next
 		  else
 		    i = GridsList.ListIndex
 		    Dim offX as double = val(GridsList.Cell(i,4))
 		    Dim offY as double = val(GridsList.Cell(i,5))
+		    
 		    if Window1.originCursor.Value then
 		      'Display offset markers
 		      OutCanvas.graphics.ForeColor = RGB(255,255,255)
-		      
 		      OutCanvas.Graphics.DrawLine(offX, 0, OffX,OffY)
 		      OutCanvas.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
 		      OutCanvas.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
 		      OutCanvas.Graphics.DrawLine((offX+5),(OffY-5),OffX,OffY)
-		      
 		      OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
 		      
-		    end
-		    
-		    'Display canvas stats
-		    if Window1.stats.Value then
-		      
-		      'Canvas Raster.
-		      
-		      OutCanvas.Graphics.ForeColor  = &cffffff
-		      
+		      'Display offset numbers
+		      OutCanvas.Graphics.TextSize=15
 		      OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
-		      
-		      
-		      
-		      
-		      'id = ("Tile X:" + GridsList.Cell(PicIndex,0) + " Columns:" + GridsList.Cell(PicIndex,3) + " Total X:" + str(val(GridsList.Cell(PicIndex,0))*val(GridsList.Cell(PicIndex,3))))
-		      'OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-40))
-		      '
-		      'id = ("Tile Y:" + GridsList.Cell(PicIndex,1) + " Rows:" + GridsList.Cell(PicIndex,4)+ " Total Y:" + str(val(GridsList.Cell(PicIndex,1))*val(GridsList.Cell(PicIndex,4))))
-		      'OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-20))
+		      id = str(GridsList.Cell(i,4)) + "," + str(GridsList.Cell(i,5))
+		      OutCanvas.Graphics.DrawString(id,offX+5,offY-2)
 		    end
 		    
+		    'Display canvas raster
+		    if Window1.stats.Value then
+		      OutCanvas.Graphics.ForeColor  = &cffffff
+		      OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
+		    end
 		    BuildGrid(i)
-		    
 		    OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
-		    
 		  end
 		  
 		  BuildGrid(picindex) 'ensure last build grid is currently selected one from list.
