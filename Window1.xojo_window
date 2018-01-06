@@ -40,7 +40,7 @@ Begin Window Window1
       InitialParent   =   ""
       Left            =   20
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
@@ -66,7 +66,7 @@ Begin Window Window1
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
@@ -94,7 +94,7 @@ Begin Window Window1
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   False
@@ -120,7 +120,7 @@ Begin Window Window1
       InitialParent   =   ""
       Left            =   892
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -145,7 +145,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   915
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -187,7 +187,7 @@ Begin Window Window1
       Left            =   259
       LimitText       =   0
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -229,7 +229,7 @@ Begin Window Window1
       Left            =   355
       LimitText       =   0
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -264,7 +264,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   309
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -299,7 +299,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   405
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -334,7 +334,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   208
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -370,7 +370,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   460
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -401,7 +401,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   954
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -437,7 +437,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   435
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -469,7 +469,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   508
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -498,7 +498,7 @@ Begin Window Window1
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -528,7 +528,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   650
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -565,7 +565,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   903
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -592,7 +592,7 @@ Begin Window Window1
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -622,7 +622,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   783
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -658,7 +658,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   582
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -691,7 +691,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   20
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -734,7 +734,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   20
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -770,7 +770,7 @@ Begin Window Window1
       InitialParent   =   ""
       Left            =   20
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -797,7 +797,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   108
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -820,7 +820,7 @@ Begin Window Window1
       InitialParent   =   ""
       Left            =   773
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -848,7 +848,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   574
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -881,7 +881,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   814
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -912,7 +912,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   906
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -942,7 +942,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   20
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -975,7 +975,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   158
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1004,7 +1004,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   90
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1041,7 +1041,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   27
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1071,7 +1071,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   158
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1194,22 +1194,22 @@ End
 		      bgColor = Array(&c3F3F3F00,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c00000000)
 		    Case "Red/Gray"
 		      'Red/Gray
-		      bgColor = Array(&c3F3F3F,&c3F0000,&c3F3F3F,&c3F0000,&c3F3F3F,&c3F0000,&c3F3F3F,&c000000)
+		      bgColor = Array(&c3F3F3F,&cdd3c46,&c3F3F3F,&cdd3c46,&c3F3F3F,&cdd3c46,&c3F3F3F,&c000000)
 		    Case "Green/Gray"
 		      'Green/Gray
-		      bgColor = Array(&c3F3F3F,&c003F00,&c3F3F3F,&c003F00,&c3F3F3F,&c003F00,&c3F3F3F,&c000000)
+		      bgColor = Array(&c3F3F3F,&c2baa3a,&c3F3F3F,&c2baa3a,&c3F3F3F,&c2baa3a,&c3F3F3F,&c000000)
 		    Case "Blue/Gray"
 		      'Blue/Gray
-		      bgColor = Array(&c3F3F3F,&c00003F,&c3F3F3F,&c00003F,&c3F3F3F,&c00003F,&c3F3F3F,&c000000)
+		      bgColor = Array(&c3F3F3F,&c0048c3,&c3F3F3F,&c0048c3,&c3F3F3F,&c0048c3,&c3F3F3F,&c000000)
 		    Case "Red/Green"
 		      'Red/Green
-		      bgColor = Array(&c3F3F3F,&c3F0000,&c003F00,&c3F0000,&c003F00,&c3F0000,&c003F00,&c000000)
+		      bgColor = Array(&c3F3F3F,&cdd3c46,&c2baa3a,&cdd3c46,&c2baa3a,&cdd3c46,&c2baa3a,&c000000)
 		    Case  "Green/Blue"
 		      'Green/Blue
-		      bgColor = Array(&c3F3F3F,&c003F00,&c00003F,&c003F00,&c00003F,&c003F00,&c00003F,&c000000)
+		      bgColor = Array(&c3F3F3F,&c2baa3a,&c0048c3,&c2baa3a,&c0048c3,&c2baa3a,&c0048c3,&c000000)
 		    Case "Blue/Red"
 		      'Blue/Red
-		      bgColor = Array(&c3F3F3F,&c00003F,&c3F0000,&c00003F,&c3F0000,&c00003F,&c3F0000,&c000000)
+		      bgColor = Array(&c3F3F3F,&c0048c3,&cdd3c46,&c0048c3,&cdd3c46,&c0048c3,&cdd3c46,&c000000)
 		    Case "Black/White"
 		      'Black/White
 		      bgColor = Array(&c3F3F3F,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000)
@@ -1288,7 +1288,7 @@ End
 		      y = y + tileY
 		    next
 		    
-		    
+		    'draw diagonal cross
 		    if GridsList.cellcheck(Index,12) then
 		      myPic.Graphics.ForeColor = &c0000ff
 		      MyPic.graphics.DrawLine ( 0,0,MyPic.width,MyPic.height)
@@ -1303,10 +1303,11 @@ End
 		        myPic.Graphics.DrawPicture(colorbars,  ((totX/2)-(totY/2)+10),((totY/2)-(totY/10))   ,(totY-20),(totY/5),0,0,1920,330)
 		      end
 		    end
+		    
 		    'custom text
 		    if (GridsList.cell(Index,6)) <> ""  then 
 		      circlesize =min((MyPic.height),(MyPic.width))
-		      MyPic.Graphics.ForeColor  = (gridColor(7))
+		      MyPic.Graphics.ForeColor  = &cfcfa22 '(gridColor(7))
 		      if alt_text.value then
 		        id = (GridsList.cell(Index,6))
 		        
@@ -1314,7 +1315,7 @@ End
 		        MyPic.Graphics.TextSize=textsize
 		        
 		        'id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
-		        
+		        MyPic.Graphics.Bold = True
 		        while MyPic.Graphics.StringWidth(id) > max((MyPic.width/2),circlesize)
 		          textsize = textsize -1
 		          MyPic.Graphics.TextSize=textsize
@@ -2324,7 +2325,7 @@ End
 		  
 		  if GridsList.ListCount>0 then                   'if grid not empty
 		    
-		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","         'exports canvas size and options
+		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+","         'exports canvas size and options
 		    tos.WriteLine s.left(s.len-1)                'save line
 		    for i=0 to GridsList.ListCount-1            'for each row
 		      s=""                                                   'build line to save
@@ -2387,6 +2388,11 @@ End
 		      Window1.originCursor.value = True
 		    else
 		      Window1.originCursor.value = False
+		    end
+		    if Trim(fields(4)) = "True" then
+		      Window1.alt_text.value = True
+		    else
+		      Window1.alt_text.value = False
 		    end
 		  end
 		  while not tis.EOF                    'while not end-of-file
