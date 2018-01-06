@@ -26,37 +26,6 @@ Begin Window Window1
    Title           =   "Generator"
    Visible         =   True
    Width           =   1009
-   Begin PushButton SaveAsGrid
-      AutoDeactivate  =   True
-      Bold            =   False
-      ButtonStyle     =   "0"
-      Cancel          =   False
-      Caption         =   "Save All Grids As..."
-      Default         =   False
-      Enabled         =   True
-      Height          =   20
-      HelpTag         =   "Save just the grid if selected\notherwise save all grids."
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   True
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   False
-      Scope           =   0
-      TabIndex        =   2
-      TabPanelIndex   =   0
-      TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   608
-      Underline       =   False
-      Visible         =   True
-      Width           =   126
-   End
    Begin Canvas Canvas1
       AcceptFocus     =   False
       AcceptTabs      =   False
@@ -281,37 +250,6 @@ Begin Window Window1
       UseFocusRing    =   True
       Visible         =   True
       Width           =   46
-   End
-   Begin PushButton SaveAsCanvas
-      AutoDeactivate  =   True
-      Bold            =   False
-      ButtonStyle     =   "0"
-      Cancel          =   False
-      Caption         =   "Canvas All Save As..."
-      Default         =   False
-      Enabled         =   True
-      Height          =   20
-      HelpTag         =   "Save just the grid within the canvas if selected\notherwise save all grids within the canvas."
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   158
-      LockBottom      =   True
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   False
-      Scope           =   0
-      TabIndex        =   9
-      TabPanelIndex   =   0
-      TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   608
-      Underline       =   False
-      Visible         =   True
-      Width           =   139
    End
    Begin Label totYlabel1
       AutoDeactivate  =   True
@@ -1022,6 +960,103 @@ Begin Window Window1
       Visible         =   True
       Width           =   126
    End
+   Begin PushButton SaveAsCanvas
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Save Canvas As.."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Save just the grid within the canvas if selected\notherwise save all grids within the canvas."
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   158
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   608
+      Underline       =   False
+      Visible         =   True
+      Width           =   194
+   End
+   Begin Label deselect
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   35
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   90
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   31
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "De-select for all grids"
+      TextAlign       =   0
+      TextColor       =   &cFF000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   620
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   135
+   End
+   Begin PushButton SaveAsGrid
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Save All Grids As..."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Save just the grid if selected\notherwise save all grids."
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   27
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   33
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   608
+      Underline       =   False
+      Visible         =   True
+      Width           =   126
+   End
 End
 #tag EndWindow
 
@@ -1354,6 +1389,8 @@ End
 		  
 		  OutCanvas= Self.BitmapForCaching(val(OutH.Text), val(OutV.Text))
 		  
+		  MyPic.Graphics.TextSize=8'font size is fifth of tileY or8pixels min
+		  
 		  Canvas1.Graphics.ForeColor = RGB(0, 0, 0)
 		  
 		  OutCanvas.Graphics.FillRect(0,0,val(OutH.Text), val(OutV.Text))
@@ -1373,6 +1410,11 @@ End
 		        
 		        OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
 		        
+		        'Display offset numbers
+		        OutCanvas.Graphics.TextSize=15
+		        OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
+		        id = str(GridsList.Cell(i,4)) + "," + str(GridsList.Cell(i,5))
+		        OutCanvas.Graphics.DrawString(id,offX+5,offY-2)
 		      end
 		      
 		      'Display canvas stats
@@ -1385,12 +1427,6 @@ End
 		        OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
 		        
 		        
-		        
-		        'id = ("Tile X:" + GridsList.Cell(PicIndex,0) + " Columns:" + GridsList.Cell(PicIndex,3) + " Total X:" + str(val(GridsList.Cell(PicIndex,0))*val(GridsList.Cell(PicIndex,3))))
-		        'OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-40))
-		        '
-		        'id = ("Tile Y:" + GridsList.Cell(PicIndex,1) + " Rows:" + GridsList.Cell(PicIndex,4)+ " Total Y:" + str(val(GridsList.Cell(PicIndex,1))*val(GridsList.Cell(PicIndex,4))))
-		        'OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-20))
 		      end
 		      
 		      BuildGrid(i)
@@ -1423,6 +1459,7 @@ End
 		      OutCanvas.Graphics.ForeColor  = &cffffff
 		      
 		      OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
+		      
 		      
 		      
 		      
@@ -1543,38 +1580,6 @@ End
 
 #tag EndWindowCode
 
-#tag Events SaveAsGrid
-	#tag Event
-		Sub Action()
-		  Dim f As FolderItem
-		  Dim d As SaveAsDialog
-		  d = New SaveAsDialog
-		  
-		  if GridsList.ListIndex <> -1 then
-		    
-		    BuildGrid(PicIndex)
-		    
-		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(PicIndex,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
-		    
-		    
-		    If f <> Nil Then
-		      MyPic.Save(f, Picture.SaveAsPNG)
-		    End If
-		  else
-		    
-		    for i as integer = 0 to GridsList.ListCount-1
-		      BuildGrid(i)
-		      f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(i,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
-		      If f <> Nil Then
-		        MyPic.Save(f, Picture.SaveAsPNG)
-		      End If
-		      
-		    next
-		  end
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events Canvas1
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
@@ -1902,27 +1907,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events SaveAsCanvas
-	#tag Event
-		Sub Action()
-		  Dim f As FolderItem
-		  OutCanvasUpdate()
-		  
-		  f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
-		  
-		  
-		  If f <> Nil Then
-		    OutCanvas.Save(f, Picture.SaveAsPNG)
-		  End If
-		  
-		  
-		  
-		  
-		  
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events stats
 	#tag Event
 		Sub Action()
@@ -2065,11 +2049,16 @@ End
 		  
 		  if me.ListIndex <> -1 then
 		    PicIndex=me.ListIndex
-		    SaveAsGrid.Caption="Save Grid As..."
-		    SaveAsCanvas.Caption="Save Canvas As..."
+		    SaveAsGrid.Caption="Save Grid As.."
+		    SaveAsCanvas.Caption="Save Single Grid Canvas As.."
+		    deselect.Visible = true
+		    
 		  else
-		    SaveAsGrid.Caption="Save All Grids As..."
-		    SaveAsCanvas.Caption="Save All Canvas As..."
+		    SaveAsGrid.Caption="Save All Grids As.."
+		    SaveAsCanvas.Caption="Save Canvas As.."
+		    
+		    deselect.Visible = false
+		    
 		  end
 		  
 		  UpdateScreen()
@@ -2283,8 +2272,10 @@ End
 		Sub Action(itemIndex as integer)
 		  If itemIndex = 0 Then
 		    GorC = false
+		    
 		  Else
 		    GorC = true
+		    
 		    OutCanvasUpdate()
 		  End If
 		  UpdateScreen()
@@ -2412,6 +2403,59 @@ End
 	#tag Event
 		Sub Action()
 		  UpdateScreen()
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events SaveAsCanvas
+	#tag Event
+		Sub Action()
+		  Dim f As FolderItem
+		  OutCanvasUpdate()
+		  
+		  f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
+		  
+		  
+		  If f <> Nil Then
+		    OutCanvas.Save(f, Picture.SaveAsPNG)
+		  End If
+		  
+		  
+		  
+		  
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events SaveAsGrid
+	#tag Event
+		Sub Action()
+		  Dim f As FolderItem
+		  Dim d As SaveAsDialog
+		  d = New SaveAsDialog
+		  
+		  if GridsList.ListIndex <> -1 then
+		    
+		    BuildGrid(PicIndex)
+		    
+		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(PicIndex,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
+		    
+		    
+		    If f <> Nil Then
+		      MyPic.Save(f, Picture.SaveAsPNG)
+		    End If
+		  else
+		    
+		    for i as integer = 0 to GridsList.ListCount-1
+		      BuildGrid(i)
+		      f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(i,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
+		      If f <> Nil Then
+		        MyPic.Save(f, Picture.SaveAsPNG)
+		      End If
+		      
+		    next
+		  end
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
