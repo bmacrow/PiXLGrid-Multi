@@ -1057,6 +1057,38 @@ Begin Window Window1
       Visible         =   True
       Width           =   126
    End
+   Begin CheckBox Grid_Solo
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   "Grid Solo"
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   158
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   0
+      TabIndex        =   34
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   402
+      Underline       =   False
+      Value           =   False
+      Visible         =   False
+      Width           =   76
+   End
 End
 #tag EndWindow
 
@@ -1395,8 +1427,11 @@ End
 		  
 		  OutCanvas.Graphics.FillRect(0,0,val(OutH.Text), val(OutV.Text))
 		  
-		  if GridsList.ListIndex = -1 then
+		  if GridsList.ListIndex = -1 or Grid_Solo.value= false then
+		    
 		    for i = 0 to GridsList.Listcount-1
+		      BuildGrid(i)
+		      OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
 		      Dim offX as double = val(GridsList.Cell(i,4))
 		      Dim offY as double = val(GridsList.Cell(i,5))
 		      if Window1.originCursor.Value then
@@ -1411,9 +1446,8 @@ End
 		        
 		        'Display offset numbers
 		        OutCanvas.Graphics.TextSize=15
-		        OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
-		        id = str(GridsList.Cell(i,4)) + "," + str(GridsList.Cell(i,5))
-		        OutCanvas.Graphics.DrawString(id,offX+5,offY-2)
+		        id = "TL:"+ GridsList.Cell(i,4) + "," + GridsList.Cell(i,5)
+		        OutCanvas.Graphics.DrawString(id,offX+5,offY+(val(GridsList.Cell(i,1))/2))
 		      end
 		      
 		      'Display canvas raster
@@ -1421,11 +1455,12 @@ End
 		        OutCanvas.Graphics.ForeColor  = &cffffff
 		        OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
 		      end
-		      BuildGrid(i)
-		      OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
+		      
 		    next
 		  else
 		    i = GridsList.ListIndex
+		    BuildGrid(i)
+		    OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
 		    Dim offX as double = val(GridsList.Cell(i,4))
 		    Dim offY as double = val(GridsList.Cell(i,5))
 		    
@@ -1440,9 +1475,8 @@ End
 		      
 		      'Display offset numbers
 		      OutCanvas.Graphics.TextSize=15
-		      OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
-		      id = str(GridsList.Cell(i,4)) + "," + str(GridsList.Cell(i,5))
-		      OutCanvas.Graphics.DrawString(id,offX+5,offY-2)
+		      id = "TL:"+ GridsList.Cell(i,4) + "," + GridsList.Cell(i,5)
+		      OutCanvas.Graphics.DrawString(id,offX+5,offY+(val(GridsList.Cell(i,1))/2))
 		    end
 		    
 		    'Display canvas raster
@@ -1450,8 +1484,7 @@ End
 		      OutCanvas.Graphics.ForeColor  = &cffffff
 		      OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
 		    end
-		    BuildGrid(i)
-		    OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
+		    
 		  end
 		  
 		  BuildGrid(picindex) 'ensure last build grid is currently selected one from list.
@@ -2028,13 +2061,15 @@ End
 		  if me.ListIndex <> -1 then
 		    PicIndex=me.ListIndex
 		    SaveAsGrid.Caption="Save Grid As.."
-		    SaveAsCanvas.Caption="Save Single Grid Canvas As.."
-		    deselect.Visible = true
-		    
-		  else
-		    SaveAsGrid.Caption="Save All Grids As.."
 		    SaveAsCanvas.Caption="Save Canvas As.."
+		    deselect.Visible = true
+		  else
 		    
+		    SaveAsGrid.Caption="Save All Grids As.."
+		    
+		    if Grid_Solo.value then
+		      SaveAsCanvas.Caption="Save Canvas As.."
+		    end
 		    deselect.Visible = false
 		    
 		  end
@@ -2250,10 +2285,10 @@ End
 		Sub Action(itemIndex as integer)
 		  If itemIndex = 0 Then
 		    GorC = false
-		    
+		    Grid_Solo.Visible = false
 		  Else
 		    GorC = true
-		    
+		    Grid_Solo.Visible = true
 		    OutCanvasUpdate()
 		  End If
 		  UpdateScreen()
@@ -2389,9 +2424,11 @@ End
 		Sub Action()
 		  Dim f As FolderItem
 		  OutCanvasUpdate()
-		  
-		  f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
-		  
+		  if Grid_Solo.value and GridsList.ListIndex <> -1 then
+		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +GridsList.cell(GridsList.ListIndex,6)+"-"+str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
+		  else
+		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
+		  end
 		  
 		  If f <> Nil Then
 		    OutCanvas.Save(f, Picture.SaveAsPNG)
@@ -2434,6 +2471,14 @@ End
 		    next
 		  end
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Grid_Solo
+	#tag Event
+		Sub Action()
+		  
+		  UpdateScreen()
 		End Sub
 	#tag EndEvent
 #tag EndEvents
