@@ -287,11 +287,11 @@ Begin Window Window1
       Bold            =   False
       ButtonStyle     =   "0"
       Cancel          =   False
-      Caption         =   "Canvas Save As..."
+      Caption         =   "Canvas All Save As..."
       Default         =   False
       Enabled         =   True
       Height          =   20
-      HelpTag         =   "Save the grids within larger canvas"
+      HelpTag         =   "Save just the grid within the canvas if selected\notherwise save all grids within the canvas."
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -311,7 +311,7 @@ Begin Window Window1
       Top             =   608
       Underline       =   False
       Visible         =   True
-      Width           =   120
+      Width           =   139
    End
    Begin Label totYlabel1
       AutoDeactivate  =   True
@@ -941,7 +941,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   708
+      Left            =   814
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -972,7 +972,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   800
+      Left            =   906
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -989,6 +989,38 @@ Begin Window Window1
       Underline       =   False
       Visible         =   True
       Width           =   80
+   End
+   Begin CheckBox alt_text
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   "Large Grid Names"
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   0
+      TabIndex        =   30
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   402
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   126
    End
 End
 #tag EndWindow
@@ -1028,7 +1060,7 @@ End
 		  
 		  dim i,j,k,tileX,tileY,screenWidth, screenHeight,rcount as Integer
 		  dim x,y,totX,totY,logoSize as Integer
-		  
+		  dim textsize as Single
 		  dim gridColor(), bgColor() as color
 		  dim id as string
 		  
@@ -1204,21 +1236,46 @@ End
 		        myPic.Graphics.DrawPicture(colorbars,  ((totX/2)-(totY/2)+10),((totY/2)-(totY/10))   ,(totY-20),(totY/5),0,0,1920,330)
 		      end
 		    end
-		    
+		    'custom text
 		    if (GridsList.cell(Index,6)) <> ""  then 
-		      'Custom text
-		      MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
+		      circlesize =min((MyPic.height),(MyPic.width))
 		      MyPic.Graphics.ForeColor  = (gridColor(7))
-		      id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
-		      if (myPic.Graphics.StringWidth(id)) < Mypic.width then
+		      if alt_text.value then
+		        id = (GridsList.cell(Index,6))
 		        
+		        textsize = 80                              'initial text size before resize 
+		        MyPic.Graphics.TextSize=textsize
+		        
+		        'id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
+		        
+		        while MyPic.Graphics.StringWidth(id) > max((MyPic.width/2),circlesize)
+		          textsize = textsize -1
+		          MyPic.Graphics.TextSize=textsize
+		        wend
+		        'msgbox(str(textsize))
+		        MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(myPic.Graphics.StringHeight(id,MyPic.width)/3))
+		        id = (str(MyPic.width) + "x" + str(MyPic.height))
+		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
 		        MyPic.Graphics.DrawString(id,3,(totY-3))
 		      else
-		        id = (GridsList.cell(Index,6))
-		        MyPic.Graphics.DrawString(id,3,(totY-3))
+		        id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
+		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
+		        
+		        if (myPic.Graphics.StringWidth(id)) < Mypic.width then
+		          'MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
+		          MyPic.Graphics.DrawString(id,3,(totY-3))
+		        else
+		          id = (GridsList.cell(Index,6))
+		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
+		          id = (str(MyPic.width) + "x" + str(MyPic.height))
+		          'MyPic.Graphics.DrawString(id,(totX/2-myPic.Graphics.StringWidth(id)/2),totY/2+(myPic.Graphics.StringHeight(id,MyPic.width)))
+		          MyPic.Graphics.DrawString(id,3,(totY-3))
+		        end
+		        
 		      end
+		      
+		      
 		    end
-		    
 		    'Draw Circle
 		    if GridsList.cellcheck(Index,11) then 
 		      circlesize =min((MyPic.height),(MyPic.width))
@@ -1293,6 +1350,7 @@ End
 		  Dim d As SaveAsDialog
 		  d = New SaveAsDialog
 		  Dim id as String
+		  dim i as Integer
 		  
 		  OutCanvas= Self.BitmapForCaching(val(OutH.Text), val(OutV.Text))
 		  
@@ -1300,10 +1358,48 @@ End
 		  
 		  OutCanvas.Graphics.FillRect(0,0,val(OutH.Text), val(OutV.Text))
 		  
-		  
-		  for i as integer = 0 to GridsList.Listcount-1
-		    
-		    
+		  if GridsList.ListIndex = -1 then
+		    for i = 0 to GridsList.Listcount-1
+		      Dim offX as double = val(GridsList.Cell(i,4))
+		      Dim offY as double = val(GridsList.Cell(i,5))
+		      if Window1.originCursor.Value then
+		        'Display offset markers
+		        OutCanvas.graphics.ForeColor = RGB(255,255,255)
+		        
+		        OutCanvas.Graphics.DrawLine(offX, 0, OffX,OffY)
+		        OutCanvas.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
+		        OutCanvas.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
+		        OutCanvas.Graphics.DrawLine((offX+5),(OffY-5),OffX,OffY)
+		        
+		        OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
+		        
+		      end
+		      
+		      'Display canvas stats
+		      if Window1.stats.Value then
+		        
+		        'Canvas Raster.
+		        
+		        OutCanvas.Graphics.ForeColor  = &cffffff
+		        
+		        OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
+		        
+		        
+		        
+		        'id = ("Tile X:" + GridsList.Cell(PicIndex,0) + " Columns:" + GridsList.Cell(PicIndex,3) + " Total X:" + str(val(GridsList.Cell(PicIndex,0))*val(GridsList.Cell(PicIndex,3))))
+		        'OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-40))
+		        '
+		        'id = ("Tile Y:" + GridsList.Cell(PicIndex,1) + " Rows:" + GridsList.Cell(PicIndex,4)+ " Total Y:" + str(val(GridsList.Cell(PicIndex,1))*val(GridsList.Cell(PicIndex,4))))
+		        'OutCanvas.Graphics.DrawString(id,5,(val(OutV.text)-20))
+		      end
+		      
+		      BuildGrid(i)
+		      
+		      OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
+		      
+		    next
+		  else
+		    i = GridsList.ListIndex
 		    Dim offX as double = val(GridsList.Cell(i,4))
 		    Dim offY as double = val(GridsList.Cell(i,5))
 		    if Window1.originCursor.Value then
@@ -1341,7 +1437,7 @@ End
 		    
 		    OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
 		    
-		  next
+		  end
 		  
 		  BuildGrid(picindex) 'ensure last build grid is currently selected one from list.
 		End Sub
@@ -1970,8 +2066,10 @@ End
 		  if me.ListIndex <> -1 then
 		    PicIndex=me.ListIndex
 		    SaveAsGrid.Caption="Save Grid As..."
+		    SaveAsCanvas.Caption="Save Canvas As..."
 		  else
 		    SaveAsGrid.Caption="Save All Grids As..."
+		    SaveAsCanvas.Caption="Save All Canvas As..."
 		  end
 		  
 		  UpdateScreen()
@@ -2306,6 +2404,13 @@ End
 		  
 		  tis.Close                                 'close file
 		  
+		  UpdateScreen()
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events alt_text
+	#tag Event
+		Sub Action()
 		  UpdateScreen()
 		End Sub
 	#tag EndEvent
