@@ -55,6 +55,7 @@ Begin Window Window2
       Width           =   600
    End
    Begin Timer Animate
+      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Mode            =   2
@@ -150,46 +151,43 @@ End
 		  if Window1.GridsList.ListIndex <> -1 then
 		    offX = val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),4))
 		    offY = val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),5))
-		    
 		    width = val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),0))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),2))
-		    
 		    height = val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),1))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),3))
-		    
-		    
-		    
-		    'Window1.OutCanvasUpdate()
-		    
-		    
-		    
-		    'g.PenHeight = Window1.SizeSlide.Value
-		    'g.PenWidth = Window1.SizeSlide.Value
-		    if Window1.Hscroll.value then
-		      if Window1.CursorColour.Value then
-		        g.ForeColor = RGB(255,0,0)
-		      else 
-		        g.ForeColor = RGB(255,255,255)
-		      end
-		      'g.DrawLine((xPos+offX),offY,(xPos+offX),(height+offY))
-		      g.fillRect((xPos+offX-(Window1.SizeSlide.Value/2)),offY,(Window1.SizeSlide.Value),(height))
-		      Animate.mode=2
-		    end
-		    if Window1.Vscroll.value then
-		      if Window1.CursorColour.Value then
-		        g.ForeColor = RGB(0,255,0)
-		      else 
-		        g.ForeColor = RGB(255,255,255)
-		      end
-		      'g.DrawLine(offX,(yPos+offY),(width+offX),(yPos+offY))
-		      g.fillRect(offX,(yPos+offY-(Window1.SizeSlide.Value/2)),(width),(Window1.SizeSlide.Value))
-		      Animate.mode=2
-		    end
-		    
-		    'g.ForeColor = &c0000ff
-		    'g.DrawLine((xPos+offX),(yPos+offY),(xPos+offX),(yPos+offY))
-		    'Animate.mode=2
-		    
-		    
+		  else
+		    offX = 0
+		    offY = 0
+		    width = Window2.Width
+		    height = Window2.Height
 		  end
+		  
+		  
+		  if Window1.Hscroll.value then
+		    if Window1.CursorColour.Value then
+		      g.ForeColor = RGB(255,0,0)
+		    else 
+		      g.ForeColor = RGB(255,255,255)
+		    end
+		    g.fillRect((xPos+offX-(Window1.SizeSlide.Value/2)),offY,(Window1.SizeSlide.Value),(height))
+		    Animate.mode=2
+		  end
+		  if Window1.Vscroll.value then
+		    if Window1.CursorColour.Value then
+		      g.ForeColor = RGB(0,255,0)
+		    else 
+		      g.ForeColor = RGB(255,255,255)
+		    end
+		    
+		    g.fillRect(offX,(yPos+offY-(Window1.SizeSlide.Value/2)),(width),(Window1.SizeSlide.Value))
+		    Animate.mode=2
+		  end
+		  
+		  
+		  'g.ForeColor = &c0000ff
+		  'g.DrawLine((xPos+offX),(yPos+offY),(xPos+offX),(yPos+offY))
+		  'Animate.mode=2
+		  
+		  
+		  
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -212,8 +210,14 @@ End
 		  
 		  xPos=xPos+speed
 		  yPos=yPos+speed
-		  if (xPos > val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),0))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),2))) OR (xPos > Window2.width) then xPos=0
-		  if (yPos > val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),1))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),3))) OR (yPos > Window2.height) then yPos=0
+		  if window1.GridsList.ListIndex <> -1 then
+		    if (xPos > val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),0))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),2))) OR (xPos > Window2.width) then xPos=0
+		    if (yPos > val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),1))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),3))) OR (yPos > Window2.height) then yPos=0
+		    
+		  else
+		    if (xPos > Window2.width) then xPos=0
+		    if (yPos > Window2.height) then yPos=0
+		  end
 		  Window2.Canvas1.Refresh
 		  
 		  

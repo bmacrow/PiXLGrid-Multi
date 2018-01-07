@@ -364,7 +364,7 @@ Begin Window Window1
       DataSource      =   ""
       Enabled         =   True
       Height          =   20
-      HelpTag         =   "Display raster on canvas"
+      HelpTag         =   "Display raster box on canvas"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -559,7 +559,7 @@ Begin Window Window1
       Default         =   False
       Enabled         =   True
       Height          =   20
-      HelpTag         =   "Display canvas on second monitor"
+      HelpTag         =   "Display canvas on second monitor with optional moving cursor"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -585,7 +585,7 @@ Begin Window Window1
       AutoDeactivate  =   True
       Enabled         =   True
       Height          =   23
-      HelpTag         =   "Adjust weight of cursor"
+      HelpTag         =   "Adjust size of cursor"
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   816
@@ -837,12 +837,12 @@ Begin Window Window1
    Begin CheckBox originCursor
       AutoDeactivate  =   True
       Bold            =   False
-      Caption         =   "Origin Cursor"
+      Caption         =   "Offset Cursor"
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
       Height          =   20
-      HelpTag         =   "Display TL start point cursor"
+      HelpTag         =   "Display Top Left start point cursor and co-ordinates"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -936,7 +936,7 @@ Begin Window Window1
       DataSource      =   ""
       Enabled         =   True
       Height          =   20
-      HelpTag         =   ""
+      HelpTag         =   "Displays large grid name in centre of each grid"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1069,9 +1069,9 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   158
+      Left            =   355
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1083,11 +1083,70 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   402
+      Top             =   608
       Underline       =   False
       Value           =   False
       Visible         =   False
       Width           =   76
+   End
+   Begin Rectangle Rectangle1
+      AutoDeactivate  =   True
+      BorderWidth     =   1
+      BottomRightColor=   &c00000000
+      Enabled         =   True
+      FillColor       =   &cFFFFFF00
+      Height          =   21
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   155
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   35
+      TabPanelIndex   =   0
+      Top             =   401
+      TopLeftColor    =   &c00000000
+      Visible         =   True
+      Width           =   27
+   End
+   Begin Label Label1
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   185
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   36
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Colour"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   402
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
    End
 End
 #tag EndWindow
@@ -1150,7 +1209,7 @@ End
 		    
 		    x = 0
 		    y = 0
-		    k = 0
+		    k = 1
 		    rcount = 1
 		    totX = (tileX*screenWidth)
 		    totY = (tileY*screenHeight)
@@ -1228,23 +1287,15 @@ End
 		    Case "Purple/Gray"
 		      'Purple/Gray
 		      bgColor = Array(&c3F3F3F,&c9c6fda,&c3f3f3f,&c9c6fda,&c3f3f3f,&c9c6fda,&c3f3f3f,&c000000)
+		    Case "Rainbow"
+		      'Rainbow
+		      bgColor = Array(&c3F3F3F00,&c9400d300,&c0000ff00,&c00ff0000,&cffff0000,&cff7f0000,&cff000000,&c00000000)
 		    Else
 		      bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
 		    End Select
 		    
 		    
 		    for j = 1  to screenHeight //draw row
-		      
-		      
-		      if rcount < 6 then
-		        rcount = rcount +1
-		      else
-		        rcount = 1
-		      end
-		      
-		      
-		      k = rcount     'colour is row count
-		      
 		      
 		      for i = 1 to screenWidth //draw column
 		        if val(GridsList.cell(Index,7)) = 5 then
@@ -1280,8 +1331,16 @@ End
 		        end
 		        
 		        x = x + tileX
-		        k = k+1
-		        if k = 7 then k = 1
+		        'k = k+1
+		        'if k = 7 then k = 0
+		        
+		        if rcount < 6 then
+		          rcount = rcount +1
+		        else
+		          rcount = 1
+		        end
+		        k = rcount     'colour is row count
+		        
 		        
 		      next
 		      x = 0
@@ -1307,7 +1366,9 @@ End
 		    'custom text
 		    if (GridsList.cell(Index,6)) <> ""  then 
 		      circlesize =min((MyPic.height),(MyPic.width))
-		      MyPic.Graphics.ForeColor  = &cfcfa22 '(gridColor(7))
+		      'MyPic.Graphics.ForeColor  = &cfcfa22 '(gridColor(7))
+		      MyPic.Graphics.ForeColor  = Rectangle1.FillColor
+		      
 		      if alt_text.value then
 		        id = (GridsList.cell(Index,6))
 		        
@@ -2126,6 +2187,7 @@ End
 		    base.Append(New MenuItem("Orange/Gray"))
 		    base.Append(New MenuItem("Aqua/Gray"))
 		    base.Append(New MenuItem("Purple/Gray"))
+		    base.Append(New MenuItem("Rainbow"))
 		    
 		    
 		    Dim selectedMenu As MenuItem
@@ -2325,7 +2387,7 @@ End
 		  
 		  if GridsList.ListCount>0 then                   'if grid not empty
 		    
-		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+","         'exports canvas size and options
+		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(Rectangle1.FillColor)+","        'exports canvas size and options
 		    tos.WriteLine s.left(s.len-1)                'save line
 		    for i=0 to GridsList.ListCount-1            'for each row
 		      s=""                                                   'build line to save
@@ -2394,6 +2456,14 @@ End
 		    else
 		      Window1.alt_text.value = False
 		    end
+		    
+		    
+		    dim v as variant
+		    v=val(Trim(fields(5)))
+		    Rectangle1.FillColor=v.colorvalue
+		    
+		    
+		    
 		  end
 		  while not tis.EOF                    'while not end-of-file
 		    GridsList.AddRow ""             'add row to grid
@@ -2486,6 +2556,28 @@ End
 		  
 		  UpdateScreen()
 		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Rectangle1
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  Dim c  as Color
+		  Dim b as Boolean
+		  c=CMY(.35,.9,.6) //choose the default color shown in color picker
+		  b=SelectColor(c,"Select a Color")
+		  Rectangle1.FillColor=c
+		  
+		  UpdateScreen()
+		  
+		  
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  
+		  return true
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
