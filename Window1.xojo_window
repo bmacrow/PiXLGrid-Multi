@@ -1089,7 +1089,7 @@ Begin Window Window1
       Visible         =   False
       Width           =   76
    End
-   Begin Rectangle Rectangle1
+   Begin Rectangle ColorPicker
       AutoDeactivate  =   True
       BorderWidth     =   1
       BottomRightColor=   &c00000000
@@ -1184,7 +1184,8 @@ End
 	#tag Method, Flags = &h0
 		Sub BuildGrid(Index As integer)
 		  
-		  dim i,j,k,tileX,tileY,screenWidth, screenHeight,rcount as Integer
+		  dim i,j,k,tileX,tileY,screenWidth, screenHeight,rcount,colcount as Integer
+		  
 		  dim x,y,totX,totY,logoSize as Integer
 		  dim textsize as Single
 		  dim gridColor(), bgColor() as color
@@ -1211,6 +1212,7 @@ End
 		    y = 0
 		    k = 1
 		    rcount = 1
+		    colcount = 1
 		    totX = (tileX*screenWidth)
 		    totY = (tileY*screenHeight)
 		    
@@ -1235,7 +1237,8 @@ End
 		      
 		    Case "100% Colour"
 		      '100%
-		      bgColor = Array(&cffffff,&cff00ff,&c00ffff,&cffff00,&c0000ff,&c00ff00,&cff0000,&c000000)
+		      bgColor=Array(&cffffff,&cff0000,&c00ff00,&c0000ff,&cffff00,&cff00ff,&c00ffff,&c000000)
+		      'bgColor = Array(&cffffff,&cff00ff,&c00ffff,&cffff00,&c0000ff,&c00ff00,&cff0000,&c000000)
 		    Case "50% Colour"
 		      '50%
 		      bgColor =   Array(&c7e7e7e,&c7e007e,&c007e7e,&c7e7e00,&c00007e,&c007e00,&c7e0000,&c000000)
@@ -1253,46 +1256,47 @@ End
 		      bgColor = Array(&c3F3F3F00,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c00000000)
 		    Case "Red/Gray"
 		      'Red/Gray
-		      bgColor = Array(&c3F3F3F,&cdd3c46,&c3F3F3F,&cdd3c46,&c3F3F3F,&cdd3c46,&c3F3F3F,&c000000)
+		      bgColor = Array(&c3F3F3F,&cdd3c46,&c3F3F3F,&c000000)
 		    Case "Green/Gray"
 		      'Green/Gray
-		      bgColor = Array(&c3F3F3F,&c2baa3a,&c3F3F3F,&c2baa3a,&c3F3F3F,&c2baa3a,&c3F3F3F,&c000000)
+		      bgColor = Array(&c3F3F3F,&c2baa3a,&c3F3F3F,&c000000)
 		    Case "Blue/Gray"
 		      'Blue/Gray
-		      bgColor = Array(&c3F3F3F,&c0048c3,&c3F3F3F,&c0048c3,&c3F3F3F,&c0048c3,&c3F3F3F,&c000000)
+		      bgColor = Array(&c3F3F3F,&c0048c3,&c3F3F3F,&c000000)
 		    Case "Red/Green"
 		      'Red/Green
-		      bgColor = Array(&c3F3F3F,&cdd3c46,&c2baa3a,&cdd3c46,&c2baa3a,&cdd3c46,&c2baa3a,&c000000)
+		      bgColor = Array(&c3F3F3F,&cdd3c46,&c2baa3a,&c000000)
 		    Case  "Green/Blue"
 		      'Green/Blue
-		      bgColor = Array(&c3F3F3F,&c2baa3a,&c0048c3,&c2baa3a,&c0048c3,&c2baa3a,&c0048c3,&c000000)
+		      bgColor = Array(&c3F3F3F,&c2baa3a,&c0048c3,&c000000)
 		    Case "Blue/Red"
 		      'Blue/Red
-		      bgColor = Array(&c3F3F3F,&c0048c3,&cdd3c46,&c0048c3,&cdd3c46,&c0048c3,&cdd3c46,&c000000)
+		      bgColor = Array(&c3F3F3F,&c0048c3,&cdd3c46,&c000000)
 		    Case "Black/White"
 		      'Black/White
-		      bgColor = Array(&c3F3F3F,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000,&cFFFFFF,&c000000)
+		      bgColor = Array(&c3F3F3F,&c000000,&cFFFFFF,&c000000)
 		    Case "Light Gray/Dark Gray"
 		      'LightGray/DarkGray
-		      bgColor = Array(&c3F3F3F,&c3F3F3F,&c7E7E7E,&c3F3F3F,&c7E7E7E,&c3F3F3F,&c7E7E7E,&c000000)
+		      bgColor = Array(&c3F3F3F,&c3F3F3F,&c7E7E7E,&c000000)
 		    Case "Yellow/Gray"
 		      'Yellow/Gray
-		      bgColor = Array(&c3F3F3F,&cf4d51a,&c3f3f3f,&cf4d51a,&c3f3f3f,&cf4d51a,&c3f3f3f,&c000000)
+		      bgColor = Array(&c3F3F3F,&cf4d51a,&c3f3f3f,&c000000)
 		    Case "Orange/Gray"
 		      'Orange/Gray
-		      bgColor = Array(&c3F3F3F,&cff5722,&c3f3f3f,&cff5722,&c3f3f3f,&cff5722,&c3f3f3f,&c000000)
+		      bgColor = Array(&c3F3F3F,&cff5722,&c3f3f3f,&c000000)
 		    Case "Aqua/Gray"
 		      'Aqua/Gray
-		      bgColor = Array(&c3F3F3F,&c0ea7b5,&c3f3f3f,&c0ea7b5,&c3f3f3f,&c0ea7b5,&c3f3f3f,&c000000)
+		      bgColor = Array(&c3F3F3F,&c0ea7b5,&c3f3f3f,&c000000)
 		    Case "Purple/Gray"
 		      'Purple/Gray
-		      bgColor = Array(&c3F3F3F,&c9c6fda,&c3f3f3f,&c9c6fda,&c3f3f3f,&c9c6fda,&c3f3f3f,&c000000)
+		      bgColor = Array(&c3F3F3F,&c9c6fda,&c3f3f3f,&c000000)
 		    Case "Rainbow"
 		      'Rainbow
-		      bgColor = Array(&c3F3F3F00,&c9400d300,&c0000ff00,&c00ff0000,&cffff0000,&cff7f0000,&cff000000,&c00000000)
+		      bgColor = Array(&c3F3F3F00,&c9400d300,&c4b008200,&c0000ff00,&c00ff0000,&cffff0000,&cff7f0000,&cff000000,&c00000000)
 		    Else
 		      bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
 		    End Select
+		    
 		    
 		    
 		    for j = 1  to screenHeight //draw row
@@ -1333,18 +1337,23 @@ End
 		        x = x + tileX
 		        'k = k+1
 		        'if k = 7 then k = 0
-		        
-		        if rcount < 6 then
-		          rcount = rcount +1
-		        else
+		        rcount = rcount +1
+		        if rcount  > Ubound(bgColor)-1 then
 		          rcount = 1
 		        end
 		        k = rcount     'colour is row count
-		        
-		        
 		      next
+		      colcount = colcount + 1
+		      
+		      if colcount > Ubound(bgColor)-1 then
+		        colcount = 1
+		      end
+		      rcount = colcount
+		      k = colcount
+		      
 		      x = 0
 		      y = y + tileY
+		      
 		    next
 		    
 		    'draw diagonal cross
@@ -1367,7 +1376,7 @@ End
 		    if (GridsList.cell(Index,6)) <> ""  then 
 		      circlesize =min((MyPic.height),(MyPic.width))
 		      'MyPic.Graphics.ForeColor  = &cfcfa22 '(gridColor(7))
-		      MyPic.Graphics.ForeColor  = Rectangle1.FillColor
+		      MyPic.Graphics.ForeColor  = ColorPicker.FillColor
 		      
 		      if alt_text.value then
 		        id = (GridsList.cell(Index,6))
@@ -2304,11 +2313,15 @@ End
 	#tag EndEvent
 	#tag Event
 		Function CellKeyDown(row as Integer, column as Integer, key as String) As Boolean
-		  if asc(key) = 9 then
+		  if Keyboard.ShiftKey = false and asc(key) = 9 then
 		    // here you find the next cell to make editable, and use editCell on it
 		    
 		    if column <6 then
 		      me.EditCell(row, column+1)
+		    end
+		  elseif  Keyboard.ShiftKey  and asc(key) = 9 Then
+		    if column <6  and column > 0 then
+		      me.EditCell(row, column-1)
 		    end
 		  else
 		    return false
@@ -2387,7 +2400,7 @@ End
 		  
 		  if GridsList.ListCount>0 then                   'if grid not empty
 		    
-		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(Rectangle1.FillColor)+","        'exports canvas size and options
+		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(ColorPicker.FillColor)+","        'exports canvas size and options
 		    tos.WriteLine s.left(s.len-1)                'save line
 		    for i=0 to GridsList.ListCount-1            'for each row
 		      s=""                                                   'build line to save
@@ -2460,7 +2473,7 @@ End
 		    
 		    dim v as variant
 		    v=val(Trim(fields(5)))
-		    Rectangle1.FillColor=v.colorvalue
+		    ColorPicker.FillColor=v.colorvalue
 		    
 		    
 		    
@@ -2558,14 +2571,15 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events Rectangle1
+#tag Events ColorPicker
 	#tag Event
 		Sub MouseUp(X As Integer, Y As Integer)
 		  Dim c  as Color
 		  Dim b as Boolean
-		  c=CMY(.35,.9,.6) //choose the default color shown in color picker
+		  c = ColorPicker.FillColor
+		  'c=CMY(.35,.9,.6) //choose the default color shown in color picker
 		  b=SelectColor(c,"Select a Color")
-		  Rectangle1.FillColor=c
+		  ColorPicker.FillColor=c
 		  
 		  UpdateScreen()
 		  
