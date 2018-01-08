@@ -1184,7 +1184,7 @@ End
 	#tag Method, Flags = &h0
 		Sub BuildGrid(Index As integer)
 		  
-		  dim i,j,k,tileX,tileY,screenWidth, screenHeight,rcount,colcount as Integer
+		  dim i,j,k,l,tileX,tileY,screenWidth, screenHeight,rcount,colcount,c2count as Integer
 		  
 		  dim x,y,totX,totY,logoSize as Integer
 		  dim textsize as Single
@@ -1211,8 +1211,10 @@ End
 		    x = 0
 		    y = 0
 		    k = 1
+		    l = 1
 		    rcount = 1
 		    colcount = 1
+		    c2count = 1
 		    totX = (tileX*screenWidth)
 		    totY = (tileY*screenHeight)
 		    
@@ -1237,8 +1239,8 @@ End
 		      
 		    Case "100% Colour"
 		      '100%
-		      bgColor=Array(&cffffff,&cff0000,&c00ff00,&c0000ff,&cffff00,&cff00ff,&c00ffff,&c000000)
-		      'bgColor = Array(&cffffff,&cff00ff,&c00ffff,&cffff00,&c0000ff,&c00ff00,&cff0000,&c000000)
+		      'bgColor=Array(&cffffff,&cff0000,&c00ff00,&c0000ff,&cffff00,&cff00ff,&c00ffff,&c000000)
+		      bgColor = Array(&cffffff,&cff00ff,&c00ffff,&cffff00,&c0000ff,&c00ff00,&cff0000,&c000000)
 		    Case "50% Colour"
 		      '50%
 		      bgColor =   Array(&c7e7e7e,&c7e007e,&c007e7e,&c7e7e00,&c00007e,&c007e00,&c7e0000,&c000000)
@@ -1317,7 +1319,7 @@ End
 		        end
 		        
 		        if GridsList.cellcheck(Index,8) then
-		          MyPic.Graphics.ForeColor  = (gridColor(k))
+		          MyPic.Graphics.ForeColor  = (gridColor(l))
 		          MyPic.Graphics.DrawRect(x, y, tileX,tileY)
 		        end
 		        
@@ -1335,15 +1337,23 @@ End
 		        end
 		        
 		        x = x + tileX
-		        'k = k+1
-		        'if k = 7 then k = 0
+		        l=l+1
+		        if l > Ubound(gridColor)-1 then
+		          l=1
+		        end
 		        rcount = rcount +1
 		        if rcount  > Ubound(bgColor)-1 then
 		          rcount = 1
 		        end
 		        k = rcount     'colour is row count
 		      next
+		      
+		      c2count = c2count + 1
 		      colcount = colcount + 1
+		      if c2count > Ubound(gridcolor) -1 then
+		        c2count = 1
+		      end
+		      l = c2count
 		      
 		      if colcount > Ubound(bgColor)-1 then
 		        colcount = 1
