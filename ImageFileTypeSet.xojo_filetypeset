@@ -2,7 +2,7 @@
 	#tag FileType
 		CodeName=Png
 		Extension=.png
-		Flags=&h0
+		Flags=&h2
 		MacCreator=ogle
 		MacType=PNGf
 		Name=image/png

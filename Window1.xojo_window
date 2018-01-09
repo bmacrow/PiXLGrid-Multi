@@ -1494,6 +1494,86 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub LoadFile(f As FolderItem = Nil)
+		  Dim file As FolderItem = f
+		  dim tis as TextInputStream
+		  dim s as string
+		  dim i as integer
+		  dim fields() as string
+		  
+		  If file Is Nil Then
+		    'show standard file selector
+		    file = GetOpenFolderItem(GridFileType.pg2)
+		    if file=nil then exit sub             'cancel clicked
+		  end if
+		  
+		  If file <> Nil Then
+		    'open the file
+		    tis = TextInputStream.Open(file)
+		    if tis=nil then                        'failed?
+		      MsgBox("The file could not be opened.")
+		      exit sub
+		    end if
+		    
+		    'read file into grid
+		    if not tis.EOF then
+		      GridsList.DeleteAllRows
+		      s=tis.ReadLine                    'read line from file
+		      fields=Split(s,",")                 'put items in fileds() array
+		      'imports grid size and options
+		      Window1.OutH.text = Trim(fields(0))
+		      Window1.OutV.text = Trim(fields(1))
+		      if Trim(fields(2)) = "True" then
+		        Window1.stats.value = True
+		      else
+		        Window1.stats.value = False
+		      end
+		      if Trim(fields(3)) = "True" then
+		        Window1.originCursor.value = True
+		      else
+		        Window1.originCursor.value = False
+		      end
+		      if Trim(fields(4)) = "True" then
+		        Window1.alt_text.value = True
+		      else
+		        Window1.alt_text.value = False
+		      end
+		      
+		      
+		      dim v as variant
+		      v=val(Trim(fields(5)))
+		      ColorPicker.FillColor=v.colorvalue
+		      
+		      
+		      
+		    end
+		    while not tis.EOF                    'while not end-of-file
+		      GridsList.AddRow ""             'add row to grid
+		      s=tis.ReadLine                    'read line from file
+		      fields=Split(s,",")                 'put items in fileds() array
+		      for i=0 to 6  'copy to grid
+		        GridsList.Cell(GridsList.ListCount-1,i)=Trim(fields(i))
+		      next
+		      GridsList.celltag(GridsList.LastIndex,7)=Trim(fields(7))
+		      for i=8 to 15
+		        If Trim(fields(i)) = "True" then
+		          GridsList.cellcheck(GridsList.Lastindex,i) = True 'Trim(fields(i))
+		        else
+		          GridsList.cellcheck(GridsList.Lastindex,i) = False
+		        end
+		      next
+		    wend
+		    
+		    tis.Close                                 'close file
+		    
+		    UpdateScreen()
+		    
+		    
+		  end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub OutCanvasUpdate()
 		  Dim d As SaveAsDialog
 		  d = New SaveAsDialog
@@ -2398,7 +2478,7 @@ End
 		  dim i, j as integer
 		  
 		  'show standard file selector
-		  f= GetSaveFolderItem("text/plain","Grid List"+".csv")
+		  f= GetSaveFolderItem(GridFileType.pg2,"Grid List"+".pg2")
 		  if f = nil then exit sub                              'cancel clicked
 		  
 		  'create file
@@ -2437,77 +2517,8 @@ End
 #tag Events LoadList
 	#tag Event
 		Sub Action()
-		  Dim f As FolderItem
-		  dim tis as TextInputStream
-		  dim s as string
-		  dim i as integer
-		  dim fields() as string
+		  LoadFile
 		  
-		  'show standard file selector
-		  f = GetOpenFolderItem(GridFileType.CommaSeparatedValues)
-		  if f=nil then exit sub             'cancel clicked
-		  
-		  'open the file
-		  tis = f.OpenAsTextFile
-		  if tis=nil then                        'failed?
-		    MsgBox("The file could not be opened.")
-		    exit sub
-		  end if
-		  
-		  
-		  
-		  'read file into grid
-		  if not tis.EOF then
-		    GridsList.DeleteAllRows
-		    s=tis.ReadLine                    'read line from file
-		    fields=Split(s,",")                 'put items in fileds() array
-		    'imports grid size and options
-		    Window1.OutH.text = Trim(fields(0))
-		    Window1.OutV.text = Trim(fields(1))
-		    if Trim(fields(2)) = "True" then
-		      Window1.stats.value = True
-		    else
-		      Window1.stats.value = False
-		    end
-		    if Trim(fields(3)) = "True" then
-		      Window1.originCursor.value = True
-		    else
-		      Window1.originCursor.value = False
-		    end
-		    if Trim(fields(4)) = "True" then
-		      Window1.alt_text.value = True
-		    else
-		      Window1.alt_text.value = False
-		    end
-		    
-		    
-		    dim v as variant
-		    v=val(Trim(fields(5)))
-		    ColorPicker.FillColor=v.colorvalue
-		    
-		    
-		    
-		  end
-		  while not tis.EOF                    'while not end-of-file
-		    GridsList.AddRow ""             'add row to grid
-		    s=tis.ReadLine                    'read line from file
-		    fields=Split(s,",")                 'put items in fileds() array
-		    for i=0 to 6  'copy to grid
-		      GridsList.Cell(GridsList.ListCount-1,i)=Trim(fields(i))
-		    next
-		    GridsList.celltag(GridsList.LastIndex,7)=Trim(fields(7))
-		    for i=8 to 15
-		      If Trim(fields(i)) = "True" then
-		        GridsList.cellcheck(GridsList.Lastindex,i) = True 'Trim(fields(i))
-		      else
-		        GridsList.cellcheck(GridsList.Lastindex,i) = False
-		      end
-		    next
-		  wend
-		  
-		  tis.Close                                 'close file
-		  
-		  UpdateScreen()
 		End Sub
 	#tag EndEvent
 #tag EndEvents

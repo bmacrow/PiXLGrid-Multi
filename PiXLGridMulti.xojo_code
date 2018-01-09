@@ -10,6 +10,14 @@ Inherits Application
 	#tag Event
 		Sub Open()
 		  Window1.icon = logo2
+		  Window1.MyPic=logo1
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Sub OpenDocument(item As FolderItem)
+		  Window1.LoadFile(item)
+		  
 		End Sub
 	#tag EndEvent
 

@@ -1,16 +1,17 @@
 #tag FileTypeSet
 	#tag FileType
-		CodeName=CommaSeparatedValues
-		Extension=.csv
-		Flags=&h0
+		CodeName=pg2
+		DocIcon=gridDraw-multi2.xojo_resources;&h0
+		Extension=pg2
+		Flags=&h5
 		MacCreator=XCEL
-		MacType=TEXT
-		Name=text/comma-separated-values
-		UTI=
-		UTIConformsTo=
-		Description=
+		MacType=
+		Name=GridValues
+		UTI=com.videowalrus.pg2
+		UTIConformsTo=public.data
+		Description=Grid List export
 		MimeType=
-		Imported=True
+		Imported=False
 	#tag EndFileType
 
 #tag EndFileTypeSet
