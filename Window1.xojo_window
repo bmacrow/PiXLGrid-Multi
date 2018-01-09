@@ -2444,7 +2444,7 @@ End
 		  dim fields() as string
 		  
 		  'show standard file selector
-		  f = GetOpenFolderItem("any" )
+		  f = GetOpenFolderItem(GridFileType.CommaSeparatedValues)
 		  if f=nil then exit sub             'cancel clicked
 		  
 		  'open the file
