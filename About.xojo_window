@@ -64,7 +64,7 @@ Begin Window About
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   157
+         Left            =   150
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -77,16 +77,16 @@ Begin Window About
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "PiXL Grid Multi"
-         TextAlign       =   1
+         TextAlign       =   0
          TextColor       =   &c00000000
          TextFont        =   "System"
          TextSize        =   0.0
          TextUnit        =   0
-         Top             =   20
+         Top             =   21
          Transparent     =   True
          Underline       =   False
          Visible         =   True
-         Width           =   124
+         Width           =   95
       End
       Begin Label Label4
          AutoDeactivate  =   True
@@ -112,7 +112,7 @@ Begin Window About
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "Beta"
-         TextAlign       =   1
+         TextAlign       =   0
          TextColor       =   &c00000000
          TextFont        =   "System"
          TextSize        =   0.0
@@ -121,7 +121,7 @@ Begin Window About
          Transparent     =   True
          Underline       =   False
          Visible         =   True
-         Width           =   117
+         Width           =   34
       End
       Begin Label Label5
          AutoDeactivate  =   True
@@ -134,7 +134,7 @@ Begin Window About
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   231
+         Left            =   191
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -147,7 +147,7 @@ Begin Window About
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "xxxx"
-         TextAlign       =   1
+         TextAlign       =   0
          TextColor       =   &c00000000
          TextFont        =   "System"
          TextSize        =   0.0
@@ -182,7 +182,7 @@ Begin Window About
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "2018"
-         TextAlign       =   1
+         TextAlign       =   0
          TextColor       =   &c00000000
          TextFont        =   "System"
          TextSize        =   0.0

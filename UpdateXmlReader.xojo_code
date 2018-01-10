@@ -4,8 +4,7 @@ Inherits XMLReader
 	#tag Event
 		Sub StartElement(name as String, attributeList as XmlAttributeList)
 		  Dim  version as double = val(str(App.MinorVersion) +"."  +Str(App.NonReleaseVersion))
-		  Dim s As TextInputStream
-		  's = attributeList.Value("changelog")
+		  Dim s(-1) As String
 		  Select Case name
 		  Case "Version"
 		    Updated.CurVer.Text = str(version)
@@ -13,15 +12,27 @@ Inherits XMLReader
 		    if version < val(attributeList.Value("ver"))then
 		      Updated.url1.Text=attributeList.Value("macURL")
 		      Updated.url2.Text=attributeList.Value("pcURL")
+		      s = split(attributeList.Value("changelog"),"|")
+		      
+		      for i as integer = 0 to Ubound(s)
+		        Updated.ChangesText.AppendText(s(i))
+		        Updated.ChangesText.AppendText(EndOfLine)
+		      next
+		      MsgBox("Update Available")
 		    elseif version = val(attributeList.Value("ver"))then
 		      Updated.Hide
 		      MsgBox("You have the latest version.")
 		    else
 		      Updated.url1.Text=attributeList.Value("macURL")
 		      Updated.url2.Text=attributeList.Value("pcURL")
-		      'Updated.ChangesText.Text=(s)
-		      Updated.ChangesText.Text=attributeList.Value("changelog")
-		      'Updated.Hide
+		      
+		      s = split(attributeList.Value("changelog"),"|")
+		      
+		      for i as integer = 0 to Ubound(s)
+		        Updated.ChangesText.AppendText(s(i))
+		        Updated.ChangesText.AppendText(EndOfLine)
+		      next
+		      
 		      MsgBox("Unknown Version. Check for latest stable version")
 		    end
 		  End Select

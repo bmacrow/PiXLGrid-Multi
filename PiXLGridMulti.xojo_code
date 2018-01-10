@@ -11,6 +11,7 @@ Inherits Application
 		Sub Open()
 		  Window1.icon = logo2
 		  Window1.MyPic=logo1
+		  App.AutoQuit = True
 		End Sub
 	#tag EndEvent
 
@@ -84,6 +85,22 @@ Inherits Application
 	#tag MenuHandler
 		Function FileOutput() As Boolean Handles FileOutput.Action
 			Window2.show
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function LoadItem(index as Integer) As Boolean Handles LoadItem.Action
+			Window1.LoadFile
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function SaveItem(index as Integer) As Boolean Handles SaveItem.Action
+			window1.SaveFile()
 			Return True
 			
 		End Function

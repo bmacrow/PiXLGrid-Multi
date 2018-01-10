@@ -2,7 +2,7 @@
 Begin Window Window1
    BackColor       =   &c49494A00
    Backdrop        =   0
-   CloseButton     =   False
+   CloseButton     =   True
    Compatibility   =   ""
    Composite       =   False
    Frame           =   0
@@ -23,7 +23,7 @@ Begin Window Window1
    MinWidth        =   1009
    Placement       =   0
    Resizeable      =   True
-   Title           =   "Generator"
+   Title           =   "Editor"
    Visible         =   True
    Width           =   1009
    Begin Canvas Canvas1
@@ -902,7 +902,7 @@ Begin Window Window1
       Bold            =   False
       ButtonStyle     =   "0"
       Cancel          =   False
-      Caption         =   "Load List..."
+      Caption         =   "Open List..."
       Default         =   False
       Enabled         =   True
       Height          =   20
@@ -1474,16 +1474,11 @@ End
 		    logoSize=min(totX/4,totY/4,tileX*8)
 		    if GridsList.cellcheck(Index,14) then 
 		      myPic.Graphics.Transparency = 25
-		      
 		      myPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
-		      
-		      
 		    end
 		    
 		  else
-		    
 		    myPic.Graphics.ClearRect(0,0,1,1)
-		    
 		  end
 		  
 		  rebuild=false
@@ -1563,6 +1558,8 @@ End
 		        end
 		      next
 		    wend
+		    
+		    Window1.Title="Editor - " + file.Name
 		    
 		    tis.Close                                 'close file
 		    
@@ -1649,6 +1646,52 @@ End
 		  end
 		  
 		  BuildGrid(picindex) 'ensure last build grid is currently selected one from list.
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub SaveFile()
+		  dim f as folderitem
+		  dim tos as textOutputStream
+		  dim s as string
+		  dim i, j as integer
+		  
+		  'show standard file selector
+		  f= GetSaveFolderItem(GridFileType.pg2,"Grid List"+".pg2")
+		  if f = nil then exit sub                              'cancel clicked
+		  
+		  'create file
+		  tos = f.CreateTextFile
+		  if tos = nil then                                       'failed?
+		    MsgBox("The file could not be created!")
+		    exit sub
+		  end if
+		  
+		  if GridsList.ListCount>0 then                   'if grid not empty
+		    
+		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(ColorPicker.FillColor)+","        'exports canvas size and options
+		    tos.WriteLine s.left(s.len-1)                'save line
+		    for i=0 to GridsList.ListCount-1            'for each row
+		      s=""                                                   'build line to save
+		      for j=0 to 6   'for each column
+		        s=s+GridsList.Cell(i,j)+ ","    'csv
+		      next
+		      s=s+str(GridsList.celltag(i,7))+","
+		      for j = 8 to 15
+		        s=s+str(GridsList.cellcheck(i,j))+","
+		      next
+		      tos.WriteLine s.left(s.len-1)                'save line
+		    next
+		  end if
+		  
+		  Window1.Title="Editor - " + f.Name
+		  
+		  tos.Close                                                 'close file
+		  
+		  
+		  
+		  
+		  
 		End Sub
 	#tag EndMethod
 
@@ -1875,9 +1918,7 @@ End
 		      Window1.MaxHeight=648
 		    end
 		    
-		    'if Window1.Fit.Active then
-		    'g.DrawPicture(MyPic, 0, 0,me.width,me.height,0,0,MyPic.width,MyPic.height)
-		    'else
+		    
 		    g.DrawPicture(OutCanvas, mXScroll, mYScroll,scaledWidth,scaledHeight,0,0,OutCanvas.width,OutCanvas.height)
 		    
 		    
@@ -2223,9 +2264,10 @@ End
 		    PicIndex=me.ListIndex
 		    SaveAsGrid.Caption="Save Grid As.."
 		    SaveAsCanvas.Caption="Save Canvas As.."
+		    AddGrid.Caption = "Copy Grid.."
 		    deselect.Visible = true
 		  else
-		    
+		    AddGrid.Caption = "Add Grid.."
 		    SaveAsGrid.Caption="Save All Grids As.."
 		    
 		    if Grid_Solo.value then
@@ -2472,44 +2514,47 @@ End
 #tag Events SaveList
 	#tag Event
 		Sub Action()
-		  dim f as folderitem
-		  dim tos as textOutputStream
-		  dim s as string
-		  dim i, j as integer
-		  
-		  'show standard file selector
-		  f= GetSaveFolderItem(GridFileType.pg2,"Grid List"+".pg2")
-		  if f = nil then exit sub                              'cancel clicked
-		  
-		  'create file
-		  tos = f.CreateTextFile
-		  if tos = nil then                                       'failed?
-		    MsgBox("The file could not be created!")
-		    exit sub
-		  end if
-		  
-		  if GridsList.ListCount>0 then                   'if grid not empty
-		    
-		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(ColorPicker.FillColor)+","        'exports canvas size and options
-		    tos.WriteLine s.left(s.len-1)                'save line
-		    for i=0 to GridsList.ListCount-1            'for each row
-		      s=""                                                   'build line to save
-		      for j=0 to 6   'for each column
-		        s=s+GridsList.Cell(i,j)+ ","    'csv
-		      next
-		      s=s+str(GridsList.celltag(i,7))+","
-		      for j = 8 to 15
-		        s=s+str(GridsList.cellcheck(i,j))+","
-		      next
-		      tos.WriteLine s.left(s.len-1)                'save line
-		    next
-		  end if
-		  
-		  tos.Close                                                 'close file
+		  SaveFile()
 		  
 		  
-		  
-		  
+		  'dim f as folderitem
+		  'dim tos as textOutputStream
+		  'dim s as string
+		  'dim i, j as integer
+		  '
+		  ''show standard file selector
+		  'f= GetSaveFolderItem(GridFileType.pg2,"Grid List"+".pg2")
+		  'if f = nil then exit sub                              'cancel clicked
+		  '
+		  ''create file
+		  'tos = f.CreateTextFile
+		  'if tos = nil then                                       'failed?
+		  'MsgBox("The file could not be created!")
+		  'exit sub
+		  'end if
+		  '
+		  'if GridsList.ListCount>0 then                   'if grid not empty
+		  '
+		  's=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(ColorPicker.FillColor)+","        'exports canvas size and options
+		  'tos.WriteLine s.left(s.len-1)                'save line
+		  'for i=0 to GridsList.ListCount-1            'for each row
+		  's=""                                                   'build line to save
+		  'for j=0 to 6   'for each column
+		  's=s+GridsList.Cell(i,j)+ ","    'csv
+		  'next
+		  's=s+str(GridsList.celltag(i,7))+","
+		  'for j = 8 to 15
+		  's=s+str(GridsList.cellcheck(i,j))+","
+		  'next
+		  'tos.WriteLine s.left(s.len-1)                'save line
+		  'next
+		  'end if
+		  '
+		  'tos.Close                                                 'close file
+		  '
+		  '
+		  '
+		  '
 		  
 		End Sub
 	#tag EndEvent

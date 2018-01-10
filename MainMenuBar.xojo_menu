@@ -16,6 +16,26 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
+      Begin MenuItem LoadItem
+         SpecialMenu = 0
+         Text = "Open Grid List..."
+         Index = 0
+         ShortcutKey = "O"
+         Shortcut = "Cmd+O"
+         MenuModifier = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem SaveItem
+         SpecialMenu = 0
+         Text = "Save Grid List..."
+         Index = 0
+         ShortcutKey = "S"
+         Shortcut = "Cmd+S"
+         MenuModifier = True
+         AutoEnable = True
+         Visible = True
+      End
       Begin ApplicationMenuItem FileCheckforupdate
          SpecialMenu = 0
          Text = "Check for updates"

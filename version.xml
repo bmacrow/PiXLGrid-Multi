@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PiXL>
+	<Version ver="2.00" date="10/1/17" macURL="https://pixlevolution.files.wordpress.com/2017/12/pixl-grid-dmg3.zip" pcURL="https://pixlevolution.files.wordpress.com/2017/12/pixl-installer1.zip" changelog="
+v2.0|
+New Multi Grid Version|
+Add many different sized grids to a canvas|
+Save list of grids|
+Several new background colour options|
+Moving cursor on individual grids or whole canvas|
+Large Grid name and colour option|
+Grid or Canvas viewer|
+Added Canvas raster|
+Added top left co-ordinates for each grid within a canvas|
+Added repeating save on grid save if nothing selected|
+Fixed TAB key in grid list|
+Fixed corner circle scaling for small grids|
+|
+v0.51|
+Added Horizontal Mouse scroll|
+Added 8 more background palettes|
+Added Check for Updates xml|
+">
+	</Version>
+</PiXL>
