@@ -1071,7 +1071,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   355
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1101,7 +1101,7 @@ Begin Window Window1
       InitialParent   =   ""
       Left            =   155
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1126,7 +1126,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   185
       LockBottom      =   True
-      LockedInPosition=   False
+      LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1142,7 +1142,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   402
+      Top             =   399
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -1155,6 +1155,8 @@ End
 	#tag Event
 		Sub Close()
 		  FileClose.Visible=false
+		  
+		  Window2.Close()
 		End Sub
 	#tag EndEvent
 
@@ -1164,13 +1166,11 @@ End
 		  me.left = screen(0).left
 		  me.top = screen(0).top+50
 		  
-		  'GridsList.AddRow("80","60","16","12","150","150","Screen One","2")
+		  
 		  
 		  
 		  rebuild=true
 		  
-		  'BuildGrid(0)
-		  'UpdateScreen()
 		End Sub
 	#tag EndEvent
 
@@ -1293,8 +1293,21 @@ End
 		      'Purple/Gray
 		      bgColor = Array(&c3F3F3F,&c9c6fda,&c3f3f3f,&c000000)
 		    Case "Rainbow"
-		      'Rainbow
-		      bgColor = Array(&c3F3F3F00,&c9400d300,&c4b008200,&c0000ff00,&c00ff0000,&cffff0000,&cff7f0000,&cff000000,&c00000000)
+		      'Rainbow &c4b008200,
+		      bgColor = Array(&c3F3F3F00,&c9400d300,&c0000ff00,&c00ff0000,&cffff0000,&cff7f0000,&cff000000,&c00000000)
+		    Case "Red"
+		      'Red
+		      bgColor = Array(&c3F3F3F00,&cFF000000,&cdd3c46,&c00000000)
+		    Case "Green"
+		      'Red
+		      bgColor = Array(&c3F3F3F00,&c00FF0000,&c2baa3a,&c00000000)
+		    Case "Blue"
+		      'Red
+		      bgColor = Array(&c3F3F3F00,&c0000FF00,&cCC000000,&c00000000)
+		    Case "Grayscale"
+		      'Grayscale
+		      bgColor=Array(&c3F3F3F00,&c00000000,&c33333300,&c66666600,&c99999900,&cCCCCCC00,&cFFFFFF00,&c00000000)
+		      
 		    Else
 		      bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
 		    End Select
@@ -1308,11 +1321,14 @@ End
 		          'Blank BG
 		          
 		        elseif val(GridsList.cell(Index,7)) = 3 then
+		          'White BG
 		          MyPic.Graphics.ForeColor  = &cffffff
 		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
 		        elseif val(GridsList.cell(Index,7)) = 4 then
+		          'Black BG
 		          MyPic.Graphics.ForeColor  = &c000000
 		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		          
 		        else
 		          MyPic.Graphics.ForeColor  = (bgColor(k))
 		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
@@ -2316,19 +2332,27 @@ End
 		    base.Append(New MenuItem("White"))
 		    base.Append(New MenuItem("Black"))
 		    base.Append(New MenuItem("Transparent"))
-		    base.Append(New MenuItem("Red/Gray"))
-		    base.Append(New MenuItem("Green/Gray"))
-		    base.Append(New MenuItem("Blue/Gray"))
-		    base.Append(New MenuItem("Red/Green"))
-		    base.Append(New MenuItem("Green/Blue"))
-		    base.Append(New MenuItem("Blue/Red"))
-		    base.Append(New MenuItem("Black/White"))
+		    base.Append(New MenuItem("Grayscale"))
 		    base.Append(New MenuItem("Light Gray/Dark Gray"))
+		    base.Append(New MenuItem("Black/White"))
+		    base.Append(New MenuItem("Red/Gray"))
+		    base.Append(New MenuItem("Red"))
+		    base.Append(New MenuItem("Green/Gray"))
+		    base.Append(New MenuItem("Green"))
+		    base.Append(New MenuItem("Blue/Gray"))
+		    base.Append(New MenuItem("Blue"))
 		    base.Append(New MenuItem("Yellow/Gray"))
 		    base.Append(New MenuItem("Orange/Gray"))
 		    base.Append(New MenuItem("Aqua/Gray"))
 		    base.Append(New MenuItem("Purple/Gray"))
+		    base.Append(New MenuItem("Red/Green"))
+		    base.Append(New MenuItem("Green/Blue"))
+		    base.Append(New MenuItem("Blue/Red"))
 		    base.Append(New MenuItem("Rainbow"))
+		    
+		    
+		    
+		    
 		    
 		    
 		    Dim selectedMenu As MenuItem

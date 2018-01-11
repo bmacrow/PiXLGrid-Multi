@@ -55,7 +55,6 @@ Begin Window Window2
       Width           =   600
    End
    Begin Timer Animate
-      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Mode            =   2
@@ -80,6 +79,7 @@ End
 		  Window1.Label15.Visible=false
 		  FileClose.Visible=false
 		  Window1.CursorColour.Visible=false
+		  
 		End Sub
 	#tag EndEvent
 
@@ -122,6 +122,8 @@ End
 		  
 		  Window1.OutCanvasUpdate()
 		  FileClose.Visible=true
+		  
+		  
 		End Sub
 	#tag EndEvent
 
