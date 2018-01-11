@@ -1407,19 +1407,19 @@ End
 		      if alt_text.value then
 		        id = (GridsList.cell(Index,6))
 		        
-		        textsize = 80                              'initial text size before resize 
+		        textsize = 250                            'initial text size before resize 
 		        MyPic.Graphics.TextSize=textsize
 		        
 		        'id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
 		        MyPic.Graphics.Bold = True
-		        while MyPic.Graphics.StringWidth(id) > max((MyPic.width/2),circlesize)
+		        while (MyPic.Graphics.StringWidth(id) > max((MyPic.width/2),circlesize)) or (MyPic.Graphics.StringHeight(id,circlesize) > MyPic.height)
 		          textsize = textsize -1
 		          MyPic.Graphics.TextSize=textsize
 		        wend
 		        'msgbox(str(textsize))
 		        MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(myPic.Graphics.StringHeight(id,MyPic.width)/3))
 		        id = (str(MyPic.width) + "x" + str(MyPic.height))
-		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
+		        MyPic.Graphics.TextSize=max((tileY/4),12)'font size is third of tileY or 12pixels min
 		        MyPic.Graphics.DrawString(id,3,(totY-3))
 		      else
 		        id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
@@ -1427,7 +1427,7 @@ End
 		        
 		        if (myPic.Graphics.StringWidth(id)) < Mypic.width then
 		          'MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
-		          MyPic.Graphics.DrawString(id,3,(totY-3))
+		          MyPic.Graphics.DrawString(id,5,(totY-5))
 		        else
 		          id = (GridsList.cell(Index,6))
 		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))

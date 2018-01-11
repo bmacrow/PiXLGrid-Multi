@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PiXL>
-	<Version ver="2.124" date="11/1/17" macURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi.dmg" 
+	<Version ver="2.125" date="11/1/17" macURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi.dmg" 
 pcURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi%20Installer.exe.zip" 
 changelog="
+v2.125|
+Fix Large text on Hi-res screens|
 v2.124|
 Bug Fixes|
 More Colours inc. Grayscale|

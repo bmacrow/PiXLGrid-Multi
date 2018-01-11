@@ -9,7 +9,7 @@ Inherits Application
 
 	#tag Event
 		Sub Open()
-		  Window1.icon = logo4
+		  Window1.icon = logo2
 		  Window1.MyPic=logo1
 		  App.AutoQuit = True
 		End Sub
