@@ -1193,6 +1193,9 @@ End
 		  
 		  dim circlesize as integer
 		  
+		  
+		  
+		  
 		  if GridsList.ListCount <>0 then
 		    
 		    Canvas1.EraseBackground = True
@@ -1385,13 +1388,13 @@ End
 		    'draw diagonal cross
 		    if GridsList.cellcheck(Index,12) then
 		      myPic.Graphics.ForeColor = &c0000ff
-		      MyPic.graphics.DrawLine ( 0,0,MyPic.width,MyPic.height)
-		      MyPic.graphics.DrawLine ( 0,MyPic.height,MyPic.width,0)
+		      MyPic.graphics.DrawLine ( 0,0,totX,totY)
+		      MyPic.graphics.DrawLine ( 0,totY,totX,0)
 		    end
 		    
 		    'Draw colorbars
 		    if GridsList.cellcheck(Index,15)  then
-		      if MyPic.height > MyPic.width then 
+		      if totY > totX then 
 		        myPic.Graphics.DrawPicture(colorbars, 10,((totY/2)-(totY/10))   ,(totX-20),(totY/5)    ,0,0,1920,330)
 		      else
 		        myPic.Graphics.DrawPicture(colorbars,  ((totX/2)-(totY/2)+10),((totY/2)-(totY/10))   ,(totY-20),(totY/5),0,0,1920,330)
@@ -1400,7 +1403,7 @@ End
 		    
 		    'custom text
 		    if (GridsList.cell(Index,6)) <> ""  then 
-		      circlesize =min((MyPic.height),(MyPic.width))
+		      circlesize =min((totY),(totX))
 		      'MyPic.Graphics.ForeColor  = &cfcfa22 '(gridColor(7))
 		      MyPic.Graphics.ForeColor  = ColorPicker.FillColor
 		      
@@ -1412,37 +1415,41 @@ End
 		        
 		        'id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
 		        MyPic.Graphics.Bold = True
-		        while (MyPic.Graphics.StringWidth(id) > max((MyPic.width/2),circlesize)) or (MyPic.Graphics.StringHeight(id,circlesize) > MyPic.height)
+		        while (MyPic.Graphics.StringWidth(id) > max((totX/2),circlesize)) or (MyPic.Graphics.StringHeight(id,circlesize) > totY)
 		          textsize = textsize -1
 		          MyPic.Graphics.TextSize=textsize
 		        wend
 		        'msgbox(str(textsize))
-		        MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(myPic.Graphics.StringHeight(id,MyPic.width)/3))
-		        id = (str(MyPic.width) + "x" + str(MyPic.height))
-		        MyPic.Graphics.TextSize=max((tileY/4),12)'font size is third of tileY or 12pixels min
+		        MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(myPic.Graphics.StringHeight(id,totX)/3))
+		        id = (str(totX) + "x" + str(totY))
+		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
+		        MyPic.Graphics.Bold = False
 		        MyPic.Graphics.DrawString(id,3,(totY-3))
 		      else
-		        id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
+		        id = (GridsList.cell(Index,6) + "     " +  str(totX) + "x" + str(totY))
 		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
 		        
-		        if (myPic.Graphics.StringWidth(id)) < Mypic.width then
+		        if (myPic.Graphics.StringWidth(id)) < totX then
 		          'MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
 		          MyPic.Graphics.DrawString(id,5,(totY-5))
 		        else
 		          id = (GridsList.cell(Index,6))
 		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
-		          id = (str(MyPic.width) + "x" + str(MyPic.height))
+		          id = (str(totX) + "x" + str(totY))
 		          'MyPic.Graphics.DrawString(id,(totX/2-myPic.Graphics.StringWidth(id)/2),totY/2+(myPic.Graphics.StringHeight(id,MyPic.width)))
-		          MyPic.Graphics.DrawString(id,3,(totY-3))
+		          MyPic.Graphics.DrawString(id,3,(totY-5))
 		        end
 		        
 		      end
 		      
 		      
 		    end
+		    
+		    
 		    'Draw Circle
 		    if GridsList.cellcheck(Index,11) then 
-		      circlesize =min((MyPic.height),(MyPic.width))
+		      'circlesize =min((MyPic.height),(MyPic.width))
+		      circlesize =min((totY),(totX))
 		      
 		      if val(GridsList.cell(Index,8))= 3 then
 		        MyPic.Graphics.ForeColor  = &c000000
@@ -1450,7 +1457,8 @@ End
 		        MyPic.Graphics.ForeColor  = &cffffff
 		      end
 		      
-		      MyPic.Graphics.DrawOval((MyPic.width/2)-(circlesize/2),(MyPic.height/2)-(circlesize/2),circlesize,circlesize)
+		      'MyPic.Graphics.DrawOval((MyPic.width/2)-(circlesize/2),(MyPic.height/2)-(circlesize/2),circlesize,circlesize)
+		      MyPic.Graphics.DrawOval((totX/2)-(circlesize/2),(totY/2)-(circlesize/2),circlesize,circlesize)
 		    end
 		    
 		    
@@ -1459,7 +1467,7 @@ End
 		    if GridsList.cellcheck(Index,13) then 
 		      'Draw Corner circles
 		      'TL-Red
-		      circlesize = min((myPic.Height/2)-5,(myPic.Width/2)-5,tileX*2)
+		      circlesize = min((myPic.Height/2)-5,(totX/2)-5,tileX*2)
 		      
 		      myPic.graphics.ForeColor = &cff0000
 		      MyPic.Graphics.DrawOval(0,0,circlesize,circlesize)
@@ -1483,7 +1491,7 @@ End
 		      else
 		        MyPic.Graphics.ForeColor  = &cffffff
 		      end
-		      MyPic.Graphics.DrawRect(0,0,MyPic.width,MyPic.height)
+		      MyPic.Graphics.DrawRect(0,0,totX,totY)
 		    end
 		    
 		    'Draw logo
@@ -1496,6 +1504,8 @@ End
 		  else
 		    myPic.Graphics.ClearRect(0,0,1,1)
 		  end
+		  
+		  
 		  
 		  rebuild=false
 		  
@@ -1814,6 +1824,7 @@ End
 #tag Events Canvas1
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  
 		  
 		  if rebuild then
 		    BuildGrid(PicIndex)
@@ -2627,24 +2638,33 @@ End
 		  Dim f As FolderItem
 		  Dim d As SaveAsDialog
 		  d = New SaveAsDialog
+		  'dim outpic as Picture
+		  
+		  'outpic= Self.BitmapForCaching(myPic.Width/4, myPic.Height/4)
+		  'outpic.HorizontalResolution = 72
+		  'outpic.VerticalResolution = 72
 		  
 		  if GridsList.ListIndex <> -1 then
 		    
 		    BuildGrid(PicIndex)
 		    
-		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(PicIndex,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
+		    
+		    'outpic.Graphics.DrawPicture(myPic,0,0,(myPic.width/4),(myPic.Height/4),0,0,myPic.width,myPic.height)
+		    
+		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(PicIndex,6) + "-"+str(mypic.Width) + "x" +str(mypic.Height) +".png"))
 		    
 		    
 		    If f <> Nil Then
-		      MyPic.Save(f, Picture.SaveAsPNG)
+		      mypic.Save(f, Picture.SaveAsPNG)
 		    End If
 		  else
 		    
 		    for i as integer = 0 to GridsList.ListCount-1
 		      BuildGrid(i)
+		      'outpic.Graphics.DrawPicture(myPic,0,0,(myPic.width/2),(myPic.Height/2),0,0,myPic.width,myPic.height)
 		      f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(i,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
 		      If f <> Nil Then
-		        MyPic.Save(f, Picture.SaveAsPNG)
+		        mypic.Save(f, Picture.SaveAsPNG)
 		      End If
 		      
 		    next
