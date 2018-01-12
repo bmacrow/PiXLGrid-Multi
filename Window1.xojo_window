@@ -720,7 +720,7 @@ Begin Window Window1
       DefaultRowHeight=   -1
       Enabled         =   True
       EnableDrag      =   False
-      EnableDragReorder=   False
+      EnableDragReorder=   True
       GridLinesHorizontal=   0
       GridLinesVertical=   0
       HasHeading      =   True
@@ -1605,7 +1605,7 @@ End
 		  
 		  OutCanvas= Self.BitmapForCaching(val(OutH.Text), val(OutV.Text))
 		  
-		  MyPic.Graphics.TextSize=8'font size is fifth of tileY or8pixels min
+		  'MyPic.Graphics.TextSize=8'font size is fifth of tileY or8pixels min
 		  
 		  Canvas1.Graphics.ForeColor = RGB(0, 0, 0)
 		  
@@ -1658,7 +1658,7 @@ End
 		      OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
 		      
 		      'Display offset numbers
-		      OutCanvas.Graphics.TextSize=15
+		      OutCanvas.Graphics.TextSize=min((val(GridsList.Cell(i,1))/5),15)
 		      id = "TL:"+ GridsList.Cell(i,4) + "," + GridsList.Cell(i,5)
 		      OutCanvas.Graphics.DrawString(id,offX+5,offY+(val(GridsList.Cell(i,1))/2))
 		    end
