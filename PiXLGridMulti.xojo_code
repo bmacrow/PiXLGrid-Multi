@@ -107,6 +107,31 @@ Inherits Application
 	#tag EndMenuHandler
 
 
+	#tag Method, Flags = &h0
+		Function StartCheck() As boolean
+		  
+		  Dim reader As New UpdateXmlReader
+		  Dim incoming as string
+		  
+		  incoming = Updated.Downloader.Get("https://s3.amazonaws.com/aws-website-videowalrus-h569u/version.xml",5)
+		  
+		  
+		  if Updated.Downloader.ErrorCode = 0 then
+		    reader.Parse(incoming)
+		  else 
+		    Updated.Hide
+		    MsgBox("Couldn't contact update server.")
+		    
+		  end
+		  
+		  
+		  
+		  
+		  Return True
+		End Function
+	#tag EndMethod
+
+
 	#tag Note, Name = Changes
 		v0.54
 		fixed max window size bug.......again
@@ -128,6 +153,11 @@ Inherits Application
 	#tag EndNote
 
 
+	#tag Property, Flags = &h0
+		newVersion As Boolean = false
+	#tag EndProperty
+
+
 	#tag Constant, Name = kEditClear, Type = String, Dynamic = False, Default = \"&Delete", Scope = Public
 		#Tag Instance, Platform = Windows, Language = Default, Definition  = \"&Delete"
 		#Tag Instance, Platform = Linux, Language = Default, Definition  = \"&Delete"
@@ -144,6 +174,12 @@ Inherits Application
 
 
 	#tag ViewBehavior
+		#tag ViewProperty
+			Name="newVersion"
+			Group="Behavior"
+			InitialValue="0"
+			Type="Boolean"
+		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class
 #tag EndClass

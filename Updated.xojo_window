@@ -45,7 +45,6 @@ Begin Window Updated
       Scope           =   0
       TabIndex        =   9
       TabPanelIndex   =   0
-      TabStop         =   True
       Top             =   20
       TopLeftColor    =   &c00000000
       Visible         =   True
@@ -403,7 +402,6 @@ Begin Window Updated
       Scope           =   0
       TabIndex        =   10
       TabPanelIndex   =   0
-      TabStop         =   True
       Top             =   220
       TopLeftColor    =   &c00000000
       Visible         =   True
@@ -501,14 +499,14 @@ End
 #tag Events url1
 	#tag Event
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
-		  ShowURL("https://pixlevolution.com/2017/11/22/pixl-grid/")
+		  ShowURL(me.text)
 		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag Events url2
 	#tag Event
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
-		  ShowURL("https://pixlevolution.com/2017/11/22/pixl-grid/")
+		  ShowURL(me.text)
 		End Function
 	#tag EndEvent
 #tag EndEvents

@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PiXL>
-	<Version ver="2.127" date="12/1/17" macURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi.dmg" 
+	<Version ver="2.130" date="22/1/18" macURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi.dmg" 
 pcURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi%20Installer.exe.zip" 
 changelog="
+v2.130|
+Added delete and backspace key|
+Fixed Canvas TL text size and position for various resolutions|
+Added Full RGB background|
+Added White Grid option|
+|
+v2.129|
+Better text scaling and positioning|
+Fruit co. inspired colour scheme|
+|
+v2.128|
+URL fixes for update|
+sponsor splash screen and link|
+|
 v2.127|
 Added Drag grid in list to re-order|
 Couple of performance tweaks|

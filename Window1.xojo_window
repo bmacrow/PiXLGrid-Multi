@@ -730,7 +730,7 @@ Begin Window Window1
       Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
-      InitialValue    =   "tileX	tileY	cols	rows	OffsetX	OffsetY	Name	Bgnd	Grid	Raster	TileIDs	Circle	Cross	Corner	Logo	ColourBars"
+      InitialValue    =   "tileX	tileY	cols	rows	OffsetX	OffsetY	Name	Background	Grid	Raster	TileIDs	Circle	Cross	Corner	Logo	ColourBars"
       Italic          =   False
       Left            =   20
       LockBottom      =   True
@@ -1136,7 +1136,7 @@ Begin Window Window1
       TabIndex        =   36
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Colour"
+      Text            =   "Text Colour"
       TextAlign       =   0
       TextColor       =   &c00000000
       TextFont        =   "System"
@@ -1146,7 +1146,39 @@ Begin Window Window1
       Transparent     =   True
       Underline       =   False
       Visible         =   True
-      Width           =   100
+      Width           =   74
+   End
+   Begin CheckBox GridColour
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   "Colour Grid"
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Displays large grid name in centre of each grid"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   269
+      LockBottom      =   True
+      LockedInPosition=   True
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   37
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   399
+      Underline       =   False
+      Value           =   True
+      Visible         =   True
+      Width           =   94
    End
 End
 #tag EndWindow
@@ -1184,31 +1216,25 @@ End
 	#tag Method, Flags = &h0
 		Sub BuildGrid(Index As integer)
 		  
-		  dim i,j,k,l,tileX,tileY,screenWidth, screenHeight,rcount,colcount,c2count as Integer
+		  dim i,j,k,l,tileX,tileY,screenWidth, screenHeight,rcount,colcount,c2count,colorbarsHeight as Integer
 		  
 		  dim x,y,totX,totY,logoSize as Integer
 		  dim textsize as Single
 		  dim gridColor(), bgColor() as color
 		  dim id as string
 		  
+		  
 		  dim circlesize as integer
-		  
-		  
-		  
 		  
 		  if GridsList.ListCount <>0 then
 		    
 		    Canvas1.EraseBackground = True
-		    
-		    'val(Window1.TileX.Text)
-		    
 		    
 		    tileX = val(GridsList.cell(Index,0))
 		    
 		    tileY = val(GridsList.cell(Index,1))
 		    screenWidth= val(GridsList.cell(Index,2))
 		    screenHeight= val(GridsList.cell(Index,3))
-		    
 		    
 		    
 		    x = 0
@@ -1221,19 +1247,12 @@ End
 		    totX = (tileX*screenWidth)
 		    totY = (tileY*screenHeight)
 		    
-		    
-		    
-		    
 		    MyPic = Self.BitmapForCaching(totX,totY)
-		    
-		    
 		    
 		    MyPic.Graphics.TextFont="Helvetica"
 		    MyPic.Graphics.TextUnit=FontUnits.Pixel
 		    
-		    
-		    
-		    MyPic.Graphics.TextSize=max((tileY/5),8)'font size is fifth of tileY or8pixels min
+		    MyPic.Graphics.TextSize=max((min(tileY/5,tileX/5)),8)'font size is fifth of tileY or8pixels min
 		    
 		    gridColor = Array(&c000000,&cff0000,&c00ff00,&c0000ff,&cffff00,&c00ffff,&cff00ff,&cffffff)
 		    
@@ -1298,18 +1317,30 @@ End
 		    Case "Rainbow"
 		      'Rainbow &c4b008200,
 		      bgColor = Array(&c3F3F3F00,&c9400d300,&c0000ff00,&c00ff0000,&cffff0000,&cff7f0000,&cff000000,&c00000000)
-		    Case "Red"
+		    Case "Alt Red"
 		      'Red
 		      bgColor = Array(&c3F3F3F00,&cFF000000,&cdd3c46,&c00000000)
-		    Case "Green"
+		    Case "Alt Green"
 		      'Red
 		      bgColor = Array(&c3F3F3F00,&c00FF0000,&c2baa3a,&c00000000)
-		    Case "Blue"
+		    Case "Alt Blue"
 		      'Red
 		      bgColor = Array(&c3F3F3F00,&c0000FF00,&cCC000000,&c00000000)
 		    Case "Grayscale"
 		      'Grayscale
 		      bgColor=Array(&c3F3F3F00,&c00000000,&c33333300,&c66666600,&c99999900,&cCCCCCC00,&cFFFFFF00,&c00000000)
+		    Case "Fruit"
+		      'Apple Logo
+		      bgColor = Array(&c3F3F3F00,&c118AD400,&c82258500 ,&cD6222E00,&cF16C1A00 ,&cF8AA1F00,&c52B13700 ,&c00000000)
+		    Case "Full Red"
+		      'Red
+		      bgColor = Array(&c3F3F3F,&cFF000000,&c000000)
+		    Case "Full Green"
+		      'Green
+		      bgColor = Array(&c3F3F3F,&c00FF0000,&c000000)
+		    Case "Full Blue"
+		      'Blue
+		      bgColor = Array(&c3F3F3F,&c0000FF00,&c000000)
 		      
 		    Else
 		      bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
@@ -1338,7 +1369,11 @@ End
 		        end
 		        
 		        if GridsList.cellcheck(Index,8) then
-		          MyPic.Graphics.ForeColor  = (gridColor(l))
+		          if GridColour.Value then
+		            MyPic.Graphics.ForeColor  = (gridColor(l))
+		          else
+		            MyPic.Graphics.ForeColor  = &cFFFFFF00
+		          end
 		          MyPic.Graphics.DrawRect(x, y, tileX,tileY)
 		        end
 		        
@@ -1352,7 +1387,8 @@ End
 		        if GridsList.cellcheck(Index,10) then
 		          
 		          id = (str(j) + "," +str(i))                                      //row, column numbering
-		          MyPic.Graphics.DrawString(id, (x+1),(y+max((tileY/5),8)))           //tile address
+		          'MyPic.Graphics.DrawString(id, (x+1),(y+max((tileY/5),8)))           //tile address
+		          MyPic.Graphics.DrawString(id, (x+1),(y+MyPic.Graphics.StringHeight(id,tileX)))  
 		        end
 		        
 		        x = x + tileX
@@ -1396,15 +1432,18 @@ End
 		    if GridsList.cellcheck(Index,15)  then
 		      if totY > totX then 
 		        myPic.Graphics.DrawPicture(colorbars, 10,((totY/2)-(totY/10))   ,(totX-20),(totY/5)    ,0,0,1920,330)
+		        'colorbarsHeight = (totY/5)-((totY/2)-(totY/10))
+		        colorbarsHeight = (totY/5)
 		      else
 		        myPic.Graphics.DrawPicture(colorbars,  ((totX/2)-(totY/2)+10),((totY/2)-(totY/10))   ,(totY-20),(totY/5),0,0,1920,330)
+		        'colorbarsHeight = (totY/5)-((totY/2)-(totY/10))
+		        colorbarsHeight = (totY/5)
 		      end
 		    end
 		    
 		    'custom text
 		    if (GridsList.cell(Index,6)) <> ""  then 
 		      circlesize =min((totY),(totX))
-		      'MyPic.Graphics.ForeColor  = &cfcfa22 '(gridColor(7))
 		      MyPic.Graphics.ForeColor  = ColorPicker.FillColor
 		      
 		      if alt_text.value then
@@ -1412,15 +1451,17 @@ End
 		        
 		        textsize = 250                            'initial text size before resize 
 		        MyPic.Graphics.TextSize=textsize
-		        
-		        'id = (GridsList.cell(Index,6) + "     " +  str(MyPic.width) + "x" + str(MyPic.height))
 		        MyPic.Graphics.Bold = True
 		        while (MyPic.Graphics.StringWidth(id) > max((totX/2),circlesize)) or (MyPic.Graphics.StringHeight(id,circlesize) > totY)
 		          textsize = textsize -1
 		          MyPic.Graphics.TextSize=textsize
 		        wend
 		        'msgbox(str(textsize))
-		        MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(myPic.Graphics.StringHeight(id,totX)/3))
+		        If colorbarsHeight = 0 then
+		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(MyPic.Graphics.StringHeight(id,totX)/3))
+		        else
+		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)-(colorbarsHeight/2)-3)
+		        end
 		        id = (str(totX) + "x" + str(totY))
 		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
 		        MyPic.Graphics.Bold = False
@@ -1430,13 +1471,11 @@ End
 		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
 		        
 		        if (myPic.Graphics.StringWidth(id)) < totX then
-		          'MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
 		          MyPic.Graphics.DrawString(id,5,(totY-5))
 		        else
 		          id = (GridsList.cell(Index,6))
 		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
 		          id = (str(totX) + "x" + str(totY))
-		          'MyPic.Graphics.DrawString(id,(totX/2-myPic.Graphics.StringWidth(id)/2),totY/2+(myPic.Graphics.StringHeight(id,MyPic.width)))
 		          MyPic.Graphics.DrawString(id,3,(totY-5))
 		        end
 		        
@@ -1448,7 +1487,7 @@ End
 		    
 		    'Draw Circle
 		    if GridsList.cellcheck(Index,11) then 
-		      'circlesize =min((MyPic.height),(MyPic.width))
+		      
 		      circlesize =min((totY),(totX))
 		      
 		      if val(GridsList.cell(Index,8))= 3 then
@@ -1456,8 +1495,6 @@ End
 		      else
 		        MyPic.Graphics.ForeColor  = &cffffff
 		      end
-		      
-		      'MyPic.Graphics.DrawOval((MyPic.width/2)-(circlesize/2),(MyPic.height/2)-(circlesize/2),circlesize,circlesize)
 		      MyPic.Graphics.DrawOval((totX/2)-(circlesize/2),(totY/2)-(circlesize/2),circlesize,circlesize)
 		    end
 		    
@@ -1495,10 +1532,11 @@ End
 		    end
 		    
 		    'Draw logo
-		    logoSize=min(totX/4,totY/4,tileX*8)
+		    logoSize=min(totX/3,totY/3,tileX*8,icon.width,icon.height)
 		    if GridsList.cellcheck(Index,14) then 
 		      myPic.Graphics.Transparency = 25
-		      myPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
+		      'myPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
+		      myPic.Graphics.DrawPicture(icon,(totX-(logoSize+3)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
 		    end
 		    
 		  else
@@ -1511,6 +1549,28 @@ End
 		  
 		  
 		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub DeleteList()
+		  if GridsList.listcount >1 Then
+		    
+		    if GridsList.ListIndex <> -1 then
+		      if GridsList.ListIndex = 0 then
+		        GridsList.removeRow(GridsList.ListIndex)
+		      else
+		        GridsList.Selected(GridsList.ListIndex-1) = True
+		        GridsList.removeRow(GridsList.ListIndex+1)
+		      end
+		      UpdateScreen()
+		    else
+		      MsgBox("Please select grid to Delete")
+		    end
+		    
+		  else
+		    MsgBox("Must have one grid")
+		  end
 		End Sub
 	#tag EndMethod
 
@@ -1559,6 +1619,11 @@ End
 		      else
 		        Window1.alt_text.value = False
 		      end
+		      if Trim(fields(6)) = "True" then
+		        GridColour.value = True
+		      else
+		        GridColour.value = False
+		      end
 		      
 		      
 		      dim v as variant
@@ -1605,7 +1670,7 @@ End
 		  
 		  OutCanvas= Self.BitmapForCaching(val(OutH.Text), val(OutV.Text))
 		  
-		  'MyPic.Graphics.TextSize=8'font size is fifth of tileY or8pixels min
+		  
 		  
 		  Canvas1.Graphics.ForeColor = RGB(0, 0, 0)
 		  
@@ -1629,9 +1694,11 @@ End
 		        OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
 		        
 		        'Display offset numbers
-		        OutCanvas.Graphics.TextSize=15
+		        'OutCanvas.Graphics.TextSize=15
+		        OutCanvas.Graphics.TextSize=min((val(GridsList.Cell(i,1))/5),15)
 		        id = "TL:"+ GridsList.Cell(i,4) + "," + GridsList.Cell(i,5)
-		        OutCanvas.Graphics.DrawString(id,offX+5,offY+(val(GridsList.Cell(i,1))/2))
+		        dim a as Integer = OutCanvas.Graphics.StringHeight(id,val(GridsList.Cell(i,0))*2)
+		        OutCanvas.Graphics.DrawString(id,offX+5,offY+(a*2))
 		      end
 		      
 		      'Display canvas raster
@@ -1660,7 +1727,8 @@ End
 		      'Display offset numbers
 		      OutCanvas.Graphics.TextSize=min((val(GridsList.Cell(i,1))/5),15)
 		      id = "TL:"+ GridsList.Cell(i,4) + "," + GridsList.Cell(i,5)
-		      OutCanvas.Graphics.DrawString(id,offX+5,offY+(val(GridsList.Cell(i,1))/2))
+		      dim a as Integer = OutCanvas.Graphics.StringHeight(id,val(GridsList.Cell(i,0))*2)
+		      OutCanvas.Graphics.DrawString(id,offX+5,offY+(a*2))
 		    end
 		    
 		    'Display canvas raster
@@ -1695,7 +1763,7 @@ End
 		  
 		  if GridsList.ListCount>0 then                   'if grid not empty
 		    
-		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(ColorPicker.FillColor)+","        'exports canvas size and options
+		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(ColorPicker.FillColor)+"," +str(GridColour.Value)+","       'exports canvas size and options
 		    tos.WriteLine s.left(s.len-1)                'save line
 		    for i=0 to GridsList.ListCount-1            'for each row
 		      s=""                                                   'build line to save
@@ -1725,19 +1793,33 @@ End
 		Sub UpdateScreen()
 		  rebuild=true
 		  
+		  'if GorC = false and OutputIsOpen = false then
+		  'Window1.Canvas1.Refresh
+		  'elseif GorC and OutputIsOpen = false then
+		  'OutCanvasUpdate
+		  'Window1.Canvas1.Refresh
+		  'elseif
+		  'Window1.Canvas1.Refresh
+		  'OutCanvasUpdate
+		  'if OutputIsOpen  then
+		  'Window2.Canvas1.Refresh
+		  'end
+		  'end
+		  
+		  
+		  
 		  if GorC then
 		    OutCanvasUpdate()
 		    Window1.Canvas1.Refresh
 		  else
 		    Window1.Canvas1.Refresh
-		    OutCanvasUpdate()
+		    'OutCanvasUpdate()
 		  end
 		  
 		  if OutputIsOpen  then
+		    OutCanvasUpdate()
 		    Window2.Canvas1.Refresh
 		  end
-		  
-		  
 		End Sub
 	#tag EndMethod
 
@@ -2008,6 +2090,7 @@ End
 		  Const kDownArrow = 31
 		  Const kScrollUnit = 8 // pixels to scroll per keypress
 		  
+		  
 		  // Move the scrollbar based on the key that was pressed
 		  Select Case Asc(Key)
 		  Case kLeftArrow
@@ -2022,9 +2105,12 @@ End
 		  Case kDownArrow
 		    VerticalScrollBar.Value = VerticalScrollBar.Value + kScrollUnit
 		    
+		    
+		    
 		  End Select
 		  
 		  Return True
+		  
 		End Function
 	#tag EndEvent
 	#tag Event
@@ -2035,6 +2121,8 @@ End
 		    Me.DoubleBuffer = False
 		  #Endif
 		  Me.EraseBackground = False
+		  
+		  
 		  
 		  
 		End Sub
@@ -2285,8 +2373,6 @@ End
 	#tag Event
 		Sub Change()
 		  
-		  
-		  
 		  if me.ListIndex <> -1 then
 		    PicIndex=me.ListIndex
 		    SaveAsGrid.Caption="Save Grid As.."
@@ -2310,7 +2396,6 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub DoubleClick()
-		  'MsgBox("Double Click")
 		  
 		  if column <8 then
 		    Me.EditCell(row, column)
@@ -2342,16 +2427,19 @@ End
 		    base.Append(New MenuItem("25% Colour"))
 		    base.Append(New MenuItem("White"))
 		    base.Append(New MenuItem("Black"))
-		    base.Append(New MenuItem("Transparent"))
 		    base.Append(New MenuItem("Grayscale"))
 		    base.Append(New MenuItem("Light Gray/Dark Gray"))
 		    base.Append(New MenuItem("Black/White"))
+		    base.Append(New MenuItem("Transparent"))
 		    base.Append(New MenuItem("Red/Gray"))
-		    base.Append(New MenuItem("Red"))
+		    base.Append(New MenuItem("Alt Red"))
+		    base.Append(New MenuItem("Full Red"))
 		    base.Append(New MenuItem("Green/Gray"))
-		    base.Append(New MenuItem("Green"))
+		    base.Append(New MenuItem("Alt Green"))
+		    base.Append(New MenuItem("Full Green"))
 		    base.Append(New MenuItem("Blue/Gray"))
-		    base.Append(New MenuItem("Blue"))
+		    base.Append(New MenuItem("Alt Blue"))
+		    base.Append(New MenuItem("Full Blue"))
 		    base.Append(New MenuItem("Yellow/Gray"))
 		    base.Append(New MenuItem("Orange/Gray"))
 		    base.Append(New MenuItem("Aqua/Gray"))
@@ -2360,11 +2448,7 @@ End
 		    base.Append(New MenuItem("Green/Blue"))
 		    base.Append(New MenuItem("Blue/Red"))
 		    base.Append(New MenuItem("Rainbow"))
-		    
-		    
-		    
-		    
-		    
+		    base.Append(New MenuItem("Fruit"))
 		    
 		    Dim selectedMenu As MenuItem
 		    selectedMenu = base.PopUp
@@ -2495,28 +2579,37 @@ End
 		  end if
 		End Function
 	#tag EndEvent
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  if asc(key) =8 or asc(key) = 127 then
+		    DeleteList()
+		  end
+		End Function
+	#tag EndEvent
 #tag EndEvents
 #tag Events DeleteGrid
 	#tag Event
 		Sub Action()
+		  DeleteList()
 		  
-		  if GridsList.listcount >1 Then
-		    
-		    if GridsList.ListIndex <> -1 then
-		      if GridsList.ListIndex = 0 then
-		        GridsList.removeRow(GridsList.ListIndex)
-		      else
-		        GridsList.Selected(GridsList.ListIndex-1) = True
-		        GridsList.removeRow(GridsList.ListIndex+1)
-		      end
-		      UpdateScreen()
-		    else
-		      MsgBox("Please select grid to Delete")
-		    end
-		    
-		  else
-		    MsgBox("Must have one grid")
-		  end
+		  
+		  'if GridsList.listcount >1 Then
+		  '
+		  'if GridsList.ListIndex <> -1 then
+		  'if GridsList.ListIndex = 0 then
+		  'GridsList.removeRow(GridsList.ListIndex)
+		  'else
+		  'GridsList.Selected(GridsList.ListIndex-1) = True
+		  'GridsList.removeRow(GridsList.ListIndex+1)
+		  'end
+		  'UpdateScreen()
+		  'else
+		  'MsgBox("Please select grid to Delete")
+		  'end
+		  '
+		  'else
+		  'MsgBox("Must have one grid")
+		  'end
 		  
 		  
 		  
@@ -2702,6 +2795,13 @@ End
 		  
 		  return true
 		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events GridColour
+	#tag Event
+		Sub Action()
+		  UpdateScreen()
+		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior

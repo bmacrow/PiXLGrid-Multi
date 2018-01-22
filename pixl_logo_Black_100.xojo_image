@@ -1,0 +1,40 @@
+#tag MultiImage
+Image pixl_logo_Black_100
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFyAAAAAAFyAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8YcGl4bF9sb2dvX0JsYWNrXzEwMC50aWZmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAACURvd25sb2FkcwAAAgAyLzpVc2VyczpyaWNoYXJkOkRvd25sb2FkczpwaXhsX2xvZ29fQmxhY2tfMTAwLnRpZmYADgAyABgAcABpAHgAbABfAGwAbwBnAG8AXwBCAGwAYQBjAGsAXwAxADAAMAAuAHQAaQBmAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgAwVXNlcnMvcmljaGFyZC9Eb3dubG9hZHMvcGl4bF9sb2dvX0JsYWNrXzEwMC50aWZmABMAAS8AABUAAgAO//8AAAAAAAAAAA==
+		FullPath = /Users/richard/Downloads/pixl_logo_Black_100.tiff
+		PartialPath = ..\..\Downloads\pixl_logo_Black_100.tiff
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 100.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

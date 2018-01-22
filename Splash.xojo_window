@@ -1,15 +1,15 @@
 #tag Window
-Begin Window About
+Begin Window Splash
    BackColor       =   &cFFFFFF00
    Backdrop        =   0
-   CloseButton     =   True
+   CloseButton     =   False
    Compatibility   =   ""
    Composite       =   False
-   Frame           =   0
+   Frame           =   5
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   163
+   Height          =   140
    ImplicitInstance=   True
    LiveResize      =   False
    MacProcID       =   0
@@ -23,18 +23,18 @@ Begin Window About
    MinWidth        =   64
    Placement       =   0
    Resizeable      =   False
-   Title           =   "About"
-   Visible         =   False
-   Width           =   388
+   Title           =   "Splash"
+   Visible         =   True
+   Width           =   394
    Begin Canvas Canvas1
       AcceptFocus     =   False
       AcceptTabs      =   False
-      AutoDeactivate  =   True
-      Backdrop        =   1044709375
+      AutoDeactivate  =   False
+      Backdrop        =   1371916287
       DoubleBuffer    =   False
       Enabled         =   True
       EraseBackground =   True
-      Height          =   94
+      Height          =   100
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
@@ -44,51 +44,51 @@ Begin Window About
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   0
-      TabIndex        =   6
+      Scope           =   2
+      TabIndex        =   0
       TabPanelIndex   =   0
       TabStop         =   True
       Top             =   20
       Transparent     =   True
-      UseFocusRing    =   True
+      UseFocusRing    =   False
       Visible         =   True
-      Width           =   348
+      Width           =   354
       Begin Label Label1
          AutoDeactivate  =   True
-         Bold            =   False
+         Bold            =   True
          DataField       =   ""
          DataSource      =   ""
          Enabled         =   True
-         Height          =   20
+         Height          =   44
          HelpTag         =   ""
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   150
+         Left            =   165
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
          Multiline       =   False
-         Scope           =   0
+         Scope           =   2
          Selectable      =   False
          TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "PiXL Grid Multi"
-         TextAlign       =   0
+         TextAlign       =   2
          TextColor       =   &c00000000
          TextFont        =   "System"
-         TextSize        =   0.0
+         TextSize        =   18.0
          TextUnit        =   0
-         Top             =   21
+         Top             =   20
          Transparent     =   True
          Underline       =   False
          Visible         =   True
-         Width           =   95
+         Width           =   193
       End
-      Begin Label Label4
+      Begin Label Label2
          AutoDeactivate  =   True
          Bold            =   False
          DataField       =   ""
@@ -99,7 +99,7 @@ Begin Window About
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   150
+         Left            =   258
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -111,19 +111,19 @@ Begin Window About
          TabIndex        =   1
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Beta"
-         TextAlign       =   0
+         Text            =   "version"
+         TextAlign       =   2
          TextColor       =   &c00000000
          TextFont        =   "System"
          TextSize        =   0.0
          TextUnit        =   0
-         Top             =   39
+         Top             =   60
          Transparent     =   True
          Underline       =   False
          Visible         =   True
-         Width           =   34
+         Width           =   100
       End
-      Begin Label Label5
+      Begin Label Label6
          AutoDeactivate  =   True
          Bold            =   False
          DataField       =   ""
@@ -134,7 +134,7 @@ Begin Window About
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   191
+         Left            =   181
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -146,158 +146,18 @@ Begin Window About
          TabIndex        =   2
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "xxxx"
-         TextAlign       =   0
-         TextColor       =   &c00000000
+         Text            =   "www.pixlevolution.com"
+         TextAlign       =   1
+         TextColor       =   &c002AFF00
          TextFont        =   "System"
          TextSize        =   0.0
          TextUnit        =   0
-         Top             =   39
+         Top             =   92
          Transparent     =   True
-         Underline       =   False
+         Underline       =   True
          Visible         =   True
-         Width           =   117
+         Width           =   143
       End
-      Begin Label Label3
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "Canvas1"
-         Italic          =   False
-         Left            =   150
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   3
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "2018"
-         TextAlign       =   0
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   57
-         Transparent     =   True
-         Underline       =   False
-         Visible         =   True
-         Width           =   117
-      End
-   End
-   Begin Label Label2
-      AutoDeactivate  =   True
-      Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      Height          =   20
-      HelpTag         =   ""
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   242
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      Multiline       =   False
-      Scope           =   0
-      Selectable      =   False
-      TabIndex        =   1
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "© Video Walrus Ltd."
-      TextAlign       =   1
-      TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   113
-      Transparent     =   True
-      Underline       =   False
-      Visible         =   True
-      Width           =   117
-   End
-   Begin Label Label6
-      AutoDeactivate  =   True
-      Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      Height          =   20
-      HelpTag         =   ""
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      Multiline       =   False
-      Scope           =   0
-      Selectable      =   False
-      TabIndex        =   5
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "www.videowalrus.com"
-      TextAlign       =   1
-      TextColor       =   &c002AFF00
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   113
-      Transparent     =   True
-      Underline       =   True
-      Visible         =   True
-      Width           =   133
-   End
-   Begin Label Label7
-      AutoDeactivate  =   True
-      Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      Height          =   20
-      HelpTag         =   ""
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      Multiline       =   False
-      Scope           =   0
-      Selectable      =   False
-      TabIndex        =   7
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "www.pixlevolution.com"
-      TextAlign       =   1
-      TextColor       =   &c002AFF00
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   133
-      Transparent     =   True
-      Underline       =   True
-      Visible         =   True
-      Width           =   143
    End
 End
 #tag EndWindow
@@ -307,6 +167,16 @@ End
 		Sub Open()
 		  Me.Top=(screen(0).Height - Me.Height) / 2
 		  Me.Left=(screen(0).Width - Me.Width) / 2
+		  Label2.Text=("version " +str(App.MinorVersion) +"."  +Str(App.NonReleaseVersion))
+		  Me.Show
+		  App.DoEvents(1000)
+		  Window1.Show
+		  Me.Show
+		  App.DoEvents(1000)
+		  Me.Hide 
+		  
+		  
+		  
 		End Sub
 	#tag EndEvent
 
@@ -314,13 +184,6 @@ End
 #tag EndWindowCode
 
 #tag Events Label6
-	#tag Event
-		Function MouseDown(X As Integer, Y As Integer) As Boolean
-		  ShowURL("http://www.videowalrus.com")
-		End Function
-	#tag EndEvent
-#tag EndEvents
-#tag Events Label7
 	#tag Event
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
 		  ShowURL("http://www.pixlevolution.com")
