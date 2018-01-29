@@ -1,205 +1,123 @@
 #tag Window
-Begin Window Splash
+Begin Window debug
    BackColor       =   &cFFFFFF00
    Backdrop        =   0
-   CloseButton     =   False
+   CloseButton     =   True
    Compatibility   =   ""
    Composite       =   False
-   Frame           =   7
+   Frame           =   0
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   140
+   Height          =   400
    ImplicitInstance=   True
-   LiveResize      =   False
+   LiveResize      =   True
    MacProcID       =   0
    MaxHeight       =   32000
-   MaximizeButton  =   False
+   MaximizeButton  =   True
    MaxWidth        =   32000
    MenuBar         =   0
    MenuBarVisible  =   True
    MinHeight       =   64
-   MinimizeButton  =   False
+   MinimizeButton  =   True
    MinWidth        =   64
    Placement       =   0
-   Resizeable      =   False
-   Title           =   ""
+   Resizeable      =   True
+   Title           =   "Debug"
    Visible         =   True
-   Width           =   394
-   Begin Canvas Canvas1
-      AcceptFocus     =   False
-      AcceptTabs      =   False
-      AutoDeactivate  =   False
-      Backdrop        =   1371916287
-      DoubleBuffer    =   False
+   Width           =   338
+   Begin Listbox listbox1
+      AutoDeactivate  =   True
+      AutoHideScrollbars=   True
+      Bold            =   False
+      Border          =   True
+      ColumnCount     =   1
+      ColumnsResizable=   False
+      ColumnWidths    =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      DefaultRowHeight=   -1
       Enabled         =   True
-      EraseBackground =   True
-      Height          =   100
+      EnableDrag      =   False
+      EnableDragReorder=   False
+      GridLinesHorizontal=   0
+      GridLinesVertical=   0
+      HasHeading      =   False
+      HeadingIndex    =   -1
+      Height          =   329
+      HelpTag         =   ""
+      Hierarchical    =   False
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      RequiresSelection=   False
+      Scope           =   0
+      ScrollbarHorizontal=   False
+      ScrollBarVertical=   True
+      SelectionType   =   0
+      ShowDropIndicator=   False
+      TabIndex        =   0
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   51
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   298
+      _ScrollOffset   =   0
+      _ScrollWidth    =   -1
+   End
+   Begin PushButton PushButton1
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Clear"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   20
+      Italic          =   False
+      Left            =   238
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      Scope           =   2
-      TabIndex        =   0
+      Scope           =   0
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
       Top             =   20
-      Transparent     =   True
-      UseFocusRing    =   False
+      Underline       =   False
       Visible         =   True
-      Width           =   354
-      Begin Label Label1
-         AutoDeactivate  =   True
-         Bold            =   True
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   44
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "Canvas1"
-         Italic          =   False
-         Left            =   165
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   2
-         Selectable      =   False
-         TabIndex        =   0
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "PiXL Grid Multi"
-         TextAlign       =   2
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   18.0
-         TextUnit        =   0
-         Top             =   20
-         Transparent     =   True
-         Underline       =   False
-         Visible         =   True
-         Width           =   193
-      End
-      Begin Label Label2
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "Canvas1"
-         Italic          =   False
-         Left            =   258
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   1
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "version"
-         TextAlign       =   2
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   60
-         Transparent     =   True
-         Underline       =   False
-         Visible         =   True
-         Width           =   100
-      End
-      Begin Label Label6
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "Canvas1"
-         Italic          =   False
-         Left            =   181
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   2
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "www.pixlevolution.com"
-         TextAlign       =   1
-         TextColor       =   &c002AFF00
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   92
-         Transparent     =   True
-         Underline       =   True
-         Visible         =   True
-         Width           =   143
-      End
-   End
-   Begin Timer Timer1
-      Index           =   -2147483648
-      LockedInPosition=   False
-      Mode            =   1
-      Period          =   3500
-      Scope           =   0
-      TabPanelIndex   =   0
+      Width           =   80
    End
 End
 #tag EndWindow
 
 #tag WindowCode
-	#tag Event
-		Sub Open()
-		  Me.Top=(screen(0).Height - Me.Height) / 2
-		  Me.Left=(screen(0).Width - Me.Width) / 2
-		  Label2.Text=("version " +str(App.MinorVersion) +"."  +Str(App.NonReleaseVersion))
-		  
-		  Timer1.mode=1
-		  
-		  
-		  
-		  
-		End Sub
-	#tag EndEvent
-
-
 #tag EndWindowCode
 
-#tag Events Label6
-	#tag Event
-		Function MouseDown(X As Integer, Y As Integer) As Boolean
-		  ShowURL("http://www.pixlevolution.com")
-		End Function
-	#tag EndEvent
-#tag EndEvents
-#tag Events Timer1
+#tag Events PushButton1
 	#tag Event
 		Sub Action()
-		  Splash.hide
-		  
+		  listbox1.DeleteAllRows
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -299,7 +217,6 @@ End
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="LiveResize"
-		Visible=true
 		Group="Behavior"
 		InitialValue="True"
 		Type="Boolean"
@@ -342,7 +259,8 @@ End
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="MenuBarVisible"
-		Group="Behavior"
+		Visible=true
+		Group="Deprecated"
 		InitialValue="True"
 		Type="Boolean"
 		EditorType="Boolean"

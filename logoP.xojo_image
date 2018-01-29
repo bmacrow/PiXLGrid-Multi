@@ -1,0 +1,40 @@
+#tag MultiImage
+Image logoP
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAGCAAAAAAGCAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8ccGl4bF9sb2dvX1doaXRlXzQwMCBjb3B5LnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAABQTkdmOEJJTf////8AAAogY3UAAAAAAAAAAAAAAAAACURvY3VtZW50cwAAAgA2LzpVc2VyczpyaWNoYXJkOkRvY3VtZW50czpwaXhsX2xvZ29fV2hpdGVfNDAwIGNvcHkucG5nAA4AOgAcAHAAaQB4AGwAXwBsAG8AZwBvAF8AVwBoAGkAdABlAF8ANAAwADAAIABjAG8AcAB5AC4AcABuAGcADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgA0VXNlcnMvcmljaGFyZC9Eb2N1bWVudHMvcGl4bF9sb2dvX1doaXRlXzQwMCBjb3B5LnBuZwATAAEvAAAVAAIADv//AAAAAAAAAAA=
+		FullPath = /Users/richard/Documents/pixl_logo_White_400 copy.png
+		PartialPath = ..\..\Documents\pixl_logo_White_400 copy.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 550.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 400.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 550.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 400.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 550.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 400.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

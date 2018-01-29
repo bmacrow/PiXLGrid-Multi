@@ -1,0 +1,40 @@
+#tag MultiImage
+Image LogoLang
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFqAAAAAAFqAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8MTG9nb0xhbmcucG5nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAABQaU5HUGlOR/////8AAAogY3UAAAAAAAAAAAAAAAAADlBpWExHcmlkLU11bHRpAAIAOC86VXNlcnM6cmljaGFyZDpDbG91ZFN0YXRpb246UGlYTEdyaWQtTXVsdGk6TG9nb0xhbmcucG5nAA4AGgAMAEwAbwBnAG8ATABhAG4AZwAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIANlVzZXJzL3JpY2hhcmQvQ2xvdWRTdGF0aW9uL1BpWExHcmlkLU11bHRpL0xvZ29MYW5nLnBuZwATAAEvAAAVAAIADv//AAAAAAAAAAA=
+		FullPath = /Users/richard/CloudStation/PiXLGrid-Multi/LogoLang.png
+		PartialPath = LogoLang.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 350.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 80.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 350.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 80.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 350.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 80.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

@@ -1,0 +1,40 @@
+#tag MultiImage
+Image logoOH
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFMAAAAAAFMAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8QT2dsZWhvZyBMb2dvLnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAAB0Rlc2t0b3AAAAIAKC86VXNlcnM6cmljaGFyZDpEZXNrdG9wOk9nbGVob2cgTG9nby5wbmcADgAiABAATwBnAGwAZQBoAG8AZwAgAEwAbwBnAG8ALgBwAG4AZwAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASACZVc2Vycy9yaWNoYXJkL0Rlc2t0b3AvT2dsZWhvZyBMb2dvLnBuZwATAAEvAAAVAAIADv//AAAAAAAAAAA=
+		FullPath = /Users/richard/Desktop/Oglehog Logo.png
+		PartialPath = ..\..\Desktop\Oglehog Logo.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 500.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 500.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

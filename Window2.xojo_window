@@ -84,6 +84,14 @@ End
 	#tag EndEvent
 
 	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  if asc(key) =27then
+		    me.FullScreen=false
+		  end
+		End Function
+	#tag EndEvent
+
+	#tag Event
 		Sub Open()
 		  Dim myscreens as Integer
 		  myscreens=ScreenCount

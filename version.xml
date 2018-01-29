@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PiXL>
-	<Version ver="2.130" date="22/1/18" macURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi.dmg" 
+	<Version ver="2.133" date="29/1/18" macURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi.dmg" 
 pcURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi%20Installer.exe.zip" 
 changelog="
+v2.133|
+Added enter key and shift enter key for vertical editing in list|
+|
+v2.132|
+Bug Fix: Tab key entry on PC crash|
+Logo size fix|
+|
+v2.131|
+Added escape key to exit fullscreen|
+Grayscale V and H|
+Fixed logo size/pos|
+|
 v2.130|
 Added delete and backspace key|
 Fixed Canvas TL text size and position for various resolutions|

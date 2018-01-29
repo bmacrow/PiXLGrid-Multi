@@ -9,9 +9,26 @@ Inherits Application
 
 	#tag Event
 		Sub Open()
-		  Window1.icon = logo2
-		  Window1.MyPic=logo1
+		  Window1.icon = logoP
+		  logoOpacity = 65
+		  
+		  'Window1.icon = logoUP
+		  'logoOpacity = 25
+		  'Window1.icon = logoOH
+		  'logoOpacity = 35
+		  'Window1.icon = logoVW
+		  'Window1.icon = logoMPH
+		  'logoOpacity = 10
+		  'Window1.icon = logoLang
+		  
+		  
+		  
+		  
+		  
+		  Window1.MyPic=logoVW
 		  App.AutoQuit = True
+		  
+		  'splash.show
 		End Sub
 	#tag EndEvent
 
@@ -20,6 +37,16 @@ Inherits Application
 		  Window1.LoadFile(item)
 		  
 		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Function UnhandledException(error As RuntimeException) As Boolean
+		  If error <> Nil Then
+		    Dim type As String = Introspection.GetType(error).Name
+		    MsgBox(type + EndOfLine + EndOfLine + Join(error.Stack, EndOfLine))
+		  End If
+		  
+		End Function
 	#tag EndEvent
 
 
@@ -133,6 +160,13 @@ Inherits Application
 
 
 	#tag Note, Name = Changes
+		display logo natively
+		if logo is wider than totX/4 then logo width = totX/4
+		
+		
+		
+		
+		
 		v0.54
 		fixed max window size bug.......again
 		
@@ -152,6 +186,10 @@ Inherits Application
 		
 	#tag EndNote
 
+
+	#tag Property, Flags = &h0
+		logoOpacity As Integer = 0
+	#tag EndProperty
 
 	#tag Property, Flags = &h0
 		newVersion As Boolean = false
@@ -174,6 +212,12 @@ Inherits Application
 
 
 	#tag ViewBehavior
+		#tag ViewProperty
+			Name="logoOpacity"
+			Group="Behavior"
+			InitialValue="0"
+			Type="Integer"
+		#tag EndViewProperty
 		#tag ViewProperty
 			Name="newVersion"
 			Group="Behavior"

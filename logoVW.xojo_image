@@ -1,0 +1,40 @@
+#tag MultiImage
+Image logoVW
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAGCAAAAAAGCAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8LQXBwTG9nby5wbmcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAABQaU5HUGlOR/////8AAAogY3UAAAAAAAAAAAAAAAAAC2ZpbmFsIGZpbGVzAAACAEYvOlVzZXJzOnJpY2hhcmQ6Q2xvdWRTdGF0aW9uOlZpZGVvIFdhbHJ1czpMb2dvOmZpbmFsIGZpbGVzOkFwcExvZ28ucG5nAA4AGAALAEEAcABwAEwAbwBnAG8ALgBwAG4AZwAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAERVc2Vycy9yaWNoYXJkL0Nsb3VkU3RhdGlvbi9WaWRlbyBXYWxydXMvTG9nby9maW5hbCBmaWxlcy9BcHBMb2dvLnBuZwATAAEvAAAVAAIADv//AAAAAAAAAAA=
+		FullPath = /Users/richard/CloudStation/Video Walrus/Logo/final files/AppLogo.png
+		PartialPath = ..\Video Walrus\Logo\final files\AppLogo.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 550.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 550.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = -1.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = -1.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

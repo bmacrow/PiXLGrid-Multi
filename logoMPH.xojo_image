@@ -1,0 +1,40 @@
+#tag MultiImage
+Image logoMPH
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFQAAAAAAFQAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8QTVBIIExvZ28gNjAwLnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAABQTkdmOEJJTf////8AAAogY3UAAAAAAAAAAAAAAAAAA01QSAAAAgAsLzpVc2VyczpyaWNoYXJkOkRlc2t0b3A6TVBIOk1QSCBMb2dvIDYwMC5wbmcADgAiABAATQBQAEgAIABMAG8AZwBvACAANgAwADAALgBwAG4AZwAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASACpVc2Vycy9yaWNoYXJkL0Rlc2t0b3AvTVBIL01QSCBMb2dvIDYwMC5wbmcAEwABLwAAFQACAA7//wAAAAAAAAAA
+		FullPath = /Users/richard/Desktop/MPH/MPH Logo 600.png
+		PartialPath = ..\..\Desktop\MPH\MPH Logo 600.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 600.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 165.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 600.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 165.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 600.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 165.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

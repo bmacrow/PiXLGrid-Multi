@@ -105,7 +105,7 @@ Begin Window Window1
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   379
+      Top             =   380
       Value           =   0
       Visible         =   True
       Width           =   954
@@ -1198,27 +1198,33 @@ End
 		  me.left = screen(0).left
 		  me.top = screen(0).top+50
 		  
-		  
-		  
-		  
 		  rebuild=true
+		  
+		  
+		  
+		  
+		  
+		  
 		  
 		End Sub
 	#tag EndEvent
 
 	#tag Event
 		Sub Resizing()
-		  UpdateScreen()
+		  'debug.listbox1.InsertRow("Resize")
+		  'UpdateScreen()
 		End Sub
 	#tag EndEvent
 
 
 	#tag Method, Flags = &h0
 		Sub BuildGrid(Index As integer)
+		  'debug.listbox1.InsertRow(0,"BuildGrid")
+		  
 		  
 		  dim i,j,k,l,tileX,tileY,screenWidth, screenHeight,rcount,colcount,c2count,colorbarsHeight as Integer
-		  
-		  dim x,y,totX,totY,logoSize as Integer
+		  dim logoRatio as Double
+		  dim x,y,totX,totY,logoSize,logoHeight as Integer
 		  dim textsize as Single
 		  dim gridColor(), bgColor() as color
 		  dim id as string
@@ -1318,15 +1324,15 @@ End
 		      'Rainbow &c4b008200,
 		      bgColor = Array(&c3F3F3F00,&c9400d300,&c0000ff00,&c00ff0000,&cffff0000,&cff7f0000,&cff000000,&c00000000)
 		    Case "Alt Red"
-		      'Red
-		      bgColor = Array(&c3F3F3F00,&cFF000000,&cdd3c46,&c00000000)
+		      'ALT Red
+		      bgColor = Array(&c3F3F3F00,&cFF000000,&cCC000000,&c00000000)
 		    Case "Alt Green"
-		      'Red
-		      bgColor = Array(&c3F3F3F00,&c00FF0000,&c2baa3a,&c00000000)
+		      'Alt Green
+		      bgColor = Array(&c3F3F3F00,&c00FF0000,&c00CC0000,&c00000000)
 		    Case "Alt Blue"
-		      'Red
-		      bgColor = Array(&c3F3F3F00,&c0000FF00,&cCC000000,&c00000000)
-		    Case "Grayscale"
+		      'Alt Blue
+		      bgColor = Array(&c3F3F3F00,&c0000FF00,&c0000CC00,&c00000000)
+		    Case "Grayscale V" , "Grayscale H"
 		      'Grayscale
 		      bgColor=Array(&c3F3F3F00,&c00000000,&c33333300,&c66666600,&c99999900,&cCCCCCC00,&cFFFFFF00,&c00000000)
 		    Case "Fruit"
@@ -1396,15 +1402,20 @@ End
 		        if l > Ubound(gridColor)-1 then
 		          l=1
 		        end
-		        rcount = rcount +1
+		        if GridsList.celltag(Index,7) <> "Grayscale H" then 'check for grayscale H and dont increment
+		          rcount = rcount +1
+		        end
 		        if rcount  > Ubound(bgColor)-1 then
 		          rcount = 1
 		        end
 		        k = rcount     'colour is row count
 		      next
 		      
-		      c2count = c2count + 1
-		      colcount = colcount + 1
+		      if GridsList.celltag(Index,7) <> "Grayscale V" then 'check for grayscale V and dont increment
+		        c2count = c2count + 1
+		        colcount = colcount + 1
+		      end
+		      
 		      if c2count > Ubound(gridcolor) -1 then
 		        c2count = 1
 		      end
@@ -1453,7 +1464,11 @@ End
 		        MyPic.Graphics.TextSize=textsize
 		        MyPic.Graphics.Bold = True
 		        while (MyPic.Graphics.StringWidth(id) > max((totX/2),circlesize)) or (MyPic.Graphics.StringHeight(id,circlesize) > totY)
-		          textsize = textsize -1
+		          if textsize <1 then
+		            exit
+		          else
+		            textsize = textsize -1
+		          end
 		          MyPic.Graphics.TextSize=textsize
 		        wend
 		        'msgbox(str(textsize))
@@ -1532,11 +1547,42 @@ End
 		    end
 		    
 		    'Draw logo
-		    logoSize=min(totX/3,totY/3,tileX*8,icon.width,icon.height)
+		    'logoSize=min(totX/3,icon.width)
+		    'logoHeight=(icon.height/icon.width)*logoSize
+		    
+		    if totX > totY then
+		      logoSize= min(totX,icon.width)
+		      logoHeight=(icon.height/icon.width)*logoSize
+		      while logoHeight > (totY-5) or logoSize > totX/4
+		        logoSize = logoSize -1
+		        logoHeight=(icon.height/icon.width)*logoSize
+		      wend
+		    else
+		      logoSize= min(totX,icon.width)
+		      logoHeight=(icon.height/icon.width)*logoSize
+		      while logoHeight > (totY-5) or logoSize > totX/1.5
+		        logoSize = logoSize -1
+		        logoHeight=(icon.height/icon.width)*logoSize
+		      wend
+		    end
+		    
+		    'if totX > (totY*2) then
+		    'logosize = min(totY,totX/2,icon.width)
+		    'elseif totY > (totX*2) then
+		    'logosize = min(totX/2,icon.width)
+		    'else
+		    'logosize = min(totX/2,icon.width)
+		    'end
+		    'logoHeight=(icon.height/icon.width)*logoSize
+		    
+		    'Window1.logosize.Text=str(logoSize)
+		    'logoHeight=(icon.height/icon.width)*logoSize
+		    
+		    
 		    if GridsList.cellcheck(Index,14) then 
-		      myPic.Graphics.Transparency = 25
+		      myPic.Graphics.Transparency = app.logoOpacity
 		      'myPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
-		      myPic.Graphics.DrawPicture(icon,(totX-(logoSize+3)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
+		      myPic.Graphics.DrawPicture(icon,(totX-(logoSize+3)),(totY-(logoHeight)-3),(logoSize),(logoHeight),0,0,icon.width,icon.height)
 		    end
 		    
 		  else
@@ -1663,6 +1709,8 @@ End
 
 	#tag Method, Flags = &h0
 		Sub OutCanvasUpdate()
+		  'debug.listbox1.InsertRow(0,"OutCanvasUpdate")
+		  
 		  Dim d As SaveAsDialog
 		  d = New SaveAsDialog
 		  Dim id as String
@@ -1791,8 +1839,9 @@ End
 
 	#tag Method, Flags = &h0
 		Sub UpdateScreen()
-		  rebuild=true
 		  
+		  rebuild=true
+		  'debug.listbox1.InsertRow(0,"UpdateScreen")
 		  'if GorC = false and OutputIsOpen = false then
 		  'Window1.Canvas1.Refresh
 		  'elseif GorC and OutputIsOpen = false then
@@ -1906,7 +1955,7 @@ End
 #tag Events Canvas1
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
-		  
+		  'debug.listbox1.InsertRow(0,"Paint "+ str(rebuild))
 		  
 		  if rebuild then
 		    BuildGrid(PicIndex)
@@ -1928,6 +1977,7 @@ End
 		      'check if ScrollBar is visible already. If just appearing then reset mYScroll
 		      
 		      if VerticalScrollBar.Visible then
+		        
 		      else
 		        VerticalScrollBar.Visible = True
 		        mYScroll = 0
@@ -1948,8 +1998,10 @@ End
 		      'check if ScrollBar is visible already. If just appearing then reset mXScroll
 		      
 		      if HorizontalScrollBar.Visible then
+		        
 		      else
 		        HorizontalScrollBar.Visible = True
+		        
 		        mXScroll = 0
 		      end
 		      
@@ -2036,6 +2088,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub MouseDrag(X As Integer, Y As Integer)
+		  
 		  If X <> mOldX Or y <> mOldY Then
 		    // If the mouse has been moved, calculate the delta
 		    // and scroll the image.
@@ -2074,6 +2127,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Function MouseWheel(X As Integer, Y As Integer, deltaX as Integer, deltaY as Integer) As Boolean
+		  
 		  // If the mousewheel is moved over the Canvas, then
 		  // use the delta to adjust the scrollbars, which
 		  // scrolls the image.
@@ -2157,6 +2211,7 @@ End
 #tag Events HorizontalScrollBar
 	#tag Event
 		Sub ValueChanged()
+		  'debug.listbox1.InsertRow("H delta")
 		  // Calculate the delta that the scrollbar was
 		  // moved and scroll the image accordingly.
 		  
@@ -2392,6 +2447,8 @@ End
 		  
 		  UpdateScreen()
 		  
+		  
+		  
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -2399,7 +2456,10 @@ End
 		  
 		  if column <8 then
 		    Me.EditCell(row, column)
+		    
 		  end
+		  
+		  
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -2427,7 +2487,8 @@ End
 		    base.Append(New MenuItem("25% Colour"))
 		    base.Append(New MenuItem("White"))
 		    base.Append(New MenuItem("Black"))
-		    base.Append(New MenuItem("Grayscale"))
+		    base.Append(New MenuItem("Grayscale V"))
+		    base.Append(New MenuItem("Grayscale H"))
 		    base.Append(New MenuItem("Light Gray/Dark Gray"))
 		    base.Append(New MenuItem("Black/White"))
 		    base.Append(New MenuItem("Transparent"))
@@ -2550,12 +2611,12 @@ End
 		    end if
 		    
 		  else
-		    
-		    If Me.CellCheck(row, column) Then
-		      UpdateScreen()
-		    Else
-		      UpdateScreen()
-		    End If
+		    UpdateScreen()
+		    'If Me.CellCheck(row, column) Then
+		    'UpdateScreen()
+		    'Else
+		    'UpdateScreen()
+		    'End If
 		  end select
 		  me.Refresh
 		  
@@ -2569,21 +2630,44 @@ End
 		    
 		    if column <6 then
 		      me.EditCell(row, column+1)
+		      return true
 		    end
 		  elseif  Keyboard.ShiftKey  and asc(key) = 9 Then
 		    if column <6  and column > 0 then
 		      me.EditCell(row, column-1)
+		      return true
 		    end
+		    
+		  elseif asc(key) = 13 then
+		    if Keyboard.AsyncShiftKey then
+		      if row > 0 then
+		        me.editcell(row - 1, column)
+		        return true
+		      end if
+		    else
+		      if row < me.ListCount - 1 then
+		        me.editcell(row + 1, column)
+		        return true
+		      end if
+		    end if
 		  else
 		    return false
 		  end if
+		  
+		  
+		  
+		  
+		  
 		End Function
 	#tag EndEvent
 	#tag Event
 		Function KeyDown(Key As String) As Boolean
 		  if asc(key) =8 or asc(key) = 127 then
 		    DeleteList()
+		    return true
 		  end
+		  
+		  return false
 		End Function
 	#tag EndEvent
 #tag EndEvents

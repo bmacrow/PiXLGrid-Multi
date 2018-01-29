@@ -45,10 +45,10 @@ Begin Menu MainMenuBar
       End
       Begin MenuItem FileOutput
          SpecialMenu = 0
-         Text = "Output"
+         Text = "Live Output"
          Index = -2147483648
-         ShortcutKey = "o"
-         Shortcut = "Cmd+o"
+         ShortcutKey = "L"
+         Shortcut = "Cmd+L"
          MenuModifier = True
          AutoEnable = True
          Visible = True
