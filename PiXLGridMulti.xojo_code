@@ -28,7 +28,7 @@ Inherits Application
 		  Window1.MyPic=logoVW
 		  App.AutoQuit = True
 		  
-		  'splash.show
+		  splash.show
 		End Sub
 	#tag EndEvent
 
@@ -184,6 +184,11 @@ Inherits Application
 		Added Check for Updates xml 
 		
 		
+		
+		44,44,44,44,52,52,160,110,50,50,50,50,50,50,50,70
+		
+		4%,4%,4%,4%,5%,5%,17%,11%,5%,5%,5%,5%,5%,5%,5%,11%
+		44,44,44,44,52,52,160,110,50,50,50,50,50,50,50,70
 	#tag EndNote
 
 

@@ -9,7 +9,7 @@ Begin Window Window1
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   True
-   Height          =   648
+   Height          =   848
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
@@ -18,14 +18,14 @@ Begin Window Window1
    MaxWidth        =   32000
    MenuBar         =   905261055
    MenuBarVisible  =   True
-   MinHeight       =   648
+   MinHeight       =   848
    MinimizeButton  =   True
-   MinWidth        =   1009
+   MinWidth        =   1010
    Placement       =   0
    Resizeable      =   True
    Title           =   "Editor"
    Visible         =   True
-   Width           =   1009
+   Width           =   1010
    Begin Canvas Canvas1
       AcceptFocus     =   False
       AcceptTabs      =   False
@@ -34,13 +34,13 @@ Begin Window Window1
       DoubleBuffer    =   False
       Enabled         =   True
       EraseBackground =   True
-      Height          =   360
+      Height          =   540
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
@@ -52,21 +52,21 @@ Begin Window Window1
       Transparent     =   True
       UseFocusRing    =   True
       Visible         =   True
-      Width           =   954
+      Width           =   960
    End
    Begin ScrollBar VerticalScrollBar
       AcceptFocus     =   True
       AutoDeactivate  =   True
       Enabled         =   True
-      Height          =   360
+      Height          =   540
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   974
+      Left            =   980
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
@@ -94,7 +94,7 @@ Begin Window Window1
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   False
@@ -105,30 +105,30 @@ Begin Window Window1
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   380
+      Top             =   560
       Value           =   0
       Visible         =   True
-      Width           =   954
+      Width           =   960
    End
    Begin UpDownArrows Scale
       AcceptFocus     =   False
       AutoDeactivate  =   True
       Enabled         =   True
-      Height          =   23
+      Height          =   22
       HelpTag         =   "Zoom in and out"
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   892
+      Left            =   902
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Scope           =   0
       TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   399
+      Top             =   592
       Visible         =   True
       Width           =   14
    End
@@ -138,30 +138,30 @@ Begin Window Window1
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
-      Height          =   20
+      Height          =   22
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   915
+      Left            =   921
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
       TabIndex        =   18
       TabPanelIndex   =   0
-      TabStop         =   True
+      TabStop         =   False
       Text            =   "Zoom"
       TextAlign       =   0
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   399
+      Top             =   592
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -184,10 +184,10 @@ Begin Window Window1
       HelpTag         =   ""
       Index           =   -2147483648
       Italic          =   False
-      Left            =   259
+      Left            =   74
       LimitText       =   0
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -203,7 +203,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   592
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
@@ -226,10 +226,10 @@ Begin Window Window1
       HelpTag         =   ""
       Index           =   -2147483648
       Italic          =   False
-      Left            =   355
+      Left            =   169
       LimitText       =   0
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -245,7 +245,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   592
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
@@ -257,14 +257,14 @@ Begin Window Window1
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
-      Height          =   20
+      Height          =   22
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   309
+      Left            =   122
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -273,14 +273,14 @@ Begin Window Window1
       Selectable      =   False
       TabIndex        =   10
       TabPanelIndex   =   0
-      TabStop         =   True
+      TabStop         =   False
       Text            =   "H size"
       TextAlign       =   0
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   592
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -292,14 +292,14 @@ Begin Window Window1
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
-      Height          =   20
+      Height          =   22
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   405
+      Left            =   220
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -308,14 +308,14 @@ Begin Window Window1
       Selectable      =   False
       TabIndex        =   11
       TabPanelIndex   =   0
-      TabStop         =   True
+      TabStop         =   False
       Text            =   "V size"
       TextAlign       =   0
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   592
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -327,14 +327,14 @@ Begin Window Window1
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
-      Height          =   20
+      Height          =   22
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   208
+      Left            =   22
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -343,34 +343,34 @@ Begin Window Window1
       Selectable      =   False
       TabIndex        =   5
       TabPanelIndex   =   0
-      TabStop         =   True
+      TabStop         =   False
       Text            =   "Canvas"
       TextAlign       =   0
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   592
       Transparent     =   True
       Underline       =   False
       Visible         =   True
-      Width           =   68
+      Width           =   47
    End
    Begin CheckBox stats
       AutoDeactivate  =   True
       Bold            =   False
-      Caption         =   "Canvas Raster"
+      Caption         =   "Raster"
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
-      Height          =   20
+      Height          =   22
       HelpTag         =   "Display raster box on canvas"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   460
+      Left            =   266
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -382,11 +382,11 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   592
       Underline       =   False
       Value           =   True
       Visible         =   True
-      Width           =   116
+      Width           =   66
    End
    Begin Label zoom
       AutoDeactivate  =   True
@@ -394,30 +394,30 @@ Begin Window Window1
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
-      Height          =   20
+      Height          =   22
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
       Left            =   954
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
       TabIndex        =   19
       TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "50%"
+      TabStop         =   False
+      Text            =   "75%"
       TextAlign       =   2
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   399
+      Top             =   592
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -437,9 +437,9 @@ Begin Window Window1
       Italic          =   False
       Left            =   435
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Scope           =   0
       State           =   1
@@ -449,7 +449,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   608
+      Top             =   801
       Underline       =   False
       Value           =   True
       Visible         =   False
@@ -469,9 +469,9 @@ Begin Window Window1
       Italic          =   False
       Left            =   508
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Scope           =   0
       State           =   1
@@ -481,7 +481,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   608
+      Top             =   801
       Underline       =   False
       Value           =   True
       Visible         =   False
@@ -498,9 +498,9 @@ Begin Window Window1
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Maximum         =   5
       Minimum         =   1
@@ -510,7 +510,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       TickStyle       =   "0"
-      Top             =   608
+      Top             =   801
       Value           =   1
       Visible         =   False
       Width           =   82
@@ -528,9 +528,9 @@ Begin Window Window1
       Italic          =   False
       Left            =   650
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Multiline       =   False
       Scope           =   0
@@ -544,7 +544,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   608
+      Top             =   801
       Transparent     =   True
       Underline       =   False
       Visible         =   False
@@ -565,9 +565,9 @@ Begin Window Window1
       Italic          =   False
       Left            =   903
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Scope           =   0
       TabIndex        =   17
@@ -576,7 +576,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   608
+      Top             =   801
       Underline       =   False
       Visible         =   True
       Width           =   86
@@ -592,9 +592,9 @@ Begin Window Window1
       LineStep        =   1
       LiveScroll      =   True
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Maximum         =   10
       Minimum         =   1
@@ -604,7 +604,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       TickStyle       =   "0"
-      Top             =   608
+      Top             =   801
       Value           =   1
       Visible         =   False
       Width           =   82
@@ -622,23 +622,23 @@ Begin Window Window1
       Italic          =   False
       Left            =   783
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
       TabIndex        =   22
       TabPanelIndex   =   0
-      TabStop         =   True
+      TabStop         =   False
       Text            =   "Size"
       TextAlign       =   0
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   608
+      Top             =   801
       Transparent     =   True
       Underline       =   False
       Visible         =   False
@@ -658,9 +658,9 @@ Begin Window Window1
       Italic          =   False
       Left            =   582
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Scope           =   0
       State           =   1
@@ -670,7 +670,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   608
+      Top             =   801
       Underline       =   False
       Value           =   True
       Visible         =   False
@@ -691,7 +691,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   20
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -702,7 +702,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   629
       Underline       =   False
       Visible         =   True
       Width           =   76
@@ -714,7 +714,7 @@ Begin Window Window1
       Border          =   True
       ColumnCount     =   16
       ColumnsResizable=   True
-      ColumnWidths    =   "44,44,44,44,52,52,160,110,50,50,50,50,50,50,50,70"
+      ColumnWidths    =   "44,44,44,44,52,52,*,110,50,50,50,50,50,50,50,70"
       DataField       =   ""
       DataSource      =   ""
       DefaultRowHeight=   -1
@@ -732,11 +732,11 @@ Begin Window Window1
       InitialParent   =   ""
       InitialValue    =   "tileX	tileY	cols	rows	OffsetX	OffsetY	Name	Background	Grid	Raster	TileIDs	Circle	Cross	Corner	Logo	ColourBars"
       Italic          =   False
-      Left            =   20
+      Left            =   22
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   False
+      LockRight       =   True
       LockTop         =   False
       RequiresSelection=   False
       Scope           =   0
@@ -750,7 +750,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   466
+      Top             =   661
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
@@ -770,14 +770,14 @@ Begin Window Window1
       InitialParent   =   ""
       Left            =   20
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   False
+      LockRight       =   True
       LockTop         =   False
       Scope           =   0
       TabIndex        =   4
       TabPanelIndex   =   0
-      Top             =   427
+      Top             =   620
       TopLeftColor    =   &c00000000
       Visible         =   True
       Width           =   969
@@ -797,7 +797,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   108
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -808,21 +808,21 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   629
       Underline       =   False
       Visible         =   True
       Width           =   88
    End
    BeginSegmented SegmentedControl GridCanvas_select
       Enabled         =   True
-      Height          =   24
+      Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   773
+      Left            =   787
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       MacControlStyle =   0
       Scope           =   0
@@ -830,7 +830,7 @@ Begin Window Window1
       SelectionType   =   0
       TabIndex        =   26
       TabPanelIndex   =   0
-      Top             =   399
+      Top             =   592
       Visible         =   True
       Width           =   104
    End
@@ -841,14 +841,14 @@ Begin Window Window1
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
-      Height          =   20
+      Height          =   22
       HelpTag         =   "Display Top Left start point cursor and co-ordinates"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   574
+      Left            =   332
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -860,7 +860,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   592
       Underline       =   False
       Value           =   True
       Visible         =   True
@@ -881,9 +881,9 @@ Begin Window Window1
       Italic          =   False
       Left            =   814
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Scope           =   0
       TabIndex        =   28
@@ -892,7 +892,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   629
       Underline       =   False
       Visible         =   True
       Width           =   80
@@ -912,9 +912,9 @@ Begin Window Window1
       Italic          =   False
       Left            =   906
       LockBottom      =   True
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   False
       Scope           =   0
       TabIndex        =   29
@@ -923,7 +923,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   436
+      Top             =   629
       Underline       =   False
       Visible         =   True
       Width           =   80
@@ -940,23 +940,23 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   20
+      Left            =   220
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
       Scope           =   0
-      State           =   0
+      State           =   1
       TabIndex        =   30
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   402
+      Top             =   629
       Underline       =   False
-      Value           =   False
+      Value           =   True
       Visible         =   True
       Width           =   126
    End
@@ -975,7 +975,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   158
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -986,10 +986,10 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   608
+      Top             =   801
       Underline       =   False
       Visible         =   True
-      Width           =   194
+      Width           =   126
    End
    Begin Label deselect
       AutoDeactivate  =   True
@@ -1004,7 +1004,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   90
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1013,14 +1013,14 @@ Begin Window Window1
       Selectable      =   False
       TabIndex        =   31
       TabPanelIndex   =   0
-      TabStop         =   True
+      TabStop         =   False
       Text            =   "De-select for all grids"
       TextAlign       =   0
       TextColor       =   &cFF000000
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   620
+      Top             =   813
       Transparent     =   True
       Underline       =   False
       Visible         =   False
@@ -1041,7 +1041,7 @@ Begin Window Window1
       Italic          =   False
       Left            =   27
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1052,7 +1052,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   608
+      Top             =   801
       Underline       =   False
       Visible         =   True
       Width           =   126
@@ -1069,9 +1069,9 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   355
+      Left            =   292
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1083,7 +1083,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   608
+      Top             =   801
       Underline       =   False
       Value           =   False
       Visible         =   False
@@ -1091,24 +1091,24 @@ Begin Window Window1
    End
    Begin Rectangle ColorPicker
       AutoDeactivate  =   True
-      BorderWidth     =   1
+      BorderWidth     =   0
       BottomRightColor=   &c00000000
       Enabled         =   True
-      FillColor       =   &cFFFFFF00
-      Height          =   21
+      FillColor       =   &cFFFF0000
+      Height          =   20
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   155
+      Left            =   355
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
       Scope           =   0
       TabIndex        =   35
       TabPanelIndex   =   0
-      Top             =   401
+      Top             =   629
       TopLeftColor    =   &c00000000
       Visible         =   True
       Width           =   27
@@ -1124,9 +1124,9 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   185
+      Left            =   385
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1135,14 +1135,14 @@ Begin Window Window1
       Selectable      =   False
       TabIndex        =   36
       TabPanelIndex   =   0
-      TabStop         =   True
+      TabStop         =   False
       Text            =   "Text Colour"
       TextAlign       =   0
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   399
+      Top             =   629
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -1160,9 +1160,9 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   269
+      Left            =   469
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   False
@@ -1174,11 +1174,84 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   399
+      Top             =   629
       Underline       =   False
       Value           =   True
       Visible         =   True
       Width           =   94
+   End
+   Begin TextField CanvasText
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   "Canvas Name..."
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   22
+      HelpTag         =   "Displays Canvas Name and Resolution"
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   443
+      LimitText       =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   38
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   592
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   193
+   End
+   Begin PopupMenu TextPos
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   23
+      HelpTag         =   "Canvas stats position"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   "Top Left\nTop Centre\nTop Right\nBottom Left\nBottom Centre\nBottom Right"
+      Italic          =   False
+      Left            =   648
+      ListIndex       =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   2
+      TabIndex        =   52
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   590
+      Underline       =   False
+      Visible         =   True
+      Width           =   118
    End
 End
 #tag EndWindow
@@ -1194,6 +1267,10 @@ End
 
 	#tag Event
 		Sub Open()
+		  maxWinHeight =Window1.MinHeight '842
+		  maxWinWidth = Window1.MinWidth '1010
+		  CanvasHmargin =maxWinWidth-Canvas1.Width '50
+		  CanvasVMargin =maxWinHeight-Canvas1.Height '302
 		  
 		  me.left = screen(0).left
 		  me.top = screen(0).top+50
@@ -1434,7 +1511,7 @@ End
 		    
 		    'draw diagonal cross
 		    if GridsList.cellcheck(Index,12) then
-		      myPic.Graphics.ForeColor = &c0000ff
+		      myPic.Graphics.ForeColor = &c00ffff
 		      MyPic.graphics.DrawLine ( 0,0,totX,totY)
 		      MyPic.graphics.DrawLine ( 0,totY,totX,0)
 		    end
@@ -1452,52 +1529,6 @@ End
 		      end
 		    end
 		    
-		    'custom text
-		    if (GridsList.cell(Index,6)) <> ""  then 
-		      circlesize =min((totY),(totX))
-		      MyPic.Graphics.ForeColor  = ColorPicker.FillColor
-		      
-		      if alt_text.value then
-		        id = (GridsList.cell(Index,6))
-		        
-		        textsize = 250                            'initial text size before resize 
-		        MyPic.Graphics.TextSize=textsize
-		        MyPic.Graphics.Bold = True
-		        while (MyPic.Graphics.StringWidth(id) > max((totX/2),circlesize)) or (MyPic.Graphics.StringHeight(id,circlesize) > totY)
-		          if textsize <1 then
-		            exit
-		          else
-		            textsize = textsize -1
-		          end
-		          MyPic.Graphics.TextSize=textsize
-		        wend
-		        'msgbox(str(textsize))
-		        If colorbarsHeight = 0 then
-		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(MyPic.Graphics.StringHeight(id,totX)/3))
-		        else
-		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)-(colorbarsHeight/2)-3)
-		        end
-		        id = (str(totX) + "x" + str(totY))
-		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
-		        MyPic.Graphics.Bold = False
-		        MyPic.Graphics.DrawString(id,3,(totY-3))
-		      else
-		        id = (GridsList.cell(Index,6) + "     " +  str(totX) + "x" + str(totY))
-		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
-		        
-		        if (myPic.Graphics.StringWidth(id)) < totX then
-		          MyPic.Graphics.DrawString(id,5,(totY-5))
-		        else
-		          id = (GridsList.cell(Index,6))
-		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
-		          id = (str(totX) + "x" + str(totY))
-		          MyPic.Graphics.DrawString(id,3,(totY-5))
-		        end
-		        
-		      end
-		      
-		      
-		    end
 		    
 		    
 		    'Draw Circle
@@ -1547,8 +1578,7 @@ End
 		    end
 		    
 		    'Draw logo
-		    'logoSize=min(totX/3,icon.width)
-		    'logoHeight=(icon.height/icon.width)*logoSize
+		    
 		    
 		    if totX > totY then
 		      logoSize= min(totX,icon.width)
@@ -1566,17 +1596,7 @@ End
 		      wend
 		    end
 		    
-		    'if totX > (totY*2) then
-		    'logosize = min(totY,totX/2,icon.width)
-		    'elseif totY > (totX*2) then
-		    'logosize = min(totX/2,icon.width)
-		    'else
-		    'logosize = min(totX/2,icon.width)
-		    'end
-		    'logoHeight=(icon.height/icon.width)*logoSize
 		    
-		    'Window1.logosize.Text=str(logoSize)
-		    'logoHeight=(icon.height/icon.width)*logoSize
 		    
 		    
 		    if GridsList.cellcheck(Index,14) then 
@@ -1584,6 +1604,56 @@ End
 		      'myPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
 		      myPic.Graphics.DrawPicture(icon,(totX-(logoSize+3)),(totY-(logoHeight)-3),(logoSize),(logoHeight),0,0,icon.width,icon.height)
 		    end
+		    
+		    
+		    'custom text
+		    myPic.Graphics.Transparency = 0
+		    if (GridsList.cell(Index,6)) <> ""  then 
+		      circlesize =min((totY),(totX))
+		      MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		      
+		      if alt_text.value then
+		        id = (GridsList.cell(Index,6))
+		        
+		        textsize = 250                            'initial text size before resize 
+		        MyPic.Graphics.TextSize=textsize
+		        MyPic.Graphics.Bold = True
+		        while (MyPic.Graphics.StringWidth(id) > max((totX/2),circlesize)) or (MyPic.Graphics.StringHeight(id,circlesize) > totY)
+		          if textsize <1 then
+		            exit
+		          else
+		            textsize = textsize -1
+		          end
+		          MyPic.Graphics.TextSize=textsize
+		        wend
+		        'msgbox(str(textsize))
+		        If colorbarsHeight = 0 then
+		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(MyPic.Graphics.StringHeight(id,totX)/3))
+		        else
+		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)-(colorbarsHeight/2)-3)
+		        end
+		        id = (str(totX) + "x" + str(totY))
+		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
+		        MyPic.Graphics.Bold = False
+		        MyPic.Graphics.DrawString(id,3,(totY-3))
+		      else
+		        id = (GridsList.cell(Index,6) + "     " +  str(totX) + "x" + str(totY))
+		        MyPic.Graphics.TextSize=max((tileY/3),12)'font size is third of tileY or 12pixels min
+		        
+		        if (myPic.Graphics.StringWidth(id)) < totX then
+		          MyPic.Graphics.DrawString(id,5,(totY-5))
+		        else
+		          id = (GridsList.cell(Index,6))
+		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
+		          id = (str(totX) + "x" + str(totY))
+		          MyPic.Graphics.DrawString(id,3,(totY-5))
+		        end
+		        
+		      end
+		      
+		      
+		    end
+		    
 		    
 		  else
 		    myPic.Graphics.ClearRect(0,0,1,1)
@@ -1670,6 +1740,12 @@ End
 		      else
 		        GridColour.value = False
 		      end
+		      CanvasText.text = Trim(fields(7))
+		      
+		      TP = val(Trim(fields(8)))
+		      TextPos.ListIndex = val(Trim(fields(8)))
+		      'TextYpos = val(Trim(fields(9)))
+		      
 		      
 		      
 		      dim v as variant
@@ -1714,7 +1790,7 @@ End
 		  Dim d As SaveAsDialog
 		  d = New SaveAsDialog
 		  Dim id as String
-		  dim i as Integer
+		  dim i  as Integer
 		  
 		  OutCanvas= Self.BitmapForCaching(val(OutH.Text), val(OutV.Text))
 		  
@@ -1787,6 +1863,44 @@ End
 		    
 		  end
 		  
+		  if CanvasText.text <> "" then
+		    OutCanvas.Graphics.TextSize=25
+		    id = "Canvas  :"+OutH.text+"px x "+OutV.text+"px"+ chr(13) + CanvasText.Text
+		    dim w as integer = OutCanvas.Graphics.Stringwidth(id)
+		    dim h as Integer = OutCanvas.Graphics.StringHeight(id,w)
+		    
+		    
+		    
+		    Select Case TP
+		    Case 0 'TL
+		      TextXpos = 0
+		      TextYpos = 0
+		    Case 1 'TC
+		      TextXpos = (OutCanvas.Width/2)-(w/2)-3
+		      TextYpos = 0
+		    Case 2 'TR
+		      TextXpos = OutCanvas.Width-w-5
+		      TextYpos = 0
+		    Case 3 'BL
+		      TextXpos = 0
+		      TextYpos = OutCanvas.Height-h-5
+		    Case 4 'BC
+		      TextXpos = (OutCanvas.Width/2)-(w/2)-3
+		      TextYpos = OutCanvas.Height-h-5
+		    Case 5 'BR
+		      TextXpos = OutCanvas.Width-w-5
+		      TextYpos = OutCanvas.Height-h-5
+		      
+		    end select
+		    
+		    
+		    
+		    
+		    OutCanvas.Graphics.DrawString(id,TextXpos+5,TextYpos+25)
+		    OutCanvas.Graphics.DrawRect(TextXpos,TextYpos,w+5,h+5)
+		  end
+		  
+		  
 		  BuildGrid(picindex) 'ensure last build grid is currently selected one from list.
 		End Sub
 	#tag EndMethod
@@ -1799,7 +1913,7 @@ End
 		  dim i, j as integer
 		  
 		  'show standard file selector
-		  f= GetSaveFolderItem(GridFileType.pg2,"Grid List"+".pg2")
+		  f= GetSaveFolderItem(GridFileType.pg2,"Grid List "+CanvasText.text+".pg2")
 		  if f = nil then exit sub                              'cancel clicked
 		  
 		  'create file
@@ -1811,7 +1925,7 @@ End
 		  
 		  if GridsList.ListCount>0 then                   'if grid not empty
 		    
-		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(ColorPicker.FillColor)+"," +str(GridColour.Value)+","       'exports canvas size and options
+		    s=Window1.OutH.Text+","+Window1.OutV.text+","+str(Window1.stats.Value)+","+str(Window1.originCursor.Value)+","+str(Window1.alt_text.Value)+"," +str(ColorPicker.FillColor)+"," +str(GridColour.Value)+"," + CanvasText.Text +","   + str(TP) + "," 'exports canvas size and options
 		    tos.WriteLine s.left(s.len-1)                'save line
 		    for i=0 to GridsList.ListCount-1            'for each row
 		      s=""                                                   'build line to save
@@ -1874,6 +1988,14 @@ End
 
 
 	#tag Property, Flags = &h0
+		CanvasHmargin As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		CanvasVMargin As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
 		column As Integer
 	#tag EndProperty
 
@@ -1889,6 +2011,14 @@ End
 		icon As Picture
 	#tag EndProperty
 
+	#tag Property, Flags = &h0
+		maxWinHeight As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		maxWinWidth As Integer
+	#tag EndProperty
+
 	#tag Property, Flags = &h21
 		Private mHorizontalScrollBarLast As Integer
 	#tag EndProperty
@@ -1902,7 +2032,7 @@ End
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mScale As Integer = 50
+		Private mScale As Integer = 75
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
@@ -1947,6 +2077,22 @@ End
 
 	#tag Property, Flags = &h21
 		Private scaledWidth As Integer = 1
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private TextXPos As Integer = 0
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private TextYPos As Integer = 0
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		TP As Integer = 0
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private Untitled As Integer
 	#tag EndProperty
 
 
@@ -2007,15 +2153,15 @@ End
 		      
 		    End If
 		    
-		    if (scaledWidth+55) >1009 then
-		      Window1.MaxWidth=max((scaledWidth+55),1009)
+		    if (scaledWidth+CanvasHmargin) >maxWinWidth then
+		      Window1.MaxWidth=max((scaledWidth+CanvasHmargin),maxWinWidth)
 		    else 
-		      Window1.MaxWidth = 1009
+		      Window1.MaxWidth = maxWinWidth
 		    end
-		    if (scaledHeight+288) > 648 then
-		      Window1.MaxHeight=max((scaledHeight+288),648)
+		    if (scaledHeight+CanvasVMargin) > maxWinHeight then
+		      Window1.MaxHeight=max((scaledHeight+CanvasVMargin),maxWinHeight)
 		    else
-		      Window1.MaxHeight=648
+		      Window1.MaxHeight=maxWinHeight
 		    end
 		    
 		    'if Window1.Fit.Active then
@@ -2067,16 +2213,16 @@ End
 		      
 		    End If
 		    
-		    if (scaledWidth+55) >1009 then
+		    if (scaledWidth+CanvasHmargin) >maxWinWidth then
 		      
-		      Window1.MaxWidth=max((scaledWidth+55),1009)
+		      Window1.MaxWidth=max((scaledWidth+CanvasHmargin),maxWinWidth)
 		    else 
-		      Window1.MaxWidth = 1009
+		      Window1.MaxWidth = maxWinWidth
 		    end
-		    if (scaledHeight+288) > 648 then
-		      Window1.MaxHeight=max((scaledHeight+288),648)
+		    if (scaledHeight+CanvasVMargin) > maxWinHeight then
+		      Window1.MaxHeight=max((scaledHeight+CanvasVMargin),maxWinHeight)
 		    else
-		      Window1.MaxHeight=648
+		      Window1.MaxHeight=maxWinHeight
 		    end
 		    
 		    
@@ -2169,6 +2315,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub Open()
+		  
 		  #If TargetWin32 Then
 		    Me.DoubleBuffer = True
 		  #Else
@@ -2389,12 +2536,10 @@ End
 		  dim i as integer
 		  
 		  
-		  Dim values() As String = Array("80","60","16","12","150","150","Screen One")
+		  Dim values() As String = Array("80","60","16","12","320","180","Screen One") 'startup values
 		  Me.AddRow(values)
 		  
 		  me.Celltag(0,7)="25% Colour"
-		  'me.cell(0,7)="25% Colour"
-		  
 		  
 		  for i = 0 to 7
 		    Me.ColumnType(2) = ListBox.TypeEditableTextField
@@ -2706,9 +2851,23 @@ End
 		  If itemIndex = 0 Then
 		    GorC = false
 		    Grid_Solo.Visible = false
+		    'CanvasText.Visible = false
+		    'Label16.Visible = false
+		    'for i as integer = 0 to 5 
+		    'TextPos(i).Visible=false
+		    'next
+		    'CanvasTextXpos.Visible=false
+		    'CanvasTextYpos.Visible=false
 		  Else
 		    GorC = true
 		    Grid_Solo.Visible = true
+		    'CanvasText.Visible = true
+		    'Label16.Visible = true
+		    'for i as integer = 0 to 5 
+		    'TextPos(i).Visible=true
+		    'next
+		    'CanvasTextXpos.Visible=true
+		    'CanvasTextYpos.Visible=true
 		    OutCanvasUpdate()
 		  End If
 		  UpdateScreen()
@@ -2792,9 +2951,9 @@ End
 		  Dim f As FolderItem
 		  OutCanvasUpdate()
 		  if Grid_Solo.value and GridsList.ListIndex <> -1 then
-		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +GridsList.cell(GridsList.ListIndex,6)+"-"+str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
+		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +CanvasText.text+" "+GridsList.cell(GridsList.ListIndex,6)+"-"+str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
 		  else
-		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
+		    f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Canvas-" +CanvasText.text+" "+str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png"))
 		  end
 		  
 		  If f <> Nil Then
@@ -2884,6 +3043,26 @@ End
 #tag Events GridColour
 	#tag Event
 		Sub Action()
+		  UpdateScreen()
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events CanvasText
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  if asc(key) = 13 or asc(key) = 9 then
+		    UpdateScreen()
+		  else
+		    return false
+		  end
+		  
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events TextPos
+	#tag Event
+		Sub Change()
+		  TP = me.ListIndex
 		  UpdateScreen()
 		End Sub
 	#tag EndEvent

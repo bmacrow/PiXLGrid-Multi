@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "PiXL Grid Multi"
-#define MyAppVersion "v2.133"
+#define MyAppVersion "v2.134"
 #define MyAppPublisher "Video Walrus"
 #define MyAppURL "http://www.videowalrus.com"
 #define MyAppExeName "PiXL Grid Multi"

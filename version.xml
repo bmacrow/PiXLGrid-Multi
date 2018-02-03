@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PiXL>
-	<Version ver="2.133" date="29/1/18" macURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi.dmg" 
+	<Version ver="2.134" date="3/2/18" macURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi.dmg" 
 pcURL="https://aws-website-videowalrus-h569u.s3.amazonaws.com/PiXL%20Grid%20Installers/PiXL%20Grid%20Multi%20Installer.exe.zip" 
 changelog="
+v2.134|
+Added Canvas Name with preset positions|
+Internal tidyup and bug fixes|
+Resized main window to 16:9 ratio|
+Changed colour of Diagonal|
+|
 v2.133|
 Added enter key and shift enter key for vertical editing in list|
 |
