@@ -1,0 +1,7 @@
+1920,1080,True,True,True,&h0020FEFE,True,Demo List,5,0,True
+80,60,16,12,320,180,Centre Screen,Fruit,True,True,True,True,True,True,True,True
+80,60,3,12,40,180,Stage Right,Yellow/Gray,True,True,True,True,True,True,False,True
+80,60,3,12,1640,180,Stage Left,Aqua/Gray,True,True,True,True,True,True,False,True
+80,60,12,2,480,932,Riser,50% Colour,True,True,True,True,True,False,False,False
+80,60,12,2,480,35,Header,Rainbow,True,True,True,True,True,False,False,False
+80,60,6,4,720,660,Door,Grayscale V,False,False,True,True,False,False,False,False

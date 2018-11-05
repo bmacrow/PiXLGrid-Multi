@@ -14,4 +14,19 @@
 		Imported=False
 	#tag EndFileType
 
+	#tag FileType
+		CodeName=pg3
+		DocIcon=gridDraw-multi2.xojo_resources;&hAA582C
+		Extension=pg3
+		Flags=&h5
+		MacCreator=
+		MacType=
+		Name=GridValuesXML
+		UTI=com.videowalrus.pg3
+		UTIConformsTo=public.data
+		Description=Grid List export XML
+		MimeType=
+		Imported=False
+	#tag EndFileType
+
 #tag EndFileTypeSet

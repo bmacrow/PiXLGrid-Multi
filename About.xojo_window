@@ -1,6 +1,6 @@
 #tag Window
 Begin Window About
-   BackColor       =   &cFFFFFF00
+   BackColor       =   &c21212100
    Backdrop        =   0
    CloseButton     =   True
    Compatibility   =   ""
@@ -48,12 +48,12 @@ Begin Window About
       TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   20
+      Top             =   15
       Transparent     =   True
       UseFocusRing    =   True
       Visible         =   True
       Width           =   348
-      Begin Label Label1
+      Begin LabelClass Label1
          AutoDeactivate  =   True
          Bold            =   False
          DataField       =   ""
@@ -76,54 +76,19 @@ Begin Window About
          TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "PiXL Grid Multi"
+         Text            =   "pixl Grid Multi"
          TextAlign       =   0
          TextColor       =   &c00000000
          TextFont        =   "System"
          TextSize        =   0.0
          TextUnit        =   0
-         Top             =   21
+         Top             =   29
          Transparent     =   True
          Underline       =   False
          Visible         =   True
          Width           =   95
       End
-      Begin Label Label4
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "Canvas1"
-         Italic          =   False
-         Left            =   150
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   1
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "Beta"
-         TextAlign       =   0
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   39
-         Transparent     =   True
-         Underline       =   False
-         Visible         =   True
-         Width           =   34
-      End
-      Begin Label Label5
+      Begin LabelClass Label5
          AutoDeactivate  =   True
          Bold            =   False
          DataField       =   ""
@@ -152,13 +117,13 @@ Begin Window About
          TextFont        =   "System"
          TextSize        =   0.0
          TextUnit        =   0
-         Top             =   39
+         Top             =   47
          Transparent     =   True
          Underline       =   False
          Visible         =   True
          Width           =   117
       End
-      Begin Label Label3
+      Begin LabelClass Label3
          AutoDeactivate  =   True
          Bold            =   False
          DataField       =   ""
@@ -187,14 +152,14 @@ Begin Window About
          TextFont        =   "System"
          TextSize        =   0.0
          TextUnit        =   0
-         Top             =   57
+         Top             =   65
          Transparent     =   True
          Underline       =   False
          Visible         =   True
          Width           =   117
       End
    End
-   Begin Label Label2
+   Begin LabelClass Label2
       AutoDeactivate  =   True
       Bold            =   False
       DataField       =   ""
@@ -305,8 +270,13 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Open()
-		  Me.Top=(screen(0).Height - Me.Height) / 2
-		  Me.Left=(screen(0).Width - Me.Width) / 2
+		  Me.Top=(Screen(0).Height - Me.Height) / 2
+		  Me.Left=(Screen(0).Width - Me.Width) / 2
+		  
+		  If Not IsDarkMode Then
+		    Self.HasBackColor = True
+		    Self.BackColor = &c262626
+		  End
 		End Sub
 	#tag EndEvent
 
@@ -317,6 +287,7 @@ End
 	#tag Event
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
 		  ShowURL("http://www.videowalrus.com")
+		  return true
 		End Function
 	#tag EndEvent
 #tag EndEvents
@@ -324,6 +295,7 @@ End
 	#tag Event
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
 		  ShowURL("http://www.pixlevolution.com")
+		  return true
 		End Function
 	#tag EndEvent
 #tag EndEvents

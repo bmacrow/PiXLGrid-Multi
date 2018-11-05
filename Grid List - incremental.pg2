@@ -1,0 +1,11 @@
+1920,1080,True,True,True,&h00FFFF00,True,,0,0
+80,60,16,12,320,180,Screen One,Transparent,False,False,False,False,False,False,False,False
+80,60,16,12,320,180,Screen One,25% Colour,False,False,False,False,False,False,False,False
+80,60,16,12,320,180,Screen One,25% Colour,False,True,False,False,False,False,False,False
+80,60,16,12,320,180,Screen One,25% Colour,False,True,False,True,False,False,False,False
+80,60,16,12,320,180,Screen One,25% Colour,False,True,False,True,True,False,False,False
+80,60,16,12,320,180,Screen One,25% Colour,False,True,False,True,True,True,False,False
+80,60,16,12,320,180,Screen One,25% Colour,False,True,False,True,True,True,True,False
+80,60,16,12,320,180,Screen One,25% Colour,False,True,False,True,True,True,True,True
+80,60,16,12,320,180,Screen One,25% Colour,True,True,False,True,True,True,True,True
+80,60,16,12,320,180,Screen One,25% Colour,True,True,True,True,True,True,True,True

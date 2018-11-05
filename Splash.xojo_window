@@ -1,6 +1,6 @@
 #tag Window
 Begin Window Splash
-   BackColor       =   &cFFFFFF00
+   BackColor       =   &c21212100
    Backdrop        =   0
    CloseButton     =   False
    Compatibility   =   ""
@@ -53,7 +53,7 @@ Begin Window Splash
       UseFocusRing    =   False
       Visible         =   True
       Width           =   354
-      Begin Label Label1
+      Begin LabelClass Label1
          AutoDeactivate  =   True
          Bold            =   True
          DataField       =   ""
@@ -76,7 +76,7 @@ Begin Window Splash
          TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "PiXL Grid Multi"
+         Text            =   "pixl Grid Multi"
          TextAlign       =   2
          TextColor       =   &c00000000
          TextFont        =   "System"
@@ -88,7 +88,7 @@ Begin Window Splash
          Visible         =   True
          Width           =   193
       End
-      Begin Label Label2
+      Begin LabelClass Label2
          AutoDeactivate  =   True
          Bold            =   False
          DataField       =   ""
@@ -172,14 +172,30 @@ End
 
 #tag WindowCode
 	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  return true
+		End Function
+	#tag EndEvent
+
+	#tag Event
+		Sub MouseUp(X As Integer, Y As Integer)
+		  Timer1.mode=0
+		  Splash.close
+		End Sub
+	#tag EndEvent
+
+	#tag Event
 		Sub Open()
-		  Me.Top=(screen(0).Height - Me.Height) / 2
-		  Me.Left=(screen(0).Width - Me.Width) / 2
-		  Label2.Text=("version " +str(App.MinorVersion) +"."  +Str(App.NonReleaseVersion))
-		  
-		  Timer1.mode=1
 		  
 		  
+		  Me.Top=(Screen(0).Height - Me.Height) / 2
+		  Me.Left=(Screen(0).Width - Me.Width) / 2
+		  Label2.Text=("v" +Str(App.MinorVersion) +"."  + Str(App.Version) +"-"+Str(App.NonReleaseVersion))
+		  
+		  If Not IsDarkMode Then
+		    Self.HasBackColor = True
+		    Self.BackColor = &c51535200
+		  End
 		  
 		  
 		End Sub
@@ -198,7 +214,7 @@ End
 #tag Events Timer1
 	#tag Event
 		Sub Action()
-		  Splash.hide
+		  self.Close
 		  
 		End Sub
 	#tag EndEvent

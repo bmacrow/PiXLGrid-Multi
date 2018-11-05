@@ -57,8 +57,8 @@ Begin Window Window2
    Begin Timer Animate
       Index           =   -2147483648
       LockedInPosition=   False
-      Mode            =   2
-      Period          =   20
+      Mode            =   1
+      Period          =   2
       Scope           =   0
       TabPanelIndex   =   0
    End
@@ -68,7 +68,7 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Close()
-		  Window1.OutputIsOpen =false
+		  Window1.OutputIsOpen =False
 		  
 		  Window1.Vscroll.Visible = false
 		  Window1.Hscroll.Visible = false
@@ -77,8 +77,12 @@ End
 		  FileFullscreenOutput.Visible = false
 		  Window1.Label13.Visible=false
 		  Window1.Label15.Visible=false
-		  FileClose.Visible=false
-		  Window1.CursorColour.Visible=false
+		  FileClose.Visible=False
+		  Window1.CursorColour.Visible=False
+		  
+		  Window1.LabelClass03.Visible=False
+		  Window1.LabelClass04.Visible=False
+		  Window1.LabelClass05.Visible=False
 		  
 		End Sub
 	#tag EndEvent
@@ -93,7 +97,7 @@ End
 
 	#tag Event
 		Sub Open()
-		  Dim myscreens as Integer
+		  Dim myscreens As Integer
 		  myscreens=ScreenCount
 		  
 		  
@@ -125,7 +129,12 @@ End
 		  Window1.SizeSlide.Visible=true
 		  Window1.Label13.Visible=true
 		  Window1.Label15.Visible=true
-		  Window1.CursorColour.Visible = true
+		  Window1.CursorColour.Visible = True
+		  
+		  Window1.LabelClass03.Visible=True
+		  Window1.LabelClass04.Visible=True
+		  Window1.LabelClass05.Visible=True
+		  
 		  
 		  
 		  Window1.OutCanvasUpdate()
@@ -137,7 +146,35 @@ End
 
 
 	#tag Property, Flags = &h0
-		speed As Integer
+		Hcolour As Color = &cff0000
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		heightA As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		OffX As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		OffY As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		size As Integer = 1
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		speed As Integer = 1
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		Vcolour As Color = &c00ff00
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		widthA As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -154,47 +191,26 @@ End
 #tag Events Canvas1
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
-		  dim OffX,OffY,width, height as Integer
 		  
 		  g.DrawPicture(Window1.OutCanvas,0,0)
 		  
-		  if Window1.GridsList.ListIndex <> -1 then
-		    offX = val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),4))
-		    offY = val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),5))
-		    width = val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),0))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),2))
-		    height = val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),1))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),3))
-		  else
-		    offX = 0
-		    offY = 0
-		    width = Window2.Width
-		    height = Window2.Height
-		  end
-		  
-		  
-		  if Window1.Hscroll.value then
-		    if Window1.CursorColour.Value then
-		      g.ForeColor = RGB(255,0,0)
-		    else 
-		      g.ForeColor = RGB(255,255,255)
-		    end
-		    g.fillRect((xPos+offX-(Window1.SizeSlide.Value/2)),offY,(Window1.SizeSlide.Value),(height))
-		    Animate.mode=2
-		  end
-		  if Window1.Vscroll.value then
-		    if Window1.CursorColour.Value then
-		      g.ForeColor = RGB(0,255,0)
-		    else 
-		      g.ForeColor = RGB(255,255,255)
-		    end
+		  If Not (Hcolour = &c000000) Then
 		    
-		    g.fillRect(offX,(yPos+offY-(Window1.SizeSlide.Value/2)),(width),(Window1.SizeSlide.Value))
-		    Animate.mode=2
-		  end
+		    g.ForeColor = Hcolour
+		    g.fillRect(xPos+offX+size,offY,size,heightA)
+		  End
+		  
+		  If Not (Vcolour = &c000000) Then
+		    // g.DrawPicture(Window1.OutCanvas,0,0)
+		    g.ForeColor = Vcolour
+		    g.fillRect(offX,yPos+offY+size,widthA,size)
+		  End
+		  
+		  Animate.mode=1
 		  
 		  
-		  'g.ForeColor = &c0000ff
-		  'g.DrawLine((xPos+offX),(yPos+offY),(xPos+offX),(yPos+offY))
-		  'Animate.mode=2
+		  
+		  
 		  
 		  
 		  
@@ -216,27 +232,57 @@ End
 #tag Events Animate
 	#tag Event
 		Sub Action()
-		  speed = Window1.SpeedSlide.Value
+		  // 
+		  // xPos=xPos+1
+		  // yPos=yPos+1
+		  // 
+		  // me.Period = speed
 		  
 		  xPos=xPos+speed
 		  yPos=yPos+speed
-		  if window1.GridsList.ListIndex <> -1 then
-		    if (xPos > val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),0))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),2))) OR (xPos > Window2.width) then xPos=0
-		    if (yPos > val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),1))*val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),3))) OR (yPos > Window2.height) then yPos=0
+		  
+		  
+		  If window1.GridsList.ListIndex <> -1 Then
+		    offX = Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),4))
+		    offY = Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),5))
+		    widthA = Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),0))*Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),2))
+		    heightA = Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),1))*Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),3))
+		    If ((xPos+(2*size)) >= Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),0))*Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),2))) Or (xPos >= Self.width) Then xPos=0
+		    If ((yPos+(2*size)) >= Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),1))*Val(Window1.GridsList.Cell((Window1.GridsList.ListIndex),3))) Or (yPos >= Self.height) Then yPos=0
 		    
 		  else
-		    if (xPos > Window2.width) then xPos=0
-		    if (yPos > Window2.height) then yPos=0
-		  end
-		  Window2.Canvas1.Refresh
+		    If (xPos >= Self.width) Then xPos=0
+		    If (yPos >= Self.height) Then yPos=0
+		    offX = 0
+		    offY = 0
+		    widthA = Self.Width
+		    heightA = Self.Height
+		  End
+		  
+		  // draw the image
+		  Canvas1.Refresh
+		  //Canvas1.Invalidate(False)
 		  
 		  
-		  'OR (xPos > Window2.width+val(Window1.OffH.text))
-		  'OR (yPos > Window2.height+val(Window1.OffV.text))
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
+	#tag ViewProperty
+		Name="Width"
+		Visible=true
+		Group="Size"
+		InitialValue="600"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Size"
+		InitialValue="400"
+		Type="Integer"
+	#tag EndViewProperty
 	#tag ViewProperty
 		Name="BackColor"
 		Visible=true
@@ -309,7 +355,7 @@ End
 		Type="Boolean"
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Height"
+		Name="heightA"
 		Visible=true
 		Group="Size"
 		InitialValue="400"
@@ -461,7 +507,7 @@ End
 		EditorType="Boolean"
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Width"
+		Name="widthA"
 		Visible=true
 		Group="Size"
 		InitialValue="600"
@@ -476,5 +522,33 @@ End
 		Name="yPos"
 		Group="Behavior"
 		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Hcolour"
+		Group="Behavior"
+		InitialValue="&cff0000"
+		Type="Color"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="OffX"
+		Group="Behavior"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="OffY"
+		Group="Behavior"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="size"
+		Group="Behavior"
+		InitialValue="1"
+		Type="Integer"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Vcolour"
+		Group="Behavior"
+		InitialValue="&c00ff00"
+		Type="Color"
 	#tag EndViewProperty
 #tag EndViewBehavior

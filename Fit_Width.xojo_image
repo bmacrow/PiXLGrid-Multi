@@ -1,0 +1,40 @@
+#tag MultiImage
+Image Fit_Width
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAF0AAAAAAF0AAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8NRml0X1dpZHRoLnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAABQTkdmOEJJTf////8AAAogY3UAAAAAAAAAAAAAAAAABkltYWdlcwACAEAvOlVzZXJzOnJpY2hhcmQ6Q2xvdWRTdGF0aW9uOlBpWExHcmlkLU11bHRpOkltYWdlczpGaXRfV2lkdGgucG5nAA4AHAANAEYAaQB0AF8AVwBpAGQAdABoAC4AcABuAGcADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgA+VXNlcnMvcmljaGFyZC9DbG91ZFN0YXRpb24vUGlYTEdyaWQtTXVsdGkvSW1hZ2VzL0ZpdF9XaWR0aC5wbmcAEwABLwAAFQACAA7//wAAAAAAAAAA
+		FullPath = /Users/richard/CloudStation/PiXLGrid-Multi/Images/Fit_Width.png
+		PartialPath = Images\Fit_Width.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 100.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 100.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 100.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

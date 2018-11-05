@@ -16,22 +16,12 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
-      Begin MenuItem LoadItem
+      Begin ApplicationMenuItem FilePreferences
          SpecialMenu = 0
-         Text = "Open Grid List..."
-         Index = 0
-         ShortcutKey = "O"
-         Shortcut = "Cmd+O"
-         MenuModifier = True
-         AutoEnable = True
-         Visible = True
-      End
-      Begin MenuItem SaveItem
-         SpecialMenu = 0
-         Text = "Save Grid List..."
-         Index = 0
-         ShortcutKey = "S"
-         Shortcut = "Cmd+S"
+         Text = "Preferences..."
+         Index = -2147483648
+         ShortcutKey = ","
+         Shortcut = "Cmd+,"
          MenuModifier = True
          AutoEnable = True
          Visible = True
@@ -43,25 +33,61 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
-      Begin MenuItem FileOutput
+      Begin MenuItem FileOpenXML
          SpecialMenu = 0
-         Text = "Live Output"
+         Text = "Open Grid List ..."
          Index = -2147483648
-         ShortcutKey = "L"
-         Shortcut = "Cmd+L"
+         ShortcutKey = "O"
+         Shortcut = "Cmd+O"
          MenuModifier = True
          AutoEnable = True
          Visible = True
       End
-      Begin MenuItem FileFullscreenOutput
+      Begin MenuItem FileSaveXML
          SpecialMenu = 0
-         Text = "Fullscreen Output"
+         Text = "Save Grid List ..."
          Index = -2147483648
-         ShortcutKey = "F"
-         Shortcut = "Cmd+F"
+         ShortcutKey = "S"
+         Shortcut = "Cmd+S"
          MenuModifier = True
          AutoEnable = True
-         Visible = False
+         Visible = True
+      End
+      Begin MenuItem LoadItem
+         SpecialMenu = 0
+         Text = "Open Old Grid List..."
+         Index = 0
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem FileExport
+         SpecialMenu = 0
+         Text = "Export"
+         Index = -2147483648
+         AutoEnable = True
+         SubMenu = True
+         Visible = True
+         Begin MenuItem AEexport
+            SpecialMenu = 0
+            Text = "After Effects Export"
+            Index = -2147483648
+            AutoEnable = True
+            Visible = True
+         End
+         Begin MenuItem svgExportMenu
+            SpecialMenu = 0
+            Text = "svg Export"
+            Index = -2147483648
+            AutoEnable = True
+            Visible = True
+         End
+         Begin MenuItem ExportResolumeExport
+            SpecialMenu = 0
+            Text = "Resolume Export"
+            Index = -2147483648
+            AutoEnable = True
+            Visible = True
+         End
       End
       Begin MenuItem FileClose
          SpecialMenu = 0
@@ -88,37 +114,10 @@ Begin Menu MainMenuBar
       Text = "&Edit"
       Index = -2147483648
       AutoEnable = True
-      Visible = False
-      Begin MenuItem EditUndo
+      Visible = True
+      Begin MenuItem EditCopy1
          SpecialMenu = 0
-         Text = "&Undo"
-         Index = -2147483648
-         ShortcutKey = "Z"
-         Shortcut = "Cmd+Z"
-         MenuModifier = True
-         AutoEnable = True
-         Visible = True
-      End
-      Begin MenuItem EditSeparator1
-         SpecialMenu = 0
-         Text = "-"
-         Index = -2147483648
-         AutoEnable = True
-         Visible = True
-      End
-      Begin MenuItem EditCut
-         SpecialMenu = 0
-         Text = "Cu&t"
-         Index = -2147483648
-         ShortcutKey = "X"
-         Shortcut = "Cmd+X"
-         MenuModifier = True
-         AutoEnable = True
-         Visible = True
-      End
-      Begin MenuItem EditCopy
-         SpecialMenu = 0
-         Text = "&Copy"
+         Text = "Copy"
          Index = -2147483648
          ShortcutKey = "C"
          Shortcut = "Cmd+C"
@@ -126,39 +125,99 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
-      Begin MenuItem EditPaste
+   End
+   Begin MenuItem CanvasMenu
+      SpecialMenu = 0
+      Text = "Canvas"
+      Index = 0
+      AutoEnable = True
+      Visible = True
+      Begin MenuItem ViewZoomIn
          SpecialMenu = 0
-         Text = "&Paste"
+         Text = "Zoom In"
          Index = -2147483648
-         ShortcutKey = "V"
-         Shortcut = "Cmd+V"
+         ShortcutKey = "="
+         Shortcut = "Cmd+="
          MenuModifier = True
          AutoEnable = True
          Visible = True
       End
-      Begin MenuItem EditClear
+      Begin MenuItem ViewZoomOut
          SpecialMenu = 0
-         Text = "#App.kEditClear"
+         Text = "Zoom Out"
          Index = -2147483648
+         ShortcutKey = "-"
+         Shortcut = "Cmd+-"
+         MenuModifier = True
          AutoEnable = True
          Visible = True
       End
-      Begin MenuItem EditSeparator2
+      Begin MenuItem ViewFitHeight
+         SpecialMenu = 0
+         Text = "Fit Height"
+         Index = -2147483648
+         ShortcutKey = "3"
+         Shortcut = "Cmd+3"
+         MenuModifier = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem ViewFitWidth
+         SpecialMenu = 0
+         Text = "Fit Width"
+         Index = -2147483648
+         ShortcutKey = "2"
+         Shortcut = "Cmd+2"
+         MenuModifier = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem View11
+         SpecialMenu = 0
+         Text = "1 : 1"
+         Index = -2147483648
+         ShortcutKey = "1"
+         Shortcut = "Cmd+1"
+         MenuModifier = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem deSelect
+         SpecialMenu = 0
+         Text = "De-Select"
+         Index = -2147483648
+         ShortcutKey = "D"
+         Shortcut = "Cmd+D"
+         MenuModifier = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem UntitledSeparator
          SpecialMenu = 0
          Text = "-"
          Index = -2147483648
          AutoEnable = True
          Visible = True
       End
-      Begin MenuItem EditSelectAll
+      Begin MenuItem FileOutput
          SpecialMenu = 0
-         Text = "Select &All"
+         Text = "Live Output"
          Index = -2147483648
-         ShortcutKey = "A"
-         Shortcut = "Cmd+A"
+         ShortcutKey = "L"
+         Shortcut = "Cmd+L"
          MenuModifier = True
          AutoEnable = True
          Visible = True
+      End
+      Begin MenuItem FileFullscreenOutput
+         SpecialMenu = 0
+         Text = "Fullscreen Output"
+         Index = -2147483648
+         ShortcutKey = "F"
+         Shortcut = "Cmd+F"
+         MenuModifier = True
+         AutoEnable = True
+         Visible = False
       End
    End
 End

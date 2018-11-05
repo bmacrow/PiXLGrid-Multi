@@ -1,0 +1,46 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=jsx
+		DocIcon=gridDraw-multi2.xojo_resources;&h154B058
+		Extension=.jsx
+		Flags=&h2
+		MacCreator=
+		MacType=
+		Name=ExtendScript
+		UTI=
+		UTIConformsTo=public.item
+		Description=
+		MimeType=
+		Imported=True
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=svg
+		DocIcon=gridDraw-multi2.xojo_resources;&h1FF0884
+		Extension=.svg
+		Flags=&h2
+		MacCreator=
+		MacType=
+		Name=Scalable Vector Graphics
+		UTI=
+		UTIConformsTo=public.item
+		Description=
+		MimeType=
+		Imported=True
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=xml
+		Extension=.xml
+		Flags=&h2
+		MacCreator=
+		MacType=
+		Name=XML text
+		UTI=
+		UTIConformsTo=public.item
+		Description=
+		MimeType=
+		Imported=True
+	#tag EndFileType
+
+#tag EndFileTypeSet

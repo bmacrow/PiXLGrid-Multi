@@ -1,0 +1,46 @@
+#tag MultiImage
+Image pixl_logo_White
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAGyAAAAAAGyAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8ccGl4bF9sb2dvX1doaXRlXzEwMCBjb3B5LnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAABkltYWdlcwACAFAvOlVzZXJzOnJpY2hhcmQ6U3lub2xvZ3lEcml2ZTpQaVhMR3JpZC1NdWx0aTpJbWFnZXM6cGl4bF9sb2dvX1doaXRlXzEwMCBjb3B5LnBuZwAOADoAHABwAGkAeABsAF8AbABvAGcAbwBfAFcAaABpAHQAZQBfADEAMAAwACAAYwBvAHAAeQAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIATlVzZXJzL3JpY2hhcmQvU3lub2xvZ3lEcml2ZS9QaVhMR3JpZC1NdWx0aS9JbWFnZXMvcGl4bF9sb2dvX1doaXRlXzEwMCBjb3B5LnBuZwATAAEvAAAVAAIADv//AAAAAAAAAAA=
+		FullPath = /Users/richard/SynologyDrive/PiXLGrid-Multi/Images/pixl_logo_White_100 copy.png
+		PartialPath = Images\pixl_logo_White_100 copy.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 100.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAGyAAAAAAGyAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8ccGl4bF9sb2dvX1doaXRlXzIwMCBjb3B5LnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAABkltYWdlcwACAFAvOlVzZXJzOnJpY2hhcmQ6U3lub2xvZ3lEcml2ZTpQaVhMR3JpZC1NdWx0aTpJbWFnZXM6cGl4bF9sb2dvX1doaXRlXzIwMCBjb3B5LnBuZwAOADoAHABwAGkAeABsAF8AbABvAGcAbwBfAFcAaABpAHQAZQBfADIAMAAwACAAYwBvAHAAeQAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIATlVzZXJzL3JpY2hhcmQvU3lub2xvZ3lEcml2ZS9QaVhMR3JpZC1NdWx0aS9JbWFnZXMvcGl4bF9sb2dvX1doaXRlXzIwMCBjb3B5LnBuZwATAAEvAAAVAAIADv//AAAAAAAAAAA=
+		FullPath = /Users/richard/SynologyDrive/PiXLGrid-Multi/Images/pixl_logo_White_200 copy.png
+		PartialPath = Images\pixl_logo_White_200 copy.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 100.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAGyAAAAAAGyAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8ccGl4bF9sb2dvX1doaXRlXzMwMCBjb3B5LnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAABkltYWdlcwACAFAvOlVzZXJzOnJpY2hhcmQ6U3lub2xvZ3lEcml2ZTpQaVhMR3JpZC1NdWx0aTpJbWFnZXM6cGl4bF9sb2dvX1doaXRlXzMwMCBjb3B5LnBuZwAOADoAHABwAGkAeABsAF8AbABvAGcAbwBfAFcAaABpAHQAZQBfADMAMAAwACAAYwBvAHAAeQAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIATlVzZXJzL3JpY2hhcmQvU3lub2xvZ3lEcml2ZS9QaVhMR3JpZC1NdWx0aS9JbWFnZXMvcGl4bF9sb2dvX1doaXRlXzMwMCBjb3B5LnBuZwATAAEvAAAVAAIADv//AAAAAAAAAAA=
+		FullPath = /Users/richard/SynologyDrive/PiXLGrid-Multi/Images/pixl_logo_White_300 copy.png
+		PartialPath = Images\pixl_logo_White_300 copy.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 100.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

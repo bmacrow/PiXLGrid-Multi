@@ -3,7 +3,7 @@ Protected Class UpdateXmlReader
 Inherits XMLReader
 	#tag Event
 		Sub StartElement(name as String, attributeList as XmlAttributeList)
-		  Dim  version as double = val(str(App.MinorVersion) +"."  +Str(App.NonReleaseVersion))
+		  Dim  version as double = val(str(App.MinorVersion) +"."  +Str(App.Version))
 		  Dim s(-1) As String
 		  
 		  if Updated.Visible = true then
@@ -20,7 +20,7 @@ Inherits XMLReader
 		          Updated.ChangesText.AppendText(s(i))
 		          Updated.ChangesText.AppendText(EndOfLine)
 		        next
-		        MsgBox("Update Available")
+		        //MsgBox("Update Available")
 		      elseif version = val(attributeList.Value("ver"))then
 		        Updated.Hide
 		        MsgBox("You have the latest version.")
@@ -40,16 +40,58 @@ Inherits XMLReader
 		    End Select
 		    
 		  else
-		    'Case "Version"
-		    'if version < val(attributeList.Value("ver"))then
-		    'app.newVersion = true
-		    'end
+		    Select Case name
+		    Case "Version"
+		      if version < val(attributeList.Value("ver"))then
+		        app.newVersion = true
+		      end
+		    end select
 		  end
 		End Sub
 	#tag EndEvent
 
 
 	#tag ViewBehavior
+		#tag ViewProperty
+			Name="Base"
+			Group="Behavior"
+			Type="String"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="CurrentLineNumber"
+			Group="Behavior"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="CurrentColumnNumber"
+			Group="Behavior"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="CurrentByteIndex"
+			Group="Behavior"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="CurrentByteCount"
+			Group="Behavior"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="ErrorCode"
+			Group="Behavior"
+			Type="Integer"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="SetDefaultHandler"
+			Group="Behavior"
+			Type="Boolean"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="SetDefaultHandlerExpand"
+			Group="Behavior"
+			Type="Boolean"
+		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Index"
 			Visible=true

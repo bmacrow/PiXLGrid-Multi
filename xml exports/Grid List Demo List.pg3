@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gridList xmlns:xml="http://www.w3.org/XML/1998/namespace">
+  <canvas canvasName="Demo List" outH="1920" outV="1080" raster="True" originCursor="True" transparentCanvas="False" largeText="True" textColour="&amp;h0020FEFE" colourGrid="True" textPosition="5" colDtype="0" dropShadow="True">
+    <grid gridName="Centre Screen" tileX="80" tileY="60" cols="16" rows="12" offX="320" offY="180" background="Fruit" grid="True" raster="True" tileID="True" circle="True" cross="True" corner="True" logo="True" colorBars="True"/>
+    <grid gridName="Stage Right" tileX="80" tileY="60" cols="3" rows="12" offX="40" offY="180" background="Yellow/Gray" grid="True" raster="True" tileID="True" circle="True" cross="True" corner="True" logo="False" colorBars="True"/>
+    <grid gridName="Stage Left" tileX="80" tileY="60" cols="3" rows="12" offX="1640" offY="180" background="Aqua/Gray" grid="True" raster="True" tileID="True" circle="True" cross="True" corner="True" logo="False" colorBars="True"/>
+    <grid gridName="Riser" tileX="80" tileY="60" cols="12" rows="2" offX="480" offY="932" background="50% Colour" grid="True" raster="True" tileID="True" circle="True" cross="True" corner="False" logo="False" colorBars="False"/>
+    <grid gridName="Header" tileX="80" tileY="60" cols="12" rows="2" offX="480" offY="35" background="Rainbow" grid="True" raster="True" tileID="True" circle="True" cross="True" corner="False" logo="False" colorBars="False"/>
+    <grid gridName="Door" tileX="80" tileY="60" cols="6" rows="4" offX="720" offY="660" background="Grayscale V" grid="False" raster="False" tileID="True" circle="True" cross="False" corner="False" logo="False" colorBars="False"/>
+  </canvas>
+</gridList>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PiXL>
+	<Version ver="2.172" date="2/11/18" macURL="http://bit.ly/2Sems8L" 
+pcURL="http://bit.ly/2O0KQaA" 
+changelog="
+v2.172|
+	Added default tile sizes to preferences and set them to 84 x 168 (Infiled ER5)|
+v2.171|
+	New Feature. Whole tile offset. Just enter #t in OffsetX or OffsetY. ie 2t for a two tile offset etc|
+	New Feature. svg export of canvas. Useful for Millumin Output setup|
+	New Feature. Resolume XML export for setting up input/output maps (A real bodge, so don't expect too much!)|
+	New Feature. Will now ask you to save before quiting.
+	Changed Grid file format to XML. You can still open old files. All new files will save as .pg3 files|
+	Moved some button to the menubar to make way for future options|
+	Bug Fixes in live output|
+	New version scheme, with build numbers|
+|
+v2.168|
+	bunch of fixes|
+|
+v2.166|
+	Added chequerboard to canvas|
+	fixed PC install|
+|
+v2.164|
+	macOS Mojave Dark Mode support|
+	performance improvements|
+	bug fixes|
+|
+v2.163|
+	Added temporary custom logo option!|
+		Paid upgrade for addition of permanent logo, contact for details|
+	Debugging improvements|
+	Small routine effiencies|
+|
+v2.162|
+	Added Red, green, blue, yellow, orange, cyan, purple, magenta flat colour backgrounds|
+|
+v2.161|
+	Added copy grid or canvas to clipboard|
+	Fixed update links|
+|
+v2.160|
+	changed update links|
+|
+v2.158|
+	new logo handling|
+|
+v2.157|
+	Minor bug fixes|
+|
+v2.156|
+	Added multiple select for copy function|
+	Added check for update on startup|
+|
+v2.155|
+	Added multiple select to Save grids and Delete Grids|
+	Added dropShadow to grid list file save|
+|
+v2.154|
+	Optional drop shadow, added to small text as well|
+|
+v2.153|
+	Added drop shadow to large central grid title|
+|
+v2.152|
+	Fixed lower left grid text size for smaller screens.|
+|
+v2.151|
+	Added Mask and Cursor layers to AE export|
+	AEexport with Grids, now saves grids,mask and cursor to same folder as Script|
+|
+v2.149|
+	Added de-select for large grid lists|
+	Added Veg (yuck) and Camouflauge colour palettes|
+|
+v2.148|
+	Added option to export AE script with links to grids as layers|
+|
+v2.147|
+	Added Transparent canvas option|
+	Mask mode now hides cursor, name and switches BG on|
+|
+v2.145|
+	Added option to id cols or rows with letters|
+	Hopefully fixed a bug where old version preferences would cause crash|
+	If not, delete preferences and re-launch application to create new prefs file|
+|
+v2.143|
+Added preference|
+	Toggle random colour / gray solid generation in AE script generator|
+|
+v2.142|
+Bug Fix|
+	Scaling CPU usage bug|
+Hi-DPI support!|
+|
+v2.141|
+New features!|
+	Optional Column letters|
+	Reduced/Full range check palette|
+Bug Fix|
+	prevent crash on opening old version grid lists|
+|
+v2.140|
+Improved Fit and zoom functions|
+Bug fixes|
+|
+v2.139|
+Bug fix, PC version autolauch from grid file|
+|
+v2.138|
+Added Fit H, Fit V and 1:1 Buttons to view scaling|
+Grids now open to canvas view and scale to width|
+Fixed bug prevented app from closing when closing window|
+|
+v2.137|
+Bug Fix. Mac double clicking file to open app would crash|
+|
+v2.136|
+Added After Effects script export|
+	Creates a script which will build an AE composition|
+	for each grid and pre-comp them all into a Canvas|
+Added mouse click to dissmiss splash screen|
+Added preferences for AE rate and duration|
+Fixed Save all grids|
+	Would sometimes export multiple copies of first grid only|
+|
+v2.135|
+Added Mask feature to canvas output|
+|
+v2.134|
+Added Canvas Name with preset positions|
+Internal tidyup and bug fixes|
+Resized main window to 16:9 ratio|
+Changed colour of Diagonal|
+|
+v2.133|
+Added enter key and shift enter key for vertical editing in list|
+|
+v2.132|
+Bug Fix: Tab key entry on PC crash|
+Logo size fix|
+|
+v2.131|
+Added escape key to exit fullscreen|
+Grayscale V and H|
+Fixed logo size/pos|
+|
+v2.130|
+Added delete and backspace key|
+Fixed Canvas TL text size and position for various resolutions|
+Added Full RGB background|
+Added White Grid option|
+|
+v2.129|
+Better text scaling and positioning|
+Fruit co. inspired colour scheme|
+|
+v2.128|
+URL fixes for update|
+sponsor splash screen and link|
+|
+v2.127|
+Added Drag grid in list to re-order|
+Couple of performance tweaks|
+|
+v2.125|
+Fix Large text on Hi-res screens|
+|
+v2.124|
+Bug Fixes|
+More Colours inc. Grayscale|
+|
+v2.0|
+New Multi Grid Version|
+Add many different sized grids to a canvas|
+Save list of grids|
+Several new background colour options|
+Moving cursor on individual grids or whole canvas|
+Large Grid name and colour option|
+Grid or Canvas viewer|
+Added Canvas raster|
+Added top left co-ordinates for each grid within a canvas|
+Added repeating save on grid save if nothing selected|
+Fixed TAB key in grid list|
+Fixed corner circle scaling for small grids|
+Added close button on Main Window|
+v0.51|
+Added Horizontal Mouse scroll|
+Added 8 more background palettes|
+Added Check for Updates xml|
+">
+	</Version>
+</PiXL>
