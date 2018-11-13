@@ -1,0 +1,2608 @@
+#tag Window
+Begin Window Window1
+   BackColor       =   &c51535200
+   Backdrop        =   0
+   CloseButton     =   True
+   Compatibility   =   ""
+   Composite       =   False
+   Frame           =   9
+   FullScreen      =   False
+   FullScreenButton=   False
+   HasBackColor    =   False
+   Height          =   700
+   ImplicitInstance=   True
+   LiveResize      =   True
+   MacProcID       =   0
+   MaxHeight       =   32000
+   MaximizeButton  =   False
+   MaxWidth        =   32000
+   MenuBar         =   905261055
+   MenuBarVisible  =   True
+   MinHeight       =   700
+   MinimizeButton  =   True
+   MinWidth        =   1010
+   Placement       =   0
+   Resizeable      =   True
+   Title           =   "Editor"
+   Visible         =   True
+   Width           =   1010
+   Begin Canvas Canvas1
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   392
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   1
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Top             =   20
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   960
+   End
+   Begin ScrollBar VerticalScrollBar
+      AcceptFocus     =   True
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   392
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   980
+      LineStep        =   1
+      LiveScroll      =   True
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      Maximum         =   100
+      Minimum         =   0
+      PageStep        =   20
+      Scope           =   0
+      TabIndex        =   18
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   20
+      Transparent     =   False
+      Value           =   0
+      Visible         =   True
+      Width           =   15
+   End
+   Begin ScrollBar HorizontalScrollBar
+      AcceptFocus     =   True
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   15
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LineStep        =   1
+      LiveScroll      =   True
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   False
+      Maximum         =   100
+      Minimum         =   0
+      PageStep        =   20
+      Scope           =   0
+      TabIndex        =   2
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   412
+      Transparent     =   False
+      Value           =   0
+      Visible         =   True
+      Width           =   960
+   End
+   Begin UpDownArrows Scale
+      AcceptFocus     =   False
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   22
+      HelpTag         =   "Zoom in and out"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   890
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   11
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   440
+      Transparent     =   False
+      Visible         =   True
+      Width           =   14
+   End
+   Begin TextField OutH
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   77
+      LimitText       =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   5
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "1920"
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   444
+      Transparent     =   False
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   46
+   End
+   Begin TextField OutV
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   135
+      LimitText       =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   6
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "1080"
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   444
+      Transparent     =   False
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   46
+   End
+   Begin LabelClass totYlabel1
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   122
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "H"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   444
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   12
+   End
+   Begin LabelClass totYlabel2
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   186
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "V"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   444
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   14
+   End
+   Begin LabelClass Label10
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   22
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Canvas"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   444
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   47
+   End
+   Begin CheckBox stats
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   42
+      HelpTag         =   "Display raster box on canvas"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   206
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   7
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   428
+      Transparent     =   False
+      Underline       =   False
+      Value           =   True
+      Visible         =   False
+      Width           =   22
+   End
+   Begin LabelClass zoom
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   17
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   908
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "54%"
+      TextAlign       =   1
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   451
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   39
+   End
+   Begin CheckBox Hscroll
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Horizontal scrolling line"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   441
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   12
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   False
+      Underline       =   False
+      Value           =   True
+      Visible         =   False
+      Width           =   20
+   End
+   Begin CheckBox Vscroll
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Vertical scrolling line"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   508
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   13
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   False
+      Underline       =   False
+      Value           =   True
+      Visible         =   False
+      Width           =   20
+   End
+   Begin Slider SpeedSlide
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   23
+      HelpTag         =   "Adjust speed of cursor"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   696
+      LineStep        =   1
+      LiveScroll      =   True
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Maximum         =   5
+      Minimum         =   1
+      PageStep        =   20
+      Scope           =   0
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TickStyle       =   "0"
+      Top             =   653
+      Transparent     =   False
+      Value           =   1
+      Visible         =   False
+      Width           =   82
+   End
+   Begin LabelClass Label13
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   650
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Speed"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   41
+   End
+   Begin PushButton Live3
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Live Output"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Display canvas on second monitor with optional moving cursor"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   903
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   86
+   End
+   Begin Slider SizeSlide
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   23
+      HelpTag         =   "Adjust size of cursor"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   814
+      LineStep        =   1
+      LiveScroll      =   True
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Maximum         =   10
+      Minimum         =   1
+      PageStep        =   20
+      Scope           =   0
+      TabIndex        =   19
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TickStyle       =   "0"
+      Top             =   657
+      Transparent     =   False
+      Value           =   1
+      Visible         =   False
+      Width           =   82
+   End
+   Begin LabelClass Label15
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   783
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   20
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Size"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   28
+   End
+   Begin CheckBox CursorColour
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Toggle live cursor colour"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   582
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   21
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   False
+      Underline       =   False
+      Value           =   True
+      Visible         =   False
+      Width           =   20
+   End
+   Begin PushButton AddGrid
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Add Grid..."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "If selected; copy grid, otherwise copy last grid"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   22
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   481
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   76
+   End
+   Begin Listbox GridsList
+      AutoDeactivate  =   True
+      AutoHideScrollbars=   True
+      Bold            =   False
+      Border          =   True
+      ColumnCount     =   16
+      ColumnsResizable=   True
+      ColumnWidths    =   "44,44,44,44,52,52,*,110,50,50,50,50,50,50,50,70"
+      DataField       =   ""
+      DataSource      =   ""
+      DefaultRowHeight=   -1
+      Enabled         =   True
+      EnableDrag      =   False
+      EnableDragReorder=   True
+      GridLinesHorizontal=   0
+      GridLinesVertical=   0
+      HasHeading      =   True
+      HeadingIndex    =   -1
+      Height          =   132
+      HelpTag         =   "Add multiple grids with individual offsets.\nEnter ## pixels or ##p for panel offsets. "
+      Hierarchical    =   False
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   "tileX	tileY	cols	rows	OffsetX	OffsetY	Name	Background	Grid	Raster	TileIDs	Circle	Cross	Corner	Logo	ColourBars"
+      Italic          =   False
+      Left            =   22
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   False
+      RequiresSelection=   False
+      Scope           =   0
+      ScrollbarHorizontal=   False
+      ScrollBarVertical=   True
+      SelectionType   =   1
+      ShowDropIndicator=   False
+      TabIndex        =   0
+      TabPanelIndex   =   0
+      TabStop         =   False
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   513
+      Transparent     =   False
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   969
+      _ScrollOffset   =   0
+      _ScrollWidth    =   -1
+   End
+   Begin Rectangle Rectangle2
+      AutoDeactivate  =   True
+      BorderWidth     =   1
+      BottomRightColor=   &c51535200
+      Enabled         =   True
+      FillColor       =   &cFFFFFF00
+      Height          =   1
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   3
+      TabPanelIndex   =   0
+      Top             =   472
+      TopLeftColor    =   &c51535200
+      Transparent     =   False
+      Visible         =   True
+      Width           =   969
+   End
+   Begin PushButton DeleteGrid
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Delete Grid"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Remove slected grid"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   108
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   23
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   481
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   88
+   End
+   BeginSegmented SegmentedControl GridCanvas_select
+      Enabled         =   True
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   777
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      MacControlStyle =   0
+      Scope           =   0
+      Segments        =   "Grid\n\nTrue\rCanvas\n\nFalse"
+      SelectionType   =   0
+      TabIndex        =   25
+      TabPanelIndex   =   0
+      Top             =   440
+      Transparent     =   False
+      Visible         =   True
+      Width           =   104
+   End
+   Begin CheckBox originCursor
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   42
+      HelpTag         =   "Display Top Left start point cursor and co-ordinates"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   273
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   26
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   428
+      Transparent     =   False
+      Underline       =   False
+      Value           =   True
+      Visible         =   False
+      Width           =   22
+   End
+   Begin PushButton SaveList
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Save List..."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Save grid list as csv file"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   814
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   27
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   481
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   80
+   End
+   Begin PushButton LoadList
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Open List..."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Import grid list from csv file"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   906
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   28
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   481
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   80
+   End
+   Begin CheckBox alt_text
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Displays large grid name in centre of each grid"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   202
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   29
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   481
+      Transparent     =   False
+      Underline       =   False
+      Value           =   True
+      Visible         =   True
+      Width           =   18
+   End
+   Begin PushButton SaveAsCanvas
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Save Canvas As.."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Save just the grid within the canvas if selected\notherwise save all grids within the canvas."
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   158
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   126
+   End
+   Begin Label deselectLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   15
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   90
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   30
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Text            =   "De-select for all grids"
+      TextAlign       =   0
+      TextColor       =   &cFF000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   679
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   135
+   End
+   Begin PushButton SaveAsGrid
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Save All Grids As..."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Save just the grid if selected\notherwise save all grids."
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   27
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   31
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   126
+   End
+   Begin CheckBox Grid_Solo
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Mutes all other grids in canvas"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   292
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   0
+      TabIndex        =   32
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   False
+      Width           =   20
+   End
+   Begin Rectangle ColorPicker
+      AutoDeactivate  =   True
+      BorderWidth     =   0
+      BottomRightColor=   &c00000000
+      Enabled         =   True
+      FillColor       =   &cDCB42200
+      Height          =   26
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   308
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   33
+      TabPanelIndex   =   0
+      Top             =   478
+      TopLeftColor    =   &c00000000
+      Transparent     =   False
+      Visible         =   True
+      Width           =   26
+   End
+   Begin CheckBox GridColour
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Displays large grid name in centre of each grid"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   476
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   34
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   481
+      Transparent     =   False
+      Underline       =   False
+      Value           =   True
+      Visible         =   True
+      Width           =   22
+   End
+   Begin TextField CanvasText
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   "Canvas Name..."
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   22
+      HelpTag         =   "Displays Canvas Name and Resolution"
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   443
+      LimitText       =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   24
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   444
+      Transparent     =   False
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   193
+   End
+   Begin PopupMenu TextPos
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   23
+      HelpTag         =   "Canvas stats position"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   "Top Left\nTop Centre\nTop Right\nBottom Left\nBottom Centre\nBottom Right"
+      Italic          =   False
+      Left            =   638
+      ListIndex       =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   35
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   444
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   118
+   End
+   Begin CheckBox MaskMode
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Turns all grids transparent on black background"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   373
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   0
+      TabIndex        =   36
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   False
+      Width           =   20
+   End
+   Begin PushButton AEexport
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "AE Export..."
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Creates an After Effects Script to generate canvas"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   710
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   37
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   481
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   94
+   End
+   Begin Rectangle Rectangle3
+      AutoDeactivate  =   True
+      BorderWidth     =   1
+      BottomRightColor=   &c51535200
+      Enabled         =   True
+      FillColor       =   &cFFFFFF00
+      Height          =   34
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   768
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   38
+      TabPanelIndex   =   0
+      Top             =   436
+      TopLeftColor    =   &c51535200
+      Transparent     =   False
+      Visible         =   True
+      Width           =   1
+   End
+   Begin PopupMenu col_alpha
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   "Display tile IDs as numbers, or letters and numbers"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   "Numbers\nColumn Letters\nRow Letters"
+      Italic          =   False
+      Left            =   569
+      ListIndex       =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   40
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   481
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   109
+   End
+   Begin CheckBox T_Canvas
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   42
+      HelpTag         =   "Removes black background from canvas"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   342
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   0
+      TabIndex        =   41
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   428
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   False
+      Width           =   22
+   End
+   Begin LabelClass T_CanvasText
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   37
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   365
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   42
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Transparent\nBackground"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   431
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   76
+   End
+   Begin LabelClass originText
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   37
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   296
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   43
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Offset\nCursor"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   431
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   42
+   End
+   Begin LabelClass statsText
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   37
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   230
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   44
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Raster\nBox"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   431
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   42
+   End
+   Begin LabelClass Label19
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   37
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   225
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   45
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Large\nGrid Names"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   473
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   72
+   End
+   Begin LabelClass Label20
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   37
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   338
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   46
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Text\nColour"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   473
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   42
+   End
+   Begin CheckBox dropShadow
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   42
+      HelpTag         =   "Add drop shadow to text"
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   389
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      State           =   1
+      TabIndex        =   47
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   470
+      Transparent     =   False
+      Underline       =   False
+      Value           =   True
+      Visible         =   True
+      Width           =   22
+   End
+   Begin LabelClass Label21
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   37
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   414
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   48
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Drop\nShadow"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   473
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   52
+   End
+   Begin LabelClass Label22
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   37
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   499
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   49
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Colour\nGrid"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   473
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   52
+   End
+   Begin Timer updateTime
+      Index           =   -2147483648
+      LockedInPosition=   False
+      Mode            =   1
+      Period          =   500
+      Scope           =   0
+      TabPanelIndex   =   0
+   End
+   Begin medButton FitHbutton
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      Caption         =   "Fit H"
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   17
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   908
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   50
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   432
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   39
+   End
+   Begin medButton OnetoOnebtn
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      Caption         =   "1:1"
+      DoubleBuffer    =   True
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   17
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   948
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   51
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   450
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   39
+   End
+   Begin medButton FitVbutton
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      Caption         =   "Fit V"
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   17
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   948
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   52
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   432
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   39
+   End
+   Begin LabelClass LabelClass01
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   309
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   53
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Grid Solo"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   62
+   End
+   Begin LabelClass LabelClass02
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   392
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   54
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Mask"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   41
+   End
+   Begin LabelClass LabelClass03
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   457
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   55
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "H scroll"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   49
+   End
+   Begin LabelClass LabelClass04
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   529
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   56
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "V scroll"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   53
+   End
+   Begin LabelClass LabelClass05
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   601
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   False
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   57
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Colour"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   653
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   False
+      Width           =   53
+   End
+End
+#tag EndWindow
+
+#tag WindowCode
+	#tag Event
+		Sub Close()
+		  If Not Preferences.Save Then
+		    MsgBox("Could not save preferences.")
+		  End If
+		  
+		  FileClose.Visible=false
+		  
+		  Window2.Close()
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  'Select case asc(key)
+		  'case  43
+		  ''+ zoom in
+		  'case 45
+		  ''- zoom out
+		  'case 72,104
+		  ''FitH
+		  'FitH()
+		  'case 86,118
+		  ''FitV
+		  'FitV()
+		  'case 70,102
+		  ''1:1
+		  'mScale=100
+		  'Window1.Canvas1.Refresh
+		  'zoom.Text=str(mScale)+"%"
+		  '
+		  'case 27
+		  'Window2.FullScreen=false
+		  '
+		  'else
+		  '
+		  'end
+		  
+		  
+		End Function
+	#tag EndEvent
+
+	#tag Event
+		Sub Open()
+		  #If DebugBuild Then
+		    me.Title = "Editor - Debug Mode " + "version " +str(App.MinorVersion) +"."  +Str(App.NonReleaseVersion)
+		  #endif
+		  
+		  If Not IsDarkMode Then
+		    Self.HasBackColor = True
+		    Self.BackColor = &c51535200
+		  End
+		  
+		  maxWinHeight =Window1.MinHeight '842
+		  maxWinWidth = Window1.MinWidth '1010
+		  CanvasHmargin =maxWinWidth-Canvas1.Width '50
+		  CanvasVMargin =maxWinHeight-Canvas1.Height '302
+		  'T_Canvas.value = Preferences.Tcanvas
+		  me.left = screen(0).left
+		  me.top = screen(0).top+50
+		  
+		  
+		  rebuild=true
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		End Sub
+	#tag EndEvent
+
+	#tag Event
+		Sub Resizing()
+		  'debug.listbox1.InsertRow("Resize")
+		  'UpdateScreen()
+		End Sub
+	#tag EndEvent
+
+
+	#tag Method, Flags = &h0
+		Sub AfterEffect(avecGrid as Boolean)
+		  Dim f, f2 As folderitem
+		  dim tos as textOutputStream
+		  dim s as string
+		  dim i, j as integer
+		  dim Red,Green,Blue as Integer
+		  
+		  
+		  
+		  'show standard file selector
+		  f= GetsaveFolderItem(ExtendScript.jsx,"AE script - "+CanvasText.text+".jsx")
+		  if f = nil then exit sub                              'cancel clicked
+		  
+		  'create file
+		  tos = f.CreateTextFile
+		  if tos = nil then                                       'failed?
+		    MsgBox("The file could not be created!")
+		    exit sub
+		  end if
+		  
+		  s = AE1 + Window1.OutH.Text +";" + chr(10) + "  var compH = " + Window1.OutV.text + AE1a + Preferences.AEduration+ AE1b + Preferences.AEframerate + AE2 + CanvasText.text +AE2a
+		  
+		  tos.WriteLine s.left(s.len-1)                'save line
+		  
+		  if GridsList.ListCount>0 then                   'if grid not empty
+		    for i=0 to GridsList.ListCount-1            'for each row
+		      
+		      if Preferences.AErandom then
+		        Red = Rnd * 255
+		        Green = rnd() * 255
+		        Blue = rnd() * 255
+		      else
+		        Red = 127
+		        Green = 127
+		        Blue = 127
+		      end if
+		      
+		      dim gridWidth as Integer = val(GridsList.cell(i,0)) * val(GridsList.cell(i,2))
+		      dim gridHeight as Integer = val(GridsList.cell(i,1)) * val(GridsList.cell(i,3))
+		      s= "  var compW = " + str(gridWidth) + ";" + chr(10) + "  var compH = " + str(gridHeight) + AE3 + GridsList.Cell(i,6) +AE3a +str(Red)+"/255,"+str(Green)+"/255,"+str(Blue)+"/255"+AE3b
+		      tos.WriteLine s.left(s.len-1)                'save line
+		      
+		      if withGrids then 
+		        s = AE3c + "Grid-" +GridsList.Cell(i,6) + "-"+Str(gridWidth) + "x" +Str(gridHeight) +".png" + AE3d
+		        tos.WriteLine s.left(s.len-1)                'save line
+		      end if
+		      
+		      s = AE3e+ GridsList.cell(i,4) + "," + GridsList.cell(i,5) + "]);" + chr(10) + chr(10)
+		      
+		      tos.WriteLine s.left(s.len-1)                'save line
+		    next
+		    
+		  end 
+		  
+		  
+		  if avecGrid then
+		    OutCanvasUpdate()
+		    s= AE4+ "Canvas-Mask-" +CanvasText.text+" "+str(OutCanvas.Width) + "x" +str(OutCanvas.Height) + ".png" + AE4b +chr(10)
+		    tos.WriteLine s.left(s.len-1)                'save line
+		    
+		    
+		    s= AE4+ "Canvas-Cursor-" +CanvasText.text+" "+str(OutCanvas.Width) + "x" +str(OutCanvas.Height) + ".png" + AE4b +chr(10)
+		    tos.WriteLine s.left(s.len-1)  
+		    
+		    
+		  end
+		  
+		  s= "  canvas.openInViewer();"+  chr(10) + "  app.endUndoGroup();" +chr(10) + "}" + chr(10)
+		  tos.WriteLine s.left(s.len-1)                'save line
+		  
+		  
+		  tos.Close                                                 'close file
+		  
+		  
+		  f = f.Parent
+		  'MsgBox(f.NativePath)
+		  
+		  
+		  if avecGrid then
+		    
+		    dim outpic as Picture
+		    
+		    for i = 0 to GridsList.ListCount-1
+		      PicIndex = i
+		      BuildGrid(PicIndex)
+		      
+		      f2 = GetFolderItem(f.NativePath +"/Grid-" +GridsList.Cell(i,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png",3)
+		      'MsgBox(f2.NativePath)
+		      If f2 <> Nil Then
+		        mypic.Save(f2, Picture.SaveAsPNG)
+		      End If
+		      
+		    next
+		    
+		    OutCursor()
+		    
+		    f2 = GetFolderItem(f.NativePath +"/Canvas-Cursor-" +CanvasText.text+" "+str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png",3)
+		    
+		    
+		    If f2 <> Nil Then
+		      OutCanvas.Save(f2, Picture.SaveAsPNG)
+		    End If
+		    
+		    
+		    OutMask()
+		    
+		    f2 = GetFolderItem(f.NativePath +"/Canvas-Mask-" +CanvasText.text+" "+str(OutCanvas.Width) + "x" +str(OutCanvas.Height) +".png",3)
+		    
+		    
+		    If f2 <> Nil Then
+		      OutCanvas.Save(f2, Picture.SaveAsPNG)
+		    End If
+		    
+		    
+		    
+		    //OutCanvasUpdate()
+		    
+		  end
+		  
+		  
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub BuildGrid(Index As integer)
+		  
+		  debugWindow.log("BuildGrid" + str(Index))
+		  
+		  
+		  dim i,j,k,l,tileX,tileY,screenWidth, screenHeight,rcount,colcount,c2count,colorbarsHeight as Integer
+		  dim logoRatio as Double
+		  dim x,y,totX,totY,logoSize,logoHeight as Integer
+		  dim textsize as Single
+		  dim gridColor(), bgColor() as color
+		  dim id as string
+		  dim offset as Integer
+		  
+		  dim alphabet() as text = Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"_
+		  ,"aa","ab","ac","ad","ae","af","ag","ah","ai","aj","ak","al","am","an","ao","ap","aq","ar","as","at","au","av","aw","ax","ay","az"_
+		  ,"ba","bb","bc","bd","be","bf","bg","bh","bi","bj","bk","bl","bm","bn","bo","bp","bq","br","bs","bt","bu","bv","bw","bx","by","bz"_
+		  ,"ca","cb","cc","cd","ce","cf","cg","ch","ci","cj","ck","cl","cm","cn","co","cp","cq","cr","cs","ct","cu","cv","cw","cx","cy","cz"_
+		  ,"da","db","dc","dd","de","df","dg","dh","di","dj","dk","dl","dm","dn","do","dp","dq","dr","ds","dt","du","dv","dw","dx","dy","dz")
+		  
+		  
+		  dim circlesize as integer
+		  
+		  Index = min(Index, GridsList.ListCount-1)
+		  
+		  
+		  
+		  if GridsList.ListCount <>0 then
+		    
+		    Canvas1.EraseBackground = True
+		    
+		    tileX = Val(GridsList.cell(Index,0))// ScaleFactor
+		    tileY = Val(GridsList.cell(Index,1))'/ScaleFactor
+		    screenWidth= val(GridsList.cell(Index,2))'/ScaleFactor
+		    screenHeight= Val(GridsList.cell(Index,3))'/ScaleFactor
+		    
+		    x = 0
+		    y = 0
+		    k = 1
+		    l = 1
+		    rcount = 1
+		    colcount = 1
+		    c2count = 1
+		    totX = (tileX*screenWidth)'/ScaleFactor
+		    totY = (tileY*screenHeight)'/ScaleFactor
+		    
+		    MyPic = Self.BitmapForCaching(totX/ScaleFactor,totY/ScaleFactor)
+		    
+		    MyPic.Graphics.TextFont="Helvetica"
+		    MyPic.Graphics.TextUnit=FontUnits.Pixel
+		    
+		    myPic.VerticalResolution = 72
+		    myPic.HorizontalResolution = 72
+		    
+		    myPic.Graphics.ScaleX = 1
+		    myPic.Graphics.ScaleY = 1
+		    
+		    mypic.Graphics.PenHeight = 1
+		    mypic.Graphics.PenWidth = 1
+		    
+		    MyPic.Graphics.TextSize=max((min(tileY/5,tileX/5)),8)'font size is fifth of tileY or8pixels min
+		    
+		    gridColor = Array(&c000000,&cff0000,&c00ff00,&c0000ff,&cffff00,&c00ffff,&cff00ff,&cffffff)
+		    
+		    
+		    Select Case GridsList.celltag(Index,7) 'FilledPopUp.ListIndex
+		      
+		    Case "100% Colour"
+		      '100%
+		      bgColor = Array(&cffffff,&cff00ff,&c00ffff,&cffff00,&c0000ff,&c00ff00,&cff0000,&c000000)
+		    Case "50% Colour"
+		      '50%
+		      bgColor =   Array(&c7e7e7e,&c7e007e,&c007e7e,&c7e7e00,&c00007e,&c007e00,&c7e0000,&c000000)
+		    Case "25% Colour"
+		      '25%
+		      bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
+		    Case "White"
+		      'White
+		      bgColor = Array(&c3F3F3F,&cFFFFFF,&cFFFFFF,&cFFFFFF,&cFFFFFF,&cFFFFFF,&cFFFFFF,&c000000)
+		    Case "Gray"
+		      'Gray
+		      bgColor = Array(&c3f3f3f,&c7f7f7f,&c000000)
+		    Case "Black"
+		      'Black
+		      bgColor = Array(&c3F3F3F,&c000000,&c000000,&c000000,&c000000,&c000000,&c000000,&c000000)
+		    Case "Transparent"
+		      'Blank
+		      bgColor = Array(&c3F3F3F00,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c00000000)
+		    Case "Red"
+		      'Red
+		      bgColor = Array(&c3F3F3F,&cdd3c46,&c000000)
+		    Case "Red/Gray"
+		      'Red/Gray
+		      bgColor = Array(&c3F3F3F,&cdd3c46,&c3F3F3F,&c000000)
+		    Case "Green"
+		      'Green/Gray
+		      bgColor = Array(&c3F3F3F,&c2baa3a,&c000000)
+		    Case "Green/Gray"
+		      'Green/Gray
+		      bgColor = Array(&c3F3F3F,&c2baa3a,&c3F3F3F,&c000000)
+		    Case "Blue"
+		      'Blue/Gray
+		      bgColor = Array(&c3F3F3F,&c0048c,&c000000)
+		    Case "Blue/Gray"
+		      'Blue/Gray
+		      bgColor = Array(&c3F3F3F,&c0048c3,&c3F3F3F,&c000000)
+		    Case "Red/Green"
+		      'Red/Green
+		      bgColor = Array(&c3F3F3F,&cdd3c46,&c2baa3a,&c000000)
+		    Case  "Green/Blue"
+		      'Green/Blue
+		      bgColor = Array(&c3F3F3F,&c2baa3a,&c0048c3,&c000000)
+		    Case "Blue/Red"
+		      'Blue/Red
+		      bgColor = Array(&c3F3F3F,&c0048c3,&cdd3c46,&c000000)
+		    Case "Black/White"
+		      'Black/White
+		      bgColor = Array(&c3F3F3F,&c000000,&cFFFFFF,&c000000)
+		    Case "Light Gray/Dark Gray"
+		      'LightGray/DarkGray
+		      bgColor = Array(&c3F3F3F,&c3F3F3F,&c7E7E7E,&c000000)
+		    Case "Yellow"
+		      'Yellow
+		      bgColor = Array(&c3F3F3F,&cf4d51a,&c000000)
+		    Case "Yellow/Gray"
+		      'Yellow/Gray
+		      bgColor = Array(&c3F3F3F,&cf4d51a,&c3f3f3f,&c000000)
+		    Case "Orange"
+		      'Orange/Gray
+		      bgColor = Array(&c3F3F3F,&cff5722,&c000000)
+		    Case "Orange/Gray"
+		      'Orange
+		      bgColor = Array(&c3F3F3F,&cff5722,&c3f3f3f,&c000000)
+		    Case "Aqua"
+		      'Aqua
+		      bgColor = Array(&c3F3F3F,&c0ea7b5,&c000000)
+		    Case "Aqua/Gray"
+		      'Aqua/Gray
+		      bgColor = Array(&c3F3F3F,&c0ea7b5,&c3f3f3f,&c000000)
+		    Case "Purple"
+		      'Purple
+		      bgColor = Array(&c3F3F3F,&c9c6fda,&c000000)
+		    Case "Purple/Gray"
+		      'Purple/Gray
+		      bgColor = Array(&c3F3F3F,&c9c6fda,&c3f3f3f,&c000000)
+		    Case "Cyan"
+		      'Cyan
+		      bgColor = Array(&c3F3F3F,&c00CBCB00,&c000000)
+		    Case "Magenta"
+		      'Magenta
+		      bgColor = Array(&c3F3F3F,&cB200B200,&c000000)
+		    Case "Rainbow"
+		      'Rainbow &c4b008200,
+		      bgColor = Array(&c3F3F3F00,&c9400d300,&c0000ff00,&c00ff0000,&cffff0000,&cff7f0000,&cff000000,&c00000000)
+		    Case "Veg"
+		      bgColor = Array(&cb80a46,&c5e362c,&c622d4b,&c4f5514,&cc96f1c,&cbbc467)
+		    Case "Camouflauge"
+		      bgColor = Array(&c50523c,&cd6cab4,&cdbbe95,&c394730,&c3e3d,&c394730,&c382225,&c802021)
+		    Case "Alt Red"
+		      'ALT Red
+		      bgColor = Array(&c3F3F3F00,&cFF000000,&cCC000000,&c00000000)
+		    Case "Alt Green"
+		      'Alt Green
+		      bgColor = Array(&c3F3F3F00,&c00FF0000,&c00CC0000,&c00000000)
+		    Case "Alt Blue"
+		      'Alt Blue
+		      bgColor = Array(&c3F3F3F00,&c0000FF00,&c0000CC00,&c00000000)
+		    Case "Grayscale V" , "Grayscale H"
+		      'Grayscale
+		      bgColor=Array(&c3F3F3F00,&c00000000,&c33333300,&c66666600,&c99999900,&cCCCCCC00,&cFFFFFF00,&c00000000)
+		    Case "Fruit"
+		      'Apple Logo
+		      bgColor = Array(&c3F3F3F00,&c118AD400,&c82258500 ,&cD6222E00,&cF16C1A00 ,&cF8AA1F00,&c52B13700 ,&c00000000)
+		    Case "Full Red"
+		      'Red
+		      bgColor = Array(&c3F3F3F,&cFF000000,&c000000)
+		    Case "Full Green"
+		      'Green
+		      bgColor = Array(&c3F3F3F,&c00FF0000,&c000000)
+		    Case "Full Blue"
+		      'Blue
+		      bgColor = Array(&c3F3F3F,&c0000FF00,&c000000)
+		    Case "Reduced/Full Check"
+		      'Blue
+		      bgColor = Array(&c3F3F3F,&c000000,&c101010,&cebebeb,&cffffff,&c000000)
+		      
+		    Else
+		      bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
+		    End Select
+		    
+		    
+		    
+		    for j = 1  to screenHeight //draw row
+		      
+		      for i = 1 to screenWidth //draw column
+		        if val(GridsList.cell(Index,7)) = 5 then
+		          'Blank BG
+		          
+		        elseif val(GridsList.cell(Index,7)) = 3 then
+		          'White BG
+		          MyPic.Graphics.ForeColor  = &cffffff
+		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		        elseif val(GridsList.cell(Index,7)) = 4 then
+		          'Black BG
+		          MyPic.Graphics.ForeColor  = &c000000
+		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		          
+		        else
+		          MyPic.Graphics.ForeColor  = (bgColor(k))
+		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		        end
+		        
+		        'Draw grid lines. Colour or Black or White
+		        if GridsList.cellcheck(Index,8) then
+		          if GridColour.Value then
+		            MyPic.Graphics.ForeColor  = (gridColor(l))
+		          else
+		            if GridsList.celltag(Index,7) <> "White" then 
+		              
+		              MyPic.Graphics.ForeColor  = &cffffff00
+		            else
+		              MyPic.Graphics.ForeColor  = &c00000000
+		            end
+		          end
+		          MyPic.Graphics.DrawRect(x, y, tileX,tileY)
+		        end
+		        
+		        'if FilledPopUp.ListIndex = 3 then
+		        if (bgColor(k))=&cFFFFFF00 then
+		          MyPic.Graphics.ForeColor  = &c656565 '(gridColor(0))
+		        else
+		          MyPic.Graphics.ForeColor  = (gridColor(7))
+		        end
+		        
+		        if GridsList.cellcheck(Index,10) then
+		          if col_alpha.ListIndex = 1 then
+		            dim alpha as integer =  ((i-1) mod (Ubound(alphabet)+1))
+		            id = (Uppercase(alphabet(alpha)) + "," +str(j))                                      //row, column numbering
+		          elseif col_alpha.ListIndex = 2 then
+		            dim alpha as integer =  ((j-1) mod (Ubound(alphabet)+1))
+		            id = (str(i) + "," +Uppercase(alphabet(alpha)))                                      //row, column numbering
+		          else
+		            id = (str(j) + "," +str(i))                                      //row, column numbering
+		          end
+		          
+		          'MyPic.Graphics.DrawString(id, (x+1),(y+max((tileY/5),8)))           //tile address
+		          MyPic.Graphics.DrawString(id, (x+1),(y+MyPic.Graphics.StringHeight(id,tileX)))  
+		        end
+		        
+		        x = x + tileX
+		        l=l+1
+		        if l > Ubound(gridColor)-1 then
+		          l=1
+		        end
+		        if GridsList.celltag(Index,7) <> "Grayscale H" then 'check for grayscale H and dont increment
+		          rcount = rcount +1
+		        end
+		        if rcount  > Ubound(bgColor)-1 then
+		          rcount = 1
+		        end
+		        k = rcount     'colour is row count
+		      next
+		      
+		      if GridsList.celltag(Index,7) <> "Grayscale V" then 'check for grayscale V and dont increment
+		        c2count = c2count + 1
+		        colcount = colcount + 1
+		      end
+		      
+		      if c2count > Ubound(gridcolor) -1 then
+		        c2count = 1
+		      end
+		      l = c2count
+		      
+		      if colcount > Ubound(bgColor)-1 then
+		        colcount = 1
+		      end
+		      rcount = colcount
+		      k = colcount
+		      
+		      x = 0
+		      y = y + tileY
+		      
+		    next
+		    
+		    'draw diagonal cross
+		    if GridsList.cellcheck(Index,12) then
+		      myPic.Graphics.ForeColor = &c00ffff
+		      MyPic.graphics.DrawLine ( 0,0,totX,totY)
+		      MyPic.graphics.DrawLine ( 0,totY,totX,0)
+		    end
+		    
+		    'Draw colorbars
+		    if GridsList.cellcheck(Index,15)  then
+		      if totY > totX then 
+		        myPic.Graphics.DrawPicture(colorbars, 10,((totY/2)-(totY/10))   ,(totX-20),(totY/5)    ,0,0,1920,330)
+		        'colorbarsHeight = (totY/5)-((totY/2)-(totY/10))
+		        colorbarsHeight = (totY/5)
+		      else
+		        myPic.Graphics.DrawPicture(colorbars,  ((totX/2)-(totY/2)+10),((totY/2)-(totY/10))   ,(totY-20),(totY/5),0,0,1920,330)
+		        'colorbarsHeight = (totY/5)-((totY/2)-(totY/10))
+		        colorbarsHeight = (totY/5)
+		      end
+		    end
+		    
+		    
+		    
+		    'Draw Circle
+		    if GridsList.cellcheck(Index,11) then 
+		      
+		      circlesize =min((totY),(totX))
+		      
+		      if val(GridsList.cell(Index,8))= 3 then
+		        MyPic.Graphics.ForeColor  = &c000000
+		      else
+		        MyPic.Graphics.ForeColor  = &cffffff
+		      end
+		      MyPic.Graphics.DrawOval((totX/2)-(circlesize/2),(totY/2)-(circlesize/2),circlesize,circlesize)
+		    end
+		    
+		    
+		    
+		    
+		    if GridsList.cellcheck(Index,13) then 
+		      'Draw Corner circles
+		      'TL-Red
+		      circlesize = min((myPic.Height/2)-5,(totX/2)-5,tileX*2)
+		      
+		      myPic.graphics.ForeColor = &cff0000
+		      MyPic.Graphics.DrawOval(0,0,circlesize,circlesize)
+		      'TR-Green
+		      myPic.graphics.ForeColor = &c00ff00
+		      MyPic.Graphics.DrawOval((totX-circlesize),0,circlesize,circlesize)
+		      'BL-Blue
+		      myPic.graphics.ForeColor = &c0000ff
+		      MyPic.Graphics.DrawOval(0,(totY-circlesize),circlesize,circlesize)
+		      'BR-Yellow
+		      myPic.graphics.ForeColor = &cffff00
+		      MyPic.Graphics.DrawOval((totX-circlesize),(totY-circlesize),circlesize,circlesize)
+		      myPic.graphics.ForeColor = &cffffff
+		    end
+		    
+		    if GridsList.cellcheck(Index,9) then 
+		      'Draw canvas Raster
+		      
+		      
+		      
+		      if val(GridsList.cell(Index,7)) = 3 then
+		        MyPic.Graphics.ForeColor  = &c000000
+		      else
+		        MyPic.Graphics.ForeColor  = &cffffff
+		      end
+		      MyPic.Graphics.DrawRect(0,0,totX,totY)
+		    end
+		    
+		    'Draw logo
+		    
+		    
+		    if totX > totY then
+		      logoSize= min(totX,icon.width)
+		      logoHeight=(icon.height/icon.width)*logoSize
+		      while logoHeight > (totY-5) or logoSize > totX/4
+		        logoSize = logoSize -1
+		        logoHeight=(icon.height/icon.width)*logoSize
+		      wend
+		    else
+		      logoSize= min(totX,icon.width)
+		      logoHeight=(icon.height/icon.width)*logoSize
+		      while logoHeight > (totY-5) or logoSize > totX/1.5
+		        logoSize = logoSize -1
+		        logoHeight=(icon.height/icon.width)*logoSize
+		      wend
+		    end
+		    
+		    
+		    
+		    
+		    if GridsList.cellcheck(Index,14) then 
+		      myPic.Graphics.Transparency = app.logoOpacity
+		      'myPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
+		      myPic.Graphics.DrawPicture(icon,(totX-(logoSize+3)),(totY-(logoHeight)-3),(logoSize),(logoHeight),0,0,icon.width,icon.height)
+		    end
+		    
+		    
+		    'custom text
+		    myPic.Graphics.Transparency = 0
+		    offset = 5
+		    if (GridsList.cell(Index,6)) <> ""  then 
+		      circlesize =min((totY),(totX))
+		      MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		      
+		      if alt_text.value then
+		        id = (GridsList.cell(Index,6))
+		        
+		        textsize = 250                            'initial text size before resize 
+		        MyPic.Graphics.TextSize=textsize
+		        MyPic.Graphics.Bold = True
+		        while (MyPic.Graphics.StringWidth(id) > max((totX/2),circlesize)) or (MyPic.Graphics.StringHeight(id,circlesize) > totY)
+		          if textsize <1 then
+		            exit
+		          else
+		            textsize = textsize -5
+		          end
+		          MyPic.Graphics.TextSize=textsize
+		        wend
+		        'msgbox(str(textsize))
+		        If colorbarsHeight = 0 then
+		          
+		          if dropShadow.value then
+		            'add drop shadow to large central text
+		            MyPic.Graphics.ForeColor  = &c0000007f
+		            MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)+offset),(totY/2)+(MyPic.Graphics.StringHeight(id,totX)/3)+offset)
+		          end
+		          MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(MyPic.Graphics.StringHeight(id,totX)/3))
+		        else
+		          
+		          if dropShadow.value then
+		            'add drop shadow
+		            MyPic.Graphics.ForeColor  = &c0000007f
+		            MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)+offset),(totY/2)-(colorbarsHeight/2)-3+offset)
+		          end
+		          MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)-(colorbarsHeight/2)-3)
+		        end
+		        id = (str(totX) + "x" + str(totY))
+		        MyPic.Graphics.TextSize=max(min((totX/10),26),12)'font size is third of tileY or 12pixels min
+		        
+		        offset = 1
+		        if dropShadow.value then
+		          'add drop shadow
+		          MyPic.Graphics.ForeColor  = &c0000007f
+		          MyPic.Graphics.DrawString(id,3+offset,(totY-3+offset))
+		        end
+		        MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		        
+		        //debug.log("TextSize(Big)" + ","+str(MyPic.Graphics.TextSize))
+		        MyPic.Graphics.Bold = False
+		        MyPic.Graphics.DrawString(id,3,(totY-3))
+		      else
+		        id = (GridsList.cell(Index,6) + "     " +  str(totX) + "x" + str(totY))
+		        MyPic.Graphics.TextSize=max(min((totX/12),26),10)'font size is third of tileY or 10pixels min
+		        
+		        // debug.log("TextSize(small)" + ","+str(MyPic.Graphics.TextSize))
+		        if (myPic.Graphics.StringWidth(id)) < totX then
+		          
+		          offset = 1
+		          if dropShadow.value then
+		            'add drop shadow
+		            MyPic.Graphics.ForeColor  = &c0000007f
+		            MyPic.Graphics.DrawString(id,5+offset,(totY-5+offset))
+		          end
+		          MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		          
+		          MyPic.Graphics.DrawString(id,5,(totY-5))
+		        else
+		          id = (GridsList.cell(Index,6))
+		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
+		          id = (str(totX) + "x" + str(totY))
+		          
+		          offset = 1
+		          if dropShadow.value then
+		            'add drop shadow
+		            MyPic.Graphics.ForeColor  = &c0000007f
+		            MyPic.Graphics.DrawString(id,3+offset,(totY-5+offset))
+		          end
+		          MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		          
+		          MyPic.Graphics.DrawString(id,3,(totY-5))
+		        end
+		        
+		      end
+		      
+		      
+		    end
+		    
+		    
+		  else
+		    myPic.Graphics.ClearRect(0,0,1,1)
+		  end
+		  
+		  
+		  rebuild=fa

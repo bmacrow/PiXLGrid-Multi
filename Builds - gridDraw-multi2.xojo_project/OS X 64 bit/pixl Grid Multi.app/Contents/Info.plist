@@ -11,7 +11,7 @@
    <key>CFBundleInfoDictionaryVersion</key>
    <string>6.0</string>
    <key>CFBundleVersion</key>
-   <string>1.2.0.3.1430</string>
+   <string>1.2.0.3.1431</string>
    <key>CFBundleDevelopmentRegion</key>
    <string>en</string>
    <key>CFBundlePackageType</key>
@@ -21,7 +21,7 @@
    <key>NSHumanReadableCopyright</key>
    <string>Video Walrus</string>
    <key>CFBundleShortVersionString</key>
-   <string>172</string>
+   <string>173</string>
    <key>CFBundleIconFile</key>
    <string>App</string>
    <key>LSMinimumSystemVersion</key>

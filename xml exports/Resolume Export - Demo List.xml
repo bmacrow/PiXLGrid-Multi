@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XmlState name="Test">
+<versionInfo name="Resolume Arena" majorVersion="6" minorVersion="1" microVersion="0" revision="61231"/>
+<ScreenSetup name="ScreenSetup">
+<Params name="ScreenSetupParams"/>
+<screens>
+<Screen name="Screen 1" uniqueId="1540993259468">
+
+
+<layers>
+
+<Slice >
+						<Params name="Common">
+							<Param name="Name" default="Layer" value="Centre Screen"/>
+
+						</Params>
+						
+						
+						<InputRect orientation="0">
+
+<v x="320" y="180"/>
+<v x="1600" y="180"/>
+<v x="1600" y="900"/>
+<v x="320" y="900"/>
+
+</InputRect>
+<OutputRect orientation="0">
+<v x="320" y="180"/>
+<v x="1600" y="180"/>
+<v x="1600" y="900"/>
+<v x="320" y="900"/>
+
+</OutputRect>
+						<Warper>
+							<Params name="Warper">
+								<ParamChoice name="Point Mode" default="PM_LINEAR" value="PM_LINEAR" storeChoices="0"/>
+								<Param name="Flip" default="0" value="0"/>
+							</Params>
+							<BezierWarper controlWidth="4" controlHeight="4">
+								<vertices>
+<v x="320" y="180"/>
+<v x="746" y="180"/>
+<v x="1172" y="180"/>
+<v x="1600" y="180"/>
+<v x="320" y="420"/>
+<v x="746" y="420"/>
+<v x="1172" y="420"/>
+<v x="1598" y="420"/>
+<v x="320" y="660"/>
+<v x="746" y="660"/>
+<v x="1172" y="660"/>
+<v x="1598" y="660"/>
+<v x="320" y="900"/>
+<v x="746" y="900"/>
+<v x="1172" y="900"/>
+<v x="1600" y="900"/>
+</vertices>
+							</BezierWarper>
+							
+						</Warper>
+					</Slice>
+<Slice >
+						<Params name="Common">
+							<Param name="Name" default="Layer" value="Stage Right"/>
+
+						</Params>
+						
+						
+						<InputRect orientation="0">
+
+<v x="40" y="180"/>
+<v x="280" y="180"/>
+<v x="280" y="900"/>
+<v x="40" y="900"/>
+
+</InputRect>
+<OutputRect orientation="0">
+<v x="40" y="180"/>
+<v x="280" y="180"/>
+<v x="280" y="900"/>
+<v x="40" y="900"/>
+
+</OutputRect>
+						<Warper>
+							<Params name="Warper">
+								<ParamChoice name="Point Mode" default="PM_LINEAR" value="PM_LINEAR" storeChoices="0"/>
+								<Param name="Flip" default="0" value="0"/>
+							</Params>
+							<BezierWarper controlWidth="4" controlHeight="4">
+								<vertices>
+<v x="40" y="180"/>
+<v x="120" y="180"/>
+<v x="200" y="180"/>
+<v x="280" y="180"/>
+<v x="40" y="420"/>
+<v x="120" y="420"/>
+<v x="200" y="420"/>
+<v x="280" y="420"/>
+<v x="40" y="660"/>
+<v x="120" y="660"/>
+<v x="200" y="660"/>
+<v x="280" y="660"/>
+<v x="40" y="900"/>
+<v x="120" y="900"/>
+<v x="200" y="900"/>
+<v x="280" y="900"/>
+</vertices>
+							</BezierWarper>
+							
+						</Warper>
+					</Slice>
+<Slice >
+						<Params name="Common">
+							<Param name="Name" default="Layer" value="Stage Left"/>
+
+						</Params>
+						
+						
+						<InputRect orientation="0">
+
+<v x="1640" y="180"/>
+<v x="1880" y="180"/>
+<v x="1880" y="900"/>
+<v x="1640" y="900"/>
+
+</InputRect>
+<OutputRect orientation="0">
+<v x="1640" y="180"/>
+<v x="1880" y="180"/>
+<v x="1880" y="900"/>
+<v x="1640" y="900"/>
+
+</OutputRect>
+						<Warper>
+							<Params name="Warper">
+								<ParamChoice name="Point Mode" default="PM_LINEAR" value="PM_LINEAR" storeChoices="0"/>
+								<Param name="Flip" default="0" value="0"/>
+							</Params>
+							<BezierWarper controlWidth="4" controlHeight="4">
+								<vertices>
+<v x="1640" y="180"/>
+<v x="1720" y="180"/>
+<v x="1800" y="180"/>
+<v x="1880" y="180"/>
+<v x="1640" y="420"/>
+<v x="1720" y="420"/>
+<v x="1800" y="420"/>
+<v x="1880" y="420"/>
+<v x="1640" y="660"/>
+<v x="1720" y="660"/>
+<v x="1800" y="660"/>
+<v x="1880" y="660"/>
+<v x="1640" y="900"/>
+<v x="1720" y="900"/>
+<v x="1800" y="900"/>
+<v x="1880" y="900"/>
+</vertices>
+							</BezierWarper>
+							
+						</Warper>
+					</Slice>
+<Slice >
+						<Params name="Common">
+							<Param name="Name" default="Layer" value="Riser"/>
+
+						</Params>
+						
+						
+						<InputRect orientation="0">
+
+<v x="480" y="932"/>
+<v x="1440" y="932"/>
+<v x="1440" y="1052"/>
+<v x="480" y="1052"/>
+
+</InputRect>
+<OutputRect orientation="0">
+<v x="480" y="932"/>
+<v x="1440" y="932"/>
+<v x="1440" y="1052"/>
+<v x="480" y="1052"/>
+
+</OutputRect>
+						<Warper>
+							<Params name="Warper">
+								<ParamChoice name="Point Mode" default="PM_LINEAR" value="PM_LINEAR" storeChoices="0"/>
+								<Param name="Flip" default="0" value="0"/>
+							</Params>
+							<BezierWarper controlWidth="4" controlHeight="4">
+								<vertices>
+<v x="480" y="932"/>
+<v x="800" y="932"/>
+<v x="1120" y="932"/>
+<v x="1440" y="932"/>
+<v x="480" y="972"/>
+<v x="800" y="972"/>
+<v x="1120" y="972"/>
+<v x="1440" y="972"/>
+<v x="480" y="1012"/>
+<v x="800" y="1012"/>
+<v x="1120" y="1012"/>
+<v x="1440" y="1012"/>
+<v x="480" y="1052"/>
+<v x="800" y="1052"/>
+<v x="1120" y="1052"/>
+<v x="1440" y="1052"/>
+</vertices>
+							</BezierWarper>
+							
+						</Warper>
+					</Slice>
+<Slice >
+						<Params name="Common">
+							<Param name="Name" default="Layer" value="Header"/>
+
+						</Params>
+						
+						
+						<InputRect orientation="0">
+
+<v x="480" y="35"/>
+<v x="1440" y="35"/>
+<v x="1440" y="155"/>
+<v x="480" y="155"/>
+
+</InputRect>
+<OutputRect orientation="0">
+<v x="480" y="35"/>
+<v x="1440" y="35"/>
+<v x="1440" y="155"/>
+<v x="480" y="155"/>
+
+</OutputRect>
+						<Warper>
+							<Params name="Warper">
+								<ParamChoice name="Point Mode" default="PM_LINEAR" value="PM_LINEAR" storeChoices="0"/>
+								<Param name="Flip" default="0" value="0"/>
+							</Params>
+							<BezierWarper controlWidth="4" controlHeight="4">
+								<vertices>
+<v x="480" y="35"/>
+<v x="800" y="35"/>
+<v x="1120" y="35"/>
+<v x="1440" y="35"/>
+<v x="480" y="75"/>
+<v x="800" y="75"/>
+<v x="1120" y="75"/>
+<v x="1440" y="75"/>
+<v x="480" y="115"/>
+<v x="800" y="115"/>
+<v x="1120" y="115"/>
+<v x="1440" y="115"/>
+<v x="480" y="155"/>
+<v x="800" y="155"/>
+<v x="1120" y="155"/>
+<v x="1440" y="155"/>
+</vertices>
+							</BezierWarper>
+							
+						</Warper>
+					</Slice>
+<Slice >
+						<Params name="Common">
+							<Param name="Name" default="Layer" value="Door"/>
+
+						</Params>
+						
+						
+						<InputRect orientation="0">
+
+<v x="720" y="660"/>
+<v x="1200" y="660"/>
+<v x="1200" y="900"/>
+<v x="720" y="900"/>
+
+</InputRect>
+<OutputRect orientation="0">
+<v x="720" y="660"/>
+<v x="1200" y="660"/>
+<v x="1200" y="900"/>
+<v x="720" y="900"/>
+
+</OutputRect>
+						<Warper>
+							<Params name="Warper">
+								<ParamChoice name="Point Mode" default="PM_LINEAR" value="PM_LINEAR" storeChoices="0"/>
+								<Param name="Flip" default="0" value="0"/>
+							</Params>
+							<BezierWarper controlWidth="4" controlHeight="4">
+								<vertices>
+<v x="720" y="660"/>
+<v x="880" y="660"/>
+<v x="1040" y="660"/>
+<v x="1200" y="660"/>
+<v x="720" y="740"/>
+<v x="880" y="740"/>
+<v x="1040" y="740"/>
+<v x="1200" y="740"/>
+<v x="720" y="820"/>
+<v x="880" y="820"/>
+<v x="1040" y="820"/>
+<v x="1200" y="820"/>
+<v x="720" y="900"/>
+<v x="880" y="900"/>
+<v x="1040" y="900"/>
+<v x="1200" y="900"/>
+</vertices>
+							</BezierWarper>
+							
+						</Warper>
+					</Slice>
+</layers>
+				<OutputDevice>
+<OutputDeviceVirtual name="Screen 1" deviceId="VirtualScreen 1" idHash="10094742552620344504" width="1920" height ="1080">
+<Params name="Params">
+<ParamRange name="Width" default="1920" value ="1920"/>
+<ValueRange name="defaultRange" min="1" max="16384"/>
+<ParamRange name="Height" default="1080" value="1080"/>
+</Params>
+					</OutputDeviceVirtual>
+				</OutputDevice>
+			</Screen>
+		</screens>
+	
+	</ScreenSetup>
+</XmlState>
+

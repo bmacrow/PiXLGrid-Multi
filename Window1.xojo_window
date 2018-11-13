@@ -704,7 +704,7 @@ Begin Window Window1
       HasHeading      =   True
       HeadingIndex    =   -1
       Height          =   132
-      HelpTag         =   "Add multiple grids with individual offsets.\nEnter ## pixels or ##p for panel offsets. "
+      HelpTag         =   "Add multiple grids with individual offsets.\nEnter ## pixels or ##t for panel offsets. "
       Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
@@ -2131,7 +2131,6 @@ End
 		  
 		  debugWindow.log("BuildGrid" + str(Index))
 		  
-		  
 		  dim i,j,k,l,tileX,tileY,screenWidth, screenHeight,rcount,colcount,c2count,colorbarsHeight as Integer
 		  dim logoRatio as Double
 		  dim x,y,totX,totY,logoSize,logoHeight as Integer
@@ -2153,9 +2152,11 @@ End
 		  
 		  
 		  
+		  
+		  
 		  if GridsList.ListCount <>0 then
 		    
-		    Canvas1.EraseBackground = True
+		    //Canvas1.EraseBackground = True
 		    
 		    tileX = Val(GridsList.cell(Index,0))// ScaleFactor
 		    tileY = Val(GridsList.cell(Index,1))'/ScaleFactor
@@ -2172,21 +2173,36 @@ End
 		    totX = (tileX*screenWidth)'/ScaleFactor
 		    totY = (tileY*screenHeight)'/ScaleFactor
 		    
-		    MyPic = Self.BitmapForCaching(totX/ScaleFactor,totY/ScaleFactor)
+		    'MyPic = Self.BitmapForCaching(totX\ScaleFactor,totY\ScaleFactor)
 		    
-		    MyPic.Graphics.TextFont="Helvetica"
-		    MyPic.Graphics.TextUnit=FontUnits.Pixel
+		    'MyPic = Self.BitmapForCaching(totX,totY)
 		    
-		    myPic.VerticalResolution = 72
-		    myPic.HorizontalResolution = 72
 		    
-		    myPic.Graphics.ScaleX = 1
-		    myPic.Graphics.ScaleY = 1
+		    Dim BuildPic as New Picture(totX,totY,32)
 		    
-		    mypic.Graphics.PenHeight = 1
-		    mypic.Graphics.PenWidth = 1
+		    Dim g as Graphics = BuildPic.Graphics
 		    
-		    MyPic.Graphics.TextSize=max((min(tileY/5,tileX/5)),8)'font size is fifth of tileY or8pixels min
+		    Dim widthGraphics as Integer = g.Width
+		    Dim heightGraphics as Integer = g.Height
+		    
+		    
+		    debugWindow.log("Total X " + str(totX)+" Total Y " + str(totY))
+		    debugWindow.log("PicX " + str(BuildPic.width)+" PicY " + str(BuildPic.height)+" ScaleFactor " + str(ScaleFactor))
+		    debugWindow.log("GraphicsX " + str(widthGraphics)+" GraphicsY " + str(heightGraphics))
+		    
+		    BuildPic.Graphics.TextFont="Helvetica"
+		    BuildPic.Graphics.TextUnit=FontUnits.Pixel
+		    
+		    BuildPic.VerticalResolution = 72
+		    BuildPic.HorizontalResolution = 72
+		    
+		    BuildPic.Graphics.ScaleX = 1
+		    BuildPic.Graphics.ScaleY = 1
+		    
+		    BuildPic.Graphics.PenHeight = 1
+		    BuildPic.Graphics.PenWidth = 1
+		    
+		    BuildPic.Graphics.TextSize=max((min(tileY/5,tileX/5)),8)'font size is fifth of tileY or8pixels min
 		    
 		    gridColor = Array(&c000000,&cff0000,&c00ff00,&c0000ff,&cffff00,&c00ffff,&cff00ff,&cffffff)
 		    
@@ -2326,38 +2342,38 @@ End
 		          
 		        elseif val(GridsList.cell(Index,7)) = 3 then
 		          'White BG
-		          MyPic.Graphics.ForeColor  = &cffffff
-		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		          BuildPic.Graphics.ForeColor  = &cffffff
+		          BuildPic.Graphics.FillRect(x,y,tileX,tileY)
 		        elseif val(GridsList.cell(Index,7)) = 4 then
 		          'Black BG
-		          MyPic.Graphics.ForeColor  = &c000000
-		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		          BuildPic.Graphics.ForeColor  = &c000000
+		          BuildPic.Graphics.FillRect(x,y,tileX,tileY)
 		          
 		        else
-		          MyPic.Graphics.ForeColor  = (bgColor(k))
-		          MyPic.Graphics.FillRect(x,y,tileX,tileY)
+		          BuildPic.Graphics.ForeColor  = (bgColor(k))
+		          BuildPic.Graphics.FillRect(x,y,tileX,tileY)
 		        end
 		        
 		        'Draw grid lines. Colour or Black or White
 		        if GridsList.cellcheck(Index,8) then
 		          if GridColour.Value then
-		            MyPic.Graphics.ForeColor  = (gridColor(l))
+		            BuildPic.Graphics.ForeColor  = (gridColor(l))
 		          else
 		            if GridsList.celltag(Index,7) <> "White" then 
 		              
-		              MyPic.Graphics.ForeColor  = &cffffff00
+		              BuildPic.Graphics.ForeColor  = &cffffff00
 		            else
-		              MyPic.Graphics.ForeColor  = &c00000000
+		              BuildPic.Graphics.ForeColor  = &c00000000
 		            end
 		          end
-		          MyPic.Graphics.DrawRect(x, y, tileX,tileY)
+		          BuildPic.Graphics.DrawRect(x, y, tileX,tileY)
 		        end
 		        
 		        'if FilledPopUp.ListIndex = 3 then
 		        if (bgColor(k))=&cFFFFFF00 then
-		          MyPic.Graphics.ForeColor  = &c656565 '(gridColor(0))
+		          BuildPic.Graphics.ForeColor  = &c656565 '(gridColor(0))
 		        else
-		          MyPic.Graphics.ForeColor  = (gridColor(7))
+		          BuildPic.Graphics.ForeColor  = (gridColor(7))
 		        end
 		        
 		        if GridsList.cellcheck(Index,10) then
@@ -2371,8 +2387,8 @@ End
 		            id = (str(j) + "," +str(i))                                      //row, column numbering
 		          end
 		          
-		          'MyPic.Graphics.DrawString(id, (x+1),(y+max((tileY/5),8)))           //tile address
-		          MyPic.Graphics.DrawString(id, (x+1),(y+MyPic.Graphics.StringHeight(id,tileX)))  
+		          'BuildPic.Graphics.DrawString(id, (x+1),(y+max((tileY/5),8)))           //tile address
+		          BuildPic.Graphics.DrawString(id, (x+1),(y+BuildPic.Graphics.StringHeight(id,tileX)))  
 		        end
 		        
 		        x = x + tileX
@@ -2412,19 +2428,19 @@ End
 		    
 		    'draw diagonal cross
 		    if GridsList.cellcheck(Index,12) then
-		      myPic.Graphics.ForeColor = &c00ffff
-		      MyPic.graphics.DrawLine ( 0,0,totX,totY)
-		      MyPic.graphics.DrawLine ( 0,totY,totX,0)
+		      BuildPic.Graphics.ForeColor = &c00ffff
+		      BuildPic.graphics.DrawLine ( 0,0,totX,totY)
+		      BuildPic.graphics.DrawLine ( 0,totY,totX,0)
 		    end
 		    
 		    'Draw colorbars
 		    if GridsList.cellcheck(Index,15)  then
 		      if totY > totX then 
-		        myPic.Graphics.DrawPicture(colorbars, 10,((totY/2)-(totY/10))   ,(totX-20),(totY/5)    ,0,0,1920,330)
+		        BuildPic.Graphics.DrawPicture(colorbars, 10,((totY/2)-(totY/10))   ,(totX-20),(totY/5)    ,0,0,1920,330)
 		        'colorbarsHeight = (totY/5)-((totY/2)-(totY/10))
 		        colorbarsHeight = (totY/5)
 		      else
-		        myPic.Graphics.DrawPicture(colorbars,  ((totX/2)-(totY/2)+10),((totY/2)-(totY/10))   ,(totY-20),(totY/5),0,0,1920,330)
+		        BuildPic.Graphics.DrawPicture(colorbars,  ((totX/2)-(totY/2)+10),((totY/2)-(totY/10))   ,(totY-20),(totY/5),0,0,1920,330)
 		        'colorbarsHeight = (totY/5)-((totY/2)-(totY/10))
 		        colorbarsHeight = (totY/5)
 		      end
@@ -2438,11 +2454,11 @@ End
 		      circlesize =min((totY),(totX))
 		      
 		      if val(GridsList.cell(Index,8))= 3 then
-		        MyPic.Graphics.ForeColor  = &c000000
+		        BuildPic.Graphics.ForeColor  = &c000000
 		      else
-		        MyPic.Graphics.ForeColor  = &cffffff
+		        BuildPic.Graphics.ForeColor  = &cffffff
 		      end
-		      MyPic.Graphics.DrawOval((totX/2)-(circlesize/2),(totY/2)-(circlesize/2),circlesize,circlesize)
+		      BuildPic.Graphics.DrawOval((totX/2)-(circlesize/2),(totY/2)-(circlesize/2),circlesize,circlesize)
 		    end
 		    
 		    
@@ -2451,20 +2467,20 @@ End
 		    if GridsList.cellcheck(Index,13) then 
 		      'Draw Corner circles
 		      'TL-Red
-		      circlesize = min((myPic.Height/2)-5,(totX/2)-5,tileX*2)
+		      circlesize = min((BuildPic.Height/2)-5,(totX/2)-5,tileX*2)
 		      
-		      myPic.graphics.ForeColor = &cff0000
-		      MyPic.Graphics.DrawOval(0,0,circlesize,circlesize)
+		      BuildPic.graphics.ForeColor = &cff0000
+		      BuildPic.Graphics.DrawOval(0,0,circlesize,circlesize)
 		      'TR-Green
-		      myPic.graphics.ForeColor = &c00ff00
-		      MyPic.Graphics.DrawOval((totX-circlesize),0,circlesize,circlesize)
+		      BuildPic.graphics.ForeColor = &c00ff00
+		      BuildPic.Graphics.DrawOval((totX-circlesize),0,circlesize,circlesize)
 		      'BL-Blue
-		      myPic.graphics.ForeColor = &c0000ff
-		      MyPic.Graphics.DrawOval(0,(totY-circlesize),circlesize,circlesize)
+		      BuildPic.graphics.ForeColor = &c0000ff
+		      BuildPic.Graphics.DrawOval(0,(totY-circlesize),circlesize,circlesize)
 		      'BR-Yellow
-		      myPic.graphics.ForeColor = &cffff00
-		      MyPic.Graphics.DrawOval((totX-circlesize),(totY-circlesize),circlesize,circlesize)
-		      myPic.graphics.ForeColor = &cffffff
+		      BuildPic.graphics.ForeColor = &cffff00
+		      BuildPic.Graphics.DrawOval((totX-circlesize),(totY-circlesize),circlesize,circlesize)
+		      BuildPic.graphics.ForeColor = &cffffff
 		    end
 		    
 		    if GridsList.cellcheck(Index,9) then 
@@ -2473,11 +2489,11 @@ End
 		      
 		      
 		      if val(GridsList.cell(Index,7)) = 3 then
-		        MyPic.Graphics.ForeColor  = &c000000
+		        BuildPic.Graphics.ForeColor  = &c000000
 		      else
-		        MyPic.Graphics.ForeColor  = &cffffff
+		        BuildPic.Graphics.ForeColor  = &cffffff
 		      end
-		      MyPic.Graphics.DrawRect(0,0,totX,totY)
+		      BuildPic.Graphics.DrawRect(0,0,totX,totY)
 		    end
 		    
 		    'Draw logo
@@ -2486,14 +2502,14 @@ End
 		    if totX > totY then
 		      logoSize= min(totX,icon.width)
 		      logoHeight=(icon.height/icon.width)*logoSize
-		      while logoHeight > (totY-5) or logoSize > totX/4
+		      while logoHeight > (totY\3) or logoSize > totX\4
 		        logoSize = logoSize -1
 		        logoHeight=(icon.height/icon.width)*logoSize
 		      wend
 		    else
 		      logoSize= min(totX,icon.width)
 		      logoHeight=(icon.height/icon.width)*logoSize
-		      while logoHeight > (totY-5) or logoSize > totX/1.5
+		      while logoHeight > (totY\3) or logoSize > totX\3
 		        logoSize = logoSize -1
 		        logoHeight=(icon.height/icon.width)*logoSize
 		      wend
@@ -2503,97 +2519,97 @@ End
 		    
 		    
 		    if GridsList.cellcheck(Index,14) then 
-		      myPic.Graphics.Transparency = app.logoOpacity
-		      'myPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
-		      myPic.Graphics.DrawPicture(icon,(totX-(logoSize+3)),(totY-(logoHeight)-3),(logoSize),(logoHeight),0,0,icon.width,icon.height)
+		      BuildPic.Graphics.Transparency = app.logoOpacity
+		      'BuildPic.Graphics.DrawPicture(icon,(totX-(logoSize)-(tileX*2)),(totY-(logoSize)-3),(logoSize),(logoSize),0,0,icon.width,icon.height)
+		      BuildPic.Graphics.DrawPicture(icon,(totX-(logoSize+3)),(totY-(logoHeight)-3),(logoSize),(logoHeight),0,0,icon.width,icon.height)
 		    end
 		    
 		    
 		    'custom text
-		    myPic.Graphics.Transparency = 0
+		    BuildPic.Graphics.Transparency = 0
 		    offset = 5
 		    if (GridsList.cell(Index,6)) <> ""  then 
 		      circlesize =min((totY),(totX))
-		      MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		      BuildPic.Graphics.ForeColor  = ColorPicker.FillColor
 		      
 		      if alt_text.value then
 		        id = (GridsList.cell(Index,6))
 		        
 		        textsize = 250                            'initial text size before resize 
-		        MyPic.Graphics.TextSize=textsize
-		        MyPic.Graphics.Bold = True
-		        while (MyPic.Graphics.StringWidth(id) > max((totX/2),circlesize)) or (MyPic.Graphics.StringHeight(id,circlesize) > totY)
+		        BuildPic.Graphics.TextSize=textsize
+		        BuildPic.Graphics.Bold = True
+		        while (BuildPic.Graphics.StringWidth(id) > max((totX\3),circlesize)) or (BuildPic.Graphics.StringHeight(id,circlesize) > totY)
 		          if textsize <1 then
 		            exit
 		          else
 		            textsize = textsize -5
 		          end
-		          MyPic.Graphics.TextSize=textsize
+		          BuildPic.Graphics.TextSize=textsize
 		        wend
 		        'msgbox(str(textsize))
 		        If colorbarsHeight = 0 then
 		          
 		          if dropShadow.value then
 		            'add drop shadow to large central text
-		            MyPic.Graphics.ForeColor  = &c0000007f
-		            MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)+offset),(totY/2)+(MyPic.Graphics.StringHeight(id,totX)/3)+offset)
+		            BuildPic.Graphics.ForeColor  = &c0000007f
+		            BuildPic.Graphics.DrawString(id,(totX/2-(BuildPic.Graphics.StringWidth(id)/2)+offset),(totY/2)+(BuildPic.Graphics.StringHeight(id,totX)/3)+offset)
 		          end
-		          MyPic.Graphics.ForeColor  = ColorPicker.FillColor
-		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)+(MyPic.Graphics.StringHeight(id,totX)/3))
+		          BuildPic.Graphics.ForeColor  = ColorPicker.FillColor
+		          BuildPic.Graphics.DrawString(id,(totX/2-(BuildPic.Graphics.StringWidth(id)/2)),(totY/2)+(BuildPic.Graphics.StringHeight(id,totX)/3))
 		        else
 		          
 		          if dropShadow.value then
 		            'add drop shadow
-		            MyPic.Graphics.ForeColor  = &c0000007f
-		            MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)+offset),(totY/2)-(colorbarsHeight/2)-3+offset)
+		            BuildPic.Graphics.ForeColor  = &c0000007f
+		            BuildPic.Graphics.DrawString(id,(totX/2-(BuildPic.Graphics.StringWidth(id)/2)+offset),(totY/2)-(colorbarsHeight/2)-3+offset)
 		          end
-		          MyPic.Graphics.ForeColor  = ColorPicker.FillColor
-		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2)-(colorbarsHeight/2)-3)
+		          BuildPic.Graphics.ForeColor  = ColorPicker.FillColor
+		          BuildPic.Graphics.DrawString(id,(totX/2-(BuildPic.Graphics.StringWidth(id)/2)),(totY/2)-(colorbarsHeight/2)-3)
 		        end
 		        id = (str(totX) + "x" + str(totY))
-		        MyPic.Graphics.TextSize=max(min((totX/10),26),12)'font size is third of tileY or 12pixels min
+		        BuildPic.Graphics.TextSize=max(min((totX/10),26),12)'font size is third of tileY or 12pixels min
 		        
 		        offset = 1
 		        if dropShadow.value then
 		          'add drop shadow
-		          MyPic.Graphics.ForeColor  = &c0000007f
-		          MyPic.Graphics.DrawString(id,3+offset,(totY-3+offset))
+		          BuildPic.Graphics.ForeColor  = &c0000007f
+		          BuildPic.Graphics.DrawString(id,3+offset,(totY-3+offset))
 		        end
-		        MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		        BuildPic.Graphics.ForeColor  = ColorPicker.FillColor
 		        
-		        //debug.log("TextSize(Big)" + ","+str(MyPic.Graphics.TextSize))
-		        MyPic.Graphics.Bold = False
-		        MyPic.Graphics.DrawString(id,3,(totY-3))
+		        //debug.log("TextSize(Big)" + ","+str(BuildPic.Graphics.TextSize))
+		        BuildPic.Graphics.Bold = False
+		        BuildPic.Graphics.DrawString(id,3,(totY-3))
 		      else
 		        id = (GridsList.cell(Index,6) + "     " +  str(totX) + "x" + str(totY))
-		        MyPic.Graphics.TextSize=max(min((totX/12),26),10)'font size is third of tileY or 10pixels min
+		        BuildPic.Graphics.TextSize=max(min((totX/12),26),10)'font size is third of tileY or 10pixels min
 		        
-		        // debug.log("TextSize(small)" + ","+str(MyPic.Graphics.TextSize))
-		        if (myPic.Graphics.StringWidth(id)) < totX then
+		        // debug.log("TextSize(small)" + ","+str(BuildPic.Graphics.TextSize))
+		        if (BuildPic.Graphics.StringWidth(id)) < totX then
 		          
 		          offset = 1
 		          if dropShadow.value then
 		            'add drop shadow
-		            MyPic.Graphics.ForeColor  = &c0000007f
-		            MyPic.Graphics.DrawString(id,5+offset,(totY-5+offset))
+		            BuildPic.Graphics.ForeColor  = &c0000007f
+		            BuildPic.Graphics.DrawString(id,5+offset,(totY-5+offset))
 		          end
-		          MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		          BuildPic.Graphics.ForeColor  = ColorPicker.FillColor
 		          
-		          MyPic.Graphics.DrawString(id,5,(totY-5))
+		          BuildPic.Graphics.DrawString(id,5,(totY-5))
 		        else
 		          id = (GridsList.cell(Index,6))
-		          MyPic.Graphics.DrawString(id,(totX/2-(myPic.Graphics.StringWidth(id)/2)),(totY/2))
+		          BuildPic.Graphics.DrawString(id,(totX/2-(BuildPic.Graphics.StringWidth(id)/2)),(totY/2))
 		          id = (str(totX) + "x" + str(totY))
 		          
 		          offset = 1
 		          if dropShadow.value then
 		            'add drop shadow
-		            MyPic.Graphics.ForeColor  = &c0000007f
-		            MyPic.Graphics.DrawString(id,3+offset,(totY-5+offset))
+		            BuildPic.Graphics.ForeColor  = &c0000007f
+		            BuildPic.Graphics.DrawString(id,3+offset,(totY-5+offset))
 		          end
-		          MyPic.Graphics.ForeColor  = ColorPicker.FillColor
+		          BuildPic.Graphics.ForeColor  = ColorPicker.FillColor
 		          
-		          MyPic.Graphics.DrawString(id,3,(totY-5))
+		          BuildPic.Graphics.DrawString(id,3,(totY-5))
 		        end
 		        
 		      end
@@ -2602,12 +2618,16 @@ End
 		    end
 		    
 		    
+		    mypic=BuildPic
+		    
 		  else
 		    myPic.Graphics.ClearRect(0,0,1,1)
 		  end
 		  
 		  
 		  rebuild=false
+		  
+		  
 		  
 		  
 		  
@@ -2727,6 +2747,7 @@ End
 		    'show standard file selector
 		    file = GetOpenFolderItem(GridFileType.pg2)
 		    if file=nil then exit sub             'cancel clicked
+		    
 		  end if
 		  
 		  If file <> Nil Then
@@ -2867,6 +2888,8 @@ End
 		  If file is Nil Then 
 		    file = GetOpenFolderItem(GridFileType.pg3)
 		    if file is nil then exit sub             'cancel clicked
+		    
+		    
 		  end
 		  
 		  Dim xml As New XMLDocument
@@ -3014,24 +3037,27 @@ End
 		  Dim id as String
 		  dim i  as Integer
 		  
-		  OutCanvas= Self.BitmapForCaching(val(OutH.Text)/ScaleFactor, val(OutV.Text)/ScaleFactor)
+		  'OutCanvas= Self.BitmapForCaching(val(OutH.Text)/ScaleFactor, val(OutV.Text)/ScaleFactor)
 		  
-		  OutCanvas.VerticalResolution = 72
-		  OutCanvas.HorizontalResolution = 72
-		  
-		  OutCanvas.Graphics.ScaleX = 1
-		  OutCanvas.Graphics.ScaleY = 1
+		  Dim OutCanvasBuild As new Picture(val(OutH.Text),val(OutV.text))
 		  
 		  
-		  OutCanvas.Graphics.PenHeight = 1
-		  OutCanvas.Graphics.PenWidth = 1
+		  OutCanvasBuild.VerticalResolution = 72
+		  OutCanvasBuild.HorizontalResolution = 72
+		  
+		  OutCanvasBuild.Graphics.ScaleX = 1
+		  OutCanvasBuild.Graphics.ScaleY = 1
+		  
+		  
+		  OutCanvasBuild.Graphics.PenHeight = 1
+		  OutCanvasBuild.Graphics.PenWidth = 1
 		  
 		  
 		  
-		  OutCanvas.Graphics.ForeColor = RGB(0, 0, 0)
+		  OutCanvasBuild.Graphics.ForeColor = RGB(0, 0, 0)
 		  
 		  if Not T_canvas.value or  MaskMode.value then 
-		    OutCanvas.Graphics.FillRect(0,0,val(OutH.Text), val(OutV.Text))
+		    OutCanvasBuild.Graphics.FillRect(0,0,val(OutH.Text), val(OutV.Text))
 		  end if
 		  
 		  if GridsList.ListIndex = -1 or Grid_Solo.value= false then
@@ -3041,15 +3067,15 @@ End
 		        
 		        dim gridwidth as integer = val(GridsList.cell(i,0))*val(GridsList.Cell(i,2))
 		        dim gridheight as Integer = val(GridsList.cell(i,1))*val(GridsList.Cell(i,3))
-		        OutCanvas.Graphics.ForeColor = RGB(0, 0, 0, 0)
+		        OutCanvasBuild.Graphics.ForeColor = RGB(0, 0, 0, 0)
 		        
-		        OutCanvas.graphics.ClearRect(val(GridsList.cell(i,4)), val(GridsList.cell(i,5)),gridwidth, gridheight)
+		        OutCanvasBuild.graphics.ClearRect(val(GridsList.cell(i,4)), val(GridsList.cell(i,5)),gridwidth, gridheight)
 		        'msgbox ("blank" + GridsList.cell(i,4) + GridsList.cell(i,5))
 		        
 		        
 		      else
 		        BuildGrid(i)
-		        OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
+		        OutCanvasBuild.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
 		      end
 		      
 		      Dim offX as double = val(GridsList.Cell(i,4))
@@ -3057,20 +3083,24 @@ End
 		      
 		      if Window1.originCursor.Value and not MaskMode.value then
 		        'Display offset markers
-		        OutCanvas.graphics.ForeColor = RGB(255,255,255)
-		        OutCanvas.Graphics.DrawLine(offX, 0, OffX,OffY)
-		        OutCanvas.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
-		        OutCanvas.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
-		        OutCanvas.Graphics.DrawLine((offX+5),(OffY-5),OffX,OffY)
+		        OutCanvasBuild.graphics.ForeColor = RGB(255,255,255)
+		        // cursor corners
+		        OutCanvasBuild.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
+		        OutCanvasBuild.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
+		        OutCanvasBuild.Graphics.DrawLine((offX+5),(OffY-5),OffX,OffY)
 		        
-		        OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
+		        if Preferences.fullcursor then
+		          //cursor pointers
+		          OutCanvasBuild.Graphics.DrawLine(offX, 0, OffX,OffY)
+		          OutCanvasBuild.Graphics.DrawLine(0, offY, OffX,OffY)
+		        end
 		        
 		        'Display offset numbers
-		        'OutCanvas.Graphics.TextSize=15
-		        OutCanvas.Graphics.TextSize=min((val(GridsList.Cell(i,1))/5),15)
+		        'OutCanvasBuild.Graphics.TextSize=15
+		        OutCanvasBuild.Graphics.TextSize=min((val(GridsList.Cell(i,1))/5),15)
 		        id = "TL:"+ GridsList.Cell(i,4) + "," + GridsList.Cell(i,5)
-		        dim a as Integer = OutCanvas.Graphics.StringHeight(id,val(GridsList.Cell(i,0))*2)
-		        OutCanvas.Graphics.DrawString(id,offX+5,offY+(a*2))
+		        dim a as Integer = OutCanvasBuild.Graphics.StringHeight(id,val(GridsList.Cell(i,0))*2)
+		        OutCanvasBuild.Graphics.DrawString(id,offX+5,offY+(a*2))
 		      end
 		      
 		      
@@ -3082,15 +3112,15 @@ End
 		      
 		      dim gridwidth as integer = val(GridsList.cell(i,0))*val(GridsList.Cell(i,2))
 		      dim gridheight as Integer = val(GridsList.cell(i,1))*val(GridsList.Cell(i,3))
-		      OutCanvas.Graphics.ForeColor = RGB(0, 0, 0, 0)
+		      OutCanvasBuild.Graphics.ForeColor = RGB(0, 0, 0, 0)
 		      
-		      OutCanvas.graphics.ClearRect(val(GridsList.cell(i,4)), val(GridsList.cell(i,5)),gridwidth, gridheight)
+		      OutCanvasBuild.graphics.ClearRect(val(GridsList.cell(i,4)), val(GridsList.cell(i,5)),gridwidth, gridheight)
 		      'msgbox ("blank" + GridsList.cell(i,4) + GridsList.cell(i,5))
 		      
 		      
 		    else
 		      BuildGrid(i)
-		      OutCanvas.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
+		      OutCanvasBuild.Graphics.DrawPicture(myPic,val(GridsList.Cell(i,4)),val(GridsList.Cell(i,5)))
 		    end
 		    
 		    
@@ -3100,18 +3130,18 @@ End
 		    
 		    if Window1.originCursor.Value and not MaskMode.value then
 		      'Display offset markers
-		      OutCanvas.graphics.ForeColor = RGB(255,255,255)
-		      OutCanvas.Graphics.DrawLine(offX, 0, OffX,OffY)
-		      OutCanvas.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
-		      OutCanvas.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
-		      OutCanvas.Graphics.DrawLine((offX+5),(OffY-5),OffX,OffY)
-		      OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
+		      OutCanvasBuild.graphics.ForeColor = RGB(255,255,255)
+		      OutCanvasBuild.Graphics.DrawLine(offX, 0, OffX,OffY)
+		      OutCanvasBuild.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
+		      OutCanvasBuild.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
+		      OutCanvasBuild.Graphics.DrawLine((offX+5),(OffY-5),OffX,OffY)
+		      OutCanvasBuild.Graphics.DrawLine(0, offY, OffX,OffY)
 		      
 		      'Display offset numbers
-		      OutCanvas.Graphics.TextSize=min((val(GridsList.Cell(i,1))/5),15)
+		      OutCanvasBuild.Graphics.TextSize=min((val(GridsList.Cell(i,1))/5),15)
 		      id = "TL:"+ GridsList.Cell(i,4) + "," + GridsList.Cell(i,5)
-		      dim a as Integer = OutCanvas.Graphics.StringHeight(id,val(GridsList.Cell(i,0))*2)
-		      OutCanvas.Graphics.DrawString(id,offX+5,offY+(a*2))
+		      dim a as Integer = OutCanvasBuild.Graphics.StringHeight(id,val(GridsList.Cell(i,0))*2)
+		      OutCanvasBuild.Graphics.DrawString(id,offX+5,offY+(a*2))
 		    end
 		    
 		    
@@ -3121,47 +3151,47 @@ End
 		  
 		  'Display canvas raster
 		  if Window1.stats.Value and not MaskMode.value then
-		    OutCanvas.Graphics.ForeColor  = &cffffff
-		    OutCanvas.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
+		    OutCanvasBuild.Graphics.ForeColor  = &cffffff
+		    OutCanvasBuild.Graphics.DrawRect(0,0,val(OutH.Text), val(OutV.Text))
 		  end
 		  
 		  
 		  
 		  if CanvasText.text <> "" and not MaskMode.value then
-		    OutCanvas.Graphics.ForeColor  = &cffffff
-		    OutCanvas.Graphics.TextSize=25
+		    OutCanvasBuild.Graphics.ForeColor  = &cffffff
+		    OutCanvasBuild.Graphics.TextSize=25
 		    id = "Canvas  :"+OutH.text+"px x "+OutV.text+"px"+ chr(13) + CanvasText.Text
-		    dim w as integer = OutCanvas.Graphics.Stringwidth(id)
-		    dim h as Integer = OutCanvas.Graphics.StringHeight(id,w)
+		    dim w as integer = OutCanvasBuild.Graphics.Stringwidth(id)
+		    dim h as Integer = OutCanvasBuild.Graphics.StringHeight(id,w)
 		    
 		    Select Case TP
 		    Case 0 'TL
 		      TextXpos = 0
 		      TextYpos = 0
 		    Case 1 'TC
-		      TextXpos = (OutCanvas.Width/2)-(w/2)-3
+		      TextXpos = (OutCanvasBuild.Width/2)-(w/2)-3
 		      TextYpos = 0
 		    Case 2 'TR
-		      TextXpos = OutCanvas.Width-w-5
+		      TextXpos = OutCanvasBuild.Width-w-5
 		      TextYpos = 0
 		    Case 3 'BL
 		      TextXpos = 0
-		      TextYpos = OutCanvas.Height-h-5
+		      TextYpos = OutCanvasBuild.Height-h-5
 		    Case 4 'BC
-		      TextXpos = (OutCanvas.Width/2)-(w/2)-3
-		      TextYpos = OutCanvas.Height-h-5
+		      TextXpos = (OutCanvasBuild.Width/2)-(w/2)-3
+		      TextYpos = OutCanvasBuild.Height-h-5
 		    Case 5 'BR
-		      TextXpos = OutCanvas.Width-w-5
-		      TextYpos = OutCanvas.Height-h-5
+		      TextXpos = OutCanvasBuild.Width-w-5
+		      TextYpos = OutCanvasBuild.Height-h-5
 		      
 		    end select
 		    
-		    OutCanvas.Graphics.DrawString(id,TextXpos+5,TextYpos+25)
-		    OutCanvas.Graphics.DrawRect(TextXpos,TextYpos,w+5,h+5)
+		    OutCanvasBuild.Graphics.DrawString(id,TextXpos+5,TextYpos+25)
+		    OutCanvasBuild.Graphics.DrawRect(TextXpos,TextYpos,w+5,h+5)
 		  end
 		  
 		  
-		  
+		  OutCanvas = OutCanvasBuild
 		  
 		  BuildGrid(picindex) 'ensure last build grid is currently selected one from list.
 		End Sub
@@ -3549,17 +3579,25 @@ End
 		  Dim f As FolderItem
 		  
 		  
+		  
 		  f = GetSaveFolderItem(GridFileType.pg3, "Grid List "+CanvasText.Text+".pg3")
+		  
+		  if f is nil then exit sub             'cancel clicked
+		  
 		  tos = f.CreateTextFile
 		  If f <> Nil Then
 		    tos.Write(prettyXML)
 		    tos.close
 		    //xml.SaveXml(f)
+		    
 		  End If
+		  
 		  
 		  Window1.Title="Editor - " + f.Name
 		  
 		  app.newChanges = False
+		  
+		  
 		  
 		  
 		  
@@ -3849,10 +3887,10 @@ End
 #tag Events Canvas1
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
-		  // debugWindow.Log("Paint "+ Str(rebuild))
+		  //debugWindow.Log("Paint "+ Str(rebuild))
 		  
 		  
-		  Dim gridColour,gC As Color
+		  Dim gridColour As Color
 		  
 		  If IsDarkMode Then
 		    gridColour = &c16161600
@@ -4090,7 +4128,7 @@ End
 		  #Else
 		    Me.DoubleBuffer = False
 		  #Endif
-		  Me.EraseBackground = False
+		  //Me.EraseBackground = False
 		  
 		  
 		  
@@ -4753,7 +4791,7 @@ End
 		    LabelClass02.Visible=False
 		    
 		    'UpdateScreen       'added 14/10
-		    
+		    UpdateScreen()
 		  Elseif itemindex = 1 and GorC = false then
 		    GorC = true
 		    Grid_Solo.Visible = True
@@ -4770,9 +4808,9 @@ End
 		    LabelClass02.Visible=True
 		    
 		    'OutCanvasUpdate().        removed 14/10
-		    
+		    UpdateScreen()
 		  End If
-		  UpdateScreen()
+		  
 		  
 		  
 		End Sub
@@ -4888,6 +4926,15 @@ End
 		  Dim d As SaveAsDialog
 		  d = New SaveAsDialog
 		  dim outpic as Picture
+		  
+		  'Dim g as Graphics = outpic.Graphics
+		  'Dim widthPic as Integer = outpic.Width
+		  'Dim widthGraphics as Integer = g.Width
+		  'Dim heightGraphics as Integer = g.Height
+		  '
+		  '
+		  'debugWindow.log("PicX " + str(outPic.width)+" PicY " + str(outPic.height)+" ScaleFactor " + str(ScaleFactor))
+		  'debugWindow.log("GraphicsX " + str(widthGraphics)+" GraphicsY " + str(heightGraphics))
 		  
 		  
 		  

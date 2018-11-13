@@ -9,7 +9,7 @@ Begin Window PrefsWindow
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   423
+   Height          =   474
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
@@ -209,7 +209,7 @@ Begin Window PrefsWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   207
+      Top             =   258
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -287,7 +287,7 @@ Begin Window PrefsWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   173
+      Top             =   224
       Transparent     =   False
       Underline       =   False
       UseFocusRing    =   True
@@ -323,7 +323,7 @@ Begin Window PrefsWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   174
+      Top             =   225
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -386,7 +386,7 @@ Begin Window PrefsWindow
       TabIndex        =   15
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   239
+      Top             =   290
       Transparent     =   True
       UseFocusRing    =   True
       Visible         =   True
@@ -548,6 +548,89 @@ Begin Window PrefsWindow
       Visible         =   True
       Width           =   35
    End
+   Begin CheckBox FullCursor
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      State           =   0
+      TabIndex        =   20
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   180
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   20
+   End
+   Begin LabelClass LabelClass4
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   40
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   21
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Full Cursors"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   180
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   144
+   End
+   Begin Line Line1
+      BorderWidth     =   1
+      Index           =   -2147483648
+      InitialParent   =   ""
+      LineColor       =   &cBFBFBF00
+      LockedInPosition=   False
+      Scope           =   0
+      TabPanelIndex   =   0
+      Transparent     =   False
+      Visible         =   True
+      X1              =   20
+      X2              =   184
+      Y1              =   212
+      Y2              =   212
+   End
 End
 #tag EndWindow
 
@@ -570,6 +653,8 @@ End
 		  Preferences.AEduration = i
 		  
 		  Preferences.AErandom = AErandom.value
+		  
+		  Preferences.fullcursor = fullcursor.value
 		  
 		  If Not Preferences.Save Then
 		    MsgBox("Could not save preferences.")
@@ -612,6 +697,9 @@ End
 		  AEframerate.Text=str(Preferences.AEframerate)
 		  AEduration.Text=str(Preferences.AEduration)
 		  AErandom.Value = Preferences.AErandom
+		  fullcursor.value = Preferences.fullcursor 
+		  
+		  
 		  'Window1.T_Canvas.Value = Preferences.Tcanvas
 		  
 		  

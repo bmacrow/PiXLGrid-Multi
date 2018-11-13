@@ -46,6 +46,7 @@ Inherits Application
 		    Preferences.AEframerate = 25
 		    Preferences.AEduration = 60
 		    Preferences.AErandom = true
+		    Preferences.fullcursor = true
 		    
 		  End If
 		  
@@ -196,7 +197,38 @@ Inherits Application
 
 	#tag MenuHandler
 		Function FileOpenXML() As Boolean Handles FileOpenXML.Action
+			If newChanges Then
+			Dim d As New MessageDialog                       //declare the MessageDialog object
+			Dim b As MessageDialogButton                     //for handling the result
+			d.Icon = MessageDialog.GraphicCaution              //display warning icon
+			
+			d.ActionButton.Caption = "Save"
+			d.CancelButton.Visible = True                      //show the Cancel button
+			d.AlternateActionButton.Visible = True             //show the "Don't Save" button
+			d.AlternateActionButton.Caption = "Don't Save"
+			d.AlternateActionButton.Cancel = True              // sets AlternateAction button to cancel
+			d.Title = "Un-saved Changes"
+			d.Message = "Do you want to save changes to this document before closing?"
+			d.Explanation = "If you don't save, your changes will be lost. "
+			
+			b = d.ShowModalWithin(Window1)                               //display the dialog in the window
+			Select Case b                                              //determine which button was pressed.
+			Case d.ActionButton
+			// user pressed Save
+			
+			Window1.SaveFileXml()
+			
+			
+			Case d.AlternateActionButton
+			// user pressed Don't Save
 			Window1.LoadFileXml
+			Case d.CancelButton
+			// user pressed Cancel
+			End Select
+			
+			End
+			
+			
 			Return True
 			
 		End Function
