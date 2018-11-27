@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PiXL>
-	<Version ver="2.172" date="2/11/18" macURL="http://bit.ly/2Sems8L" 
+	<Version ver="2.177" date="23/11/18" macURL="http://bit.ly/2Sems8L" 
 pcURL="http://bit.ly/2O0KQaA" 
 changelog="
+v2.177|
+	Background performance fix|
+|
+v2.176|
+	Because I'm an idiot|
+|
+
+v2.175|
+	Squishy grid bug fixed!|
+	Open dialog box fixed|
+	Now tab or enter in Canvas size boxes works|
+|
+v2.174|
+	New feature. HALF TILE SUPPORT!. Enter 4.5 in the rows for 4xfull rows and 1xhalf row. Use preferences to define top row or bottom row. (nobody needs half columns??)|
+	New feature. In grid offsets and canvas size, you can use basic maths functions to calculate. ie 30x2 or 50+60 etc.....|
+	New feature. In grid offets you can also shift a grid by an entire grid offset by entering 1g in the offset box.|
+	New feature. Full or partial cursors.|
+	Bug fixes. Hopefully stops crashing when opening grids from finder, or pressing cacel button in dialog.|
+	Bug fixes. Tracks changes to files in a better way and warns when a grid needs saving.|
+	Bug fixes. After effects export wasn't adding grids to layers.|
+	Application is now donation ware, Please consider donating to our chosen charity if you find pixl Grid useful.|
+|
 v2.172|
 	Added default tile sizes to preferences and set them to 84 x 168 (Infiled ER5)|
+|
 v2.171|
 	New Feature. Whole tile offset. Just enter #t in OffsetX or OffsetY. ie 2t for a two tile offset etc|
 	New Feature. svg export of canvas. Useful for Millumin Output setup|

@@ -5,7 +5,7 @@ Begin Window Window1
    CloseButton     =   True
    Compatibility   =   ""
    Composite       =   False
-   Frame           =   9
+   Frame           =   0
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
@@ -13,9 +13,9 @@ Begin Window Window1
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
-   MaxHeight       =   32000
+   MaxHeight       =   2160
    MaximizeButton  =   False
-   MaxWidth        =   32000
+   MaxWidth        =   3840
    MenuBar         =   905261055
    MenuBarVisible  =   True
    MinHeight       =   700
@@ -524,38 +524,6 @@ Begin Window Window1
       Visible         =   False
       Width           =   41
    End
-   Begin PushButton Live3
-      AutoDeactivate  =   True
-      Bold            =   False
-      ButtonStyle     =   "0"
-      Cancel          =   False
-      Caption         =   "Live Output"
-      Default         =   False
-      Enabled         =   True
-      Height          =   20
-      HelpTag         =   "Display canvas on second monitor with optional moving cursor"
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   903
-      LockBottom      =   True
-      LockedInPosition=   False
-      LockLeft        =   False
-      LockRight       =   True
-      LockTop         =   False
-      Scope           =   0
-      TabIndex        =   16
-      TabPanelIndex   =   0
-      TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   653
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   86
-   End
    Begin Slider SizeSlide
       AutoDeactivate  =   True
       Enabled         =   True
@@ -704,7 +672,7 @@ Begin Window Window1
       HasHeading      =   True
       HeadingIndex    =   -1
       Height          =   132
-      HelpTag         =   "Add multiple grids with individual offsets.\nEnter ## pixels or ##t for panel offsets. "
+      HelpTag         =   "Add multiple grids with individual offsets.\nEnter ## pixels or ##t for tile offsets or ##g for whole grid offsets. "
       Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
@@ -1189,7 +1157,7 @@ Begin Window Window1
       HelpTag         =   "Canvas stats position"
       Index           =   -2147483648
       InitialParent   =   ""
-      InitialValue    =   "Top Left\nTop Centre\nTop Right\nBottom Left\nBottom Centre\nBottom Right"
+      InitialValue    =   "Top Left\nTop Centre\nTop Right\nBottom Left\nBottom Centre\nBottom Right\nNone"
       Italic          =   False
       Left            =   638
       ListIndex       =   0
@@ -1914,6 +1882,35 @@ Begin Window Window1
       Visible         =   False
       Width           =   53
    End
+   Begin medButton LiveBtn
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   0
+      Caption         =   "Live Output"
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   27
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   906
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   58
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   653
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   84
+   End
 End
 #tag EndWindow
 
@@ -1948,7 +1945,7 @@ End
 		  'case 70,102
 		  ''1:1
 		  'mScale=100
-		  'Window1.Canvas1.Refresh
+		  'Window1.canvas1.invalidate()
 		  'zoom.Text=str(mScale)+"%"
 		  '
 		  'case 27
@@ -1967,6 +1964,13 @@ End
 		  #If DebugBuild Then
 		    me.Title = "Editor - Debug Mode " + "v" +Str(App.MinorVersion) +"."  + Str(App.Version) +"-"+Str(App.NonReleaseVersion)
 		  #endif
+		  
+		  createBuffer
+		  bgGrid(Canvas1.width,Canvas1.height)
+		  
+		  //bgGrid(canvas1.width,canvas1.height)
+		  
+		  
 		  
 		  If Not IsDarkMode Then
 		    Self.HasBackColor = True
@@ -1994,15 +1998,18 @@ End
 	#tag EndEvent
 
 	#tag Event
-		Sub Resizing()
-		  'debug.listbox1.InsertRow("Resize")
-		  'UpdateScreen()
+		Sub Resized()
+		  createBuffer
+		  bgGrid(Canvas1.width,Canvas1.height)
 		End Sub
 	#tag EndEvent
 
 
 	#tag Method, Flags = &h0
 		Sub AfterEffect(avecGrid as Boolean)
+		  debugWindow.log("Avec grids " + str(avecGrid))
+		  
+		  
 		  Dim f, f2 As folderitem
 		  dim tos as textOutputStream
 		  dim s as string
@@ -2047,6 +2054,7 @@ End
 		      if withGrids then 
 		        s = AE3c + "Grid-" +GridsList.Cell(i,6) + "-"+Str(gridWidth) + "x" +Str(gridHeight) +".png" + AE3d
 		        tos.WriteLine s.left(s.len-1)                'save line
+		        debugWindow.log("Added grids to AE")
 		      end if
 		      
 		      s = AE3e+ GridsList.cell(i,4) + "," + GridsList.cell(i,5) + "]);" + chr(10) + chr(10)
@@ -2117,7 +2125,7 @@ End
 		    
 		    
 		    
-		    //OutCanvasUpdate()
+		    OutCanvasUpdate()
 		    
 		  end
 		  
@@ -2127,17 +2135,67 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub BuildGrid(Index As integer)
+		Sub bgGrid(Width as integer, Height as integer)
+		  'debugWindow.Log("BG Grid " +str(width)+" " +str(height))
+		  dim ms as Double = Microseconds
+		  Dim gridColour As Color
 		  
+		  //dim bg as New Picture(width,height,32)
+		  
+		  Dim g as Graphics = myBG.Graphics
+		  
+		  If IsDarkMode Then
+		    gridColour = &c16161600
+		  Else
+		    gridColour = &c21212100
+		  End If
+		  
+		  Dim i,j,k As Integer = 0
+		  
+		  const square as Integer = 20
+		  
+		  For j = 0 To Height Step square
+		    
+		    If (j/square)  Mod 2 = 0 Then
+		      k = 0
+		    Else
+		      k = square
+		    End
+		    
+		    For i = k To Width Step (square *2)
+		      g.ForeColor= gridColour
+		      g.FillRect(i,j,square,square)
+		      g.ForeColor= &c12121200
+		      g.FillRect(i-square,j,square,square)
+		      
+		    Next i
+		    
+		  Next j
+		  
+		  Canvas1.Invalidate
+		  
+		  debugWindow.log ("bgGrid in (" + Format((Microseconds - ms)/1000,"#0.0") + "ms)")
+		  
+		  //myBG = bg
+		  
+		  return 
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub BuildGrid(Index As integer)
+		  dim ms as Double = Microseconds
 		  debugWindow.log("BuildGrid" + str(Index))
 		  
-		  dim i,j,k,l,tileX,tileY,screenWidth, screenHeight,rcount,colcount,c2count,colorbarsHeight as Integer
+		  dim i,j,k,l,tileX,tileY,rcount,colcount,c2count,colorbarsHeight,screenWidth as Integer
+		  dim screenHeight as double
 		  dim logoRatio as Double
 		  dim x,y,totX,totY,logoSize,logoHeight as Integer
 		  dim textsize as Single
 		  dim gridColor(), bgColor() as color
 		  dim id as string
 		  dim offset as Integer
+		  dim halfRow As string
 		  
 		  dim alphabet() as text = Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"_
 		  ,"aa","ab","ac","ad","ae","af","ag","ah","ai","aj","ak","al","am","an","ao","ap","aq","ar","as","at","au","av","aw","ax","ay","az"_
@@ -2152,16 +2210,12 @@ End
 		  
 		  
 		  
-		  
-		  
 		  if GridsList.ListCount <>0 then
 		    
-		    //Canvas1.EraseBackground = True
-		    
-		    tileX = Val(GridsList.cell(Index,0))// ScaleFactor
-		    tileY = Val(GridsList.cell(Index,1))'/ScaleFactor
-		    screenWidth= val(GridsList.cell(Index,2))'/ScaleFactor
-		    screenHeight= Val(GridsList.cell(Index,3))'/ScaleFactor
+		    tileX = Val(GridsList.cell(Index,0))
+		    tileY = Val(GridsList.cell(Index,1))
+		    screenWidth= val(GridsList.cell(Index,2))
+		    screenHeight= Val(GridsList.cell(Index,3))
 		    
 		    x = 0
 		    y = 0
@@ -2170,25 +2224,18 @@ End
 		    rcount = 1
 		    colcount = 1
 		    c2count = 1
-		    totX = (tileX*screenWidth)'/ScaleFactor
-		    totY = (tileY*screenHeight)'/ScaleFactor
-		    
-		    'MyPic = Self.BitmapForCaching(totX\ScaleFactor,totY\ScaleFactor)
-		    
-		    'MyPic = Self.BitmapForCaching(totX,totY)
+		    totX = (tileX*screenWidth)
+		    totY = (tileY*screenHeight)
 		    
 		    
-		    Dim BuildPic as New Picture(totX,totY,32)
 		    
-		    Dim g as Graphics = BuildPic.Graphics
+		    Dim BuildPic as New Picture(totX,totY)
 		    
-		    Dim widthGraphics as Integer = g.Width
-		    Dim heightGraphics as Integer = g.Height
+		    //Dim g as Graphics = BuildPic.Graphics
 		    
-		    
-		    debugWindow.log("Total X " + str(totX)+" Total Y " + str(totY))
+		    'debugWindow.log("Total X " + str(totX)+" Total Y " + str(totY))
 		    debugWindow.log("PicX " + str(BuildPic.width)+" PicY " + str(BuildPic.height)+" ScaleFactor " + str(ScaleFactor))
-		    debugWindow.log("GraphicsX " + str(widthGraphics)+" GraphicsY " + str(heightGraphics))
+		    //debugWindow.log("GraphicsX " + str(BuildPic.width)+" GraphicsY " + str(BuildPic.height))
 		    
 		    BuildPic.Graphics.TextFont="Helvetica"
 		    BuildPic.Graphics.TextUnit=FontUnits.Pixel
@@ -2229,7 +2276,7 @@ End
 		      bgColor = Array(&c3F3F3F,&c000000,&c000000,&c000000,&c000000,&c000000,&c000000,&c000000)
 		    Case "Transparent"
 		      'Blank
-		      bgColor = Array(&c3F3F3F00,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c000000ff,&c00000000)
+		      bgColor = Array(&c3F3F3F00,&c000000ff,&c00000000)
 		    Case "Red"
 		      'Red
 		      bgColor = Array(&c3F3F3F,&cdd3c46,&c000000)
@@ -2332,9 +2379,37 @@ End
 		      bgColor = Array(&c3F3F3F,&c3F003F,&c003F3F,&c3F3F00,&c00003F,&c003F00,&c3F0000,&c000000)
 		    End Select
 		    
+		    //Draw extra Half Tile at Bottom
+		    
+		    If Right(str(screenHeight) ,2) = ".5" Then
+		      
+		      screenHeight = screenHeight + 0.5
+		      
+		      if Preferences.halfTilePos = "true"  then 
+		        halfrow = "bottom"
+		        'debugWindow.log("HalfRow Bottom")
+		      else
+		        halfRow = "top"
+		        'debugWindow.log("HalfRow Top")
+		      end
+		      
+		    end
 		    
 		    
 		    for j = 1  to screenHeight //draw row
+		      
+		      if halfRow = "top"  and j = 1 then
+		        
+		        tileY = tileY\2
+		        
+		      elseif halfRow = "bottom" and j = screenHeight then
+		        
+		        tileY = tileY\2
+		        
+		      else
+		        tileY = Val(GridsList.cell(Index,1))'/ScaleFactor
+		      end
+		      
 		      
 		      for i = 1 to screenWidth //draw column
 		        if val(GridsList.cell(Index,7)) = 5 then
@@ -2425,6 +2500,11 @@ End
 		      y = y + tileY
 		      
 		    next
+		    
+		    
+		    
+		    
+		    
 		    
 		    'draw diagonal cross
 		    if GridsList.cellcheck(Index,12) then
@@ -2624,13 +2704,27 @@ End
 		    myPic.Graphics.ClearRect(0,0,1,1)
 		  end
 		  
+		  scaledWidth  = MyPic.width * (mscale/100)
+		  scaledHeight = MyPic.height * (mscale/100)
 		  
 		  rebuild=false
 		  
 		  
+		  debugWindow.log ("BuildGrid in (" + Format((Microseconds - ms)/1000,"#0.0") + "ms)")
 		  
 		  
 		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub createBuffer()
+		  dim w as Integer = Canvas1.Width
+		  dim h as Integer = Canvas1.Height
+		  
+		  MyBG = TrueWindow.BitmapForCaching(w,h)
+		  
+		  Canvas1.Backdrop = MyBG
 		End Sub
 	#tag EndMethod
 
@@ -2687,7 +2781,9 @@ End
 		    if canvas1.width <> scaledwidth then
 		      
 		      mscale = (canvas1.width/MyPic.width)*100
-		      Window1.Canvas1.Refresh
+		      scaledWidth  = MyPic.width * (mscale/100)
+		      scaledHeight = MyPic.height * (mscale/100)
+		      Window1.canvas1.invalidate()
 		      
 		    end
 		    
@@ -2695,7 +2791,9 @@ End
 		    if canvas1.width <> scaledwidth then
 		      
 		      mscale = (canvas1.width/OutCanvas.width)*100
-		      Window1.Canvas1.Refresh
+		      scaledWidth  = MyPic.width * (mscale/100)
+		      scaledHeight = MyPic.height * (mscale/100)
+		      Window1.canvas1.invalidate()
 		      
 		    end
 		    
@@ -2713,7 +2811,9 @@ End
 		    if canvas1.height <> scaledheight then
 		      
 		      mscale = (canvas1.height/MyPic.height)*100
-		      Window1.Canvas1.Refresh
+		      scaledWidth  = MyPic.width * (mscale/100)
+		      scaledHeight = MyPic.height * (mscale/100)
+		      Window1.canvas1.invalidate()
 		      
 		    end
 		    
@@ -2721,7 +2821,9 @@ End
 		    if canvas1.height <> scaledheight then
 		      
 		      mscale = (canvas1.height/OutCanvas.height)*100
-		      Window1.Canvas1.Refresh
+		      scaledWidth  = MyPic.width * (mscale/100)
+		      scaledHeight = MyPic.height * (mscale/100)
+		      Window1.canvas1.invalidate()
 		      
 		    end
 		    
@@ -3021,7 +3123,9 @@ End
 	#tag Method, Flags = &h0
 		Sub OnetoOne()
 		  mScale=100
-		  Window1.Canvas1.Refresh
+		  scaledWidth  = MyPic.width * (mscale/100)
+		  scaledHeight = MyPic.height * (mscale/100)
+		  Window1.canvas1.invalidate()
 		  zoom.Text=str(mScale)+"%"
 		End Sub
 	#tag EndMethod
@@ -3030,14 +3134,17 @@ End
 		Sub OutCanvasUpdate()
 		  
 		  
-		  debugWindow.log("OutCanvasUpdate")
+		  debugWindow.log("OutCanvasUpdate " + OutH.Text + " " + OutV.Text)
 		  
 		  'Dim d As SaveAsDialog
 		  'd = New SaveAsDialog
 		  Dim id as String
 		  dim i  as Integer
 		  
-		  'OutCanvas= Self.BitmapForCaching(val(OutH.Text)/ScaleFactor, val(OutV.Text)/ScaleFactor)
+		  
+		  //Dim OutCanvas as New Picture(val(OutH.Text),val(OutV.Text))
+		  
+		  //OutCanvas= Self.BitmapForCaching(val(OutH.Text)/ScaleFactor, val(OutV.Text)/ScaleFactor)
 		  
 		  Dim OutCanvasBuild As new Picture(val(OutH.Text),val(OutV.text))
 		  
@@ -3157,7 +3264,7 @@ End
 		  
 		  
 		  
-		  if CanvasText.text <> "" and not MaskMode.value then
+		  if CanvasText.text <> "" and not MaskMode.value and TP <> 6 then
 		    OutCanvasBuild.Graphics.ForeColor  = &cffffff
 		    OutCanvasBuild.Graphics.TextSize=25
 		    id = "Canvas  :"+OutH.text+"px x "+OutV.text+"px"+ chr(13) + CanvasText.Text
@@ -3236,12 +3343,17 @@ End
 		    
 		    'Display offset markers
 		    OutCanvas.graphics.ForeColor = RGB(255,255,255)
-		    OutCanvas.Graphics.DrawLine(offX, 0, OffX,OffY)
+		    
 		    OutCanvas.Graphics.DrawLine((offX-5),(OffY-5),OffX,OffY)
 		    OutCanvas.Graphics.DrawLine((offX-5),(OffY+5),OffX,OffY)
 		    OutCanvas.Graphics.DrawLine((offX+5),(OffY-5),OffX,OffY)
 		    
-		    OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
+		    if Preferences.fullcursor then
+		      //cursor pointers
+		      OutCanvas.Graphics.DrawLine(offX, 0, OffX,OffY)
+		      OutCanvas.Graphics.DrawLine(0, offY, OffX,OffY)
+		    end
+		    
 		    
 		    'Display offset numbers
 		    'OutCanvas.Graphics.TextSize=15
@@ -3679,7 +3791,7 @@ End
 
 	#tag Method, Flags = &h0
 		Sub UpdateScreen()
-		  
+		  dim ms as Double = Microseconds
 		  'debug.log("UpDateScreen")
 		  
 		  if GridsList.ListCount>0 then
@@ -3689,18 +3801,21 @@ End
 		    
 		    if GorC then
 		      OutCanvasUpdate()
-		      Window1.Canvas1.Refresh
+		      Window1.canvas1.invalidate()
 		    else
-		      Window1.Canvas1.Refresh
+		      Window1.canvas1.invalidate()
 		      'OutCanvasUpdate()
 		    end
 		    
 		    if OutputIsOpen  then
 		      OutCanvasUpdate()
-		      Window2.Canvas1.Refresh
+		      Window2.canvas1.invalidate()
 		    end
 		    
 		  end
+		  
+		  
+		  debugWindow.log ("UpDateScreen in (" + Format((Microseconds - ms)/1000,"#0.0") + "ms)")
 		End Sub
 	#tag EndMethod
 
@@ -3759,6 +3874,10 @@ End
 
 	#tag Property, Flags = &h21
 		Private mXScroll As Integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		myBG As Picture
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -3887,37 +4006,8 @@ End
 #tag Events Canvas1
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
-		  //debugWindow.Log("Paint "+ Str(rebuild))
-		  
-		  
-		  Dim gridColour As Color
-		  
-		  If IsDarkMode Then
-		    gridColour = &c16161600
-		  Else
-		    gridColour = &c21212100
-		  End If
-		  
-		  
-		  
-		  Dim i,j,k As Integer = 0
-		  For j = 0 To Self.height Step 10
-		    
-		    If (j/10)  Mod 2 = 0 Then
-		      k = 0
-		    Else
-		      k = 10
-		    End
-		    
-		    For i = k To Self.width Step 20
-		      g.ForeColor= gridColour
-		      g.FillRect(i,j,10,10)
-		      g.ForeColor= &c12121200
-		      g.FillRect(i-10,j,10,10)
-		      
-		    Next i
-		    
-		  Next j
+		  'debugWindow.Log("Paint "+ Str(rebuild))
+		  //dim ms as Double = Microseconds
 		  
 		  
 		  
@@ -3925,9 +4015,7 @@ End
 		    BuildGrid(PicIndex)
 		  end
 		  
-		  if GorC = false then
-		    scaledWidth  = MyPic.width * (mscale/100)
-		    scaledHeight = MyPic.height * (mscale/100)
+		  if GorC = false then //Grid Mode
 		    
 		    // Size the scrollbar based on how much vertical scrolling the image can do
 		    VerticalScrollBar.Maximum = scaledHeight - me.Height
@@ -3936,6 +4024,7 @@ End
 		    // is nothing to scroll
 		    If me.Height >= scaledHeight Then
 		      VerticalScrollBar.Visible = False
+		      //g.DrawPicture(myBG, 0, 0,me.Width,me.Height,0,0,myBG.width,myBG.height)
 		      mYScroll = 0
 		    Else
 		      'check if ScrollBar is visible already. If just appearing then reset mYScroll
@@ -3944,6 +4033,7 @@ End
 		        
 		      else
 		        VerticalScrollBar.Visible = True
+		        
 		        mYScroll = 0
 		      end
 		      
@@ -3956,16 +4046,15 @@ End
 		    // is nothing to scroll
 		    If me.Width >= scaledWidth Then
 		      HorizontalScrollBar.Visible = False 
+		      //g.DrawPicture(myBG, 0, 0,me.Width,me.Height,0,0,myBG.width,myBG.height)
 		      mXScroll = 0
 		    Else
 		      
 		      // check if ScrollBar is visible already. If just appearing then reset mXScroll
 		      
 		      if HorizontalScrollBar.Visible then
-		        
 		      else
 		        HorizontalScrollBar.Visible = True
-		        
 		        mXScroll = 0
 		      end
 		      
@@ -3973,8 +4062,7 @@ End
 		    
 		    g.DrawPicture(MyPic, mXScroll, mYScroll,scaledWidth,scaledHeight,0,0,MyPic.width,MyPic.height)
 		    
-		    
-		  else
+		  else //Canvas Mode
 		    scaledWidth  = OutCanvas.width * (mscale/100)
 		    scaledHeight = OutCanvas.height * (mscale/100)
 		    
@@ -3985,6 +4073,7 @@ End
 		    // is nothing to scroll
 		    If me.Height >= scaledHeight Then
 		      VerticalScrollBar.Visible = False
+		      //g.DrawPicture(myBG, 0, 0,me.Width,me.Height,0,0,myBG.width,myBG.height)
 		      mYScroll = 0
 		    Else
 		      // check if ScrollBar is visible already. If just appearing then reset mYScroll
@@ -4006,6 +4095,7 @@ End
 		    
 		    If me.Width >= scaledWidth Then
 		      HorizontalScrollBar.Visible = False 
+		      //g.DrawPicture(myBG, 0, 0,me.Width,me.Height,0,0,myBG.width,myBG.height)
 		      mXScroll = 0
 		    Else
 		      
@@ -4021,9 +4111,8 @@ End
 		    
 		    g.DrawPicture(OutCanvas, mXScroll, mYScroll,scaledWidth,scaledHeight,0,0,OutCanvas.width,OutCanvas.height)
 		    
-		    
 		  end 
-		  
+		  //debugWindow.log ("Paint in (" + Format((Microseconds - ms)/1000,"#0.0") + "ms)")
 		  
 		End Sub
 	#tag EndEvent
@@ -4133,6 +4222,8 @@ End
 		  
 		  
 		  
+		  
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -4193,11 +4284,12 @@ End
 		  
 		  if mscale > 0 then
 		    mScale = mScale-5
-		    
+		    scaledWidth  = MyPic.width * (mscale/100)
+		    scaledHeight = MyPic.height * (mscale/100)
 		    
 		    rebuild=false
 		    
-		    Window1.Canvas1.Refresh
+		    Window1.canvas1.invalidate()
 		    
 		  else 
 		    Window1.mScale = 0
@@ -4205,6 +4297,8 @@ End
 		  end if
 		  
 		  zoom.Text=str(mScale)+"%"
+		  
+		  
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -4218,7 +4312,11 @@ End
 		  mScale = mScale+5
 		  rebuild=false
 		  'UpdateScreen()
-		  Window1.Canvas1.Refresh
+		  
+		  scaledWidth  = MyPic.width * (mscale/100)
+		  scaledHeight = MyPic.height * (mscale/100)
+		  
+		  Window1.canvas1.invalidate()
 		  
 		  zoom.Text=str(mScale)+"%"
 		End Sub
@@ -4226,44 +4324,70 @@ End
 #tag EndEvents
 #tag Events OutH
 	#tag Event
-		Sub LostFocus()
-		  If Val(Me.Text) > 32767 Then
-		    MsgBox("Too Big!")
-		    me.Text = str(32767)
+		Function KeyDown(Key As String) As Boolean
+		  
+		  
+		  
+		  if asc(key) = 9 or asc(key) = 13 then
+		    If Val(Me.Text) > 32767 Then
+		      MsgBox("Too Big!")
+		      me.Text = str(32767)
+		      
+		    elseif val(me.text) <1 then
+		      MsgBox("Too Small")
+		      me.Text = "1"
+		      
+		      
+		    end
 		    
-		  elseif val(me.text) <1 then
-		    MsgBox("Too Small")
-		    me.Text = "1"
+		    Dim result As String
 		    
+		    Dim myEval As New Evaluator
+		    result = myEval.Eval(me.Text)
+		    
+		    me.Text = result
+		    
+		    
+		    UpdateScreen
+		    
+		    app.newChanges = true
 		    
 		  end
 		  
-		  
-		  UpdateScreen
-		  
-		  'app.newChanges = True
-		  'debugWindow.log("newChanges hlost")
-		End Sub
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag Events OutV
 	#tag Event
-		Sub LostFocus()
-		  If Val(Me.Text) > 32767 Then
-		    MsgBox("Too Big!")
-		    me.Text = str(32767)
+		Function KeyDown(Key As String) As Boolean
+		  if asc(key) = 9 or asc(key) = 13 then
 		    
-		  elseif val(me.text) <1 then
-		    MsgBox("Too Small")
-		    me.Text = "1"
+		    If Val(Me.Text) > 32767 Then
+		      MsgBox("Too Big!")
+		      me.Text = str(32767)
+		      
+		    elseif val(me.text) <0.5 then
+		      MsgBox("Too Small")
+		      me.Text = "1"
+		      
+		      
+		    end
 		    
+		    Dim result As String
+		    
+		    Dim myEval As New Evaluator
+		    result = myEval.Eval(me.Text)
+		    
+		    me.Text = result
+		    
+		    
+		    UpdateScreen
+		    
+		    
+		    app.newChanges = true
 		    
 		  end
-		  UpdateScreen
-		  
-		  'app.newChanges = True
-		  'debugWindow.log("newChanges v lost")
-		End Sub
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag Events stats
@@ -4318,18 +4442,6 @@ End
 	#tag Event
 		Sub ValueChanged()
 		  Window2.speed= me.Value
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events Live3
-	#tag Event
-		Sub Action()
-		  if OutputIsOpen then
-		    window2.close
-		  else
-		    
-		    Window2.show
-		  end
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -4411,6 +4523,7 @@ End
 	#tag Event
 		Sub Open()
 		  dim i as integer
+		  dim defTileX,defTileY as integer
 		  
 		  
 		  
@@ -4651,6 +4764,7 @@ End
 		    end 
 		    
 		  Case 2 //cols
+		    
 		    if (val(GridsList.cell(row,0))*val(GridsList.cell(row,2))) >  32767 then
 		      MsgBox("Too Big!")
 		      GridsList.cell(row,2) = str((32767\val(GridsList.cell(row,0)))-1)
@@ -4660,10 +4774,18 @@ End
 		    end if
 		    
 		  Case 3 //rows
+		    
+		    'If Right(GridsList.cell(row,3),2) = ".5" Then
+		    '
+		    'MsgBox("half Tile!")
+		    '
+		    'end
+		    
+		    
 		    if (val(GridsList.cell(row,1))*val(GridsList.cell(row,3))) >  32767 then
 		      MsgBox("Too Big!")
 		      GridsList.cell(row,3) = str((32767\val(GridsList.cell(row,1)))-1)
-		    elseif (val(GridsList.cell(row,3))) <1 then
+		    elseif (val(GridsList.cell(row,3))) <0.5 then
 		      MsgBox("Too Small")
 		      GridsList.cell(row,3) = "1"
 		    End If
@@ -4674,12 +4796,38 @@ End
 		      
 		      GridsList.cell(row,4) = Str(Val(GridsList.cell(row,4)) * Val(GridsList.cell(row,0)))
 		      
+		    elseif Right(GridsList.cell(row,4),1) = "g" Then
+		      
+		      GridsList.cell(row,4) = Str(Val(GridsList.cell(row,4)) * Val(GridsList.cell(row,0))* Val(GridsList.cell(row,2)))
+		      
+		    else
+		      
+		      Dim result As String
+		      
+		      Dim myEval As New Evaluator
+		      result = myEval.Eval(GridsList.cell(row,4))
+		      
+		      GridsList.cell(row,4) = result
+		      
 		    End If
 		    
 		  Case 5 //OffsetY
 		    If Right(GridsList.cell(row,5),1) = "t" Then
 		      
 		      GridsList.cell(row,5) = Str(Val(GridsList.cell(row,5)) * Val(GridsList.cell(row,1)))
+		      
+		    elseif Right(GridsList.cell(row,5),1) = "g" Then
+		      
+		      GridsList.cell(row,5) = Str(Val(GridsList.cell(row,5)) * Val(GridsList.cell(row,1))* Val(GridsList.cell(row,3)))
+		      
+		    else
+		      
+		      Dim result As String
+		      
+		      Dim myEval As New Evaluator
+		      result = myEval.Eval(GridsList.cell(row,5))
+		      
+		      GridsList.cell(row,5) = result
 		      
 		    End If
 		    
@@ -4776,7 +4924,7 @@ End
 #tag Events GridCanvas_select
 	#tag Event
 		Sub Action(itemIndex as integer)
-		  If itemIndex = 0  And GorC = True Then
+		  If itemIndex = 0  And GorC = True Then //Grid Mode
 		    GorC = false
 		    Grid_Solo.Visible = False
 		    MaskMode.Visible = false
@@ -4792,7 +4940,7 @@ End
 		    
 		    'UpdateScreen       'added 14/10
 		    UpdateScreen()
-		  Elseif itemindex = 1 and GorC = false then
+		  Elseif itemindex = 1 and GorC = false then //Canvas Mode
 		    GorC = true
 		    Grid_Solo.Visible = True
 		    MaskMode.Visible = true
@@ -4925,9 +5073,10 @@ End
 		  Dim f As FolderItem
 		  Dim d As SaveAsDialog
 		  d = New SaveAsDialog
-		  dim outpic as Picture
 		  
-		  'Dim g as Graphics = outpic.Graphics
+		  
+		  
+		  
 		  'Dim widthPic as Integer = outpic.Width
 		  'Dim widthGraphics as Integer = g.Width
 		  'Dim heightGraphics as Integer = g.Height
@@ -4947,7 +5096,7 @@ End
 		        f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(PicIndex,6) + "-"+str(mypic.Width) + "x" +str(mypic.Height) +".png"))
 		        
 		        If f <> Nil Then
-		          mypic.Save(f, Picture.SaveAsPNG)
+		          myPic.Save(f, Picture.SaveAsPNG)
 		        End If
 		        
 		      end
@@ -4964,7 +5113,7 @@ End
 		      f = GetSaveFolderItem(ImageFileTypeSet.Png, ("Grid-" +GridsList.Cell(i,6) + "-"+str(myPic.Width) + "x" +str(myPic.Height) +".png"))
 		      
 		      If f <> Nil Then
-		        mypic.Save(f, Picture.SaveAsPNG)
+		        myPic.Save(f, Picture.SaveAsPNG)
 		      End If
 		      
 		    next
@@ -5056,13 +5205,14 @@ End
 		  n = MsgBox("Would you like to generate a script with the grids included?", 36)
 		  If n = 6 Then
 		    withGrids = true
+		    
 		  ElseIf n = 7 Then
 		    withGrids = false
 		  End If
 		  
 		  AfterEffect(withGrids)
 		  
-		  
+		  debugWindow.log("With grids " + str(withGrids))
 		  
 		  
 		  
@@ -5126,6 +5276,18 @@ End
 	#tag Event
 		Sub Action()
 		  FitV
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events LiveBtn
+	#tag Event
+		Sub Action()
+		  if OutputIsOpen then
+		    window2.close
+		  else
+		    
+		    Window2.show
+		  end
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -5446,5 +5608,10 @@ End
 		Group="Behavior"
 		InitialValue="false"
 		Type="Boolean"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="myBG"
+		Group="Behavior"
+		Type="Picture"
 	#tag EndViewProperty
 #tag EndViewBehavior

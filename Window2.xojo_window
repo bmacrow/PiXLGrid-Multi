@@ -55,6 +55,7 @@ Begin Window Window2
       Width           =   600
    End
    Begin Timer Animate
+      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Mode            =   1
@@ -191,8 +192,8 @@ End
 #tag Events Canvas1
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
-		  
-		  g.DrawPicture(Window1.OutCanvas,0,0)
+		  me.Backdrop = Window1.OutCanvas
+		  //g.DrawPicture(Window1.OutCanvas,0,0)
 		  
 		  If Not (Hcolour = &c000000) Then
 		    
@@ -223,7 +224,9 @@ End
 		  #Else
 		    Me.DoubleBuffer = False
 		  #Endif
-		  Me.EraseBackground = False
+		  //Me.EraseBackground = False
+		  
+		  
 		  
 		  
 		End Sub
@@ -260,7 +263,7 @@ End
 		  End
 		  
 		  // draw the image
-		  Canvas1.Refresh
+		  canvas1.invalidate(False)
 		  //Canvas1.Invalidate(False)
 		  
 		  

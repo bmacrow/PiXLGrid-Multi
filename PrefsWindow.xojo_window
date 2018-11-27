@@ -5,24 +5,24 @@ Begin Window PrefsWindow
    CloseButton     =   True
    Compatibility   =   ""
    Composite       =   False
-   Frame           =   9
+   Frame           =   0
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   474
+   Height          =   520
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   True
-   MaxWidth        =   32000
+   MaxHeight       =   520
+   MaximizeButton  =   False
+   MaxWidth        =   204
    MenuBar         =   0
    MenuBarVisible  =   True
    MinHeight       =   64
    MinimizeButton  =   True
    MinWidth        =   64
    Placement       =   0
-   Resizeable      =   True
+   Resizeable      =   False
    Title           =   "Preferences"
    Visible         =   True
    Width           =   204
@@ -192,11 +192,11 @@ Begin Window PrefsWindow
       InitialParent   =   ""
       Italic          =   False
       Left            =   20
-      LockBottom      =   False
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
-      LockTop         =   True
+      LockTop         =   False
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
@@ -209,7 +209,7 @@ Begin Window PrefsWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   258
+      Top             =   304
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -270,11 +270,11 @@ Begin Window PrefsWindow
       Italic          =   False
       Left            =   116
       LimitText       =   0
-      LockBottom      =   False
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
-      LockTop         =   True
+      LockTop         =   False
       Mask            =   ""
       Password        =   False
       ReadOnly        =   False
@@ -287,7 +287,7 @@ Begin Window PrefsWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   224
+      Top             =   270
       Transparent     =   False
       Underline       =   False
       UseFocusRing    =   True
@@ -306,11 +306,11 @@ Begin Window PrefsWindow
       InitialParent   =   ""
       Italic          =   False
       Left            =   20
-      LockBottom      =   False
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
-      LockTop         =   True
+      LockTop         =   False
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
@@ -323,7 +323,7 @@ Begin Window PrefsWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   225
+      Top             =   271
       Transparent     =   True
       Underline       =   False
       Visible         =   True
@@ -377,16 +377,16 @@ Begin Window PrefsWindow
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
-      LockBottom      =   False
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
-      LockTop         =   True
+      LockTop         =   False
       Scope           =   0
       TabIndex        =   15
       TabPanelIndex   =   0
       TabStop         =   True
-      Top             =   290
+      Top             =   336
       Transparent     =   True
       UseFocusRing    =   True
       Visible         =   True
@@ -618,18 +618,89 @@ Begin Window PrefsWindow
    End
    Begin Line Line1
       BorderWidth     =   1
+      Enabled         =   True
       Index           =   -2147483648
       InitialParent   =   ""
       LineColor       =   &cBFBFBF00
       LockedInPosition=   False
       Scope           =   0
+      TabIndex        =   "16"
       TabPanelIndex   =   0
+      TabStop         =   True
       Transparent     =   False
       Visible         =   True
       X1              =   20
       X2              =   184
-      Y1              =   212
-      Y2              =   212
+      Y1              =   252
+      Y2              =   252
+   End
+   Begin CheckBox halfTilePos
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      State           =   0
+      TabIndex        =   22
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   212
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   20
+   End
+   Begin LabelClass LabelClass5
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   40
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   23
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Half tile rows bottom"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   212
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   144
    End
 End
 #tag EndWindow
@@ -655,6 +726,8 @@ End
 		  Preferences.AErandom = AErandom.value
 		  
 		  Preferences.fullcursor = fullcursor.value
+		  
+		  Preferences.halfTilePos = halfTilePos.value
 		  
 		  If Not Preferences.Save Then
 		    MsgBox("Could not save preferences.")
@@ -698,7 +771,7 @@ End
 		  AEduration.Text=str(Preferences.AEduration)
 		  AErandom.Value = Preferences.AErandom
 		  fullcursor.value = Preferences.fullcursor 
-		  
+		  halfTilePos.value = Preferences.halfTilePos
 		  
 		  'Window1.T_Canvas.Value = Preferences.Tcanvas
 		  
@@ -779,22 +852,22 @@ End
 #tag Events dropLogoCanvas
 	#tag Event
 		Sub DropObject(obj As DragItem, action As Integer)
-		  DropCode(obj)
+		  
 		  
 		  If obj.PictureAvailable Then
 		    Self.dropImage = gProportionalScale(obj.Picture, Me.width,Me.height)
 		    Me.Refresh
 		  Elseif obj.FolderItemAvailable Then
 		    
-		    If obj.FolderItem.Type <> "" Then
+		    If obj.FolderItem.Type = "image/png" Then
 		      
 		      Self.dropImage = gProportionalScale(Picture.Open(obj.FolderItem), Me.width,Me.height)
 		      Me.Refresh
-		      
+		      DropCode(obj)
 		      
 		    Else
 		      
-		      MsgBox "Unsupported File Type"
+		      MsgBox ("Unsupported File Type " + obj.FolderItem.Type)
 		      
 		    End
 		    

@@ -26,6 +26,20 @@ Private Class Prefs
 		      case "defTileY" 
 		        Preferences.Set(name) ="168"
 		        return "168"
+		        
+		        
+		      case "halfTilePos"
+		        Preferences.halfTilePos = true
+		        return true
+		        
+		      case "Icon"
+		        Preferences.Icon = "1"
+		        return true
+		        
+		      case"AEframerate"
+		        Preferences.AEframerate = "25"
+		        return true
+		        
 		      else
 		        Preferences.Set(name) =""
 		      end select

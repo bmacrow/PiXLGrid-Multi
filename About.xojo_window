@@ -9,7 +9,7 @@ Begin Window About
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   163
+   Height          =   405
    ImplicitInstance=   True
    LiveResize      =   False
    MacProcID       =   0
@@ -25,7 +25,7 @@ Begin Window About
    Resizeable      =   False
    Title           =   "About"
    Visible         =   False
-   Width           =   388
+   Width           =   394
    Begin Canvas Canvas1
       AcceptFocus     =   False
       AcceptTabs      =   False
@@ -99,7 +99,7 @@ Begin Window About
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   191
+         Left            =   150
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -117,7 +117,7 @@ Begin Window About
          TextFont        =   "System"
          TextSize        =   0.0
          TextUnit        =   0
-         Top             =   47
+         Top             =   46
          Transparent     =   True
          Underline       =   False
          Visible         =   True
@@ -264,6 +264,104 @@ Begin Window About
       Visible         =   True
       Width           =   143
    End
+   Begin Label charityReg
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   38
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Teenage Cancer Trust is a registered charity: 1062559 (England & Wales), SC039757 (Scotland)"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   347
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   354
+   End
+   Begin Canvas DonateButton
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   1283657727
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   100
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   235
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   354
+   End
+   Begin Label Plea
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   58
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "If you find pixl Grid useful, please consider donating whatever you can to the Teenage Cancer Trust via the button below. Thank you."
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   165
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   354
+   End
 End
 #tag EndWindow
 
@@ -296,6 +394,13 @@ End
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
 		  ShowURL("http://www.pixlevolution.com")
 		  return true
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events DonateButton
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  ShowURL("http://www.justgiving.com/pixlGridDonate")
 		End Function
 	#tag EndEvent
 #tag EndEvents

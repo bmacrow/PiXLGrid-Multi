@@ -1,0 +1,40 @@
+#tag MultiImage
+Image TCT
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFoAAAAAAFoAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8HVENULnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAABkltYWdlcwACAD8vOlVzZXJzOnJpY2hhcmQ6Q2xvdWRTdGF0aW9uOlBpWExHcmlkLU11bHRpOkNvZGU6SW1hZ2VzOlRDVC5wbmcAAA4AEAAHAFQAQwBUAC4AcABuAGcADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgA9VXNlcnMvcmljaGFyZC9DbG91ZFN0YXRpb24vUGlYTEdyaWQtTXVsdGkvQ29kZS9JbWFnZXMvVENULnBuZwAAEwABLwAAFQACAA7//wAAAAAAAAAA
+		FullPath = /Users/richard/CloudStation/PiXLGrid-Multi/Code/Images/TCT.png
+		PartialPath = Images\TCT.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 354.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 354.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 354.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 100.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

@@ -1,9 +1,0 @@
-<svg version="1.1" id="layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-xml:space="preserve" x="0" y="0" width="1920" height="1080" viewBox="0 0 1920 1080">
-<polygon id="Centre Screen" fill="#76D87" points="320 180 1600 180 1600 900 320 900"></polygon>
-<polygon id="Stage Right" fill="#326F15" points="40 180 280 180 280 900 40 900"></polygon>
-<polygon id="Stage Left" fill="#9A3D68" points="1640 180 1880 180 1880 900 1640 900"></polygon>
-<polygon id="Riser" fill="#4762EF" points="480 932 1440 932 1440 1052 480 1052"></polygon>
-<polygon id="Header" fill="#4CDB1" points="480 35 1440 35 1440 155 480 155"></polygon>
-<polygon id="Door" fill="#F0FC25" points="720 660 1200 660 1200 900 720 900"></polygon>
-</svg>

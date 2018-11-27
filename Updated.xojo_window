@@ -100,6 +100,7 @@ Begin Window Updated
       Address         =   ""
       BytesAvailable  =   0
       BytesLeftToSend =   0
+      Enabled         =   True
       Handle          =   0
       httpProxyAddress=   ""
       httpProxyPort   =   0
@@ -133,6 +134,7 @@ Begin Window Updated
       Scope           =   0
       TabIndex        =   10
       TabPanelIndex   =   0
+      TabStop         =   True
       Top             =   220
       TopLeftColor    =   &c00000000
       Transparent     =   False
@@ -210,6 +212,7 @@ Begin Window Updated
       Selectable      =   False
       TabIndex        =   11
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Release notes and changes"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -279,6 +282,7 @@ Begin Window Updated
       Selectable      =   False
       TabIndex        =   13
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Please follow the links below...."
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -313,6 +317,7 @@ Begin Window Updated
       Selectable      =   False
       TabIndex        =   14
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Current Version"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -347,6 +352,7 @@ Begin Window Updated
       Selectable      =   False
       TabIndex        =   15
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Latest Version"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -381,6 +387,7 @@ Begin Window Updated
       Selectable      =   False
       TabIndex        =   16
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Mac Version"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -415,6 +422,7 @@ Begin Window Updated
       Selectable      =   False
       TabIndex        =   17
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "PC Version"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -449,6 +457,7 @@ Begin Window Updated
       Selectable      =   False
       TabIndex        =   18
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Untitled"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -483,6 +492,7 @@ Begin Window Updated
       Selectable      =   False
       TabIndex        =   19
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Untitled"
       TextAlign       =   0
       TextColor       =   &c00000000

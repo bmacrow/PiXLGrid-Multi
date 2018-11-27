@@ -9,7 +9,7 @@ Begin Window Splash
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   140
+   Height          =   372
    ImplicitInstance=   True
    LiveResize      =   False
    MacProcID       =   0
@@ -26,7 +26,7 @@ Begin Window Splash
    Title           =   ""
    Visible         =   True
    Width           =   394
-   Begin Canvas Canvas1
+   Begin Canvas Logo
       AcceptFocus     =   False
       AcceptTabs      =   False
       AutoDeactivate  =   False
@@ -62,7 +62,7 @@ Begin Window Splash
          Height          =   44
          HelpTag         =   ""
          Index           =   -2147483648
-         InitialParent   =   "Canvas1"
+         InitialParent   =   "Logo"
          Italic          =   False
          Left            =   165
          LockBottom      =   False
@@ -97,7 +97,7 @@ Begin Window Splash
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
-         InitialParent   =   "Canvas1"
+         InitialParent   =   "Logo"
          Italic          =   False
          Left            =   258
          LockBottom      =   False
@@ -132,7 +132,7 @@ Begin Window Splash
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
-         InitialParent   =   "Canvas1"
+         InitialParent   =   "Logo"
          Italic          =   False
          Left            =   181
          LockBottom      =   False
@@ -160,12 +160,111 @@ Begin Window Splash
       End
    End
    Begin Timer Timer1
+      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Mode            =   1
       Period          =   3500
       Scope           =   0
       TabPanelIndex   =   0
+   End
+   Begin Canvas DonateButton
+      AcceptFocus     =   False
+      AcceptTabs      =   False
+      AutoDeactivate  =   True
+      Backdrop        =   1283657727
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      Height          =   100
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   False
+      Scope           =   0
+      TabIndex        =   1
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   202
+      Transparent     =   True
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   354
+   End
+   Begin Label Plea
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   58
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   2
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "If you find pixl Grid useful, please consider donating whatever you can to the Teenage Cancer Trust via the button below. Thank you."
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   132
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   354
+   End
+   Begin Label charityReg
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   38
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   True
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   3
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Teenage Cancer Trust is a registered charity: 1062559 (England & Wales), SC039757 (Scotland)"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   314
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   354
    End
 End
 #tag EndWindow
@@ -217,6 +316,13 @@ End
 		  self.Close
 		  
 		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events DonateButton
+	#tag Event
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  ShowURL("http://www.justgiving.com/pixlGridDonate")
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
